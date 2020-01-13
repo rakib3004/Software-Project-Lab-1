@@ -1,0 +1,56 @@
+Library_Management _Tool
+
+
+
+Jalal is a new librarian in khilkhet pathagar. 
+The executive members of this pathagar describe about pathagar infrastructure,  it's member, book management etc.
+Jalal now wants some work to do and some functionality is done by Library_Management _Tool. 
+
+
+
+Jalal wants to buy some books
+Then he need :
+1.Readers demand of specific book.
+2.Buy the types of book which reader have more demand.
+3.Price of demanding books.
+4.Number of Division of books..
+5.Number of specific types of book.
+6. Priority of the specific class of book.
+
+
+Jalal wants to remove some books
+Then he need :
+1.depend on buying date.
+2.books demand history.
+3. Types priority. 
+4.Each books price and  demand.
+
+
+
+Each books have some information :
+1.Book Name.
+2.Writer Name.
+3.Issue date.
+4.Price.
+5.Book category.
+6.Number of reader that getting the book.
+7.Their  borrow and back time History.
+
+If any reader want to any information 
+To his choice of specific book
+He must put :
+1.book name. 
+2.writer name.
+3.price.
+4.type.
+
+We also get extra key.
+They are :
+1.Types wise priority.
+2.Writers  priority. 
+3.Priority   by specific writer books borrowed. 
+
+
+
+
+
