@@ -1,0 +1,23 @@
+Consider the following inception of an SPL project  :
+
+Multi – objective Optimization Technique case study on 
+Khilkhet Pathagar :
+
+The main purpose of this technique is to provide a platform where librarian and library’s  executive  members  can manage their Library books with optimized way . The application should be self-managed by the librarian and library’s  executive  members with least manual involvement . This system will provide many management suggestion with optimal It should also be modular for future expansion. Following are the features/services that the system should provide .
+
+Book Information :    There is a huge amount of books in this library . To maintenance , organize , sorting , searching there  is some important parameter fixed for each books . They are Book Name , Writer Name  , Book ID  and Price . Book ID is a 10 digit number which holds Book Types /Category , Issue Date  and Book Serial Number .We will also put Books Priority , Writer Priority and Borrow Count .
+
+Requirement Information :  Usually readers  and members will suggest  and talk about some popular book’s or popular writer’s books or his/her favorite write’s/category’s  books. So he / she must give essential information . They are Book Name  , Writer Name  , Price , Categories. These parameters are very important for buying new books . 
+
+Book Add Suggestion :  In this part this system  will give suggestions about which type of book we urgently need or what is the percentage of importance  of required books..  We also see here the percentage of  importance of each books. 
+
+
+Book Remove Suggestion :   In this part this system will give suggestions about which n number books should be remove,  percentage of removing probability for each book,  price risks (if huge number of costly or cheaply book available in the library)  and category risk(Number of books are huge in any specific category book) percentage. 
+
+Library Balance Suggestion : Library balance suggestion helps to provide stability or a status of Library basically based on book add suggestion  & book remove suggestion.  It also give some suggestion about how to improve balance on this library system.  
+  
+Automation Algorithms : We will use algorithms and mathematical and statistical technique and calculation for optimize the library system and give an assumption value for each of the sector of prediction. 
+We will use four different types of algorithm to process result and suggestions in different perspective and showing angle. 
+
+Output Interface Tool : We can find different types of output like each book status,  group of books status,  specific category's  status. Groups can be made by same writer,  same alphabet, 
+Same price,  same time of buying,  same number of borrow count. 
