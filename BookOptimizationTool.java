@@ -1,4 +1,4 @@
-package JavaFile;
+package BasicJava;
 
 import java.io.*;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class InStream {
 
         Scanner scan = new Scanner(System.in);
         input_number = scan.nextInt();
-         space  = scan.nextLine();
+        space  = scan.nextLine();
 
         int iteration;
         String bookName,writerName,bookID, bookPrice;
@@ -21,28 +21,36 @@ public class InStream {
         File file = new File("C:\\Users\\Rakib\\Desktop\\input.txt");
         file.createNewFile();
         FileWriter fileWriter = new FileWriter(file);
+        fileWriter.write("bookName\twriterName\tbookID\tbookPrice\n");
+       fileWriter.flush();
+       // fileWriter.close();
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-          for(iteration=0;iteration<input_number;iteration++){
+        for(iteration=0;iteration<input_number;iteration++){
 
-        System.out.println("Book Name : ");
-        bookName  = scan.nextLine();
+          // fileWriter.append((CharSequence) file);
+            System.out.println("Book Name : ");
+            bookName  = scan.nextLine();
 
-        System.out.println("Writer Name : ");
-        writerName = scan.nextLine();
+            System.out.println("Writer Name : ");
+            writerName = scan.nextLine();
 
-        System.out.println("Book ID : ");
-        bookID = scan.nextLine();
+            System.out.println("Book ID : ");
+            bookID = scan.nextLine();
 
-        System.out.println("Book Price : ");
-        bookPrice = scan.nextLine();
+            System.out.println("Book Price : ");
+            bookPrice = scan.nextLine();
 
-        bookInfo = bookName+" "+writerName+" "+bookID+" "+bookPrice+"\n";
+            bookInfo = bookName+"\t"+writerName+"\t"+bookID+"\t"+bookPrice+"\n";
+bufferedWriter.write(bookInfo);
+//bufferedWriter.close();
+           // fileWriter.write(bookInfo);
+           // fileWriter.flush();
+           // fileWriter.close();
+        }
 
-              fileWriter.write(bookInfo);
-              fileWriter.flush();
-              fileWriter.close();
-         }
-
+bufferedWriter.close();
+         fileWriter.close();
 
 
 
