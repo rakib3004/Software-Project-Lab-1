@@ -1,0 +1,16 @@
+
+Book Priority = 20 - sqrt(Book's Types Value)
+Time Priority = 16 - (Time/12)
+Borrow Count = Book Count 
+Serial Priority = qubicRoot(Serial No)
+Writer Priority  = Write Priority 
+Price Priority  = pentaRoot(Book Price * Book Price )
+
+Book Weight = Book Priority + Time Priority + Borrow Count + Serial Priority + Writer Priority + Price Priority
+
+Book Weight = 20 - sqrt(Book's Types Value) + 16 - (Time/12) + Book Count + qubicRoot(Serial No) + Write Priority + 
+pentaRoot(Book Price * Book Price )
+
+
+Book Weight =  36 - sqrt(Book's Types Value) - (Time/12) + Book Count + QubicRoot(Serial No) + Write Priority + 
+PentaRoot(Book Price * Book Price )
