@@ -1,4 +1,4 @@
-                    Library Management Story Writing
+                    Library Management System Story Writing
 Book:  Each books have book name,  book's  author name,  price,  issue date,
 book's classification , publication name ,page no ,publishing country, purchase 
 count, purchase history .
