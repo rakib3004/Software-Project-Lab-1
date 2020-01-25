@@ -1,0 +1,50 @@
+                    Library Management Story Writing
+Book:  Each books have book name,  book's  author name,  price,  issue date,
+book's classification , publication name ,page no ,publishing country, purchase 
+count, purchase history .
+We can manage purchase/borrow of each book, issue book , remove book.
+
+Author:
+Each book's author has his/her name, email,  gender , biography , citizen ship , qualification .
+Library Member :
+Library member have name, age, gender ,address , phone number , occupation , Member ID ,registration 
+date ,blood group .
+They can borrow book, renew Library Card , pay monthly fee , pay fine, search book .
+
+Executive Member :
+Executive member have name ,address ,blood group , designation at committee ,occupation ,email ,
+phone number , monthly bill  , call meeting , add librarian , remove librarian .
+
+Librarian :
+Librarian has his name, Id No, qualification,  age,  designation , phone No  ,email , 
+duty time .Authority/librarian  can update designation , duty time , email, phone number.
+Librarian  have issue book , search book , issue status , remove book , take fine , take fee,
+verify member , manage notice board ,issue library card ,register new member , rejected 
+existing member.
+
+Magazine :
+Magazine have name, type, publishing date, price ,language .
+Members can read them, librarian can sorted, search an remove them.
+Store them.Two types of magazine daily and monthly .We can just read
+daily magazine/newspaper. Monthly magazine can borrow & read.
+
+Library Card:
+Library card contain Card no, member name, issue date, expiry date, membership class, 
+purchasing history. Library card can borrow book, return book, update validity, change membership class.
+
+Entry Book :
+Entry Book contain member/reader name, member classification, 
+entry time , exit time , occupation ,borrow status .
+Entry book count daily reader, no. of monthly reader, most 
+frequent readers', total time spent, total purchase book.
+
+Purchase  Book Register book :
+Purchase book contain book name, book classification, book id, member id, borrow date, return date.
+It provide book , receive book , check fine ,check available book .
+
+Notice Board :
+Notice board contains on duty librarian name, library  time, each librarian work schedule ,
+notification ,reminder , number of member enter in library , number of book purchase .
+Update No. of purchase book & sign in members, add new librarian, re-schedule library time,
+add notification , remove notification ,set reminder .
+
