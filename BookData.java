@@ -4,27 +4,24 @@ public class BookData {
     String  bookName;
     String writerName;
     String bookId;
-    String bookType;
-    String priority;
+   // String bookType;
+  //  String priority;
     String borrowCount;
-    String monthCount;
+ //   String monthCount;
     String bookPrice;
     double weight;
     public BookData(){
 
     }
     public BookData(String  bookName,String  writerName,String  bookId,
-                    String  bookType,String  priority,
-                    String  borrowCount,String  monthCount,
-                    String  bookPrice,double weight) {
-
+                    String  borrowCount , String  bookPrice,double weight) {
         this.bookName = bookName;
         this.writerName =writerName;
         this.bookId = bookId;
-        this.bookType = bookType;
-        this.priority = priority;
+      //  this.bookType = bookType;
+      //  this.priority = priority;
         this.borrowCount = borrowCount;
-        this.monthCount = monthCount;
+      //  this.monthCount = monthCount;
         this.bookPrice = bookPrice;
         this.weight = weight;
     }
@@ -37,18 +34,18 @@ public class BookData {
      public String getBookId(){
         return bookId;
     }
-     public String getBookType(){
+  /*  public String getBookType(){
         return bookType;
-    }
-     public String getPriority(){
+    }*/
+   /*  public String getPriority(){
         return priority;
-    }
+    }*/
      public String getBorrowCount(){
         return borrowCount;
     }
-     public String getMonthCount(){
+    /* public String getMonthCount(){
         return monthCount;
-    }
+    }*/
      public String getBookPrice(){
         return bookPrice;
     }
