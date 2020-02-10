@@ -10,7 +10,6 @@ package IOStream;
         import java.awt.event.MouseAdapter;
         import java.awt.event.MouseEvent;
         import java.io.IOException;
-
 public class OutStream extends JFrame implements ActionListener {
 
     private Container container;
@@ -199,7 +198,6 @@ public class OutStream extends JFrame implements ActionListener {
     }
 
 }
-
 //Processing
 package IOStream;
 
@@ -223,18 +221,15 @@ MonthCountRegression monthCountRegression = new MonthCountRegression();
         FileReader fr = new FileReader(file);
         char[] a = new char[120500];
         fr.read(a);
-        // reads the content to the array
 
         String  bookName[] = new String[1050];
         String writerName[] = new String[1050];
         String bookId[] = new String[1050];
 
-       // String bookType[] = new String[1050];
-      //  String priority[] = new String[1050];
+      
 
         String borrowCount[] = new String[1050];
 
-      //  String monthCount[] = new String[1050];
         String bookPrice[] = new String[1050];
  //  arrayList.array();
 
