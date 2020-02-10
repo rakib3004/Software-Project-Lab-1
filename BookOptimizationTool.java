@@ -291,7 +291,6 @@ MonthCountRegression monthCountRegression = new MonthCountRegression();
         }
         fr.close();
 
-      //  System.out.println();
 
 int numOfBook= x;
 
