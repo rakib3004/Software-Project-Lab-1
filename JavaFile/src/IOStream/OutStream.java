@@ -2,7 +2,7 @@
 package IOStream;
 
 
-        import javax.print.DocFlavor;
+        import  javax.print.DocFlavor;
         import javax.swing.*;
         import javax.swing.table.DefaultTableModel;
         import java.awt.*;
@@ -17,16 +17,24 @@ public class OutStream extends JFrame implements ActionListener {
     private Container container;
     private JLabel jLabel,jLabel2,jLabel3,jLabel4,jLabel5,jLabel6;
     private JTextField jTextField,jTextField2,jTextField3,jTextField4,jTextField5;
-    private JButton jButton,jButton2,jButton3,jButton4;
+    private JButton jButton,jButton2,jButton3,jButton4,jButton5;
     private JTable jTable;
     private JScrollPane jScrollPane;
     private DefaultTableModel defaultTableModel;
+
     private String []  columms = {"Book Name","Writer Name","Book Id","Borrow Count","Price"};
     private String [] rows = new String[5];
+
     OutStream(){
         induction();
     }
-    public void induction(){
+
+
+    public void induction(/*BookData [] bookData,int numberOfBooks*/){
+        BookData[] bookData = new BookData[1020];
+        Processing processing = new Processing();
+        int rankNumber = processing.x;
+       // System.out.println(rankNumber);System.out.println(rankNumber);System.out.println(rankNumber);System.out.println(rankNumber);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(780,690);
         this.setLocationRelativeTo(null);
@@ -119,6 +127,11 @@ public class OutStream extends JFrame implements ActionListener {
         jTextField5.setBounds(110,280,200,30);
         container.add(jTextField5);
 
+        jButton5 = new JButton("Exit ");
+        jButton5.setFont(font);
+        jButton5.setBounds(400,280,100,30);
+        container.add(jButton5);
+
         jTable = new JTable();
         defaultTableModel = new DefaultTableModel();
         defaultTableModel.setColumnIdentifiers(columms);
@@ -133,22 +146,36 @@ public class OutStream extends JFrame implements ActionListener {
         jScrollPane.setBounds(10,360,740,265);
         container.add(jScrollPane);
 
+       for(int iterator=0;iterator<200;iterator++){
+            rows[0] = bookData[iterator].bookName;
+            rows[1] =  bookData[iterator].writerName;
+            rows[3] =  bookData[iterator].borrowCount;
+            rows[4] = bookData[iterator].bookPrice;
+            defaultTableModel.addRow(rows);
+        }
+
         jButton.addActionListener(this);
         jButton2.addActionListener(this);
         jButton3.addActionListener(this);
         jButton4.addActionListener(this);
+        jButton5.addActionListener(this);
+
         jTable.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent me){
                 int number_of_row = jTable.getSelectedRow();
+              JOptionPane.showMessageDialog(null,"Row No. "+number_of_row);
                 String srting = defaultTableModel.getValueAt(number_of_row,0).toString();
                 String srting1 = defaultTableModel.getValueAt(number_of_row,1).toString();
                 String srting2 = defaultTableModel.getValueAt(number_of_row,2).toString();
                 String srting3 = defaultTableModel.getValueAt(number_of_row,3).toString();
+                String srting4 = defaultTableModel.getValueAt(number_of_row,4).toString();
+
                 jTextField.setText(srting);
                 jTextField2.setText(srting1);
                 jTextField3.setText(srting2);
                 jTextField4.setText(srting3);
+                jTextField5.setText(srting4);
             }
         });
 
@@ -161,6 +188,8 @@ public class OutStream extends JFrame implements ActionListener {
             rows[1] = jTextField2.getText();
             rows[2] = jTextField3.getText();
             rows[3] = jTextField4.getText();
+            rows[4] = jTextField5.getText();
+
             defaultTableModel.addRow(rows);
 
         }
@@ -169,18 +198,22 @@ public class OutStream extends JFrame implements ActionListener {
             jTextField2.setText("");
             jTextField3.setText("");
             jTextField4.setText("");
+            jTextField5.setText("");
+
         }
+
         else if(e.getSource()==jButton2){
             int number_of_row = jTable.getSelectedRow();
             String srting  = jTextField.getText();
             String srting1  = jTextField2.getText();
             String srting2  = jTextField3.getText();
             String srting3   = jTextField4.getText();
+            String srting4   = jTextField5.getText();
             defaultTableModel.setValueAt(srting,number_of_row,0);
             defaultTableModel.setValueAt(srting1,number_of_row,1);
             defaultTableModel.setValueAt(srting2,number_of_row,2);
             defaultTableModel.setValueAt(srting3,number_of_row,3);
-
+            defaultTableModel.setValueAt(srting4,number_of_row,4);
         }
         else if(e.getSource()==jButton3){
             int number_of_row = jTable.getSelectedRow();
@@ -191,6 +224,10 @@ public class OutStream extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null,"Please Delete Any row");
             }
         }
+        else if(e.getSource()==jButton5){
+           System.exit(0);
+        }
+
     }
     public static void main(String[] args)throws IOException {
         Processing processing = new Processing();
