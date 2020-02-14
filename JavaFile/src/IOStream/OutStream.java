@@ -31,9 +31,7 @@ public class OutStream extends JFrame implements ActionListener {
 
 
     public void induction(/*BookData [] bookData,int numberOfBooks*/){
-        BookData[] bookData = new BookData[1020];
-        Processing processing = new Processing();
-        int rankNumber = processing.x;
+
        // System.out.println(rankNumber);System.out.println(rankNumber);System.out.println(rankNumber);System.out.println(rankNumber);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(780,690);
@@ -146,19 +144,15 @@ public class OutStream extends JFrame implements ActionListener {
         jScrollPane.setBounds(10,360,740,265);
         container.add(jScrollPane);
 
-       for(int iterator=0;iterator<200;iterator++){
-            rows[0] = bookData[iterator].bookName;
-            rows[1] =  bookData[iterator].writerName;
-            rows[3] =  bookData[iterator].borrowCount;
-            rows[4] = bookData[iterator].bookPrice;
-            defaultTableModel.addRow(rows);
-        }
+
 
         jButton.addActionListener(this);
         jButton2.addActionListener(this);
         jButton3.addActionListener(this);
         jButton4.addActionListener(this);
         jButton5.addActionListener(this);
+
+
 
         jTable.addMouseListener(new MouseAdapter() {
 
@@ -183,6 +177,9 @@ public class OutStream extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        BookData[] bookData = new BookData[1020];
+        Processing processing = new Processing();
+        int rankNumber = processing.x;
         if(e.getSource()==jButton){
             rows[0] = jTextField.getText();
             rows[1] = jTextField2.getText();
@@ -219,13 +216,21 @@ public class OutStream extends JFrame implements ActionListener {
             int number_of_row = jTable.getSelectedRow();
             if(number_of_row>=0){
                 defaultTableModel.removeRow(number_of_row);
+
             }
             else{
                 JOptionPane.showMessageDialog(null,"Please Delete Any row");
             }
         }
         else if(e.getSource()==jButton5){
-           System.exit(0);
+          // System.exit(0);
+            for(int iterator=0;iterator<rankNumber;iterator++){
+                rows[0] = bookData[iterator].bookName.toString();
+                rows[1] =  bookData[iterator].writerName.toString();
+                rows[3] =  bookData[iterator].borrowCount.toString();
+                rows[4] = bookData[iterator].bookPrice;
+                defaultTableModel.addRow(rows);
+            }
         }
 
     }
@@ -233,7 +238,7 @@ public class OutStream extends JFrame implements ActionListener {
         Processing processing = new Processing();
         processing.fileReader();
         OutStream frame = new OutStream();
-        frame.setVisible(true);
+     //   frame.setVisible(true);
     }
 
 }

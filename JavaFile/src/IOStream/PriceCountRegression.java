@@ -57,8 +57,39 @@ public class PriceCountRegression  {
 
         bookData[i].setWeight(bookCount1[i]);
     }
-    SortingPriceCount sortingPriceCount = new SortingPriceCount();
-    sortingPriceCount.algorithm(bookData,numberOfBooks);
+  //  SortingPriceCount sortingPriceCount = new SortingPriceCount();
+   // sortingPriceCount.algorithm(bookData,numberOfBooks);
+        GenericAlgo genericAlgo[] = new GenericAlgo[1050];
+        for( i = 0; i<numberOfBooks; i++){
+            genericAlgo[i] = new GenericAlgo(bookData[i].getWeight(),i);
+        }
+        double temporary;
+        int temp;
+        for( i=0;i<numberOfBooks;i++){
+            for(int j=0;j<numberOfBooks;j++){
+                if(genericAlgo[i].getWeight()>genericAlgo[j].getWeight()){
+                    temporary= genericAlgo[i].getWeight();
+                    genericAlgo[i].setWeight(genericAlgo[j].getWeight());
+                    genericAlgo[j].setWeight(temporary);
+                    temp = genericAlgo[i].getIndex();
+                    genericAlgo[i].setIndex(genericAlgo[j].getIndex());
+                    genericAlgo[j].setIndex(temp);
+                    bookData[j].setRank(temp,3);
+
+                }
+            }
+        }
+        System.out.println( );
+        System.out.println( );
+        System.out.println( );
+        System.out.println( );
+        System.out.println("Optimized View 4 :" );
+
+        for( i=190;i<numberOfBooks;i++){
+            System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
+                    "; Writer Name : "+bookData[genericAlgo[i].getIndex()].getWriterName()
+                    + "; Weight : "+genericAlgo[i].getWeight());
+        }
 
 }
 }

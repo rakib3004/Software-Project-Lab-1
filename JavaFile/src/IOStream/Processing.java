@@ -6,14 +6,21 @@ import java.io.FileReader;
 import java.io.IOException;
 public class Processing {
     int x = 0;
-
+int numOfBook;
     BookData bookData [] = new BookData[1050];
-TotalRegression totalRegression = new TotalRegression();
-TypeCountRegression typeCountRegression = new TypeCountRegression();
-MonthCountRegression monthCountRegression = new MonthCountRegression();
+    TotalRegression totalRegression = new TotalRegression();
+    TypeCountRegression typeCountRegression = new TypeCountRegression();
+    MonthCountRegression monthCountRegression = new MonthCountRegression();
     PriceCountRegression priceCountRegression = new PriceCountRegression();
     TypePriceRegression typePriceRegression = new TypePriceRegression();
     CountPriceRegression countPriceRegression = new CountPriceRegression();
+    CountTypeRegression countTypeRegression = new CountTypeRegression();
+    CountMonthRegression countMonthRegression = new CountMonthRegression();
+    PriceTypeRegression priceTypeRegression = new PriceTypeRegression();
+
+    RankShow rankShow = new RankShow();
+
+
     public void fileReader()  throws IOException{
 
         File file = new File("IIT_SPL.txt");
@@ -95,7 +102,9 @@ MonthCountRegression monthCountRegression = new MonthCountRegression();
 
       //  System.out.println();
 
-int numOfBook= x;
+ numOfBook= x;
+
+int p= getNumber();
 
        totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         typeCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
@@ -103,10 +112,18 @@ int numOfBook= x;
         priceCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         typePriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         countPriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        countTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        countMonthRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        priceTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
 
+        rankShow.showCase(bookData,numOfBook);
 
         // printAll(bookName,writerName,bookId,borrowCount,bookPrice,numOfBook);
     }
+    public int getNumber(){
+        return  x ;
+    }
+
 
     public void printAll(String[] bookName,String[] writerName,String[] bookId,
                         String[] borrowCount,String[] bookPrice,int numberOfBooks){

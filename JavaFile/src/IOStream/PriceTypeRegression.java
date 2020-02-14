@@ -1,67 +1,66 @@
 package IOStream;
 
-public class CountPriceRegression {
-
-
+public class PriceTypeRegression {
     public  void statistics(BookData[] bookData,String[] writerName,
-                            String[] borrowCount1,String[] bookPrice9,String[] bookId,int numberOfBooks){
+                            String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
 
         int i;
-        double countMean=0;
         double priceMean=0;
-        double bookCount [] = new double [1050];
-        double bookPrice [] =new double[1050];
-        double bookPrice1 [] =new double[1050];
-        double bookPrice0 [] =new double[1050];
+        double typeMean=0;
+        double bookPrice [] = new double [1050];
+        double bookPrice2 [] = new double [1050];
+        double typeValue [] =new double[1050];
+        double typeValue1 [] =new double[1050];
+        double typeValue0 [] =new double[1050];
 
         int length;
         String string;
+
         for( i=0;i<numberOfBooks;i++){
-            length = borrowCount1[i].length();
-            string =borrowCount1[i].substring(1,length);
-            bookCount[i] = Integer.parseInt(string);
+            length = bookId[i].length();
+            string =bookId[i].substring(1,3);
+            typeValue[i] = Integer.parseInt(string);
+            typeValue0[i]=typeValue[i];
         }
+
         for( i=0;i<numberOfBooks;i++){
-            length = bookPrice9[i].length();
-            string =bookPrice9[i].substring(1,length);
+            length = bookPrice1[i].length();
+            string =bookPrice1[i].substring(1,length);
             string=string.replaceAll("[\\t\\n\\r]+","");
             bookPrice[i] = Integer.parseInt(string);
         }
-
         for( i=0;i<numberOfBooks;i++){
-            priceMean = priceMean +bookPrice[i];
-            countMean = countMean+bookCount[i];
+            typeMean = typeMean +typeValue[i];
+            priceMean = priceMean+bookPrice[i];
         }
 
+        typeMean = typeMean/numberOfBooks;
         priceMean = priceMean/numberOfBooks;
-        countMean = countMean/numberOfBooks;
 
         double assumpMean1  = 0;
         double assumpMean2  = 0;
         for(i=0;i<numberOfBooks;i++){
-            bookPrice[i] =  bookPrice[i]  - priceMean;
-            bookCount[i]=bookCount[i]-countMean;
-            assumpMean1 = assumpMean1 +( bookPrice[i]*bookCount[i]);
-            assumpMean2 = assumpMean2 + (bookCount[i]*bookCount[i]);
+            typeValue[i] =  typeValue[i]  - typeMean;
+            bookPrice[i]=bookPrice[i]-priceMean;
+            assumpMean1 = assumpMean1 +( typeValue[i]*bookPrice[i]);
+            assumpMean2 = assumpMean2 + (typeValue[i]*typeValue[i]);
 
         }
 
         double metaValue = assumpMean1/assumpMean2;
-        double betaValue = countMean - (metaValue*priceMean);
+        double betaValue = priceMean - (metaValue*typeMean);
         for(i=0;i<numberOfBooks;i++) {
 
-            bookPrice1[i] = betaValue + metaValue * bookCount[i];
-            //     System.out.println(bookPrice0[i]+"\t"+bookPrice1[i]);
+            bookPrice2[i] = betaValue + metaValue * typeValue[i];
+            //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
         for( i =0;i<numberOfBooks;i++){
 
-            bookData[i].setWeight(bookPrice1[i]);
+            bookData[i].setWeight(bookPrice2[i]);
         }
-       // SortingCountPrice sortingCountPrice = new SortingCountPrice();
-       // sortingCountPrice.algorithm(bookData,numberOfBooks);
-
+        // SortingTypePrice sortingTypePrice = new SortingTypePrice();
+        //sortingTypePrice.algorithm(bookData,numberOfBooks);
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
-
         for( i = 0; i<numberOfBooks; i++){
             genericAlgo[i] = new GenericAlgo(bookData[i].getWeight(),i);
         }
@@ -76,7 +75,7 @@ public class CountPriceRegression {
                     temp = genericAlgo[i].getIndex();
                     genericAlgo[i].setIndex(genericAlgo[j].getIndex());
                     genericAlgo[j].setIndex(temp);
-                    bookData[j].setRank(temp,1);
+                    bookData[j].setRank(temp,6);
 
                 }
             }
@@ -85,13 +84,14 @@ public class CountPriceRegression {
         System.out.println( );
         System.out.println( );
         System.out.println( );
-        System.out.println("Optimized View 2 :" );
+        System.out.println("Optimized View 7 :" );
 
         for( i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
                     "; Writer Name : "+bookData[genericAlgo[i].getIndex()].getWriterName()
                     + "; Weight : "+genericAlgo[i].getWeight());
         }
+
 
     }
 

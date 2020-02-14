@@ -10,6 +10,8 @@ public class BookData {
  //   String monthCount;
     String bookPrice;
     double weight;
+    int rank[] = new int[9];
+
     public BookData(){
 
     }
@@ -24,6 +26,19 @@ public class BookData {
       //  this.monthCount = monthCount;
         this.bookPrice = bookPrice;
         this.weight = weight;
+    }
+    public BookData(String  bookName,String  writerName,String  bookId,
+                    String  borrowCount , String  bookPrice,double weight,int[]rank) {
+        this.bookName = bookName;
+        this.writerName =writerName;
+        this.bookId = bookId;
+      //  this.bookType = bookType;
+      //  this.priority = priority;
+        this.borrowCount = borrowCount;
+      //  this.monthCount = monthCount;
+        this.bookPrice = bookPrice;
+        this.weight = weight;
+        this.rank= rank;
     }
     public String getBookName(){
         return bookName;
@@ -48,4 +63,10 @@ public class BookData {
         this.weight = weight;
     }
 
+    public int[] getRank() {
+        return rank;
+    }
+    public void setRank(int rankValue,int i){
+        this.rank[i] = rankValue;
+    }
 }
