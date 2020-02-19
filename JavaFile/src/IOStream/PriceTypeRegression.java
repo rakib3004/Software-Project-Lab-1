@@ -84,7 +84,7 @@ public class PriceTypeRegression {
         System.out.println( );
         System.out.println( );
         System.out.println( );
-        System.out.println("Optimized View 7 :" );
+        System.out.println("Optimized View 07 :" );
 
         for( i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+

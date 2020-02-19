@@ -83,7 +83,7 @@ public class PriceCountRegression  {
         System.out.println( );
         System.out.println( );
         System.out.println( );
-        System.out.println("Optimized View 4 :" );
+        System.out.println("Optimized View 04 :" );
 
         for( i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+

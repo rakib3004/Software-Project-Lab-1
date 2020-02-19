@@ -106,15 +106,15 @@ int numOfBook;
 
 int p= getNumber();
 
-       totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        typeCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        countPriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         monthCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         priceCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        typeCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         typePriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        countPriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        countTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        countMonthRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         priceTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        countMonthRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        countTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
 
         rankShow.showCase(bookData,numOfBook);
 

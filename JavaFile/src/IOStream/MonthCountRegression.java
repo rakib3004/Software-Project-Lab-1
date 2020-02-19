@@ -94,7 +94,7 @@ public class MonthCountRegression {
         System.out.println( );
         System.out.println( );
         System.out.println( );
-        System.out.println("Optimized View 3 :" );
+        System.out.println("Optimized View 03 :" );
 
         for( i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
