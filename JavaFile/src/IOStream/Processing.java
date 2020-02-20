@@ -117,7 +117,8 @@ int p= getNumber();
         countTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
 
         rankShow.showCase(bookData,numOfBook);
-
+        RankingAnalyze rankingAnalyze = new RankingAnalyze();
+        rankingAnalyze.rankingAnalyze1(bookData,numOfBook);
         // printAll(bookName,writerName,bookId,borrowCount,bookPrice,numOfBook);
     }
     public int getNumber(){
