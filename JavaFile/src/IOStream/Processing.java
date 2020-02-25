@@ -17,7 +17,7 @@ int numOfBook;
     CountTypeRegression countTypeRegression = new CountTypeRegression();
     CountMonthRegression countMonthRegression = new CountMonthRegression();
     PriceTypeRegression priceTypeRegression = new PriceTypeRegression();
-
+        Searching searching = new Searching();
     RankShow rankShow = new RankShow();
 
 
@@ -118,6 +118,8 @@ int p= getNumber();
 
         rankShow.showCase(bookData,numOfBook);
         RankingAnalyze rankingAnalyze = new RankingAnalyze();
+                searching.search(bookData,numOfBook);
+
         rankingAnalyze.rankingAnalyze1(bookData,numOfBook);
         // printAll(bookName,writerName,bookId,borrowCount,bookPrice,numOfBook);
     }
