@@ -1,26 +1,27 @@
 package IOStream;
 
 public class MonthCountRegression {
+
+    int i;
+    double countMean=0;
+    double timeMean=0;
+    double bookCount [] = new double [1050];
+    double bookCount0 [] = new double [1050];
+    double bookCount1 [] = new double [1050];
+
+    int timeCount [] = new int[1050];
+
+    double timeValue [] =new double[1050];
+
+
+    int length;
+    String string;
+    String string1,string2;
+
+    int newYear,oldYear,integer1,integer2;
     public  void statistics(BookData[] bookData,String[] writerName,
                             String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
 
-        int i;
-        double countMean=0;
-        double timeMean=0;
-        double bookCount [] = new double [1050];
-        double bookCount0 [] = new double [1050];
-        double bookCount1 [] = new double [1050];
-
-        int timeCount [] = new int[1050];
-
-        double timeValue [] =new double[1050];
-
-
-        int length;
-        String string;
-        String string1,string2;
-
-        int newYear,oldYear,integer1,integer2;
         for( i=0;i<numberOfBooks;i++){
             newYear = 2 + (20) * 12;
             string1 = bookId[i].substring(4,6);

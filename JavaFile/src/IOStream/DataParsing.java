@@ -1,19 +1,28 @@
 package IOStream;
 
 public class DataParsing {
+    double bookPriority [] = new double[1050];
+    double timePriority [] = new double [1050];
+    double borrowPriority [] = new double[1050];
+    double pricePriority [] = new double [1050];
+    double weight [] = new double[1050];
+
+    double x_value[][] = new double[3][1050];
+    double y_value[] = new double[1050];
+
+    int typeValue [] =new int[1050];
+    int timeCount [] = new int[1050];
+    int bookCount [] = new int [1050];
+    int bookPrice [] =new int[1050];
+
+    String string,string1,string2;
+    int length;
+    int integer1,integer2;
+    int newYear,oldYear;
+
     public void bookValueParsing(BookData[] bookData,String[] writerName,
                              String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
      LinearRegression linearRegression = new LinearRegression();
-
-        int typeValue [] =new int[1050];
-        int timeCount [] = new int[1050];
-        int bookCount [] = new int [1050];
-        int bookPrice [] =new int[1050];
-
-        String string,string1,string2;
-        int length;
-        int integer1,integer2;
-        int newYear,oldYear;
 
         for(int i=0;i<numberOfBooks;i++){
 
@@ -44,14 +53,7 @@ public class DataParsing {
             bookPrice[i] = Integer.parseInt(string);
         }
 
-        double bookPriority [] = new double[1050];
-        double timePriority [] = new double [1050];
-        double borrowPriority [] = new double[1050];
-        double pricePriority [] = new double [1050];
-        double weight [] = new double[1050];
 
-        double x_value[][] = new double[3][1050];
-        double y_value[] = new double[1050];
 
         for(int i =0;i<numberOfBooks;i++){
             bookPriority[i] =  (35-typeValue[i]);

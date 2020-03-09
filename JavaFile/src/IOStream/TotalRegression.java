@@ -2,21 +2,21 @@ package IOStream;
 
 public class TotalRegression {
 
+    int typeValue [] =new int[1050];
+    int timeCount [] = new int[1050];
+    int bookCount [] = new int [1050];
+    int queueValue [] = new int [1050];
+    int bookPrice [] =new int[1050];
+    int writePriority [] = new int[1050];
+
+    String string,string1,string2;
+    int length;
+    int integer1,integer2;
+    int newYear,oldYear;
     public double[] analysis(BookData[] bookData,String[] writerName,
                          String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
      //   Processing processing = new Processing();
 
-        int typeValue [] =new int[1050];
-        int timeCount [] = new int[1050];
-        int bookCount [] = new int [1050];
-        int queueValue [] = new int [1050];
-        int bookPrice [] =new int[1050];
-        int writePriority [] = new int[1050];
-
-        String string,string1,string2;
-        int length;
-        int integer1,integer2;
-        int newYear,oldYear;
         for(int i=0;i<numberOfBooks;i++){
            if(writerName[i].equals(" Humayon Ahmed")){
                writePriority[i]=25;

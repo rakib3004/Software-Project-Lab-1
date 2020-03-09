@@ -2,21 +2,21 @@ package IOStream;
 
 public class CountTypeRegression {
 
+    int i;
+    double countMean = 0;
+    double typeMean = 0;
+    double bookCount[] = new double[1050];
+    double bookCount2[] = new double[1050];
+    double typeValue[] = new double[1050];
+    double typeValue1[] = new double[1050];
+    double typeValue0[] = new double[1050];
+
+    int length;
+    String string;
 
     public  void statistics(BookData[] bookData,String[] writerName,
                             String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks) {
 
-        int i;
-        double countMean = 0;
-        double typeMean = 0;
-        double bookCount[] = new double[1050];
-        double bookCount2[] = new double[1050];
-        double typeValue[] = new double[1050];
-        double typeValue1[] = new double[1050];
-        double typeValue0[] = new double[1050];
-
-        int length;
-        String string;
 
         for (i = 0; i < numberOfBooks; i++) {
             length = bookId[i].length();

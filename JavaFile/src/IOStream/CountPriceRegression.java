@@ -3,19 +3,19 @@ package IOStream;
 public class CountPriceRegression {
 
 
+    int i;
+    double countMean=0;
+    double priceMean=0;
+    double bookCount [] = new double [1050];
+    double bookPrice [] =new double[1050];
+    double bookPrice1 [] =new double[1050];
+    double bookPrice0 [] =new double[1050];
+
+    int length;
+    String string;
     public  void statistics(BookData[] bookData,String[] writerName,
                             String[] borrowCount1,String[] bookPrice9,String[] bookId,int numberOfBooks){
 
-        int i;
-        double countMean=0;
-        double priceMean=0;
-        double bookCount [] = new double [1050];
-        double bookPrice [] =new double[1050];
-        double bookPrice1 [] =new double[1050];
-        double bookPrice0 [] =new double[1050];
-
-        int length;
-        String string;
         for( i=0;i<numberOfBooks;i++){
             length = borrowCount1[i].length();
             string =borrowCount1[i].substring(1,length);

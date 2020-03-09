@@ -2,20 +2,20 @@ package IOStream;
 
 public class MultipleLinearRegression {
 
+    int typeValue [] =new int[1050];
+    int timeCount [] = new int[1050];
+    int bookCount [] = new int [1050];
+    int queueValue [] = new int [1050];
+    int bookPrice [] =new int[1050];
+
+    String string,string1,string2;
+    int length;
+    int integer1,integer2;
+    int newYear,oldYear;
+
  public void  loadData(BookData[] bookData,String[] writerName,
                        String[] borrowCount1,String[] bookPrice1,String[] bookId,
                        int numberOfBooks,double[] weight1){
-
-     int typeValue [] =new int[1050];
-     int timeCount [] = new int[1050];
-     int bookCount [] = new int [1050];
-     int queueValue [] = new int [1050];
-     int bookPrice [] =new int[1050];
-
-     String string,string1,string2;
-     int length;
-     int integer1,integer2;
-     int newYear,oldYear;
 
     for(int i=0;i<numberOfBooks;i++){
          length = bookId[i].length();

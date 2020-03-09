@@ -1,9 +1,6 @@
  package IOStream;
 
 public class PriceCountRegression  {
-    public  void statistics(BookData[] bookData,String[] writerName,
-                            String[] borrowCount1,String[] bookPrice9,String[] bookId,int numberOfBooks){
-
     int i;
     double countMean=0;
     double priceMean=0;
@@ -16,6 +13,10 @@ public class PriceCountRegression  {
 
     int length;
     String string;
+    public  void statistics(BookData[] bookData,String[] writerName,
+                            String[] borrowCount1,String[] bookPrice9,String[] bookId,int numberOfBooks){
+
+
         for( i=0;i<numberOfBooks;i++){
             length = borrowCount1[i].length();
             string =borrowCount1[i].substring(1,length);

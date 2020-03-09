@@ -1,19 +1,21 @@
 package IOStream;
 //Complete
 public class TypeCountRegression {
+    int i;
+    double countMean=0;
+    double typeMean=0;
+    double bookCount [] = new double [1050];
+    double typeValue [] =new double[1050];
+    double typeValue1 [] =new double[1050];
+    double typeValue0 [] =new double[1050];
+
+    int length;
+    String string;
+    double assumpMean1  = 0;
+    double assumpMean2  = 0;
     public  void statistics(BookData[] bookData,String[] writerName,
                             String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
 
-        int i;
-        double countMean=0;
-        double typeMean=0;
-        double bookCount [] = new double [1050];
-        double typeValue [] =new double[1050];
-        double typeValue1 [] =new double[1050];
-        double typeValue0 [] =new double[1050];
-
-        int length;
-        String string;
 
         for( i=0;i<numberOfBooks;i++){
              length = bookId[i].length();
@@ -35,8 +37,7 @@ countMean = countMean+bookCount[i];
         typeMean = typeMean/numberOfBooks;
         countMean = countMean/numberOfBooks;
 
-        double assumpMean1  = 0;
-      double assumpMean2  = 0;
+
     for(i=0;i<numberOfBooks;i++){
 typeValue[i] =  typeValue[i]  - typeMean;
 bookCount[i]=bookCount[i]-countMean;

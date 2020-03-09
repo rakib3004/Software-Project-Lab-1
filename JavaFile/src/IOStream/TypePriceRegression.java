@@ -1,20 +1,21 @@
 package IOStream;
 
 public class TypePriceRegression {
-
+    int i;
+    double priceMean=0;
+    double typeMean=0;
+    double bookPrice [] = new double [1050];
+    double typeValue [] =new double[1050];
+    double typeValue1 [] =new double[1050];
+    double typeValue0 [] =new double[1050];
+    double assumpMean1  = 0;
+    double assumpMean2  = 0;
+    int length;
+    String string;
     public  void statistics(BookData[] bookData,String[] writerName,
                             String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
 
-        int i;
-        double priceMean=0;
-        double typeMean=0;
-        double bookPrice [] = new double [1050];
-        double typeValue [] =new double[1050];
-        double typeValue1 [] =new double[1050];
-        double typeValue0 [] =new double[1050];
 
-        int length;
-        String string;
 
         for( i=0;i<numberOfBooks;i++){
             length = bookId[i].length();
@@ -37,8 +38,7 @@ public class TypePriceRegression {
         typeMean = typeMean/numberOfBooks;
         priceMean = priceMean/numberOfBooks;
 
-        double assumpMean1  = 0;
-        double assumpMean2  = 0;
+
         for(i=0;i<numberOfBooks;i++){
             typeValue[i] =  typeValue[i]  - typeMean;
             bookPrice[i]=bookPrice[i]-priceMean;
