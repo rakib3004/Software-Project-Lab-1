@@ -6,9 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 public class Processing {
     int x = 0;
-int numOfBook;
+     static   int numOfBook;
     BookData bookData [] = new BookData[1050];
-    TotalRegression totalRegression = new TotalRegression();
+   /* TotalRegression totalRegression = new TotalRegression();
     TypeCountRegression typeCountRegression = new TypeCountRegression();
     MonthCountRegression monthCountRegression = new MonthCountRegression();
     PriceCountRegression priceCountRegression = new PriceCountRegression();
@@ -16,9 +16,11 @@ int numOfBook;
     CountPriceRegression countPriceRegression = new CountPriceRegression();
     CountTypeRegression countTypeRegression = new CountTypeRegression();
     CountMonthRegression countMonthRegression = new CountMonthRegression();
-    PriceTypeRegression priceTypeRegression = new PriceTypeRegression();
-    Searching searching = new Searching();
-    RankShow rankShow = new RankShow();
+    PriceTypeRegression priceTypeRegression = new PriceTypeRegression();*/
+
+   DataParsing dataParsing = new DataParsing();
+  //  Searching searching = new Searching();
+  //  RankShow rankShow = new RankShow();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
 
@@ -47,10 +49,8 @@ int numOfBook;
         bookName[x] = "\0";
         writerName[x] = "\0";
         bookId[x] = "\0";
-       // bookType[x] = "\0";
-     //   priority[x] = "\0";
+
         borrowCount[x] = "\0";
-     //   monthCount[x] = "\0";
         bookPrice[x] = "\0";
 
         int t = 0;
@@ -74,10 +74,8 @@ int numOfBook;
                 bookName[x] = "\0";
                 writerName[x] = "\0";
                 bookId[x] = "\0";
-               // bookType[x] = "\0";
-             //   priority[x] = "\0";
+
                 borrowCount[x] = "\0";
-           //     monthCount[x] = "\0";
                 bookPrice[x] = "\0";
 
             }
@@ -108,7 +106,7 @@ int numOfBook;
 int p= getNumber();
 double weight1[] = new double[1050];
 
-     weight1 =  totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+   /*  weight1 =  totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         typeCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         monthCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         priceCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
@@ -117,9 +115,10 @@ double weight1[] = new double[1050];
         countTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         countMonthRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         priceTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        multipleLinearRegression.loadData(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook,weight1);
-        rankShow.showCase(bookData,numOfBook);
-        searching.search(bookData,numOfBook);
+        multipleLinearRegression.loadData(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook,weight1);*/
+        dataParsing.bookValueParsing(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+       // rankShow.showCase(bookData,numOfBook);
+        //searching.search(bookData,numOfBook);
         // printAll(bookName,writerName,bookId,borrowCount,bookPrice,numOfBook);
     }
     public int getNumber(){

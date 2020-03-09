@@ -1,7 +1,7 @@
 package IOStream;
 
 public class LinearRegression {
-    int numberOfBooks=250;
+
     int i;
     double y_mean = 0;
     double x_mean = 0;
@@ -12,7 +12,7 @@ public class LinearRegression {
     double beta_value = 0;
     int length;
     String string;
-public  void calculateRegression( double x_value[],double y_value[]){
+public  double [] calculateRegression( double x_value[],double y_value[], int numberOfBooks){
 
 
     for (i = 0; i < numberOfBooks; i++) {
@@ -39,5 +39,6 @@ public  void calculateRegression( double x_value[],double y_value[]){
         reg_y_value[i] = betaValue + metaValue * x_value[i];
     }
 
+return reg_y_value;
 }
 }

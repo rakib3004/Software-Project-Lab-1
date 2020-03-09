@@ -5,15 +5,15 @@ public class DataParsing {
     double timePriority [] = new double [1050];
     double borrowPriority [] = new double[1050];
     double pricePriority [] = new double [1050];
-    double weight [] = new double[1050];
-
     double x_value[][] = new double[3][1050];
     double y_value[] = new double[1050];
-
     int typeValue [] =new int[1050];
     int timeCount [] = new int[1050];
     int bookCount [] = new int [1050];
     int bookPrice [] =new int[1050];
+
+    double weight [] = new double[1050];
+Sorting sorting = new Sorting();
 
     String string,string1,string2;
     int length;
@@ -52,23 +52,20 @@ public class DataParsing {
             string=string.replaceAll("[\\t\\n\\r]+","");
             bookPrice[i] = Integer.parseInt(string);
         }
-
-
-
         for(int i =0;i<numberOfBooks;i++){
             bookPriority[i] =  (35-typeValue[i]);
             timePriority[i] = 16 -  (timeCount[i]/12);
             borrowPriority[i] = bookCount[i];
             pricePriority[i] = bookPrice[i];
         }
+
          y_value =   bookPriority;
         x_value[0]=timePriority;
         x_value[1]=bookPriority;
         x_value[2]=pricePriority;
         for(int i=0;i<3;i++){
-linearRegression.calculateRegression(x_value[i],y_value);
+weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
+sorting.algorithm(bookData,weight,numberOfBooks);
         }
-
-
     }
 }
