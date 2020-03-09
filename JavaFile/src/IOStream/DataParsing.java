@@ -66,7 +66,7 @@ public class DataParsing {
         x_value[1]=bookPriority;
         x_value[2]=pricePriority;
         for(int i=0;i<3;i++){
-linearRegression.calculateRegression();
+linearRegression.calculateRegression(x_value[i],y_value);
         }
 
 

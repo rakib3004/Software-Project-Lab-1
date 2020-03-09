@@ -3,44 +3,40 @@ package IOStream;
 public class LinearRegression {
     int numberOfBooks=250;
     int i;
-    double countMean = 0;
-    double typeMean = 0;
-    double bookCount[] = new double[1050];
-    double bookCount2[] = new double[1050];
-    double typeValue[] = new double[1050];
-    double typeValue1[] = new double[1050];
-    double typeValue0[] = new double[1050];
-
+    double y_mean = 0;
+    double x_mean = 0;
+   //  = new double[1050];
+    double reg_y_value[] = new double[1050];
+  //  = new double[1050];
+    double alpha_value = 0;
+    double beta_value = 0;
     int length;
     String string;
-public  void calculateRegression(){
-
+public  void calculateRegression( double x_value[],double y_value[]){
 
 
     for (i = 0; i < numberOfBooks; i++) {
-        typeMean = typeMean + typeValue[i];
-        countMean = countMean + bookCount[i];
+        x_mean = x_mean + x_value[i];
+        y_mean = y_mean + y_value[i];
     }
 
-    typeMean = typeMean / numberOfBooks;
-    countMean = countMean / numberOfBooks;
+    x_mean = x_mean / numberOfBooks;
+    y_mean = y_mean / numberOfBooks;
 
-    double assumpMean1 = 0;
-    double assumpMean2 = 0;
+
     for (i = 0; i < numberOfBooks; i++) {
-        typeValue[i] = typeValue[i] - typeMean;
-        bookCount[i] = bookCount[i] - countMean;
-        assumpMean1 = assumpMean1 + (typeValue[i] * bookCount[i]);
-        assumpMean2 = assumpMean2 + (typeValue[i] * typeValue[i]);
+        x_value[i] = x_value[i] - x_mean;
+        y_value[i] = y_value[i] - y_mean;
+        alpha_value = alpha_value + (x_value[i] * y_value[i]);
+        beta_value = beta_value + (x_value[i] * x_value[i]);
 
     }
 
-    double metaValue = assumpMean1 / assumpMean2;
-    double betaValue = countMean - (metaValue * typeMean);
+    double metaValue = alpha_value / beta_value;
+    double betaValue = y_mean - (metaValue * x_mean);
     for (i = 0; i < numberOfBooks; i++) {
 
-        bookCount2[i] = betaValue + metaValue * typeValue[i];
-        //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
+        reg_y_value[i] = betaValue + metaValue * x_value[i];
     }
 
 }
