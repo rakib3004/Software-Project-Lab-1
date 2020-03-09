@@ -1,4 +1,4 @@
-package IOStream;
+ package IOStream;
 
 public class PriceCountRegression  {
     public  void statistics(BookData[] bookData,String[] writerName,
@@ -83,7 +83,7 @@ public class PriceCountRegression  {
         System.out.println( );
         System.out.println( );
         System.out.println( );
-        System.out.println("Optimized View 04 :" );
+        System.out.println("Optimized View 4 :" );
 
         for( i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+

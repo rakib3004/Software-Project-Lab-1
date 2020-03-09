@@ -17,8 +17,9 @@ int numOfBook;
     CountTypeRegression countTypeRegression = new CountTypeRegression();
     CountMonthRegression countMonthRegression = new CountMonthRegression();
     PriceTypeRegression priceTypeRegression = new PriceTypeRegression();
-        Searching searching = new Searching();
+    Searching searching = new Searching();
     RankShow rankShow = new RankShow();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
 
     public void fileReader()  throws IOException{
@@ -105,22 +106,20 @@ int numOfBook;
  numOfBook= x;
 
 int p= getNumber();
+double weight1[] = new double[1050];
 
-        totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        countPriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+     weight1 =  totalRegression.analysis(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        typeCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         monthCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         priceCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        typeCountRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         typePriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        priceTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-        countMonthRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        countPriceRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
         countTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-
+        countMonthRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        priceTypeRegression.statistics(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        multipleLinearRegression.loadData(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook,weight1);
         rankShow.showCase(bookData,numOfBook);
-        RankingAnalyze rankingAnalyze = new RankingAnalyze();
-                searching.search(bookData,numOfBook);
-
-        rankingAnalyze.rankingAnalyze1(bookData,numOfBook);
+        searching.search(bookData,numOfBook);
         // printAll(bookName,writerName,bookId,borrowCount,bookPrice,numOfBook);
     }
     public int getNumber(){

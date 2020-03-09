@@ -1,5 +1,4 @@
-Book Name	Write Name 	Book Id 	Borrow Count	Price
-Shimul tolir Jangal bari           	Masudul Hasan Shaon     	11-0611-100631	4	315
+ Shimul tolir Jangal bari           	Masudul Hasan Shaon     	11-0611-100631	4	315
 Shishu kishor	Amirul Islam	11-0611-100632	3	176
 Voy pawano voot petnir golpo 	Shisu Academy	11-0611-100633	0	195
 Sera voot er golpo	Jamir Uddin Ahmed	11-0611-100634	5	225
@@ -51,55 +50,55 @@ Jala	A Furtan	10-0611-100649	0	280
 Asroy	Muhammad Jafar Iqbal	10-0611-100650	5	350
 Nazrul Rocona Boli 1	Kazi Nazrul Islam	05-0810-100001	1	300
 Nazrul Rocona Boli 2	Kazi Nazrul Islam	05-0810-100002	1	300
-Nazrul Rocona Boli 3	Kazi Nazrul Islam	05-0810-100003	1	275
-Nazrul Rocona Boli 4	Kazi Nazrul Islam	05-0810-100004	1	275
-Nazrul Rocona Boli 5	Kazi Nazrul Islam	05-0810-100005	1	275
-Nazrul Rocona Boli 6	Kazi Nazrul Islam	05-0810-100006	1	275
-Nazrul Rocona Boli 7	Kazi Nazrul Islam	05-0810-100007	1	275
-Nazrul Rocona Boli 8	Kazi Nazrul Islam	05-0810-100008	1	275
-Nazrul Rocona Boli 1	Kazi Nazrul Islam	05-0810-100009	1	275
-Nazrul Rocona Boli 2	Kazi Nazrul Islam	05-0810-100010	1	275
-Nazrul Rocona Boli 3	Kazi Nazrul Islam	05-0810-100011	1	275
-Rokeyar Rocona Boli	Rokeya Begum	05-0810-100012	2	275
-Ahsan Habib Rocona Boli	Ahsan Habib	05-0810-100013	2	275
-Bonde Ali  Mia Rocona Boli	Bonde Ali Mia	05-0810-100014	2	300
-Bonde Ali Mia Rocona Boli	Bonde Ali Mia	05-0810-100015	2	300
-Sufia Kamal Rocona  Boli	Sufia Kamal	05-0810-100016	2	300
-Sadot Ali Akondo Rocona Boli	Sadot Ali Akondo	05-0810-100017	2	300
-Abul fazal Rocona Boli	Abul fazal	05-0810-100018	2	300
-Benjir Ahmed Rocona Boli	Benjir Ahmed	05-0810-100019	2	300
-Md. Monsur Uddin Rocona Boli	Md. Monsur Uddin	05-0810-100020	2	255
-sherlock holmes Rocona Boli 1	sherlock holmes	05-0810-100021	2	255
-sherlock holmes Rocona Boli 2	sherlock holmes	05-0810-100022	2	255
-sherlock holmess Rocona Boli 3	sherlock holmess	05-0810-100023	2	255
-Den Karnepi Rocona Boli	Den Karnepi	05-0810-100024	2	255
-Shakespeare Rocona Boli	Shakespeare	05-0810-100025	2	255
-Monsur Ahmed Rocona Boli	Monsur Ahmed	05-0810-100026	2	255
-sharatchandra Rocona Boli	sharatchandra	05-0810-100027	2	255
-Dr. Lutfar Rahman Rocona Boli	Dr. Lutfar Rahman	05-0810-100028	2	255
-bankim chandra Rocona Boli	bankim chandra	05-0810-100029	5	255
-Ema_1	Humayon Ahmed	05-0810-100030	5	255
-Ditiyo Manob	Humayon Ahmed	05-0810-100031	5	255
-Ei Bosonte	Humayon Ahmed	05-0810-100032	5	255
-Badol Diner Ditiyo kodom ful	Humayon Ahmed	05-0810-100033	5	255
-Himu Rimande 1	Humayon Ahmed	05-0810-100034	7	255
-Rojoni 	Humayon Ahmed	05-0810-100035	7	255
-Misir Alir Chosma	Humayon Ahmed	05-0810-100036	7	255
-Daru Cinir Dip 1	Humayon Ahmed	05-0810-100037	7	255
-Holud Himu Kalo Rab 1	Humayon Ahmed	05-0810-100038	7	255
-Holud Himu Kalo Rab 2	Humayon Ahmed	05-0810-100039	7	225
-Rupar Palonko	Humayon Ahmed	05-0810-100040	7	225
-Ayna Ghar	Humayon Ahmed	05-0810-100041	7	225
-Amanush	Humayon Ahmed	05-0810-100042	7	225
-Rupali Dip 1	Humayon Ahmed	05-0810-100043	7	225
-Rupa 1	Humayon Ahmed	05-0810-100044	7	225
-Ekjon Hiimu  o koyekti jiji poka	Humayon Ahmed	05-0810-100045	5	225
-Himur Haat e koyekti Nil Poddo	Humayon Ahmed	05-0810-100046	5	255
-Himur Haat e koyekti Nil Poddo 2	Humayon Ahmed	05-0810-100047	5	255
-Opekka	Humayon Ahmed	05-0810-100048	1	255
-Nayok	Emdadul Haque Milon	05-0810-100049	1	255
-Oporicita	Emdadul Haque Milon	05-0810-100050	1	255
-Sokha Tumi Sokhi Tumi	Emdadul Haque Milon	05-0810-100051	1	255
+Nazrul Rocona Boli 3	Kazi Nazrul Islam	05-0810-100003	1	300
+Nazrul Rocona Boli 4	Kazi Nazrul Islam	05-0810-100004	1	300
+Nazrul Rocona Boli 5	Kazi Nazrul Islam	05-0810-100005	1	300
+Nazrul Rocona Boli 6	Kazi Nazrul Islam	05-0810-100006	1	300
+Nazrul Rocona Boli 7	Kazi Nazrul Islam	05-0810-100007	1	300
+Nazrul Rocona Boli 8	Kazi Nazrul Islam	05-0810-100008	1	300
+Nazrul Rocona Boli 1	Kazi Nazrul Islam	05-0810-100009	1	300
+Nazrul Rocona Boli 2	Kazi Nazrul Islam	05-0810-100010	1	300
+Nazrul Rocona Boli 3	Kazi Nazrul Islam	05-0810-100011	1	300
+Rokeyar Rocona Boli	Rokeya Begum	05-0810-100012	1	300
+Ahsan Habib Rocona Boli	Ahsan Habib	05-0810-100013	1	300
+Bonde Ali  Mia Rocona Boli	Bonde Ali Mia	05-0810-100014	1	300
+Bonde Ali Mia Rocona Boli	Bonde Ali Mia	05-0810-100015	1	300
+Sufia Kamal Rocona  Boli	Sufia Kamal	05-0810-100016	1	300
+Sadot Ali Akondo Rocona Boli	Sadot Ali Akondo	05-0810-100017	1	300
+Abul fazal Rocona Boli	Abul fazal	05-0810-100018	1	300
+Benjir Ahmed Rocona Boli	Benjir Ahmed	05-0810-100019	1	300
+Md. Monsur Uddin Rocona Boli	Md. Monsur Uddin	05-0810-100020	1	300
+sherlock holmes Rocona Boli 1	sherlock holmes	05-0810-100021	1	300
+sherlock holmes Rocona Boli 2	sherlock holmes	05-0810-100022	1	300
+sherlock holmess Rocona Boli 3	sherlock holmess	05-0810-100023	1	300
+Den Karnepi Rocona Boli	Den Karnepi	05-0810-100024	1	300
+Shakespeare Rocona Boli	Shakespeare	05-0810-100025	1	300
+Monsur Ahmed Rocona Boli	Monsur Ahmed	05-0810-100026	1	300
+sharatchandra Rocona Boli	sharatchandra	05-0810-100027	1	300
+Dr. Lutfar Rahman Rocona Boli	Dr. Lutfar Rahman	05-0810-100028	1	300
+bankim chandra Rocona Boli	bankim chandra	05-0810-100029	1	300
+Ema_1	Humayon Ahmed	05-0810-100030	1	300
+Ditiyo Manob	Humayon Ahmed	05-0810-100031	1	300
+Ei Bosonte	Humayon Ahmed	05-0810-100032	1	300
+Badol Diner Ditiyo kodom ful	Humayon Ahmed	05-0810-100033	1	300
+Himu Rimande 1	Humayon Ahmed	05-0810-100034	1	300
+Rojoni 	Humayon Ahmed	05-0810-100035	1	300
+Misir Alir Chosma	Humayon Ahmed	05-0810-100036	1	300
+Daru Cinir Dip 1	Humayon Ahmed	05-0810-100037	1	300
+Holud Himu Kalo Rab 1	Humayon Ahmed	05-0810-100038	1	300
+Holud Himu Kalo Rab 2	Humayon Ahmed	05-0810-100039	1	300
+Rupar Palonko	Humayon Ahmed	05-0810-100040	1	300
+Ayna Ghar	Humayon Ahmed	05-0810-100041	1	300
+Amanush	Humayon Ahmed	05-0810-100042	1	300
+Rupali Dip 1	Humayon Ahmed	05-0810-100043	1	300
+Rupa 1	Humayon Ahmed	05-0810-100044	1	300
+Ekjon Hiimu  o koyekti jiji poka	Humayon Ahmed	05-0810-100045	1	300
+Himur Haat e koyekti Nil Poddo	Humayon Ahmed	05-0810-100046	1	300
+Himur Haat e koyekti Nil Poddo 2	Humayon Ahmed	05-0810-100047	1	300
+Opekka	Humayon Ahmed	05-0810-100048	1	300
+Nayok	Emdadul Haque Milon	05-0810-100049	1	300
+Oporicita	Emdadul Haque Milon	05-0810-100050	1	300
+Sokha Tumi Sokhi Tumi	Emdadul Haque Milon	05-0810-100051	1	300
 Tumi Kemon Aso	Emdadul Haque Milon	05-0810-100052	1	300
 Prem Kotha	Emdadul Haque Milon	05-0810-100053	1	300
 Josna Raat e Tin ta meye	Emdadul Haque Milon	05-0810-100054	1	300
@@ -107,24 +106,24 @@ Du jon e	Emdadul Haque Milon	05-0810-100055	1	300
 Pother Pachali 1	bivuti bhushan	05-0810-100056	1	300
 Pother Pachali 2	bivuti bhushan	05-0810-100057	1	300
 Uttoradhikar 1	samaresh majumdar	05-0810-100058	1	300
-Josnamoy Borsar Megh	samaresh majumdar	05-0810-100059	1	185
-Saatkahon 1	samaresh majumdar	05-0810-100060	1	185
-Saatkahon 2	samaresh majumdar	05-0810-100061	1	185
-Saatkahon 3	samaresh majumdar	05-0810-100062	1	185
-Gorvodarini 1	samaresh majumdar	05-0810-100063	1	185
-Gorvodarini 2	samaresh majumdar	05-0810-100064	1	185
-Kalpurush	samaresh majumdar	05-0810-100065	1	185
-Ay Sukh Jay Sukh 1	samaresh majumdar	05-0810-100066	1	185
-Hridoy Boti 1	samaresh majumdar	05-0810-100067	1	185
-Hridoy Boti 2	samaresh majumdar	05-0810-100068	1	185
-Kalo Bela	samaresh majumdar	05-0810-100069	1	185
-Shishir Veja Bookul	samaresh majumdar	05-0810-100070	1	185
-Uttoradhikar 2	samaresh majumdar	05-0810-100071	1	185
-He Moha Jibon	sunil gangopadhyay	05-0810-100072	1	185
-Sotero Basar Boyoshe	sunil gangopadhyay	05-0810-100073	1	185
-Sonali Dhukkho	sunil gangopadhyay	05-0810-100074	1	185
-Josna Kumari	sunil gangopadhyay	05-0810-100075	1	185
-Sopno lojjahin	sunil gangopadhyay	05-0810-100076	1	185
+Josnamoy Borsar Megh	samaresh majumdar	05-0810-100059	1	300
+Saatkahon 1	samaresh majumdar	05-0810-100060	1	300
+Saatkahon 2	samaresh majumdar	05-0810-100061	1	300
+Saatkahon 3	samaresh majumdar	05-0810-100062	1	300
+Gorvodarini 1	samaresh majumdar	05-0810-100063	1	300
+Gorvodarini 2	samaresh majumdar	05-0810-100064	1	300
+Kalpurush	samaresh majumdar	05-0810-100065	1	300
+Ay Sukh Jay Sukh 1	samaresh majumdar	05-0810-100066	1	300
+Hridoy Boti 1	samaresh majumdar	05-0810-100067	1	300
+Hridoy Boti 2	samaresh majumdar	05-0810-100068	1	300
+Kalo Bela	samaresh majumdar	05-0810-100069	1	300
+Shishir Veja Bookul	samaresh majumdar	05-0810-100070	1	300
+Uttoradhikar 2	samaresh majumdar	05-0810-100071	1	300
+He Moha Jibon	sunil gangopadhyay	05-0810-100072	1	300
+Sotero Basar Boyoshe	sunil gangopadhyay	05-0810-100073	1	300
+Sonali Dhukkho	sunil gangopadhyay	05-0810-100074	1	300
+Josna Kumari	sunil gangopadhyay	05-0810-100075	1	300
+Sopno lojjahin	sunil gangopadhyay	05-0810-100076	1	300
 Prothom Alo 1	sunil gangopadhyay	05-0810-100077	1	300
 Prothom Alo 2	sunil gangopadhyay	05-0810-100078	1	300
 Prothom Alo 3	sunil gangopadhyay	05-0810-100079	1	300
@@ -144,35 +143,35 @@ Manob Jomin	shirshendu mukhopadhyay	05-0810-100092	1	300
 Mej Didi	Sharat Chandra Chattropadhay	05-0810-100093	1	300
 Dena Pauna	Sharat Chandra Chattropadhay	05-0810-100094	1	300
 Griho Dah	Sharat Chandra Chattropadhay	05-0810-100095	1	300
-Ovagir Sorgo	Sharat Chandra Chattropadhay	05-0810-100096	1	320
-Madhu Kari	buddhadeb basu	05-0810-100097	1	320
-Padma Nadir Majhi 	manik bandopadhyay	05-0810-100098	1	320
-Gera	rabindranath tagore	05-0810-100099	1	320
-Rabindar Nath Uponnash Somogro	rabindranath tagore	05-0810-100100	1	320
-Abiram Niranondo	shajahan chowdhury	05-0810-100101	1	320
-Choker Jol e muse dilam	Popi chowdhury	05-0810-100102	1	320
-Surer Sray Maton	anjuman ara begum	05-0810-100103	1	320
-Sukanter Shesh Prosno	Arif Uddin	05-0810-100104	1	320
-Payel	Piyara Parvin	05-0810-100105	1	320
-Amare Tumi Cinbe Na	Jahanara Tofayel	05-0810-100106	1	320
-Mreg Trisna 	Jamshed Foyoji	05-0810-100107	1	320
-Manush Omanush	Kasem Bin Abu Bakar	05-0810-100108	1	320
-Nil Jonaki	Firoz Ashraf	05-0810-100109	1	320
-Ke Tumi	Sumonta Aslam	05-0810-100110	1	320
-Prem	Jahangir Shahnewaj	05-0810-100111	1	320
-Basanta Amake Dake	Sajjadur Rahman 	05-0810-100112	1	320
-Basundhora	Harun Ar Rashid	05-0810-100113	1	320
-Piyasi Mon	Moni Rahman	05-0810-100114	1	320
-Mon + Hridoy	Anisul Hoque	05-0810-100115	1	320
-Bonchita 	Voboghure	05-0810-100116	1	320
-Ahoto Hridoy	Motiur Rahman bin Ataur	05-0810-100117	1	320
-Ekti moner dam dite giye	 Chanchal Chowdhury	05-0810-100118	1	320
-Lal Salu 1	syed waliullah	05-0810-100119	1	320
-Spy Meye	martha maccallum	05-0810-100120	1	320
-Protima Upokkhan 	Monju Sarkar	05-0810-100121	1	320
-Bristi o Borjo	Muhammad Ibrahim	05-0810-100167	1	320
-Beboharik Ajoibo Roshayon	Kalipad Kundu	05-0810-100168	1	320
-Adhunik Samudra Biggan	Dr. Suvash Candra Dash	05-0810-100169	1	320
+Ovagir Sorgo	Sharat Chandra Chattropadhay	05-0810-100096	1	300
+Madhu Kari	buddhadeb basu	05-0810-100097	1	300
+Padma Nadir Majhi 	manik bandopadhyay	05-0810-100098	1	300
+Gera	rabindranath tagore	05-0810-100099	1	300
+Rabindar Nath Uponnash Somogro	rabindranath tagore	05-0810-100100	1	300
+Abiram Niranondo	shajahan chowdhury	05-0810-100101	1	300
+Choker Jol e muse dilam	Popi chowdhury	05-0810-100102	1	300
+Surer Sray Maton	anjuman ara begum	05-0810-100103	1	300
+Sukanter Shesh Prosno	Arif Uddin	05-0810-100104	1	300
+Payel	Piyara Parvin	05-0810-100105	1	300
+Amare Tumi Cinbe Na	Jahanara Tofayel	05-0810-100106	1	300
+Mreg Trisna 	Jamshed Foyoji	05-0810-100107	1	300
+Manush Omanush	Kasem Bin Abu Bakar	05-0810-100108	1	300
+Nil Jonaki	Firoz Ashraf	05-0810-100109	1	300
+Ke Tumi	Sumonta Aslam	05-0810-100110	1	300
+Prem	Jahangir Shahnewaj	05-0810-100111	1	300
+Basanta Amake Dake	Sajjadur Rahman 	05-0810-100112	1	300
+Basundhora	Harun Ar Rashid	05-0810-100113	1	300
+Piyasi Mon	Moni Rahman	05-0810-100114	1	300
+Mon + Hridoy	Anisul Hoque	05-0810-100115	1	300
+Bonchita 	Voboghure	05-0810-100116	1	300
+Ahoto Hridoy	Motiur Rahman bin Ataur	05-0810-100117	1	300
+Ekti moner dam dite giye	 Chanchal Chowdhury	05-0810-100118	1	300
+Lal Salu 1	syed waliullah	05-0810-100119	1	300
+Spy Meye	martha maccallum	05-0810-100120	1	300
+Protima Upokkhan 	Monju Sarkar	05-0810-100121	1	300
+Bristi o Borjo	Muhammad Ibrahim	05-0810-100167	1	300
+Beboharik Ajoibo Roshayon	Kalipad Kundu	05-0810-100168	1	300
+Adhunik Samudra Biggan	Dr. Suvash Candra Dash	05-0810-100169	1	300
 Kothin Oboshtahy Rasaynik Crista.	Idris and Riyazul Haque	05-0810-100170	1	300
 Bisslesito Rosayon	Basudeb Kumar dash	05-0810-100171	1	300
 Souro Jagat	Subbroto Baruya	05-0810-100172	1	300
@@ -180,128 +179,38 @@ Bikiron o porimapon	Abdul Jalil	05-0810-100173	1	300
 Vobisshat e jauya jabe ……	Asif	05-0810-100174	1	300
 Dekha Alo na dekha roop	Muhammad Jafar Iqbal	05-0810-100175	1	300
 Srostar Sristi Opar Bismoy	HRI	05-0810-100176	1	300
-Jiboner Sottru Mitro	Morshed Shafiul Hasan	05-0810-100177	6	300
-Ghohobbor theke bishforon	Shahinur Rahman	05-0810-100178	6	280
-Bigganer Shoto Abishkar er kotha	Vobesh Roy	05-0810-100179	6	280
-Science Friction Somogro	Muhammad Jafar Iqbal	05-0810-100180	3	280
-Suhaner Sopno	Muhammad Jafar Iqbal	05-0810-100181	6	190
-Noy Noy Sunno Tin 1	Muhammad Jafar Iqbal	05-0810-100182	6	280
-Triniv Rashi Mala	Muhammad Jafar Iqbal	05-0810-100183	6	235
-Cromium Oronno	Muhammad Jafar Iqbal	05-0810-100184	7	280
-Nishiongo GrohoChari	Muhammad Jafar Iqbal	05-0810-100185	6	280
-Nayira	Muhammad Jafar Iqbal	05-0810-100186	6	280
-Obnil 1	Muhammad Jafar Iqbal	05-0810-100187	6	220
-Finix 1	Muhammad Jafar Iqbal	05-0810-100188	6	280
-Biggani Onik Lumba	Muhammad Jafar Iqbal	05-0810-100189	6	280
-Uvochor Manush 	Alexzendar Belayev	05-0810-100190	5	280
-Captain Q r Vingroher Onuson..	Vobesh Roy	05-0810-100191	6	280
-Pagol Bigganir Kando	Hanif Talukdar	05-0810-100192	6	280
-Meku Khahini 1	Muhammad Jafar Iqbal	05-0810-100193	6	175
-Meku Khahini 2	Muhammad Jafar Iqbal	05-0810-100194	6	280
-Chotoder Rabin Hood	Jahid Islam	05-0810-100195	6	280
-Dustu Cheler Dol	Muhammad Jafar Iqbal	05-0810-100196	6	280
-Kishor Doy	Muhammad Ali Azam	05-0810-100197	6	280
-Choto Rajkonna	Fransis Hosjon Kornet	05-0810-100198	6	280
-Vobdohre Golpo  o onnanno	Muhammad Jafar Iqbal	05-0810-100199	6	280
-Bekkha	Muhammad Jafar Iqbal	05-0810-100200	6	280
-Aloukik Angti	Mehrab Masuk	05-0810-100201	6	280
-Dossi ko jon	Muhammad Jafar Iqbal	05-0810-100202	6	280
-Nitu O Tar Bondhura	Muhammad Jafar Iqbal	05-0810-100203	6	280
- Chotoder  Chresto Bangla Golpo  	Nila, Eklash Uddin	05-0810-100204	6	280
-Sagor Tole	Jul Varner 	05-0810-100205	6	280
-Mojar Golpo Somogro	Hasan Kurshid Rumi	05-0810-100206	6	280
-Tukhor Fentasi	Touhidur Rahman	05-0810-100207	6	280
-Agun Danar Pakhi	Rahim Shah	05-0810-100208	6	280
-Sahoshi Manusher Golpo 2	Mosharof Hossen Khan	05-0810-100209	6	280
-Choto der Sera Golpo	Humayon Ahmed	05-0810-100210	6	280
-Mojar Voot	Humayon Ahmed	05-0810-100211	6	280
-Dayni Murgir Golpo	Shamima Jafrin	05-0810-100227	6	280
-Projonmo	Anayet Sobhan	05-0810-100228	6	280
-Belgreder Dak	Basir  Al Helal 	05-0810-100229	6	280
-Robin Hood	Kazi Anwar Hossain	05-0810-100230	6	280
-Golpo Niye  Hasahasi	Mostofa O Mamun	05-0810-100231	6	280
-Boka Jamai	Kabi Bande Ali Mia	05-0810-100232	6	280
-Voot er Khoppore	Helena Khan	05-0810-100233	6	280
-Vindesi Rupkotha	Bazlul Karim	05-0810-100234	6	280
-The Call of the Wild	Jack Lontun	05-0810-100235	6	280
-Turosker Rupkotha	Amirul Islam	05-0810-100236	6	280
-Norwayer Rupkotha	Amirul Islam	05-0810-100237	6	280
-Rupkothar Golpo	Kashruzzaman Khan Jorj	05-0810-100238	6	280
-Bangladesh er Sera Koutuk	Basir Mahmud Eliyas	05-0810-100239	6	280
-Mittur Sathe Panja	Mohammad Nasir Ali	05-0810-100240	6	280
-Arobbo Rojoni	Abdul Karim Bissash	05-0810-100241	6	280
-Amader O Ase Odhikar	Ali Imam	05-0810-100242	6	280
-Saat Somuddro Tero Nodi	Abul Basar	05-0810-100243	6	280
-Rip Van Winkel 	Wasington Arving	05-0810-100244	6	280
-Aj Amder Suti	Selina Jesmin	05-0810-100245	6	280
-Aladin	Henry Robartson	05-0810-100246	6	280
-Ojer Jadukar	Henry Robartson	05-0810-100247	6	280
-Mojar Bari Mojar Manush	Shamsul Haque	05-0810-100248	6	280
-Uttoradhikar	Dr. Sayed Mohammad Shahed	05-0810-100249	6	280
-Ron theke Jon	A.S.M Mostafizur Rahman	05-0810-100250	6	280
-Sonjib Datta	Anupom Hayat	05-0810-100251	6	280
-Khalek Dada Chowdhury	Emamur Rashid	05-0810-100252	6	280
-Sorone Thaka Kisu Kotha	Sayed Ashraf Ali	05-0810-100253	6	280
-Joddopi Amar Guru	Ahmed Sofa	05-0810-100254	6	280
-Amar Meye Bela	Taslima Nasrin	05-0810-100255	6	280
-Sera Bigganider Chatrojibon	Ruhul Amin Babul	05-0810-100256	6	280
-Tumi Robe Nirobe	Mustofa Nurul Islam	05-0810-100257	6	280
-Tumi Robe Nirobe 2	Mustofa Nurul Islam	05-0810-100258	6	280
-Mukul Dash	Subrosish Sorkar	05-0810-100259	6	280
-Aniruddho Kahali	Abdur Rauf Chowdhury	05-0810-100260	6	280
-Ataur Rahman	Anik Mahmud	05-0810-100261	6	280
-Best 110 Scientist Bioraphy	Md. Mukhlesur Rahman	05-0810-100262	6	280
-Nij Karagare	Shah Moyazzem Hosen	05-0810-100263	6	280
-Jamiya Kasemia Samsul Ulum	Al Kasem	05-0810-100264	6	280
-Cultural Survey	S.M Munjur Morshed	05-0810-100265	6	280
-Monajat Uddin	Mohammad Joynuddin	05-0810-100266	6	280
-Doulot	Golam Kibria	05-0810-100267	6	280
-Poraner Gohin Govire 1	Momotaj Begum	05-0810-100268	6	280
-Poraner Gohin Govire 2	Momotaj Begum	05-0810-100269	6	280
-Seka is better than eka	Roman Rayhan	05-0810-100270	6	280
-Soyoncita	Rabindranath Tagore	05-0810-100271	6	280
-Khattriyo Purush	 Jahanara Khan Bina	05-0810-100286	6	280
-Shresto Bengo Kobita	Mahbubul Alam	05-0810-100287	6	280
-Valobasa Ure ase jure bose monta	Jahanara Tofayel	05-0810-100288	6	280
-Akash jokon krishnocura	Jahanara Tofayel	05-0810-100289	6	280
-CharPotro	Sukanto Vottacharjo	05-0810-100290	6	280
-Sunirmito Bonobash 5	Mahjabin Mimi	05-0810-100291	6	280
-Sunirmito Bonobash 6	Mahjabin Mimi	05-0810-100292	6	280
-Sunirmito Bonobash 7	Mahjabin Mimi	05-0810-100293	6	280
-Sunirmito Bonobash 8	Mahjabin Mimi	05-0810-100294	6	280
-Priyo Manush , Priyo Bangladesh	A.F.M. Mominur Rahman	05-0810-100295	6	280
-Priyo Manush , Priyo Bangladesh 2	A.F.M. Mominur Rahman	05-0810-100296	6	280
-Olosh Cinta	Mohammad Mokarom Hosen	05-0810-100297	6	280
-Selected Poems of Asad	Asad Chowdhury	05-0810-100298	6	280
-Adhofota Golap	Kursida Aktar	05-0810-100299	6	280
-Nishithe Nikkon	Soyaeb Ahmed	05-0810-100300	6	280
-Love City	Badrul Haydar	05-0810-100301	6	280
-Hijol Boner Pakhi	Golam Mohammad	05-0810-100302	6	280
-Tar Cheye Ei Valo	Abdur Rahim Shelly	05-0810-100303	6	280
-Priyo Kobita Tomar Jonno	Hemaet Mukul	05-0810-100304	6	280
-Tin Projonmer Kobita	Shahin Rizvi	05-0810-100305	6	280
-Tomar Sondhane	Idris Sorkar	05-0810-100306	6	280
-Prane Dhorese Tomake	Sharera Khatun	05-0810-100307	6	280
-Le Miserable	Victor Hugo	05-0810-100308	6	280
-Ma	Maxim Gorki	05-0810-100309	6	280
-The Scilence of the lamp	Tomas Harris	05-0810-100310	6	280
-Kalo Tulip	Alekgender Duma	05-0810-100311	6	280
-The God of Small Things	Abir Hasan	05-0810-100312	6	280
-Sohjiya Poth Laus	Sorkar Amin	05-0810-100313	6	280
-The Wonderful Adventures of Nils	Selma Lagerlof	05-0810-100314	6	280
-Brick Lane	Monika Ali	05-0810-100315	6	280
-Harry Potter : The order of the finix	J.K Rawling	05-0810-100316	1	150
-Harry Potter : the philoshopers stone	J.K Rawling	05-0810-100317	1	150
-Nirbachito Darsonik Rochona	Karl Poper	05-0810-100318	1	150
-Nirbachito  Rochona	Lord Macle	05-0810-100319	1	150
-Ain E Akbari	Abul Fazle Allami	05-0810-100320	1	150
-Born Supremesi	Rishad Habib	05-0810-100321	1	150
-Mukti Juddher Shresto Uponnash	Abdul Hafeez	05-0810-100322	1	150
-Ekattorer 71	Ajoy Das Gupta	05-0810-100323	1	150
-Birshresto Mahiuddin Jahangir	Kazi Sajjad Ali Jahir	05-0810-100324	1	150
-1971	Humayon Ahmed	05-0810-100325	1	150
-Somokalin	A.H.M. Yousuf Vuiya	05-0810-100326	1	150
-Bangladsh er Pakhi	Reza Khan	05-0810-100327	1	150
-Posu Sompod Unnoyon	M A Mazid	05-0810-100328	1	150
-Motso Songroho Projukti	Bisnu Das	05-0810-100329	1	150
-Motso Somposaron Sikkha	Bisnu Das	05-0810-100330	1	150
+Jiboner Sottru Mitro	Morshed Shafiul Hasan	05-0810-100177	1	300
+Ghohobbor theke bishforon	Shahinur Rahman	05-0810-100178	1	300
+Bigganer Shoto Abishkar er kotha	Vobesh Roy	05-0810-100179	1	300
+Science Friction Somogro	Muhammad Jafar Iqbal	05-0810-100180	1	300
+Suhaner Sopno	Muhammad Jafar Iqbal	05-0810-100181	1	300
+Noy Noy Sunno Tin 1	Muhammad Jafar Iqbal	05-0810-100182	1	300
+Triniv Rashi Mala	Muhammad Jafar Iqbal	05-0810-100183	1	300
+Cromium Oronno	Muhammad Jafar Iqbal	05-0810-100184	1	300
+Nishiongo GrohoChari	Muhammad Jafar Iqbal	05-0810-100185	1	300
+Nayira	Muhammad Jafar Iqbal	05-0810-100186	1	300
+Obnil 1	Muhammad Jafar Iqbal	05-0810-100187	1	300
+Finix 1	Muhammad Jafar Iqbal	05-0810-100188	1	300
+Biggani Onik Lumba	Muhammad Jafar Iqbal	05-0810-100189	1	300
+Uvochor Manush 	Alexzendar Belayev	05-0810-100190	1	300
+Captain Q r Vingroher Onuson..	Vobesh Roy	05-0810-100191	1	300
+Pagol Bigganir Kando	Hanif Talukdar	05-0810-100192	1	300
+Meku Khahini 1	Muhammad Jafar Iqbal	05-0810-100193	1	300
+Meku Khahini 2	Muhammad Jafar Iqbal	05-0810-100194	1	300
+Chotoder Rabin Hood	Jahid Islam	05-0810-100195	1	300
+Dustu Cheler Dol	Muhammad Jafar Iqbal	05-0810-100196	1	300
+Kishor Doy	Muhammad Ali Azam	05-0810-100197	1	300
+Choto Rajkonna	Fransis Hosjon Kornet	05-0810-100198	1	300
+Vobdohre Golpo  o onnanno	Muhammad Jafar Iqbal	05-0810-100199	1	300
+Bekkha	Muhammad Jafar Iqbal	05-0810-100200	1	300
+Aloukik Angti	Mehrab Masuk	05-0810-100201	1	300
+Dossi ko jon	Muhammad Jafar Iqbal	05-0810-100202	1	300
+Nitu O Tar Bondhura	Muhammad Jafar Iqbal	05-0810-100203	1	300
+ Chotoder  Chresto Bangla Golpo  	Nila, Eklash Uddin	05-0810-100204	1	300
+Sagor Tole	Jul Varner 	05-0810-100205	1	300
+Mojar Golpo Somogro	Hasan Kurshid Rumi	05-0810-100206	1	300
+Tukhor Fentasi	Touhidur Rahman	05-0810-100207	1	300
+Agun Danar Pakhi	Rahim Shah	05-0810-100208	1	300
+Sahoshi Manusher Golpo 2	Mosharof Hossen Khan	05-0810-100209	1	300
+Choto der Sera Golpo	Humayon Ahmed	05-0810-100210	1	300
+Mojar Voot	Humayon Ahmed	05-0810-100211	1	300

@@ -237,7 +237,7 @@ public class OutStream extends JFrame implements ActionListener {
     public static void main(String[] args)throws IOException {
         Processing processing = new Processing();
         processing.fileReader();
-        OutStream frame = new OutStream();
+       // OutStream frame = new OutStream();
      //   frame.setVisible(true);
     }
 

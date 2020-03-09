@@ -45,7 +45,7 @@ public class CountMonthRegression {
             countMean = countMean + bookCount[i];
         }
 
-        timeMean = timeMean / numberOfBooks;
+
         countMean = countMean / numberOfBooks;
 
         double assumpMean1 = 0;
@@ -69,6 +69,8 @@ public class CountMonthRegression {
 
             bookData[i].setWeight(timeValue1[i]);
         }
+
+
         // SortingMonthCount sortingMonthCount = new SortingMonthCount();
         //  sortingMonthCount.algorithm(bookData,numberOfBooks);
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];

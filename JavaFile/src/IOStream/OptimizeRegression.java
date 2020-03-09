@@ -1,10 +1,31 @@
 package IOStream;
 
-public class TotalRegression {
+public class OptimizeRegression {
+    double bookPriority5[] = new double[1050];
+    double timePriority5[] = new double[1050];
+    int borrowCount5[] = new int[1050];
+    double serialPriority[] = new double[1050];
+    double pricePriority[] = new double[1050];
+    double weight[] = new double[1050];
 
-    public double[] analysis(BookData[] bookData,String[] writerName,
+    public void newCountValue(){
+
+    }
+    public void newTypeValue(){
+
+    }
+    public void newPriceValue(){
+
+    }
+    public void newMonthValue(){
+
+    }
+
+
+
+    public void analysis(BookData[] bookData,String[] writerName,
                          String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
-     //   Processing processing = new Processing();
+        //   Processing processing = new Processing();
 
         int typeValue [] =new int[1050];
         int timeCount [] = new int[1050];
@@ -18,42 +39,17 @@ public class TotalRegression {
         int integer1,integer2;
         int newYear,oldYear;
         for(int i=0;i<numberOfBooks;i++){
-           if(writerName[i].equals(" Humayon Ahmed")){
-               writePriority[i]=25;
-           }
-           else if(writerName[i].equals("Muhammad Jafar Iqbal")){
+            if(writerName[i].equals(" Humayon Ahmed")){
+                writePriority[i]=25;
+            }
+            else if(writerName[i].equals("Muhammad Jafar Iqbal")){
                 writePriority[i]=23;
             }
             else {
-               writePriority[i]=15;
+                writePriority[i]=15;
             }
 
-        } for(int i=0;i<numberOfBooks;i++){
-            length = bookId[i].length();
-            string =bookId[i].substring(1,3);
-            typeValue[i] = Integer.parseInt(string);
-        } for(int i=0;i<numberOfBooks;i++){
-
- newYear = 2 + (20) * 12;
-string1 = bookId[i].substring(4,6);
-integer1 = Integer.parseInt(string1);
-string2=bookId[i].substring(6,8);
-
-integer2 = Integer.parseInt(string2);
-oldYear = integer1+(integer2*12);
-timeCount[i] = newYear - oldYear;
-
-        } for(int i=0;i<numberOfBooks;i++){
-            length = borrowCount1[i].length();
-            string =borrowCount1[i].substring(1,length);
-            bookCount[i] = Integer.parseInt(string);
-        }for(int i=0;i<numberOfBooks;i++){
-            length = bookPrice1[i].length();
-            string =bookPrice1[i].substring(1,length);
-            string=string.replaceAll("[\\t\\n\\r]+","");
-            bookPrice[i] = Integer.parseInt(string);
         }
-
         double bookPriority [] = new double[1050];
         double timePriority [] = new double [1050];
         int borrowCount [] = new int [1050];
@@ -65,17 +61,15 @@ timeCount[i] = newYear - oldYear;
 
 
         for(int i =0;i<numberOfBooks;i++){
-bookPriority[i] =  (20 - Math.sqrt(typeValue[i]));
-timePriority[i] = 16 -  (timeCount[i]/12);
-borrowCount[i] = bookCount[i];
-//serialPriority[i] = Math.pow(queueValue[i],(1/3));
-pricePriority[i] = Math.pow(bookPrice[i],(2/5));
+            bookPriority[i] =  (20 - Math.sqrt(typeValue[i]));
+            timePriority[i] = 16 -  (timeCount[i]/12);
+            borrowCount[i] = bookCount[i];
+            pricePriority[i] = Math.pow(bookPrice[i],(2/5));
 
-weight[i] = bookPriority[i] +timePriority[i] +
-        borrowCount[i]+//serialPriority[i]+
-        +writePriority[i]+pricePriority[i];
-          //  System.out.println(weight[i]);
-bookData[i].setWeight(weight[i]);
+            weight[i] = bookPriority[i] +timePriority[i] +
+                    borrowCount[i]+
+                    +writePriority[i]+pricePriority[i];
+            bookData[i].setWeight(weight[i]);
         }
         OutStream outStream = new OutStream();
         BookData bookData1 = new BookData();
@@ -111,9 +105,7 @@ bookData[i].setWeight(weight[i]);
         }
         //  outStream.induction(bookData,numberOfBooks);
 
-      //SortingAll sortingAll = new SortingAll();
+        //SortingAll sortingAll = new SortingAll();
         //sortingAll.algorithm(bookData,numberOfBooks);
-        return weight;
     }
-
 }

@@ -87,7 +87,7 @@ public class CountTypeRegression {
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println("Optimized View 09 :");
+        System.out.println("Optimized View 9 :");
 
         for (i = 190; i < numberOfBooks; i++) {
             System.out.println("Book Name :" + bookData[genericAlgo[i].getIndex()].getBookName() +

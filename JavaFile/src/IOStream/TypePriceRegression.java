@@ -1,6 +1,7 @@
 package IOStream;
 
 public class TypePriceRegression {
+
     public  void statistics(BookData[] bookData,String[] writerName,
                             String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
 
@@ -8,7 +9,6 @@ public class TypePriceRegression {
         double priceMean=0;
         double typeMean=0;
         double bookPrice [] = new double [1050];
-        double bookPrice2 [] = new double [1050];
         double typeValue [] =new double[1050];
         double typeValue1 [] =new double[1050];
         double typeValue0 [] =new double[1050];
@@ -51,14 +51,14 @@ public class TypePriceRegression {
         double betaValue = priceMean - (metaValue*typeMean);
         for(i=0;i<numberOfBooks;i++) {
 
-            typeValue[i] = betaValue + metaValue * bookPrice[i];
+            typeValue1[i] = betaValue + metaValue * bookPrice[i];
             //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
         for( i =0;i<numberOfBooks;i++){
 
-            bookData[i].setWeight(typeValue[i]);
+            bookData[i].setWeight(typeValue1[i]);
         }
-        // SortingTypePrice sortingTypePrice = new SortingTypePrice();
+       // SortingTypePrice sortingTypePrice = new SortingTypePrice();
         //sortingTypePrice.algorithm(bookData,numberOfBooks);
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
         for( i = 0; i<numberOfBooks; i++){
@@ -75,7 +75,7 @@ public class TypePriceRegression {
                     temp = genericAlgo[i].getIndex();
                     genericAlgo[i].setIndex(genericAlgo[j].getIndex());
                     genericAlgo[j].setIndex(temp);
-                    bookData[j].setRank(temp,6);
+                    bookData[j].setRank(temp,5);
 
                 }
             }
@@ -84,7 +84,7 @@ public class TypePriceRegression {
         System.out.println( );
         System.out.println( );
         System.out.println( );
-        System.out.println("Optimized View 06 :" );
+        System.out.println("Optimized View 6 :" );
 
         for( i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
@@ -94,4 +94,5 @@ public class TypePriceRegression {
 
 
     }
+
 }
