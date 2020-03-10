@@ -11,18 +11,19 @@ public class DataParsing {
     int timeCount [] = new int[1050];
     int bookCount [] = new int [1050];
     int bookPrice [] =new int[1050];
-
     double weight [] = new double[1050];
-Sorting sorting = new Sorting();
-
     String string,string1,string2;
     int length;
     int integer1,integer2;
     int newYear,oldYear;
 
+Sorting sorting = new Sorting();
+    LinearRegression linearRegression = new LinearRegression();
+MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
+
     public void bookValueParsing(BookData[] bookData,String[] writerName,
                              String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
-     LinearRegression linearRegression = new LinearRegression();
 
         for(int i=0;i<numberOfBooks;i++){
 
@@ -61,11 +62,12 @@ Sorting sorting = new Sorting();
 
          y_value =   bookPriority;
         x_value[0]=timePriority;
-        x_value[1]=bookPriority;
+        x_value[1]=borrowPriority;
         x_value[2]=pricePriority;
         for(int i=0;i<3;i++){
 weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
 sorting.algorithm(bookData,weight,numberOfBooks);
+multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks);
         }
     }
 }

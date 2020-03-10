@@ -7,7 +7,7 @@ public class TotalRegression {
     int bookCount [] = new int [1050];
     int queueValue [] = new int [1050];
     int bookPrice [] =new int[1050];
-    int writePriority [] = new int[1050];
+    int writePriority [] = new int[1050] ;
 
     String string,string1,string2;
     int length;
