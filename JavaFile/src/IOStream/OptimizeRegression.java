@@ -54,10 +54,6 @@ public class OptimizeRegression {
 
         }
 
-
-        //   processing.fileReader();
-
-
         for(int i =0;i<numberOfBooks;i++){
             bookPriority[i] =  (20 - Math.sqrt(typeValue[i]));
             timePriority[i] = 16 -  (timeCount[i]/12);
@@ -101,9 +97,6 @@ public class OptimizeRegression {
                     + "; Weight : "+genericAlgo[i].getWeight());
 
         }
-        //  outStream.induction(bookData,numberOfBooks);
 
-        //SortingAll sortingAll = new SortingAll();
-        //sortingAll.algorithm(bookData,numberOfBooks);
     }
 }

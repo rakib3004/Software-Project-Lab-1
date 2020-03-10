@@ -4,10 +4,7 @@ public class BookData {
     String  bookName;
     String writerName;
     String bookId;
-   // String bookType;
-  //  String priority;
     String borrowCount;
- //   String monthCount;
     String bookPrice;
     double weight;
     int rank[] = new int[9];

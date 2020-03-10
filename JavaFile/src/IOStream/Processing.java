@@ -49,7 +49,6 @@ public class Processing {
         bookName[x] = "\0";
         writerName[x] = "\0";
         bookId[x] = "\0";
-
         borrowCount[x] = "\0";
         bookPrice[x] = "\0";
 

@@ -12,6 +12,7 @@ public class DataParsing {
     int bookCount [] = new int [1050];
     int bookPrice [] =new int[1050];
     double weight [] = new double[1050];
+
     String string,string1,string2;
     int length;
     int integer1,integer2;
@@ -20,7 +21,7 @@ public class DataParsing {
 Sorting sorting = new Sorting();
     LinearRegression linearRegression = new LinearRegression();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
+PriorityData priorityData[] = new PriorityData[1050];
 
     public void bookValueParsing(BookData[] bookData,String[] writerName,
                              String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
@@ -58,6 +59,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             timePriority[i] = 16 -  (timeCount[i]/12);
             borrowPriority[i] = bookCount[i];
             pricePriority[i] = bookPrice[i];
+            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i]);
         }
 
          y_value =   bookPriority;
@@ -67,7 +69,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         for(int i=0;i<3;i++){
 weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
 sorting.algorithm(bookData,weight,numberOfBooks);
-multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks);
         }
+
+        multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks);
+
     }
 }
