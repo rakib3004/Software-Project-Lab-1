@@ -22,7 +22,9 @@ double [] d_array = new double[3];
 Matrix matrix = new Matrix();
 
 
- public void  loadData(double[] bookPriority,double[] timePriority,double[] borrowPriority,double[]pricePriority,int numberOfBooks){
+ public void  loadData(double[] bookPriority,double[] timePriority,
+                       double[] borrowPriority,double[]pricePriority,
+                       int numberOfBooks,PriorityData [] priorityData){
 for(i=0;i<numberOfBooks;i++){
  d1 = d1 + (bookPriority[i]*borrowPriority[i]);
 }
@@ -75,7 +77,7 @@ for(i=0;i<numberOfBooks;i++){
   d_array[2] = d3;
 
 
-matrix.evaluateMatrix(a_array,b_array,c_array,d_array);
+matrix.evaluateMatrix(a_array,b_array,c_array,d_array,priorityData,numberOfBooks);
 //,a2,a3,b1,b2,b3,c1,c2,c3,d1,d2,d3;
 
  }

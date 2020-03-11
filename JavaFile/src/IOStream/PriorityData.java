@@ -12,7 +12,9 @@ public class PriorityData {
         this.borrowPriority = borrowPriority;
         this.pricePriority = pricePriority;
     }
-
+public void setBookPriority(double bookPriority){
+        this.bookPriority = bookPriority;
+}
 
 
 }

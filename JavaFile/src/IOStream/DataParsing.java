@@ -71,7 +71,7 @@ weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
 sorting.algorithm(bookData,weight,numberOfBooks);
         }
 
-        multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks);
+        multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks,priorityData);
 
     }
 }

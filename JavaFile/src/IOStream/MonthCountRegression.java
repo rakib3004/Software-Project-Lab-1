@@ -63,7 +63,6 @@ public class MonthCountRegression {
         for(i=0;i<numberOfBooks;i++) {
 
             bookCount1[i] = betaValue + metaValue * timeValue[i];
-            //     System.out.println(typeValue0[i]+"\t"+timeValue1[i]);
         }
         for( i =0;i<numberOfBooks;i++){
 

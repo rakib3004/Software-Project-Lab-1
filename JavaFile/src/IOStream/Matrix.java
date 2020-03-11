@@ -3,15 +3,16 @@ package IOStream;
 public class Matrix {
 
     int i;
-double matrix [][]= new double[3][3];
+double [][] matrix = new double[3][3];
 
 double determinantT,determinantX,determinantY,determinantZ;
 
 double betaOne,betaTwo,betaThree;
 
 MatrixDeterminant matrixDeterminant = new MatrixDeterminant();
+CalculateWeight calculateWeight = new CalculateWeight();
 
-    public void evaluateMatrix(double [] a_array , double [] b_array , double [] c_array, double [] d_array){
+    public void evaluateMatrix(double [] a_array , double [] b_array , double [] c_array, double [] d_array,PriorityData [] priorityData,int numberOfBooks){
 
 
 for (i=0;i<3;i++){
@@ -57,7 +58,7 @@ determinantT=matrixDeterminant.calculateDeterminant(matrix);
 betaOne = determinantX/determinantT;
 betaTwo = determinantY/determinantT;
 betaThree = determinantZ/determinantT;
-
+calculateWeight.regressionResult(betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
 
     }
 
