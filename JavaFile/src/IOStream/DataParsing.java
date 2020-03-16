@@ -17,11 +17,12 @@ public class DataParsing {
     int length;
     int integer1,integer2;
     int newYear,oldYear;
-
+    int index;
 Sorting sorting = new Sorting();
     LinearRegression linearRegression = new LinearRegression();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 PriorityData priorityData[] = new PriorityData[1050];
+SimpleStatistics simpleStatistics= new SimpleStatistics();
 
     public void bookValueParsing(BookData[] bookData,String[] writerName,
                              String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
@@ -59,7 +60,8 @@ PriorityData priorityData[] = new PriorityData[1050];
             timePriority[i] = 16 -  (timeCount[i]/12);
             borrowPriority[i] = bookCount[i];
             pricePriority[i] = bookPrice[i];
-            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i]);
+            index = i;
+            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i],index);
         }
 
          y_value =   bookPriority;
@@ -72,6 +74,6 @@ sorting.algorithm(bookData,weight,numberOfBooks);
         }
 
         multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks,priorityData);
-
+simpleStatistics.regressionProcess(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks,priorityData);
     }
 }
