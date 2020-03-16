@@ -13,6 +13,12 @@ public class CalculateWeight {
             optimizeValue = ((betaOne * priorityData[i].borrowPriority)+
                     (betaTwo * priorityData[i].timePriority)+(betaThree * priorityData[i].pricePriority));
             priorityData[i].setBookPriority(optimizeValue);
+                System.out.println();
+                System.out.println();
+                System.out.println("Optimized Value :   ");
+                System.out.println(optimizeValue);
+                System.out.println();
+                System.out.println();
         }
        outputSort.sortingProcess(priorityData,numberOfBooks);
 

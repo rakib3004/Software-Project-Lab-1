@@ -1,9 +1,14 @@
 package IOStream;
 
 public class OutputSort {
-    BookData [] bookData = new BookData[1050];
     public void sortingProcess(PriorityData[] priorityData,int numberOfBooks){
 
+
+
+        for (int i = 0; i < numberOfBooks; i++) {
+            System.out.println(i+"->->->->->"+priorityData[i].getBookPriority());
+            System.out.println();
+        }
         double temporary;
         int temp;
         for(int i=0;i<numberOfBooks;i++){
@@ -30,11 +35,9 @@ optimizedResult(priorityData,numberOfBooks);
         System.out.println("List of top "+start+" Risk Books :" );
 
 
-        try {
+       try {
             for (int i = 0; i < numberOfBooks; i++) {
-                System.out.println("Book Name :" + bookData[priorityData[i].getIndex()].getBookName() +
-                        "; Writer Name : " + bookData[priorityData[i].getIndex()].getWriterName()
-                        + "; Weight : " + priorityData[i].getBookPriority());
+                System.out.println(i+"->->->->->"+priorityData[i].getBookPriority());
             }
 
         }

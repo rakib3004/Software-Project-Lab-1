@@ -70,6 +70,7 @@ SimpleStatistics simpleStatistics= new SimpleStatistics();
         x_value[2]=pricePriority;
         for(int i=0;i<3;i++){
 weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
+            System.out.println("Optimization No : "+(i+1));
 sorting.algorithm(bookData,weight,numberOfBooks);
         }
 

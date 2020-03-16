@@ -44,6 +44,9 @@ for(i=0;i<numberOfBooks;i++){
    c1 = c1 + (pricePriority[i]*borrowPriority[i]);
   }
 
+
+
+
 for(i=0;i<numberOfBooks;i++){
    a2 = a2 + (borrowPriority[i]*timePriority[i]);
   }for(i=0;i<numberOfBooks;i++){
