@@ -1,13 +1,13 @@
 package ObjectOriented;
 
 public class BookData {
-    String  bookName;
-    String writerName;
-    String bookId;
-    String borrowCount;
-    String bookPrice;
-    double weight;
-    int rank[] = new int[9];
+  public   String  bookName;
+    public  String writerName;
+    public  String bookId;
+    public String borrowCount;
+    public   String bookPrice;
+    public   double weight;
+    public int rank[] = new int[9];
 
     public BookData(){
 

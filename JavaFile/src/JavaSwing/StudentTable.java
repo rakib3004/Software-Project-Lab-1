@@ -1,7 +1,7 @@
 package JavaSwing;
 
 
-import IOStream.OutStream;
+import MainPackage.MainClass;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -181,7 +181,7 @@ public class StudentTable  extends JFrame implements ActionListener {
         }
     }
     public static void main(String[] args) {
-        OutStream frame = new OutStream();
+        MainClass frame = new MainClass();
         frame.setVisible(true);
     }
 

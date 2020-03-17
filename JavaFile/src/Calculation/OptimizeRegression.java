@@ -2,7 +2,7 @@ package Calculation;
 
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
-import IOStream.OutStream;
+import MainPackage.MainClass;
 
 public class OptimizeRegression {
     double bookPriority5[] = new double[1050];
@@ -69,7 +69,7 @@ public class OptimizeRegression {
                     +writePriority[i]+pricePriority[i];
             bookData[i].setWeight(weight[i]);
         }
-        OutStream outStream = new OutStream();
+        MainClass mainClass = new MainClass();
         BookData bookData1 = new BookData();
 
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];

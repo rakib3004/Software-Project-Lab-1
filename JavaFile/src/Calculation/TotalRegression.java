@@ -2,7 +2,7 @@ package Calculation;
 
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
-import IOStream.OutStream;
+import MainPackage.MainClass;
 
 public class TotalRegression {
 
@@ -81,7 +81,7 @@ weight[i] = bookPriority[i] +timePriority[i] +
           //  System.out.println(weight[i]);
 bookData[i].setWeight(weight[i]);
         }
-        OutStream outStream = new OutStream();
+        MainClass mainClass = new MainClass();
         BookData bookData1 = new BookData();
 
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];

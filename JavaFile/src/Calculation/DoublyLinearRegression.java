@@ -1,6 +1,7 @@
 package Calculation;
 
 import ObjectOriented.PriorityData;
+import Processed.CalculateDoublyRegression;
 
 public class DoublyLinearRegression {
     PriorityData[]  priorityData  = new PriorityData[1050];
@@ -8,6 +9,7 @@ public class DoublyLinearRegression {
     int i;
 double sumYX2,sumYX3,sumX3square,sumX2square,sumX2X3;
 double meanY,meanX2,meanX3;
+CalculateDoublyRegression calculateDoublyRegression = new CalculateDoublyRegression();
     public void calculateRegression(){
 
         for(i=0;i<number;i++){
@@ -47,6 +49,9 @@ meanY = meanY + priorityData[i].bookPriority ;
  beta2 = ((sumYX2*sumX3square)-(sumYX3*sumX2X3))/((sumX2square*sumX3square)-(sumX2X3*sumX2X3));
  beta3 = ((sumYX3*sumX2square)-(sumYX2*sumX2X3))/((sumX2square*sumX3square)-(sumX2X3*sumX2X3));
  beta1 = meanY - (beta2*meanX2) - (beta3*meanX3);
+
+ calculateDoublyRegression.calculateDoublyRegressionMethod(beta1,beta1,beta3,priorityData);
+
 
         }
 

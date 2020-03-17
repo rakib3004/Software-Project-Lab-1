@@ -1,11 +1,11 @@
 package Processed;
 
-import IOStream.OutputSort;
+import MainPackage.ResultClass;
 import ObjectOriented.PriorityData;
 
 public class CalculateWeight {
     double optimizeValue;
-    OutputSort outputSort = new OutputSort();
+    ResultClass resultClass = new ResultClass();
     public  void  regressionResult(double betaZero, double betaOne, double
             betaTwo, double betaThree, PriorityData[] priorityData, int numberOfBooks){
 
@@ -21,7 +21,7 @@ public class CalculateWeight {
             priorityData[i].setBookPriority(optimizeValue);
             }
 
-       outputSort.sortingProcess(priorityData,numberOfBooks);
+       resultClass.sortingProcess(priorityData,numberOfBooks);
 
     }
 }
