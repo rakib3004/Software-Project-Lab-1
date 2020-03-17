@@ -7,12 +7,12 @@ double [][] matrix = new double[3][3];
 
 double determinantT,determinantX,determinantY,determinantZ;
 
-double betaOne,betaTwo,betaThree;
+double betaZero,betaOne,betaTwo,betaThree;
 
 MatrixDeterminant matrixDeterminant = new MatrixDeterminant();
 CalculateWeight calculateWeight = new CalculateWeight();
 
-    public void evaluateMatrix(double [] a_array , double [] b_array , double [] c_array, double [] d_array,PriorityData [] priorityData,int numberOfBooks){
+    public void evaluateMatrix(double [] a_array , double [] b_array , double [] c_array, double [] d_array,PriorityData [] priorityData,int numberOfBooks,double y_mean){
 
 
 for (i=0;i<3;i++){
@@ -58,12 +58,12 @@ determinantT=matrixDeterminant.calculateDeterminant(matrix);
 betaOne = determinantT/determinantX;
 betaTwo = determinantT/determinantY;
 betaThree = determinantT/determinantZ;
-
-calculateWeight.regressionResult(betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+betaZero  = y_mean - betaOne - betaTwo - betaThree;
+calculateWeight.regressionResult(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
         betaOne = Math.pow(betaOne,-1);
         betaTwo = Math.pow(betaTwo,-1);
         betaThree = Math.pow(betaThree,-1);
-        calculateWeight.regressionResult(betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+        calculateWeight.regressionResult(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
 
       /*  System.out.println("###################################");
 

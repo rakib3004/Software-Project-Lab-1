@@ -3,7 +3,7 @@ package IOStream;
 public class CalculateWeight {
     double optimizeValue;
     OutputSort outputSort = new OutputSort();
-    public  void  regressionResult(double betaOne,double
+    public  void  regressionResult(double betaZero,double betaOne,double
             betaTwo,double betaThree,PriorityData[] priorityData,int numberOfBooks){
 
         int i;
