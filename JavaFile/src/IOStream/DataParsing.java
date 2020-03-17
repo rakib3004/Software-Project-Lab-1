@@ -61,7 +61,7 @@ SimpleStatistics simpleStatistics= new SimpleStatistics();
             borrowPriority[i] = bookCount[i];
             pricePriority[i] = bookPrice[i];
             index = i;
-            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i],index);
+            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i],index,bookData[i]);
         }
 
          y_value =   bookPriority;
