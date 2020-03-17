@@ -55,10 +55,22 @@ determinantT=matrixDeterminant.calculateDeterminant(matrix);
             matrix[i][2] = c_array[i];
         }
 
-betaOne = determinantX/determinantT;
-betaTwo = determinantY/determinantT;
-betaThree = determinantZ/determinantT;
+betaOne = determinantT/determinantX;
+betaTwo = determinantT/determinantY;
+betaThree = determinantT/determinantZ;
+
 calculateWeight.regressionResult(betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+        betaOne = Math.pow(betaOne,-1);
+        betaTwo = Math.pow(betaTwo,-1);
+        betaThree = Math.pow(betaThree,-1);
+        calculateWeight.regressionResult(betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+
+      /*  System.out.println("###################################");
+
+        System.out.print("######"); System.out.print("Alpha : "+betaOne);System.out.println("######");
+        System.out.print("######");  System.out.print("Beta : "+betaTwo);System.out.println("######");
+        System.out.print("######");  System.out.print("Gama : "+betaThree);System.out.println("######");
+        System.out.println("###################################");*/
 
     }
 
