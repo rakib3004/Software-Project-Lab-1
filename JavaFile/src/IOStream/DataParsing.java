@@ -1,5 +1,12 @@
 package IOStream;
 
+import Calculation.LinearRegression;
+import Calculation.MultipleLinearRegression;
+import Calculation.SimpleStatistics;
+import ObjectOriented.BookData;
+import ObjectOriented.PriorityData;
+import Processed.Sorting;
+
 public class DataParsing {
     double bookPriority [] = new double[1050];
     double timePriority [] = new double [1050];
@@ -24,8 +31,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 PriorityData priorityData[] = new PriorityData[1050];
 SimpleStatistics simpleStatistics= new SimpleStatistics();
 
-    public void bookValueParsing(BookData[] bookData,String[] writerName,
-                             String[] borrowCount1,String[] bookPrice1,String[] bookId,int numberOfBooks){
+    public void bookValueParsing(BookData[] bookData, String[] writerName,
+                                 String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
 
         for(int i=0;i<numberOfBooks;i++){
 

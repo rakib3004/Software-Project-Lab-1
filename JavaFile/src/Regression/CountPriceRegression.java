@@ -1,7 +1,7 @@
 package Regression;
 
-import IOStream.BookData;
-import IOStream.GenericAlgo;
+import ObjectOriented.BookData;
+import ObjectOriented.GenericAlgo;
 
 public class CountPriceRegression {
 

@@ -1,5 +1,7 @@
 package IOStream;
 
+import ObjectOriented.PriorityData;
+
 public class OutputSort {
 
     public void sortingProcess(PriorityData[] priorityData, int numberOfBooks){
