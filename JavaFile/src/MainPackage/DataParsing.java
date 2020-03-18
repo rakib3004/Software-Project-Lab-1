@@ -1,5 +1,6 @@
 package MainPackage;
 
+import Calculation.DoublyLinearRegression;
 import Calculation.LinearRegression;
 import Calculation.MultipleLinearRegression;
 import Calculation.SimpleStatistics;
@@ -29,7 +30,7 @@ Sorting sorting = new Sorting();
     LinearRegression linearRegression = new LinearRegression();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 PriorityData priorityData[] = new PriorityData[1050];
-SimpleStatistics simpleStatistics= new SimpleStatistics();
+DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
     public void bookValueParsing(BookData[] bookData, String[] writerName,
                                  String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
@@ -75,13 +76,16 @@ SimpleStatistics simpleStatistics= new SimpleStatistics();
         x_value[0]=timePriority;
         x_value[1]=borrowPriority;
         x_value[2]=pricePriority;
-        for(int i=0;i<3;i++){
+
+       for(int i=0;i<3;i++){
 weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
             System.out.println("Optimization No : "+(i+1));
 sorting.algorithm(bookData,weight,numberOfBooks);
         }
 
         multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks,priorityData);
-simpleStatistics.regressionProcess(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks,priorityData);
+
+        doublyLinearRegression.calculateRegression(priorityData);
+
     }
 }

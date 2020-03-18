@@ -2,6 +2,7 @@ package ObjectOriented;
 
 public class PriorityData {
    public double bookPriority ;
+   public double bookPriorityOne ;
     public  double timePriority;
     public   double borrowPriority ;
     public  double pricePriority;
@@ -15,6 +16,9 @@ public class PriorityData {
         this.index = index;
         this.bookData = bookData;
     }
+    public PriorityData(double bookPriorityOne){
+        this.bookPriorityOne =bookPriorityOne;
+    }
 public void setBookPriority(double bookPriority)
 {
         this.bookPriority = bookPriority;
@@ -27,7 +31,7 @@ public void setIndex(int index){
         this.index = index;
 }
 public int getIndex(){
-    return     this.index;
+    return  this.index;
 }
 
 }
