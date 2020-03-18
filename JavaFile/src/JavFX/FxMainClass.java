@@ -5,10 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -18,173 +15,20 @@ import javafx.stage.Stage;
 public class FxMainClass extends Application {
 
 
-    Label messageLbl = new Label("Choose your Gender : ");
-    Label messageLb2 = new Label("Choose your BSSE Batch : ");
-    Label messageLb3 = new Label();
-    Label messageLb4 = new Label("About Yourself :");
-    Label messageLb5 = new Label("Press any Button to see the message");
-    Label selectionMsg = new Label();
 
     public static void main(String[] args)
     {
         Application.launch(args);
     }
     @Override
-    public void start(Stage stage)
-    {
-// Create the Text Fields
-        TextField firstNameFld = new TextField();
-        TextField lastNameFld = new TextField();
+    public void start(Stage stage) {
 
-// Create the Labels
-        Label firstNameLbl = new Label("_Name:");
-        Label lastNameLbl = new Label("_Email");
+        Label label = new Label("\"Recommendation Tool for Library Management\"");
 
-// Bind the Label to the according Field
-        firstNameLbl.setLabelFor(firstNameFld);
-// Set mnemonic parsing to the Label
-        firstNameLbl.setMnemonicParsing(true);
-// Bind the Label to the according Field
-        lastNameLbl.setLabelFor(lastNameFld);
-// Set mnemonic parsing to the Label
-        lastNameLbl.setMnemonicParsing(true);
-
-        GridPane root = new GridPane();
-// Add the Labels and Fields to the GridPane
-        root.addRow(0, firstNameLbl, firstNameFld);
-        root.addRow(1, lastNameLbl, lastNameFld);
-
-// Set the Size of the GridPane
-        root.setMaxSize(980, 650);
-
-
-
-        //  Scene scene = new Scene(root);
-// Add the scene to the Stage
-        //stage.setScene(scene);
-
-        CheckBox maleCB = new CheckBox("Male");
-        CheckBox femaleCB = new CheckBox("Female");
-
-        maleCB.setAllowIndeterminate(true);
-        maleCB.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            public void changed(ObservableValue<? extends Boolean> ov, final Boolean value, final Boolean newValue) {
-                if(newValue != null && newValue) {
-                    printCheck("Your Selection: Male"); } } });
-        femaleCB.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            public void changed(ObservableValue<? extends Boolean> ov, final Boolean value, final Boolean newValue) {
-                if(newValue != null && newValue) {
-                    printCheck("Your Selection: Female"); } } });
-
-
-        maleCB.indeterminateProperty().addListener(new ChangeListener<Boolean>() { public void changed(ObservableValue<? extends Boolean> ov,
-                                                                                                       final Boolean value, final Boolean newValue)
-        { if(newValue != null && newValue) { printMessage("Your indeterminate Selection: Male"); } }
-        });
-
-        VBox vBox2 = new VBox();
-        vBox2.getChildren().addAll(messageLbl,maleCB,femaleCB,messageLb3);
-
-        MenuItem bsse01 = new MenuItem("BSSE 01");
-        bsse01.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 01"); } });
-        MenuItem bsse02 = new MenuItem("BSSE 02");
-        bsse02.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 02"); }
-        });
-
-        MenuItem bsse03 = new MenuItem("BSSE 03");
-        bsse03.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 03"); }
-        });
-        MenuItem bsse04 = new MenuItem("BSSE 04");
-        bsse04.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 04"); }
-        });
-
-
-        MenuItem bsse05 = new MenuItem("BSSE 05");
-        bsse05.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 05"); } });
-
-        MenuItem bsse06 = new MenuItem("BSSE 06");
-        bsse06.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 06"); }
-        });
-
-        MenuItem bsse07 = new MenuItem("BSSE 07");
-        bsse07.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 07"); }
-        });
-
-
-        MenuItem bsse08 = new MenuItem("BSSE 08");
-        bsse08.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 08"); } });
-        MenuItem bsse09 = new MenuItem("BSSE 09");
-        bsse09.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 09"); }
-        });
-
-        MenuItem bsse10 = new MenuItem("BSSE 10");
-        bsse10.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 10"); }
-        });
-        MenuItem bsse11 = new MenuItem("BSSE 11");
-        bsse11.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 11"); }
-        });
-        MenuItem bsse12 = new MenuItem("BSSE 12");
-        bsse12.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) { printMessage("Welcome to BSSE 12"); }
-        });
-        MenuButton bsse = new MenuButton("Select");
-        bsse.getItems().addAll( bsse01, bsse02, bsse03, bsse04, bsse05, bsse06, bsse07, bsse08,bsse09, bsse10, bsse11,bsse12);
-
-        TextArea textArea = new TextArea();
-
-        Button save = new Button("Save");
-        save.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                printInfo("You have pressed the Save Button");
-            }
-        });
-
-        Button ok = new Button("Ok");
-        ok.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                printInfo("You have pressed the Ok Button");
-            }
-        });
-
-        Button cancel = new Button("Cancel");
-        cancel.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                printInfo("You have pressed the Cancel Button");
-            }
-        });
-
-        Button reset = new Button("Reset");
-
-        reset.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                printInfo("You have pressed the Reset Button");
-            }
-        });
-
- Button exit = new Button("Exit");
-
-        exit.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                printInfo("You have pressed the Exit Button");
-                System.exit(0);
-            }
-        });
-
-
-
-
-        HBox hBox = new HBox();
-        hBox.getChildren().addAll(save,ok,cancel,reset,exit);
-        hBox.setSpacing(5);
-
-
+        Label label2 = new Label("\"All Statistical Analysis For Library Books\"");
 
         VBox vBox = new VBox();
-        vBox.getChildren().addAll(root, vBox2,messageLb2,bsse,selectionMsg,messageLb4,textArea,hBox,messageLb5);
+        vBox.getChildren().addAll(label,label2);
 
 
 
@@ -196,7 +40,8 @@ public class FxMainClass extends Application {
                 "-fx-border-width: 2;" +
                 "-fx-border-insets: 5;" +
                 "-fx-border-radius: 0;" +
-                "-fx-border-color: green;");
+                "-fx-border-color: white;" +
+                "-fx-background-color: lime;");
 
         // Create the Scene
 
@@ -210,16 +55,86 @@ public class FxMainClass extends Application {
 
         BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
-        XYChart.Series series = new XYChart.Series();
-        series.setName("Train");
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName("Train");
 
-        series.getData().add(new XYChart.Data("Mohanganj",3));
-        series.getData().add(new XYChart.Data("Deyanganj",5));
-        series.getData().add(new XYChart.Data("Chattragam",7));
+        series1.getData().add(new XYChart.Data("Mohanganj",3));
+        series1.getData().add(new XYChart.Data("Deyanganj",5));
+        series1.getData().add(new XYChart.Data("Chattragam",7));
 
-        barChart.getData().add(series);
+        barChart.getData().add(series1);
+
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("Station");
+
+        series2.getData().add(new XYChart.Data("Mohanganj",17));
+        series2.getData().add(new XYChart.Data("Deyanganj",23));
+        series2.getData().add(new XYChart.Data("Chattragam",38));
+
+        barChart.getData().add(series2);
+
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName("Passengers");
+
+        series3.getData().add(new XYChart.Data("Mohanganj",27));
+        series3.getData().add(new XYChart.Data("Deyanganj",30));
+        series3.getData().add(new XYChart.Data("Chattragam",18));
+
+        barChart.getData().add(series3);
+
+
+        XYChart.Series series4 = new XYChart.Series();
+        series4.setName("Distance");
+
+        series4.getData().add(new XYChart.Data("Mohanganj",37));
+        series4.getData().add(new XYChart.Data("Deyanganj",25));
+        series4.getData().add(new XYChart.Data("Chattragam",12));
+
+        barChart.getData().add(series4);
+
+ XYChart.Series series5 = new XYChart.Series();
+        series5.setName("Distance");
+
+        series5.getData().add(new XYChart.Data("Mohanganj",37));
+        series5.getData().add(new XYChart.Data("Deyanganj",25));
+        series5.getData().add(new XYChart.Data("Chattragam",12));
+
+        barChart.getData().add(series5);
+
+
+
+
+
+
+        PieChart pieChart = new PieChart();
+
+        PieChart.Data slice1 = new PieChart.Data("Golpo", 23);
+        PieChart.Data slice2 = new PieChart.Data("Kobita"  , 17);
+        PieChart.Data slice3 = new PieChart.Data("Kisore Uponnash" , 36);
+        PieChart.Data slice4 = new PieChart.Data("Romantic Uponnash" , 26);
+        PieChart.Data slice5 = new PieChart.Data("History" , 14);
+        PieChart.Data slice6 = new PieChart.Data("General Knowledge" , 17);
+        PieChart.Data slice7 = new PieChart.Data("Science Fiction" , 9);
+        PieChart.Data slice8 = new PieChart.Data("Probondho" , 33);
+        PieChart.Data slice9 = new PieChart.Data("Rocona Somogro" , 26);
+
+        pieChart.getData().add(slice1);
+        pieChart.getData().add(slice2);
+        pieChart.getData().add(slice3);
+        pieChart.getData().add(slice4);
+        pieChart.getData().add(slice5);
+        pieChart.getData().add(slice6);
+        pieChart.getData().add(slice7);
+        pieChart.getData().add(slice8);
+        pieChart.getData().add(slice9);
+
+        HBox hBox1 = new HBox(barChart,pieChart);
+;
+
+
+
         VBox vBox1 = new VBox();
-        vBox1.getChildren().addAll(vBox,barChart);
+       vBox1.getChildren().addAll(vBox,hBox1);
 
         vBox1.setMaxSize(850, 650);
         vBox1.setSpacing(5);
@@ -228,34 +143,19 @@ public class FxMainClass extends Application {
 //scrollPane.fitToHeightProperty().set(true);
 //scrollPane.fitToWidthProperty().set(true);
 //scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
-        Scene scene1 = new Scene(vBox1);
+        Scene scene1 = new Scene(vBox1,900,700);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vBox1);
 // Add the scene to the Stage
         stage.setScene(scene1);
 // Set the title of the Stage
-        stage.setTitle("Students Information");
+        stage.setTitle("Books Statistics");
 // Display the Stage
         stage.show();
 
 
     }
-    public void printMessage(String message)
-    {
-// Set the Text of the Label
-        selectionMsg.setText(message);
-    }
 
-    public void printInfo(String message)
-    {
-// Set the Text of the Label
-        messageLb5.setText(message);
-    }
-    public void printCheck(String message)
-    {
-// Set the Text of the Label
-        messageLb3.setText(message);
-    }
 
 }
