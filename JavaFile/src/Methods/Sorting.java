@@ -34,14 +34,14 @@ public class Sorting {
         int start= 20;
      //   Scanner scanner = new Scanner(System.in);
       //  start =scanner.nextInt();
-        System.out.println("List of top "+start+" Risk Books :" );
+        //System.out.println("List of top "+start+" Risk Books :" );
 
 
        try {
-           for (int i = numberOfBooks-start; i < numberOfBooks; i++) {
+           for (int i = 0; i < numberOfBooks; i++) {
                System.out.println("Book Name :" + bookData[genericAlgo[i].getIndex()].getBookName() +
                        "; Writer Name : " + bookData[genericAlgo[i].getIndex()].getWriterName()
-                       + "; Weight : " + genericAlgo[i].getWeight());
+                       + "; Weight : " + genericAlgo[i].getWeight()+" ID : "+bookData[genericAlgo[i].getIndex()].getBookId());
            }
 
        }

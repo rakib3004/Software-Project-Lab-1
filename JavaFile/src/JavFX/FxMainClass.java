@@ -10,6 +10,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class FxMainClass extends Application {
@@ -23,20 +25,25 @@ public class FxMainClass extends Application {
     @Override
     public void start(Stage stage) {
 
-        Label label = new Label("\"Recommendation Tool for Library Management\"");
+        Label label = new Label("\t\"Recommendation Tool for Library Management\"");
 
-        Label label2 = new Label("\"All Statistical Analysis For Library Books\"");
+        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
+        Font font1 = Font.font("Verdana", FontWeight.BOLD, 15);
 
-        VBox vBox = new VBox();
-        vBox.getChildren().addAll(label,label2);
+        label.setFont(font);
+        label.setStyle("-fx-body-color: white;");
+        Label label2 = new Label("\t\t\t\t\t\"All Statistical Analysis For Library Books\"");
+label2.setFont(font1);
+        VBox vBox2 = new VBox();
+        vBox2.getChildren().addAll(label,label2);
 
 
 
      //   vBox.setMinSize(550, 650);
-           vBox.setSpacing(5);
+           vBox2.setSpacing(5);
 
-        vBox.setStyle("-fx-padding: 5;" +
-                "-fx-border-style: solid inside;" +
+        vBox2.setStyle("-fx-padding: 5;" +
+                "-fx-border-style: inset;" +
                 "-fx-border-width: 2;" +
                 "-fx-border-insets: 5;" +
                 "-fx-border-radius: 0;" +
@@ -133,20 +140,20 @@ public class FxMainClass extends Application {
 
 
 
-        VBox vBox1 = new VBox();
-       vBox1.getChildren().addAll(vBox,hBox1);
+        VBox vBox3 = new VBox();
+       vBox3.getChildren().addAll(vBox2,hBox1);
 
-        vBox1.setMaxSize(850, 650);
-        vBox1.setSpacing(5);
+        vBox3.setMaxSize(850, 650);
+        vBox3.setSpacing(5);
 
 //scrollPane.pannableProperty().set(true);
 //scrollPane.fitToHeightProperty().set(true);
 //scrollPane.fitToWidthProperty().set(true);
 //scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
-        Scene scene1 = new Scene(vBox1,900,700);
+        Scene scene1 = new Scene(vBox3,900,700);
 
         ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setContent(vBox1);
+        scrollPane.setContent(vBox3);
 // Add the scene to the Stage
         stage.setScene(scene1);
 // Set the title of the Stage

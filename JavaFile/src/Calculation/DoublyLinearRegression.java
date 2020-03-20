@@ -4,7 +4,7 @@ import ObjectOriented.PriorityData;
 import Processed.CalculateDoublyRegression;
 
 public class DoublyLinearRegression {
-    int number=216;
+    int number=632;
     int i;
 double sumYX2,sumYX3,sumX3square,sumX2square,sumX2X3;
 double meanY,meanX2,meanX3;
