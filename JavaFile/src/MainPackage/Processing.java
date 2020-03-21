@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Processing {
     int x = 0;
      static   int numOfBook;
-    BookData bookData [] = new BookData[1050];
+     BookData [] bookData = new BookData[1050];
 
   DataParsing dataParsing = new DataParsing();
   //  Searching searching = new Searching();

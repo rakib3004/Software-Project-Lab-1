@@ -1,4 +1,5 @@
 package JavFX;
+import ObjectOriented.BookData;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -7,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -14,19 +16,21 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class FxMainClass extends Application {
-
-
-
+    int x = 0;
     public static void main(String[] args)
     {
         Application.launch(args);
     }
     @Override
-    public void start(Stage stage) {
+    public void start (Stage stage) throws IOException {
 
         Label label = new Label("\t\"Recommendation Tool for Library Management\"");
-
+  
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font1 = Font.font("Verdana", FontWeight.BOLD, 15);
 
@@ -139,9 +143,108 @@ label2.setFont(font1);
 ;
 
 
+        TableView tableView = new TableView();
+
+        TableColumn<String, BookData> column1 = new TableColumn<>("Book Name");
+        column1.setCellValueFactory(new PropertyValueFactory<>("BookName"));
+
+
+        TableColumn<String, BookData> column2 = new TableColumn<>("Writer Name");
+        column2.setCellValueFactory(new PropertyValueFactory<>("WriterName"));
+
+TableColumn<String, BookData> column3 = new TableColumn<>("Book ID");
+        column3.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+
+
+        TableColumn<String, BookData> column4 = new TableColumn<>("Borrow Count");
+        column4.setCellValueFactory(new PropertyValueFactory<>("BorrowCount"));
+
+        TableColumn<String, BookData> column5 = new TableColumn<>("Book Price");
+        column5.setCellValueFactory(new PropertyValueFactory<>("BookPrice"));
+
+
+        tableView.getColumns().add(column1);
+        tableView.getColumns().add(column2);
+        tableView.getColumns().add(column3);
+        tableView.getColumns().add(column4);
+        tableView.getColumns().add(column5);
+
+        File file = new File("IIT_SPL.txt");
+        FileReader fr = new FileReader(file);
+        char[] a = new char[120500];
+        fr.read(a);
+
+
+        // reads the content to the array
+        String  bookName[] = new String[1050];
+        String writerName[] = new String[1050];
+        String bookId[] = new String[1050];
+
+
+        String borrowCount[] = new String[1050];
+
+        String bookPrice[] = new String[1050];
+
+
+
+        bookName[x] = "\0";
+        writerName[x] = "\0";
+        bookId[x] = "\0";
+        borrowCount[x] = "\0";
+        bookPrice[x] = "\0";
+
+        int t = 0;
+        for (int i = 0; a[i] != '\0'; i++) {
+            if (a[i] == '\t') {
+                i++;
+                t++;
+                t = t % 5;
+            }
+            if (a[i] == '\n') {
+                i++;
+                t++;
+
+                t = t % 5;
+
+
+                tableView.getItems().add(new BookData( bookName[x],  writerName[x], bookId[x], borrowCount[x],bookPrice[x]));
+
+                x++;
+                bookName[x] = "\0";
+                writerName[x] = "\0";
+                bookId[x] = "\0";
+
+                borrowCount[x] = "\0";
+                bookPrice[x] = "\0";
+
+            }
+            if (t == 0) {
+
+                bookName[x] = bookName[x] + a[i];
+            } else if (t == 1) {
+                writerName[x] = writerName[x] + a[i];
+
+            } else if (t == 2) {
+                bookId[x] = bookId[x] + a[i];
+
+
+            } else if (t == 3) {
+                borrowCount[x] = borrowCount[x] + a[i];
+
+            }
+            else if(t==4){
+                bookPrice[x]=bookPrice[x]+a[i];
+            }
+        }
+        fr.close();
+
+
+
+
+
 
         VBox vBox3 = new VBox();
-       vBox3.getChildren().addAll(vBox2,hBox1);
+       vBox3.getChildren().addAll(vBox2,hBox1,tableView);
 
         vBox3.setMaxSize(850, 650);
         vBox3.setSpacing(5);

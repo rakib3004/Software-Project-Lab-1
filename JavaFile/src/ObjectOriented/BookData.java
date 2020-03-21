@@ -1,5 +1,7 @@
 package ObjectOriented;
 
+import JavFX.FxMainClass;
+
 public class BookData {
   public   String  bookName;
     public  String writerName;
@@ -12,6 +14,19 @@ public class BookData {
     public BookData(){
 
     }
+    public BookData(String  bookName,String  writerName){
+        this.bookName = bookName;
+        this.writerName =writerName;
+    }
+
+     public BookData(String  bookName,String  writerName,String  bookId,String  bookPrice){
+        this.bookName = bookName;
+        this.writerName =writerName;
+         this.bookId = bookId;
+         this.bookPrice = bookPrice;
+
+     }
+
     public BookData(String  bookName,String  writerName,String  bookId,
                     String  borrowCount , String  bookPrice,double weight) {
         this.bookName = bookName;
@@ -23,6 +38,16 @@ public class BookData {
       //  this.monthCount = monthCount;
         this.bookPrice = bookPrice;
         this.weight = weight;
+    }
+
+    public BookData(String  bookName,String  writerName,String  bookId,
+                    String  borrowCount , String  bookPrice) {
+        this.bookName = bookName;
+        this.writerName =writerName;
+        this.bookId = bookId;
+        this.borrowCount = borrowCount;
+        this.bookPrice = bookPrice;
+
     }
     public BookData(String  bookName,String  writerName,String  bookId,
                     String  borrowCount , String  bookPrice,double weight,int[]rank) {
@@ -66,4 +91,5 @@ public class BookData {
     public void setRank(int rankValue,int i){
         this.rank[i] = rankValue;
     }
+
 }

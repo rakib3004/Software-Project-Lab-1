@@ -4,6 +4,7 @@ import Calculation.DoublyLinearRegression;
 import Calculation.LinearRegression;
 import Calculation.MultipleLinearRegression;
 import Calculation.SimpleStatistics;
+import JavFX.FxMainClass;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
 import Methods.Sorting;
@@ -88,6 +89,5 @@ sorting.algorithm(bookData,weight,numberOfBooks);
         System.out.println("Doubly  Linear Regression _______  ");
 
         doublyLinearRegression.calculateRegression(priorityData);
-
     }
 }

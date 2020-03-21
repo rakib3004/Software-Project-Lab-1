@@ -17,7 +17,8 @@ double c1,c2,c3;
 double d1,d2,d3;
 int i;
 
-double [] a_array = new double[3];
+
+    double [] a_array = new double[3];
 double [] b_array = new double[3];
 double [] c_array = new double[3];
 double [] d_array = new double[3];
