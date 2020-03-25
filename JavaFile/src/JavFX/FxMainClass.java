@@ -1,4 +1,5 @@
 package JavFX;
+import MainPackage.Processing;
 import ObjectOriented.BookData;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -22,8 +23,10 @@ import java.io.IOException;
 
 public class FxMainClass extends Application {
     int x = 0;
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
+        Processing processing = new Processing();
+        processing.fileReader();
         Application.launch(args);
     }
     @Override
@@ -145,8 +148,11 @@ label2.setFont(font1);
 
         TableView tableView = new TableView();
 
+        TableColumn<String, BookData> column0 = new TableColumn<>("Serial No");
+        column0.setCellValueFactory(new PropertyValueFactory<>("serialNo"));
+
         TableColumn<String, BookData> column1 = new TableColumn<>("Book Name");
-        column1.setCellValueFactory(new PropertyValueFactory<>("BookName"));
+        column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
 
 
         TableColumn<String, BookData> column2 = new TableColumn<>("Writer Name");
@@ -163,6 +169,7 @@ TableColumn<String, BookData> column3 = new TableColumn<>("Book ID");
         column5.setCellValueFactory(new PropertyValueFactory<>("BookPrice"));
 
 
+        tableView.getColumns().add(column0);
         tableView.getColumns().add(column1);
         tableView.getColumns().add(column2);
         tableView.getColumns().add(column3);
@@ -205,9 +212,9 @@ TableColumn<String, BookData> column3 = new TableColumn<>("Book ID");
                 t++;
 
                 t = t % 5;
+String serialNo = " "+x+" ";
 
-
-                tableView.getItems().add(new BookData( bookName[x],  writerName[x], bookId[x], borrowCount[x],bookPrice[x]));
+                tableView.getItems().add(new BookData( serialNo,bookName[x],  writerName[x], bookId[x], borrowCount[x],bookPrice[x]));
 
                 x++;
                 bookName[x] = "\0";

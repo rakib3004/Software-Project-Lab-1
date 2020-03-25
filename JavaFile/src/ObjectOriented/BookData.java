@@ -3,13 +3,26 @@ package ObjectOriented;
 import JavFX.FxMainClass;
 
 public class BookData {
-  public   String  bookName;
+
+    public  String serialNo;
+
+    public   String  bookName;
     public  String writerName;
     public  String bookId;
     public String borrowCount;
     public   String bookPrice;
     public   double weight;
     public int rank[] = new int[9];
+
+    public BookData(String serialNo, String bookName, String writerName, String bookId, String borrowCount, String bookPrice) {
+        this.serialNo = serialNo;
+        this.bookName = bookName;
+        this.writerName = writerName;
+        this.bookId = bookId;
+        this.borrowCount = borrowCount;
+        this.bookPrice = bookPrice;
+    }
+
 
     public BookData(){
 
