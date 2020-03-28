@@ -27,7 +27,7 @@ public class FxMainClass extends Application {
     {
         Processing processing = new Processing();
         processing.fileReader();
-        Application.launch(args);
+       // Application.launch(args);
     }
     @Override
     public void start (Stage stage) throws IOException {
@@ -149,7 +149,7 @@ label2.setFont(font1);
         TableView tableView = new TableView();
 
         TableColumn<String, BookData> column0 = new TableColumn<>("Serial No");
-        column0.setCellValueFactory(new PropertyValueFactory<>("serialNo"));
+        column0.setCellValueFactory(new PropertyValueFactory<>("SerialNo"));
 
         TableColumn<String, BookData> column1 = new TableColumn<>("Book Name");
         column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
@@ -212,9 +212,9 @@ TableColumn<String, BookData> column3 = new TableColumn<>("Book ID");
                 t++;
 
                 t = t % 5;
-String serialNo = " "+x+" ";
+String p = ""+x;
 
-                tableView.getItems().add(new BookData( serialNo,bookName[x],  writerName[x], bookId[x], borrowCount[x],bookPrice[x]));
+                tableView.getItems().add(new BookData( p,bookName[x],  writerName[x], bookId[x], borrowCount[x],bookPrice[x]));
 
                 x++;
                 bookName[x] = "\0";

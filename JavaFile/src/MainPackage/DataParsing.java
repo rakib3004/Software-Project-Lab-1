@@ -78,16 +78,18 @@ DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
         x_value[1]=borrowPriority;
         x_value[2]=pricePriority;
 
-       for(int i=0;i<3;i++){
+      /* for(int i=0;i<3;i++){
 weight =linearRegression.calculateRegression(x_value[i],y_value,numberOfBooks);
             System.out.println("Linear Regression _______ Optimization No : "+(i+1));
 sorting.algorithm(bookData,weight,numberOfBooks);
-        }
-        System.out.println("Multiple Linear Regression _______  ");
+        }*/
 
-        multipleLinearRegression.loadData(bookPriority,timePriority,borrowPriority,pricePriority,numberOfBooks,priorityData);
-        System.out.println("Doubly  Linear Regression _______  ");
+        System.out.println("___________M-u-l-t-i-p-l-e L-i-n-e-a-r R-e-g-r-e-s-s-i-o-n___________");
 
-        doublyLinearRegression.calculateRegression(priorityData);
+        multipleLinearRegression.loadData(priorityData,numberOfBooks);
+
+       /* System.out.println("Doubly  Linear Regression _______  ");*/
+
+       // doublyLinearRegression.calculateRegression(priorityData);
     }
 }

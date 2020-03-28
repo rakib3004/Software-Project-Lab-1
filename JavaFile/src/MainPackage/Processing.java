@@ -2,6 +2,7 @@ package MainPackage;
 
 
 import Calculation.MultipleLinearRegression;
+import Methods.PrintInfo;
 import ObjectOriented.BookData;
 
 import java.io.File;
@@ -14,6 +15,7 @@ public class Processing {
      BookData [] bookData = new BookData[1050];
 
   DataParsing dataParsing = new DataParsing();
+  PrintInfo printInfo = new PrintInfo();
   //  Searching searching = new Searching();
   //  RankShow rankShow = new RankShow();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
@@ -101,7 +103,7 @@ double weight1[] = new double[1050];
 
        // rankShow.showCase(bookData,numOfBook);
         //searching.search(bookData,numOfBook);
-        // printAll(bookName,writerName,bookId,borrowCount,bookPrice,numOfBook);
+       // printInfo.printAll(bookData,numOfBook);
 
         dataParsing.bookValueParsing(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
     }
@@ -110,24 +112,4 @@ double weight1[] = new double[1050];
     }
 
 
-    public void printAll(String[] bookName,String[] writerName,String[] bookId,
-                        String[] borrowCount,String[] bookPrice,int numberOfBooks){
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookName[j]);
-        }
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(writerName[j]);
-        }
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookId[j]);
-        }
-
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(borrowCount[j]);
-
-        }  for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookPrice[j]);
-
-        }
-    }
 }

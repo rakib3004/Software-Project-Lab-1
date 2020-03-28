@@ -26,50 +26,48 @@ double y_mean;
 Matrix matrix = new Matrix();
 
 
- public void  loadData(double[] bookPriority, double[] timePriority,
-                       double[] borrowPriority, double[]pricePriority,
-                       int numberOfBooks, PriorityData[] priorityData){
+ public void  loadData( PriorityData[] priorityData, int numberOfBooks ){
 
      for(i=0;i<numberOfBooks;i++){
-         y_mean = y_mean + bookPriority[i];
+         y_mean = y_mean + priorityData[i].bookPriority;
      }
      y_mean = y_mean/numberOfBooks;
 for(i=0;i<numberOfBooks;i++){
- d1 = d1 + (bookPriority[i]*borrowPriority[i]);
+ d1 = d1 + (priorityData[i].bookPriority*priorityData[i].borrowPriority);
 }
 for(i=0;i<numberOfBooks;i++){
- d2 = d2 + (bookPriority[i]*timePriority[i]);
+ d2 = d2 + (priorityData[i].bookPriority*priorityData[i].timePriority);
 }
 for(i=0;i<numberOfBooks;i++){
- d3 = d3 + (bookPriority[i]*pricePriority[i]);
+ d3 = d3 + (priorityData[i].bookPriority*priorityData[i].pricePriority);
 }
 
 
   for(i=0;i<numberOfBooks;i++){
-   a1 = a1 + (borrowPriority[i]*borrowPriority[i]);
+   a1 = a1 + (priorityData[i].borrowPriority*priorityData[i].borrowPriority);
   }for(i=0;i<numberOfBooks;i++){
-   b1 = b1 + (timePriority[i]*borrowPriority[i]);
+   b1 = b1 + (priorityData[i].timePriority*priorityData[i].borrowPriority);
   }for(i=0;i<numberOfBooks;i++){
-   c1 = c1 + (pricePriority[i]*borrowPriority[i]);
+   c1 = c1 + (priorityData[i].pricePriority*priorityData[i].borrowPriority);
   }
 
 
 
 
 for(i=0;i<numberOfBooks;i++){
-   a2 = a2 + (borrowPriority[i]*timePriority[i]);
+   a2 = a2 + (priorityData[i].borrowPriority*priorityData[i].timePriority);
   }for(i=0;i<numberOfBooks;i++){
-   b2 = b2 + (timePriority[i]*timePriority[i]);
+   b2 = b2 + (priorityData[i].timePriority*priorityData[i].timePriority);
   }for(i=0;i<numberOfBooks;i++){
-   c2 = c2 + (pricePriority[i]*timePriority[i]);
+   c2 = c2 + (priorityData[i].pricePriority*priorityData[i].timePriority);
   }
 
 for(i=0;i<numberOfBooks;i++){
-   a3 = a3 + (borrowPriority[i]*pricePriority[i]);
+   a3 = a3 + (priorityData[i].borrowPriority*priorityData[i].pricePriority);
   }for(i=0;i<numberOfBooks;i++){
-   b3 = b3 + (timePriority[i]*pricePriority[i]);
+   b3 = b3 + (priorityData[i].timePriority*priorityData[i].pricePriority);
   }for(i=0;i<numberOfBooks;i++){
-   c3 = c3 + (pricePriority[i]*pricePriority[i]);
+   c3 = c3 + (priorityData[i].pricePriority*priorityData[i].pricePriority);
   }
 
   a_array[0] = a1;
