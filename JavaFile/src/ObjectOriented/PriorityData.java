@@ -6,9 +6,34 @@ public class PriorityData {
     public  double timePriority;
     public   double borrowPriority ;
     public  double pricePriority;
+
+    public PriorityData(double bookPriority,
+                        double timePriority, double borrowPriority,
+                        double pricePriority,int index , BookData
+                                bookData,double weight ) {
+        this.bookPriority = bookPriority;
+        this.timePriority = timePriority;
+        this.borrowPriority = borrowPriority;
+        this.pricePriority = pricePriority;
+        this.weight = weight;
+        this.bookData = bookData;
+        this.index = index;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double weight;
     public   BookData bookData;
-    int index;
-    public PriorityData(double bookPriority , double timePriority, double borrowPriority ,  double pricePriority,int index,BookData bookData){
+   public int index;
+    public PriorityData(double bookPriority , double timePriority,
+                        double borrowPriority ,  double pricePriority,
+                        int index,BookData bookData){
         this.bookPriority =bookPriority;
         this.timePriority = timePriority;
         this.borrowPriority = borrowPriority;

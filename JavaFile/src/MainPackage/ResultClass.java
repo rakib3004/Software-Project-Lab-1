@@ -1,5 +1,6 @@
 package MainPackage;
 
+import Methods.Searching;
 import ObjectOriented.PriorityData;
 
 import javax.swing.*;
@@ -8,18 +9,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ResultClass {
-
+Searching searching = new Searching();
     public void sortingProcess(PriorityData[] priorityData, int numberOfBooks){
 
 
-        for (int i = 0; i < numberOfBooks; i++) {
+      /*  for (int i = 0; i < numberOfBooks; i++) {
             System.out.println(i+"->->->->->"+priorityData[i].getBookPriority()+">>>>>>"+priorityData[i].bookData.bookName);
             System.out.println();
-        }
+        }*/
         double temporary;
         int temp;
         PriorityData tempData ;
-        for(int i=0;i<numberOfBooks;i++){
+        /*for(int i=0;i<numberOfBooks;i++){
             for(int j=0;j<numberOfBooks;j++){
                 if(priorityData[i].getBookPriority()>priorityData[j].getBookPriority()){
 
@@ -28,9 +29,10 @@ public class ResultClass {
                 priorityData[j] = tempData;
                 }
             }
-        }
+        }*/
 
-optimizedResult(priorityData,numberOfBooks);
+//optimizedResult(priorityData,numberOfBooks);
+     searching.search(priorityData,numberOfBooks);
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){

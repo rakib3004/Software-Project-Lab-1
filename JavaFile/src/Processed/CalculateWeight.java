@@ -15,10 +15,10 @@ public class CalculateWeight {
             for(i=0;i<numberOfBooks;i++){
             optimizeValue = ((betaOne * priorityData[i].borrowPriority)+
                     (betaTwo * priorityData[i].timePriority)+(betaThree * priorityData[i].pricePriority));
-                System.out.println("********* "+optimizeValue+" *********");
+              //  System.out.println("********* "+optimizeValue+" *********");
 
 
-            priorityData[i].setBookPriority(optimizeValue);
+            priorityData[i].setWeight(optimizeValue);
             }
 
        resultClass.sortingProcess(priorityData,numberOfBooks);

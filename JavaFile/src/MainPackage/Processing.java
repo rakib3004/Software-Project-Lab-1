@@ -59,7 +59,17 @@ public class Processing {
                 t++;
 
                 t = t % 5;
- bookData[x] = new BookData(  bookName[x],  writerName[x],
+
+                /*String string = bookName[x];
+                string=string.replace(" ","");
+                bookName[x] = string;*/
+                int n = bookName[x].length();
+bookName[x] = bookName[x].substring(1,n);
+
+                int m = writerName[x].length();
+                writerName[x] = writerName[x].substring(1,m);
+
+                bookData[x] = new BookData(  bookName[x],  writerName[x],
          bookId[x],   borrowCount[x],
            bookPrice[x],0.00);
 
@@ -77,6 +87,7 @@ public class Processing {
 
                 bookName[x] = bookName[x] + a[i];
             } else if (t == 1) {
+
                 writerName[x] = writerName[x] + a[i];
 
             } else if (t == 2) {

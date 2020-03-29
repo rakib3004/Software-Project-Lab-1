@@ -10,17 +10,17 @@ import ObjectOriented.PriorityData;
 import Methods.Sorting;
 
 public class DataParsing {
-    double bookPriority [] = new double[1050];
-    double timePriority [] = new double [1050];
-    double borrowPriority [] = new double[1050];
-    double pricePriority [] = new double [1050];
-    double x_value[][] = new double[3][1050];
-    double y_value[] = new double[1050];
-    int typeValue [] =new int[1050];
-    int timeCount [] = new int[1050];
-    int bookCount [] = new int [1050];
-    int bookPrice [] =new int[1050];
-    double weight [] = new double[1050];
+    double []bookPriority  = new double[1050];
+    double []timePriority  = new double[1050];
+    double []borrowPriority  = new double[1050];
+    double []pricePriority  = new double[1050];
+    double [][] x_value = new double[3][1050];
+    double [] y_value = new double[1050];
+    int [] typeValue  =new int[1050];
+    int [] timeCount  = new int[1050];
+    int [] bookCount  = new int [1050];
+    int [] bookPrice  =new int[1050];
+    double []weight  = new double[1050];
 
     String string,string1,string2;
     int length;
@@ -30,7 +30,7 @@ public class DataParsing {
 Sorting sorting = new Sorting();
     LinearRegression linearRegression = new LinearRegression();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-PriorityData priorityData[] = new PriorityData[1050];
+public static PriorityData priorityData[] = new PriorityData[1050];
 DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
     public void bookValueParsing(BookData[] bookData, String[] writerName,
@@ -70,7 +70,8 @@ DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
             borrowPriority[i] = bookCount[i];
             pricePriority[i] = bookPrice[i];
             index = i;
-            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i],index,bookData[i]);
+            weight[i] = bookPriority[i];
+            priorityData[i] =new PriorityData(bookPriority[i],timePriority[i],borrowPriority[i],pricePriority[i],index,bookData[i],weight[i]);
         }
 
          y_value =   bookPriority;

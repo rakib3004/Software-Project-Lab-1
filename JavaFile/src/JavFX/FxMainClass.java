@@ -1,6 +1,7 @@
 package JavFX;
 import MainPackage.Processing;
 import ObjectOriented.BookData;
+import ObjectOriented.PriorityData;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -27,7 +28,7 @@ public class FxMainClass extends Application {
     {
         Processing processing = new Processing();
         processing.fileReader();
-       // Application.launch(args);
+      //  Application.launch(args);
     }
     @Override
     public void start (Stage stage) throws IOException {
@@ -148,24 +149,24 @@ label2.setFont(font1);
 
         TableView tableView = new TableView();
 
-        TableColumn<String, BookData> column0 = new TableColumn<>("Serial No");
+        TableColumn<String, PriorityData> column0 = new TableColumn<>("Serial No");
         column0.setCellValueFactory(new PropertyValueFactory<>("SerialNo"));
 
-        TableColumn<String, BookData> column1 = new TableColumn<>("Book Name");
+        TableColumn<String, PriorityData> column1 = new TableColumn<>("Book Name");
         column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
 
 
-        TableColumn<String, BookData> column2 = new TableColumn<>("Writer Name");
+        TableColumn<String, PriorityData> column2 = new TableColumn<>("Writer Name");
         column2.setCellValueFactory(new PropertyValueFactory<>("WriterName"));
 
-TableColumn<String, BookData> column3 = new TableColumn<>("Book ID");
+TableColumn<String, PriorityData> column3 = new TableColumn<>("Book ID");
         column3.setCellValueFactory(new PropertyValueFactory<>("bookId"));
 
 
-        TableColumn<String, BookData> column4 = new TableColumn<>("Borrow Count");
+        TableColumn<String, PriorityData> column4 = new TableColumn<>("Borrow Count");
         column4.setCellValueFactory(new PropertyValueFactory<>("BorrowCount"));
 
-        TableColumn<String, BookData> column5 = new TableColumn<>("Book Price");
+        TableColumn<String, PriorityData> column5 = new TableColumn<>("Book Price");
         column5.setCellValueFactory(new PropertyValueFactory<>("BookPrice"));
 
 
@@ -175,6 +176,7 @@ TableColumn<String, BookData> column3 = new TableColumn<>("Book ID");
         tableView.getColumns().add(column3);
         tableView.getColumns().add(column4);
         tableView.getColumns().add(column5);
+
 
         File file = new File("IIT_SPL.txt");
         FileReader fr = new FileReader(file);
