@@ -1,7 +1,9 @@
 package MainPackage;
 
+import Collection.TypeCollection;
 import Methods.Searching;
 import ObjectOriented.PriorityData;
+import Collection.WriterCollection;
 
 import javax.swing.*;
 import java.io.BufferedWriter;
@@ -10,6 +12,8 @@ import java.io.IOException;
 
 public class ResultClass {
 Searching searching = new Searching();
+WriterCollection writerCollection = new WriterCollection();
+TypeCollection typeCollection = new TypeCollection();
     public void sortingProcess(PriorityData[] priorityData, int numberOfBooks){
 
 
@@ -31,8 +35,10 @@ Searching searching = new Searching();
             }
         }*/
 
-//optimizedResult(priorityData,numberOfBooks);
-     searching.search(priorityData,numberOfBooks);
+optimizedResult(priorityData,numberOfBooks);
+   //  searching.search(priorityData,numberOfBooks);
+      //  writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
+        //typeCollection.typeCollectionMethods(priorityData,numberOfBooks);
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){
@@ -41,8 +47,8 @@ Searching searching = new Searching();
 
        try {
             for (int i = 0; i < numberOfBooks; i++) {
-                System.out.println(i+"_____M R :"+priorityData[i].getBookPriority()+">>>>>>"+priorityData[i].bookData.bookName);
-                string = string + (i + "_____M R :" + priorityData[i].getBookPriority() + ">>>>>>" + priorityData[i].bookData.bookName+"\n");
+                System.out.println(i+"_____M R :"+priorityData[i].getWeight()+">>>>>>"+priorityData[i].bookData.bookName);
+                string = string + (i + "_____M R :" + priorityData[i].getWeight() + ">>>>>>" + priorityData[i].bookData.bookName+"\n");
             }
 
         }
@@ -51,7 +57,7 @@ Searching searching = new Searching();
         }
 
 
-String FILENAME = "New Output.txt";
+String FILENAME = "New Output2.txt";
 
             try {
 

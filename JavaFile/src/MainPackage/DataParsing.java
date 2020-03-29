@@ -40,14 +40,14 @@ DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
         } for(int i=0;i<numberOfBooks;i++){
             length = bookId[i].length();
-            string =bookId[i].substring(1,3);
+            string =bookId[i].substring(0,2);
             typeValue[i] = Integer.parseInt(string);
         }
         for(int i=0;i<numberOfBooks;i++){
             newYear = 2 + (20) * 12;
-            string1 = bookId[i].substring(4,6);
+            string1 = bookId[i].substring(3,5);
             integer1 = Integer.parseInt(string1);
-            string2=bookId[i].substring(6,8);
+            string2=bookId[i].substring(5,7);
 
             integer2 = Integer.parseInt(string2);
             oldYear = integer1+(integer2*12);

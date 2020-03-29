@@ -69,6 +69,9 @@ bookName[x] = bookName[x].substring(1,n);
                 int m = writerName[x].length();
                 writerName[x] = writerName[x].substring(1,m);
 
+                int p = bookId[x].length();
+                bookId[x] = bookId[x].substring(1,p);
+
                 bookData[x] = new BookData(  bookName[x],  writerName[x],
          bookId[x],   borrowCount[x],
            bookPrice[x],0.00);
