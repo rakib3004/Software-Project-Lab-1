@@ -17,7 +17,10 @@ public class TypeCollection {
             typeId.add(priorityData[i].bookData.bookId.substring(0,2));
 
         }
-
+        System.out.println(typeId);
+        System.out.println();
+        System.out.println();
+        System.out.println();
         int number=0;
         Iterator<String> iterator = typeId.iterator();
 

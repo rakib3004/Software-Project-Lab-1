@@ -18,14 +18,19 @@ public class WriterCollection {
 
         }
 
-
+        System.out.println(writerId.size());
+        System.out.println();
+        System.out.println();
+        System.out.println();
 int number=0;
+int writerCount=0;
         Iterator<String> iterator = writerId.iterator();
 
         while(iterator.hasNext()){
             String element = iterator.next();
             number =1;
-            System.out.println("##########Books of \""+element+"\" ############");
+            writerCount++;
+            System.out.println("##########Books of \""+element+"\" #########("+writerCount+")###");
             for(i=0;i<numberOfBooks;i++){
                 if(priorityData[i].bookData.writerName.equals(element)){
                     System.out.println(number+" . "+priorityData[i].bookData.bookName);

@@ -24,7 +24,7 @@ TypeCollection typeCollection = new TypeCollection();
         double temporary;
         int temp;
         PriorityData tempData ;
-        /*for(int i=0;i<numberOfBooks;i++){
+        for(int i=0;i<numberOfBooks;i++){
             for(int j=0;j<numberOfBooks;j++){
                 if(priorityData[i].getBookPriority()>priorityData[j].getBookPriority()){
 
@@ -33,11 +33,12 @@ TypeCollection typeCollection = new TypeCollection();
                 priorityData[j] = tempData;
                 }
             }
-        }*/
+        }
 
 optimizedResult(priorityData,numberOfBooks);
-   //  searching.search(priorityData,numberOfBooks);
-      //  writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
+
+       // searching.search(priorityData,numberOfBooks);
+       //writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
         //typeCollection.typeCollectionMethods(priorityData,numberOfBooks);
     }
 
@@ -57,7 +58,7 @@ optimizedResult(priorityData,numberOfBooks);
         }
 
 
-String FILENAME = "New Output2.txt";
+String FILENAME = "New Output3.txt";
 
             try {
 
