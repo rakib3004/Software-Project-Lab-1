@@ -64,7 +64,7 @@ DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
             length = bookPrice1[i].length();
             string =bookPrice1[i].substring(1,length);
             string=string.replaceAll("[\\t\\n\\r]+","");
-            bookPrice[i] = Integer.parseInt(string);
+            bookPrice[i] = Integer.parseInt(string)/10;
         }
         for(int i =0;i<numberOfBooks;i++){
             bookPriority[i] =  (35-typeValue[i]);

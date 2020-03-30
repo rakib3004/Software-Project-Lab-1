@@ -26,7 +26,7 @@ TypeCollection typeCollection = new TypeCollection();
         PriorityData tempData ;
         for(int i=0;i<numberOfBooks;i++){
             for(int j=0;j<numberOfBooks;j++){
-                if(priorityData[i].getBookPriority()>priorityData[j].getBookPriority()){
+                if(priorityData[i].getWeight()>priorityData[j].getWeight()){
 
                 tempData =priorityData[i];
                 priorityData[i] = priorityData[j];
@@ -58,7 +58,7 @@ optimizedResult(priorityData,numberOfBooks);
         }
 
 
-String FILENAME = "New Output3.txt";
+String FILENAME = "New Output5.txt";
 
             try {
 
