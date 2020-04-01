@@ -28,16 +28,58 @@ int writerCount=0;
 
         while(iterator.hasNext()){
             String element = iterator.next();
+
+            int count =0;
+
             number =1;
             writerCount++;
+
+
+
             System.out.println("##########Books of \""+element+"\" #########("+writerCount+")###");
             for(i=0;i<numberOfBooks;i++){
                 if(priorityData[i].bookData.writerName.equals(element)){
                     System.out.println(number+" . "+priorityData[i].bookData.bookName);
                             number++;
+                    count++;
+
                 }
 
             }
+
+
+            double summation=0.0;
+
+
+            for(i=0;i<numberOfBooks;i++){
+
+                if(priorityData[i].bookData.writerName.equals(element)){
+                    summation = summation + priorityData[i].weight;
+
+                    //   System.out.println(number+" . "+priorityData[i].bookData.bookName);
+                }
+
+            }
+            double mean = summation/number;
+
+
+            double standard_deviation=0.0;
+
+            for(i=0;i<numberOfBooks;i++){
+
+                if(priorityData[i].bookData.writerName.equals(element)){
+
+                    standard_deviation = standard_deviation + ((mean-priorityData[i].weight)*
+                            (mean-priorityData[i].weight));
+
+                }
+
+            }
+
+            standard_deviation = standard_deviation/(number-1);
+            standard_deviation = Math.sqrt(standard_deviation);
+            System.out.println("Mean : "+mean+"    "+"Standard Deviation : "+standard_deviation);
+
 
 
         }

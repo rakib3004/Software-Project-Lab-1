@@ -35,11 +35,24 @@ TypeCollection typeCollection = new TypeCollection();
             }
         }
 
-optimizedResult(priorityData,numberOfBooks);
+      String  aString=  JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics \n2.Writer Based Statistics \n3.Searching by Alphabets");
+        optimizedResult(priorityData,numberOfBooks);
 
-       // searching.search(priorityData,numberOfBooks);
-       //writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
-        //typeCollection.typeCollectionMethods(priorityData,numberOfBooks);
+      int a = Integer.parseInt(aString);
+      if(a==1){
+          typeCollection.typeCollectionMethods(priorityData,numberOfBooks);
+
+      }
+      else if(a==2){
+          writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
+
+      }
+      else if(a==3){
+          searching.search(priorityData,numberOfBooks);
+
+      }
+
+
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){
@@ -82,7 +95,9 @@ String FILENAME = "New Output5.txt";
             catch (IOException e) {
                 System.out.println("exception occoured" + e);
             }
-        }
+
+
+    }
 
     }
 

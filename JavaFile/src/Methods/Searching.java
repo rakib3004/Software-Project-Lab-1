@@ -43,7 +43,7 @@ public class Searching {
             System.out.println("____________________________" );
             for (j = 0; j < numberOfBooks; j++) {
                 if (priorityData[j].bookData.writerName.charAt(0) == ch) {
-                    System.out.println("Writer Name : " + priorityData[j].bookData.writerName + "\t Book price : " + priorityData[j].bookData.bookPrice);
+                    System.out.println("Writer Name : " + priorityData[j].bookData.writerName + "\t Book weight : " + priorityData[j].weight);
 
                 }
 

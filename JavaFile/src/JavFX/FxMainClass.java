@@ -23,12 +23,18 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FxMainClass extends Application {
+    PriorityData [] priorityData;
+  int numberOfBooks;
+    public FxMainClass(PriorityData[] priorityData, int numberOfBooks){
+        this.priorityData = priorityData;
+        this.numberOfBooks = numberOfBooks;
+    }
     int x = 0;
     public static void main(String[] args) throws IOException
     {
         Processing processing = new Processing();
         processing.fileReader();
-      //  Application.launch(args);
+        Application.launch(args);
     }
     @Override
     public void start (Stage stage) throws IOException {
@@ -107,7 +113,7 @@ label2.setFont(font1);
 
         barChart.getData().add(series4);
 
- XYChart.Series series5 = new XYChart.Series();
+        XYChart.Series series5 = new XYChart.Series();
         series5.setName("Distance");
 
         series5.getData().add(new XYChart.Data("Mohanganj",37));
@@ -149,24 +155,24 @@ label2.setFont(font1);
 
         TableView tableView = new TableView();
 
-        TableColumn<String, PriorityData> column0 = new TableColumn<>("Serial No");
+        TableColumn<String, FxDatabase> column0 = new TableColumn<>("Serial No");
         column0.setCellValueFactory(new PropertyValueFactory<>("SerialNo"));
 
-        TableColumn<String, PriorityData> column1 = new TableColumn<>("Book Name");
+        TableColumn<String, FxDatabase> column1 = new TableColumn<>("Book Name");
         column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
 
 
-        TableColumn<String, PriorityData> column2 = new TableColumn<>("Writer Name");
+        TableColumn<String, FxDatabase> column2 = new TableColumn<>("Writer Name");
         column2.setCellValueFactory(new PropertyValueFactory<>("WriterName"));
 
-TableColumn<String, PriorityData> column3 = new TableColumn<>("Book ID");
+TableColumn<String, FxDatabase> column3 = new TableColumn<>("Book ID");
         column3.setCellValueFactory(new PropertyValueFactory<>("bookId"));
 
 
-        TableColumn<String, PriorityData> column4 = new TableColumn<>("Borrow Count");
+        TableColumn<String, FxDatabase> column4 = new TableColumn<>("Borrow Count");
         column4.setCellValueFactory(new PropertyValueFactory<>("BorrowCount"));
 
-        TableColumn<String, PriorityData> column5 = new TableColumn<>("Book Price");
+        TableColumn<String, FxDatabase> column5 = new TableColumn<>("Book Price");
         column5.setCellValueFactory(new PropertyValueFactory<>("BookPrice"));
 
 
@@ -178,47 +184,20 @@ TableColumn<String, PriorityData> column3 = new TableColumn<>("Book ID");
         tableView.getColumns().add(column5);
 
 
-        File file = new File("IIT_SPL.txt");
-        FileReader fr = new FileReader(file);
-        char[] a = new char[120500];
-        fr.read(a);
+        int i;
+        String index;
+
+for(i=0;i<numberOfBooks;i++){
+index = Integer.toString(i);
+
+    tableView.getItems().add(new FxDatabase( index,priorityData[i].bookData.bookName,
+            priorityData[i].bookData.writerName,priorityData[i].bookData.bookId,
+            priorityData[i].bookData.borrowCount,priorityData[i].bookData.bookPrice));
+
+}
 
 
-        // reads the content to the array
-        String  bookName[] = new String[1050];
-        String writerName[] = new String[1050];
-        String bookId[] = new String[1050];
-
-
-        String borrowCount[] = new String[1050];
-
-        String bookPrice[] = new String[1050];
-
-
-
-        bookName[x] = "\0";
-        writerName[x] = "\0";
-        bookId[x] = "\0";
-        borrowCount[x] = "\0";
-        bookPrice[x] = "\0";
-
-        int t = 0;
-        for (int i = 0; a[i] != '\0'; i++) {
-            if (a[i] == '\t') {
-                i++;
-                t++;
-                t = t % 5;
-            }
-            if (a[i] == '\n') {
-                i++;
-                t++;
-
-                t = t % 5;
-String p = ""+x;
-
-                tableView.getItems().add(new BookData( p,bookName[x],  writerName[x], bookId[x], borrowCount[x],bookPrice[x]));
-
-                x++;
+               /* x++;
                 bookName[x] = "\0";
                 writerName[x] = "\0";
                 bookId[x] = "\0";
@@ -245,7 +224,7 @@ String p = ""+x;
                 bookPrice[x]=bookPrice[x]+a[i];
             }
         }
-        fr.close();
+        fr.close();*/
 
 
 
