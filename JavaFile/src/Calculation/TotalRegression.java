@@ -17,8 +17,8 @@ public class TotalRegression {
     int length;
     int integer1,integer2;
     int newYear,oldYear;
-    public double[] analysis(BookData[] bookData, String[] writerName,
-                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
+    public double[] totalRegressionMethods(BookData[] bookData, String[] writerName,
+                                           String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
      //   Processing processing = new Processing();
 
         for(int i=0;i<numberOfBooks;i++){
