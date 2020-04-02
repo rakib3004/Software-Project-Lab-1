@@ -1,5 +1,7 @@
 package MainPackage;
 
+import Collection.BorrowCollection;
+import Collection.TimeCollection;
 import Collection.TypeCollection;
 import Methods.Searching;
 import ObjectOriented.PriorityData;
@@ -14,6 +16,8 @@ public class ResultClass {
 Searching searching = new Searching();
 WriterCollection writerCollection = new WriterCollection();
 TypeCollection typeCollection = new TypeCollection();
+TimeCollection timeCollection  = new TimeCollection();
+BorrowCollection borrowCollection = new BorrowCollection();
     public void sortingProcess(PriorityData[] priorityData, int numberOfBooks){
 
 
@@ -35,7 +39,9 @@ TypeCollection typeCollection = new TypeCollection();
             }
         }
 
-      String  aString=  JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics \n2.Writer Based Statistics \n3.Searching by Alphabets");
+      String  aString=  JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
+              "\n2.Writer Based Statistics \n3.Issue Date Base Statitics " +
+              "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
         optimizedResult(priorityData,numberOfBooks);
 
       int a = Integer.parseInt(aString);
@@ -46,8 +52,14 @@ TypeCollection typeCollection = new TypeCollection();
       else if(a==2){
           writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
 
+      }else if(a==3){
+          timeCollection.timeCollectionMethods(priorityData,numberOfBooks);
+
+      }else if(a==4){
+          borrowCollection.borrowCollectionMethods(priorityData,numberOfBooks);
+
       }
-      else if(a==3){
+      else if(a==5){
           searching.search(priorityData,numberOfBooks);
 
       }

@@ -40,8 +40,8 @@ public class OptimizeRegression {
 
 
 
-    public void analysis(BookData[] bookData, String[] writerName,
-                         String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
+    public void OptimizeRegressionMethods(BookData[] bookData, String[] writerName,
+                                          String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
         //   Processing processing = new Processing();
 
 

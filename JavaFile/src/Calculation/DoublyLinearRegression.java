@@ -9,7 +9,7 @@ public class DoublyLinearRegression {
 double sumYX2,sumYX3,sumX3square,sumX2square,sumX2X3;
 double meanY,meanX2,meanX3;
 CalculateDoublyRegression calculateDoublyRegression = new CalculateDoublyRegression();
-    public void calculateRegression(PriorityData[]  priorityData){
+    public void doublyLinearRegressionMethods(PriorityData[]  priorityData){
 
         for(i=0;i<number;i++){
 meanX2 = meanX2 + priorityData[i].borrowPriority;

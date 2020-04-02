@@ -7,7 +7,7 @@ public class Sorting {
 
     int i;
 
-    public void algorithm(BookData[] bookData, double [] weight, int numberOfBooks){
+    public void sortingMethods(BookData[] bookData, double [] weight, int numberOfBooks){
 
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
         for( i =0;i<numberOfBooks;i++){

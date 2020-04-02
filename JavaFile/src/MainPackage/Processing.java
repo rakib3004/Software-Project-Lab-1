@@ -119,7 +119,7 @@ double weight1[] = new double[1050];
         //searching.search(bookData,numOfBook);
        // printInfo.printAll(bookData,numOfBook);
 
-        dataParsing.bookValueParsing(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
+        dataParsing.dataParsingMethods(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
     }
     public int getNumber(){
         return  x ;

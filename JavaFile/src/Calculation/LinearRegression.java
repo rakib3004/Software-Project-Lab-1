@@ -12,7 +12,7 @@ public class LinearRegression {
     double beta_value = 0;
     int length;
     String string;
-public  double [] calculateRegression( double x_value[],double y_value[], int numberOfBooks){
+public  double [] linearRegressionMethods(double x_value[], double y_value[], int numberOfBooks){
 
 
     for (i = 0; i < numberOfBooks; i++) {

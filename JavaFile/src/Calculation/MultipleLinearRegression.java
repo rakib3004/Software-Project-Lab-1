@@ -26,7 +26,7 @@ double y_mean;
 Matrix matrix = new Matrix();
 
 
- public void  loadData( PriorityData[] priorityData, int numberOfBooks ){
+ public void multipleLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks ){
 
      for(i=0;i<numberOfBooks;i++){
          y_mean = y_mean + priorityData[i].bookPriority;
