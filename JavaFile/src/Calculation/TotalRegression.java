@@ -21,41 +21,41 @@ public class TotalRegression {
                                            String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
      //   Processing processing = new Processing();
 
-        for(int i=0;i<numberOfBooks;i++){
-           if(writerName[i].equals(" Humayon Ahmed")){
-               writePriority[i]=25;
+        for(int iterator=0;iterator<numberOfBooks;iterator++){
+           if(writerName[iterator].equals(" Humayon Ahmed")){
+               writePriority[iterator]=25;
            }
-           else if(writerName[i].equals("Muhammad Jafar Iqbal")){
-                writePriority[i]=23;
+           else if(writerName[iterator].equals("Muhammad Jafar Iqbal")){
+                writePriority[iterator]=23;
             }
             else {
-               writePriority[i]=15;
+               writePriority[iterator]=15;
             }
 
-        } for(int i=0;i<numberOfBooks;i++){
-            length = bookId[i].length();
-            string =bookId[i].substring(1,3);
-            typeValue[i] = Integer.parseInt(string);
-        } for(int i=0;i<numberOfBooks;i++){
+        } for(int iterator=0;iterator<numberOfBooks;iterator++){
+            length = bookId[iterator].length();
+            string =bookId[iterator].substring(1,3);
+            typeValue[iterator] = Integer.parseInt(string);
+        } for(int iterator=0;iterator<numberOfBooks;iterator++){
 
  newYear = 2 + (20) * 12;
-string1 = bookId[i].substring(4,6);
+string1 = bookId[iterator].substring(4,6);
 integer1 = Integer.parseInt(string1);
-string2=bookId[i].substring(6,8);
+string2=bookId[iterator].substring(6,8);
 
 integer2 = Integer.parseInt(string2);
 oldYear = integer1+(integer2*12);
-timeCount[i] = newYear - oldYear;
+timeCount[iterator] = newYear - oldYear;
 
-        } for(int i=0;i<numberOfBooks;i++){
-            length = borrowCount1[i].length();
-            string =borrowCount1[i].substring(1,length);
-            bookCount[i] = Integer.parseInt(string);
-        }for(int i=0;i<numberOfBooks;i++){
-            length = bookPrice1[i].length();
-            string =bookPrice1[i].substring(1,length);
+        } for(int iterator=0;iterator<numberOfBooks;iterator++){
+            length = borrowCount1[iterator].length();
+            string =borrowCount1[iterator].substring(1,length);
+            bookCount[iterator] = Integer.parseInt(string);
+        }for(int iterator=0;iterator<numberOfBooks;iterator++){
+            length = bookPrice1[iterator].length();
+            string =bookPrice1[iterator].substring(1,length);
             string=string.replaceAll("[\\t\\n\\r]+","");
-            bookPrice[i] = Integer.parseInt(string);
+            bookPrice[iterator] = Integer.parseInt(string);
         }
 
         double bookPriority [] = new double[1050];
@@ -68,18 +68,18 @@ timeCount[i] = newYear - oldYear;
         //   processing.fileReader();
 
 
-        for(int i =0;i<numberOfBooks;i++){
-bookPriority[i] =  (20 - Math.sqrt(typeValue[i]));
-timePriority[i] = 16 -  (timeCount[i]/12);
-borrowCount[i] = bookCount[i];
-//serialPriority[i] = Math.pow(queueValue[i],(1/3));
-pricePriority[i] = Math.pow(bookPrice[i],(2/5));
+        for(int iterator =0;iterator<numberOfBooks;iterator++){
+bookPriority[iterator] =  (20 - Math.sqrt(typeValue[iterator]));
+timePriority[iterator] = 16 -  (timeCount[iterator]/12);
+borrowCount[iterator] = bookCount[iterator];
+//serialPriority[iterator] = Math.pow(queueValue[iterator],(1/3));
+pricePriority[iterator] = Math.pow(bookPrice[iterator],(2/5));
 
-weight[i] = bookPriority[i] +timePriority[i] +
-        borrowCount[i]+//serialPriority[i]+
-        +writePriority[i]+pricePriority[i];
-          //  System.out.println(weight[i]);
-bookData[i].setWeight(weight[i]);
+weight[iterator] = bookPriority[iterator] +timePriority[iterator] +
+        borrowCount[iterator]+//serialPriority[iterator]+
+        +writePriority[iterator]+pricePriority[iterator];
+          //  System.out.println(weight[iterator]);
+bookData[iterator].setWeight(weight[iterator]);
         }
         MainClass mainClass = new MainClass();
         BookData bookData1 = new BookData();
@@ -90,16 +90,16 @@ bookData[i].setWeight(weight[i]);
         }
         double temporary;
         int temp;
-        for(int i=0;i<numberOfBooks;i++){
-            for(int j=0;j<numberOfBooks;j++){
-                if(genericAlgo[i].getWeight()>genericAlgo[j].getWeight()){
-                    temporary= genericAlgo[i].getWeight();
-                    genericAlgo[i].setWeight(genericAlgo[j].getWeight());
-                    genericAlgo[j].setWeight(temporary);
-                    temp = genericAlgo[i].getIndex();
-                    genericAlgo[i].setIndex(genericAlgo[j].getIndex());
-                    genericAlgo[j].setIndex(temp);
-                    bookData[j].setRank(temp,0);
+        for(int iterator=0;iterator<numberOfBooks;iterator++){
+            for(int jterator=0;jterator<numberOfBooks;jterator++){
+                if(genericAlgo[iterator].getWeight()>genericAlgo[jterator].getWeight()){
+                    temporary= genericAlgo[iterator].getWeight();
+                    genericAlgo[iterator].setWeight(genericAlgo[jterator].getWeight());
+                    genericAlgo[jterator].setWeight(temporary);
+                    temp = genericAlgo[iterator].getIndex();
+                    genericAlgo[iterator].setIndex(genericAlgo[jterator].getIndex());
+                    genericAlgo[jterator].setIndex(temp);
+                    bookData[jterator].setRank(temp,0);
                 }
             }
         }
@@ -107,10 +107,10 @@ bookData[i].setWeight(weight[i]);
         System.out.println("Optimized View 01 :" );
 
 
-        for(int i=190;i<numberOfBooks;i++){
-            System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
-                    "; Writer Name : "+bookData[genericAlgo[i].getIndex()].getWriterName()
-                    + "; Weight : "+genericAlgo[i].getWeight());
+        for(int iterator=190;iterator<numberOfBooks;iterator++){
+            System.out.println("Book Name :"+bookData[genericAlgo[iterator].getIndex()].getBookName()+
+                    "; Writer Name : "+bookData[genericAlgo[iterator].getIndex()].getWriterName()
+                    + "; Weight : "+genericAlgo[iterator].getWeight());
 
         }
         //  outStream.induction(bookData,numberOfBooks);

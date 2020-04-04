@@ -5,41 +5,41 @@ import Processed.CalculateDoublyRegression;
 
 public class DoublyLinearRegression {
     int number=632;
-    int i;
+    int iterator;
 double sumYX2,sumYX3,sumX3square,sumX2square,sumX2X3;
 double meanY,meanX2,meanX3;
 CalculateDoublyRegression calculateDoublyRegression = new CalculateDoublyRegression();
     public void doublyLinearRegressionMethods(PriorityData[]  priorityData){
 
-        for(i=0;i<number;i++){
-meanX2 = meanX2 + priorityData[i].borrowPriority;
-        }for(i=0;i<number;i++){
-meanX3 = meanX3 + priorityData[i].timePriority;
-        }for(i=0;i<number;i++){
-meanY = meanY + priorityData[i].bookPriority ;
+        for(iterator =0; iterator <number; iterator++){
+meanX2 = meanX2 + priorityData[iterator].borrowPriority;
+        }for(iterator =0; iterator <number; iterator++){
+meanX3 = meanX3 + priorityData[iterator].timePriority;
+        }for(iterator =0; iterator <number; iterator++){
+meanY = meanY + priorityData[iterator].bookPriority ;
         }
         meanY = meanY / number;
         meanX2 = meanX2 / number;
         meanX3 = meanX3 / number;
 
-        for(i=0;i<number;i++){
-            sumX2square= sumX2square + Math.pow(priorityData[i].borrowPriority,2);
+        for(iterator =0; iterator <number; iterator++){
+            sumX2square= sumX2square + Math.pow(priorityData[iterator].borrowPriority,2);
         }
 
-        for(i=0;i<number;i++) {
-            sumX3square= sumX3square + Math.pow(priorityData[i].timePriority,2);
+        for(iterator =0; iterator <number; iterator++) {
+            sumX3square= sumX3square + Math.pow(priorityData[iterator].timePriority,2);
 
         }
- for(i=0;i<number;i++) {
-     sumYX2 = sumYX2 + (priorityData[i].bookPriority*priorityData[i].borrowPriority);
+ for(iterator =0; iterator <number; iterator++) {
+     sumYX2 = sumYX2 + (priorityData[iterator].bookPriority*priorityData[iterator].borrowPriority);
 
         }
- for(i=0;i<number;i++) {
-     sumYX3 = sumYX3 + (priorityData[i].bookPriority*priorityData[i].timePriority);
+ for(iterator =0; iterator <number; iterator++) {
+     sumYX3 = sumYX3 + (priorityData[iterator].bookPriority*priorityData[iterator].timePriority);
 
         }
- for(i=0;i<number;i++) {
-     sumX2X3 = sumX2X3 + (priorityData[i].borrowPriority*priorityData[i].timePriority);
+ for(iterator =0; iterator <number; iterator++) {
+     sumX2X3 = sumX2X3 + (priorityData[iterator].borrowPriority*priorityData[iterator].timePriority);
         }
 
 

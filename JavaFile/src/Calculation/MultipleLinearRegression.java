@@ -15,7 +15,7 @@ double a1,a2,a3;
 double b1,b2,b3;
 double c1,c2,c3;
 double d1,d2,d3;
-int i;
+int iterator;
 
 
     double [] a_array = new double[3];
@@ -28,46 +28,46 @@ Matrix matrix = new Matrix();
 
  public void multipleLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks ){
 
-     for(i=0;i<numberOfBooks;i++){
-         y_mean = y_mean + priorityData[i].bookPriority;
+     for(iterator =0; iterator <numberOfBooks; iterator++){
+         y_mean = y_mean + priorityData[iterator].bookPriority;
      }
      y_mean = y_mean/numberOfBooks;
-for(i=0;i<numberOfBooks;i++){
- d1 = d1 + (priorityData[i].bookPriority*priorityData[i].borrowPriority);
+for(iterator =0; iterator <numberOfBooks; iterator++){
+ d1 = d1 + (priorityData[iterator].bookPriority*priorityData[iterator].borrowPriority);
 }
-for(i=0;i<numberOfBooks;i++){
- d2 = d2 + (priorityData[i].bookPriority*priorityData[i].timePriority);
+for(iterator =0; iterator <numberOfBooks; iterator++){
+ d2 = d2 + (priorityData[iterator].bookPriority*priorityData[iterator].timePriority);
 }
-for(i=0;i<numberOfBooks;i++){
- d3 = d3 + (priorityData[i].bookPriority*priorityData[i].pricePriority);
+for(iterator =0; iterator <numberOfBooks; iterator++){
+ d3 = d3 + (priorityData[iterator].bookPriority*priorityData[iterator].pricePriority);
 }
 
 
-  for(i=0;i<numberOfBooks;i++){
-   a1 = a1 + (priorityData[i].borrowPriority*priorityData[i].borrowPriority);
-  }for(i=0;i<numberOfBooks;i++){
-   b1 = b1 + (priorityData[i].timePriority*priorityData[i].borrowPriority);
-  }for(i=0;i<numberOfBooks;i++){
-   c1 = c1 + (priorityData[i].pricePriority*priorityData[i].borrowPriority);
+  for(iterator =0; iterator <numberOfBooks; iterator++){
+   a1 = a1 + (priorityData[iterator].borrowPriority*priorityData[iterator].borrowPriority);
+  }for(iterator =0; iterator <numberOfBooks; iterator++){
+   b1 = b1 + (priorityData[iterator].timePriority*priorityData[iterator].borrowPriority);
+  }for(iterator =0; iterator <numberOfBooks; iterator++){
+   c1 = c1 + (priorityData[iterator].pricePriority*priorityData[iterator].borrowPriority);
   }
 
 
 
 
-for(i=0;i<numberOfBooks;i++){
-   a2 = a2 + (priorityData[i].borrowPriority*priorityData[i].timePriority);
-  }for(i=0;i<numberOfBooks;i++){
-   b2 = b2 + (priorityData[i].timePriority*priorityData[i].timePriority);
-  }for(i=0;i<numberOfBooks;i++){
-   c2 = c2 + (priorityData[i].pricePriority*priorityData[i].timePriority);
+for(iterator =0; iterator <numberOfBooks; iterator++){
+   a2 = a2 + (priorityData[iterator].borrowPriority*priorityData[iterator].timePriority);
+  }for(iterator =0; iterator <numberOfBooks; iterator++){
+   b2 = b2 + (priorityData[iterator].timePriority*priorityData[iterator].timePriority);
+  }for(iterator =0; iterator <numberOfBooks; iterator++){
+   c2 = c2 + (priorityData[iterator].pricePriority*priorityData[iterator].timePriority);
   }
 
-for(i=0;i<numberOfBooks;i++){
-   a3 = a3 + (priorityData[i].borrowPriority*priorityData[i].pricePriority);
-  }for(i=0;i<numberOfBooks;i++){
-   b3 = b3 + (priorityData[i].timePriority*priorityData[i].pricePriority);
-  }for(i=0;i<numberOfBooks;i++){
-   c3 = c3 + (priorityData[i].pricePriority*priorityData[i].pricePriority);
+for(iterator =0; iterator <numberOfBooks; iterator++){
+   a3 = a3 + (priorityData[iterator].borrowPriority*priorityData[iterator].pricePriority);
+  }for(iterator =0; iterator <numberOfBooks; iterator++){
+   b3 = b3 + (priorityData[iterator].timePriority*priorityData[iterator].pricePriority);
+  }for(iterator =0; iterator <numberOfBooks; iterator++){
+   c3 = c3 + (priorityData[iterator].pricePriority*priorityData[iterator].pricePriority);
   }
 
   a_array[0] = a1;

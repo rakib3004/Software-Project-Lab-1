@@ -89,7 +89,6 @@ median = (median1 + median2)/2;
 
             thirdQuartile--;
         }
-
         System.out.println("Third Quartile Value : "+list.get(thirdQuartile));
     } public void findMaximumValue(List<Double> list){
 
@@ -97,6 +96,7 @@ median = (median1 + median2)/2;
 
 
     }
+
 
     public void findInterQuartileRange(List<Double> list){
 

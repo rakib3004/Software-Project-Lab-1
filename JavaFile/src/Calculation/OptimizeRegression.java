@@ -45,49 +45,49 @@ public class OptimizeRegression {
         //   Processing processing = new Processing();
 
 
-        for(int i=0;i<numberOfBooks;i++){
-            if(writerName[i].equals(" Humayon Ahmed")){
-                writePriority[i]=25;
+        for(int iterator=0;iterator<numberOfBooks;iterator++){
+            if(writerName[iterator].equals(" Humayon Ahmed")){
+                writePriority[iterator]=25;
             }
-            else if(writerName[i].equals("Muhammad Jafar Iqbal")){
-                writePriority[i]=23;
+            else if(writerName[iterator].equals("Muhammad Jafar Iqbal")){
+                writePriority[iterator]=23;
             }
             else {
-                writePriority[i]=15;
+                writePriority[iterator]=15;
             }
 
         }
 
-        for(int i =0;i<numberOfBooks;i++){
-            bookPriority[i] =  (20 - Math.sqrt(typeValue[i]));
-            timePriority[i] = 16 -  (timeCount[i]/12);
-            borrowCount[i] = bookCount[i];
-            pricePriority[i] = Math.pow(bookPrice[i],(2/5));
+        for(int iterator =0;iterator<numberOfBooks;iterator++){
+            bookPriority[iterator] =  (20 - Math.sqrt(typeValue[iterator]));
+            timePriority[iterator] = 16 -  (timeCount[iterator]/12);
+            borrowCount[iterator] = bookCount[iterator];
+            pricePriority[iterator] = Math.pow(bookPrice[iterator],(2/5));
 
-            weight[i] = bookPriority[i] +timePriority[i] +
-                    borrowCount[i]+
-                    +writePriority[i]+pricePriority[i];
-            bookData[i].setWeight(weight[i]);
+            weight[iterator] = bookPriority[iterator] +timePriority[iterator] +
+                    borrowCount[iterator]+
+                    +writePriority[iterator]+pricePriority[iterator];
+            bookData[iterator].setWeight(weight[iterator]);
         }
         MainClass mainClass = new MainClass();
         BookData bookData1 = new BookData();
 
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
-        for(int i = 0; i<numberOfBooks; i++){
-            genericAlgo[i] = new GenericAlgo(bookData[i].getWeight(),i);
+        for(int iterator = 0; iterator<numberOfBooks; iterator++){
+            genericAlgo[iterator] = new GenericAlgo(bookData[iterator].getWeight(),iterator);
         }
         double temporary;
         int temp;
-        for(int i=0;i<numberOfBooks;i++){
-            for(int j=0;j<numberOfBooks;j++){
-                if(genericAlgo[i].getWeight()>genericAlgo[j].getWeight()){
-                    temporary= genericAlgo[i].getWeight();
-                    genericAlgo[i].setWeight(genericAlgo[j].getWeight());
-                    genericAlgo[j].setWeight(temporary);
-                    temp = genericAlgo[i].getIndex();
-                    genericAlgo[i].setIndex(genericAlgo[j].getIndex());
-                    genericAlgo[j].setIndex(temp);
-                    bookData[j].setRank(temp,0);
+        for(int iterator=0;iterator<numberOfBooks;iterator++){
+            for(int jterator=0;jterator<numberOfBooks;jterator++){
+                if(genericAlgo[iterator].getWeight()>genericAlgo[jterator].getWeight()){
+                    temporary= genericAlgo[iterator].getWeight();
+                    genericAlgo[iterator].setWeight(genericAlgo[jterator].getWeight());
+                    genericAlgo[jterator].setWeight(temporary);
+                    temp = genericAlgo[iterator].getIndex();
+                    genericAlgo[iterator].setIndex(genericAlgo[jterator].getIndex());
+                    genericAlgo[jterator].setIndex(temp);
+                    bookData[jterator].setRank(temp,0);
                 }
             }
         }

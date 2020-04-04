@@ -39,37 +39,46 @@ BorrowCollection borrowCollection = new BorrowCollection();
             }
         }
 
+try {
 
 
-      String  aString=  JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
-              "\n2.Writer Based Statistics \n3.Issue Date Base Statitics " +
-              "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
-   //     optimizedResult(priorityData,numberOfBooks);
+    String aString = JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
+            "\n2.Writer Based Statistics \n3.Issue Date Base Statitics " +
+            "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
+    //     optimizedResult(priorityData,numberOfBooks);
 
-      int a = Integer.parseInt(aString);
-      if(a==1){
-          typeCollection.typeCollectionMethods(priorityData,numberOfBooks);
+    int a = Integer.parseInt(aString);
+    JOptionPane.showMessageDialog(null, "You Pressed "+a);
 
-      }
-      else if(a==2){
-          writerCollection.writerCollectionMethods(priorityData,numberOfBooks);
+    if (a == 1) {
 
-      }else if(a==3){
-          timeCollection.timeCollectionMethods(priorityData,numberOfBooks);
+        typeCollection.typeCollectionMethods(priorityData, numberOfBooks);
 
-      }else if(a==4){
-          borrowCollection.borrowCollectionMethods(priorityData,numberOfBooks);
+    } else if (a == 2) {
 
-      }
-      else if(a==5){
-          searching.search(priorityData,numberOfBooks);
+        writerCollection.writerCollectionMethods(priorityData, numberOfBooks);
 
-      }
-      else{
-          JOptionPane.showMessageDialog(null,"Empty Command");
-      }
+    } else if (a == 3) {
 
+        timeCollection.timeCollectionMethods(priorityData, numberOfBooks);
 
+    } else if (a == 4) {
+
+        borrowCollection.borrowCollectionMethods(priorityData, numberOfBooks);
+
+    } else if (a == 5) {
+
+        searching.search(priorityData, numberOfBooks);
+
+    } else {
+        JOptionPane.showMessageDialog(null, "Empty Command");
+    }
+
+}
+catch (NullPointerException nullPointerException){
+    System.out.println("");
+
+}
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){

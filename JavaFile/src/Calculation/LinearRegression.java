@@ -2,7 +2,7 @@ package Calculation;
 
 public class LinearRegression {
 
-    int i;
+    int iterator;
     double y_mean = 0;
     double x_mean = 0;
    //  = new double[1050];
@@ -15,28 +15,28 @@ public class LinearRegression {
 public  double [] linearRegressionMethods(double x_value[], double y_value[], int numberOfBooks){
 
 
-    for (i = 0; i < numberOfBooks; i++) {
-        x_mean = x_mean + x_value[i];
-        y_mean = y_mean + y_value[i];
+    for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        x_mean = x_mean + x_value[iterator];
+        y_mean = y_mean + y_value[iterator];
     }
 
     x_mean = x_mean / numberOfBooks;
     y_mean = y_mean / numberOfBooks;
 
 
-    for (i = 0; i < numberOfBooks; i++) {
-        x_value[i] = x_value[i] - x_mean;
-        y_value[i] = y_value[i] - y_mean;
-        alpha_value = alpha_value + (x_value[i] * y_value[i]);
-        beta_value = beta_value + (x_value[i] * x_value[i]);
+    for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        x_value[iterator] = x_value[iterator] - x_mean;
+        y_value[iterator] = y_value[iterator] - y_mean;
+        alpha_value = alpha_value + (x_value[iterator] * y_value[iterator]);
+        beta_value = beta_value + (x_value[iterator] * x_value[iterator]);
 
     }
 
     double metaValue = alpha_value / beta_value;
     double betaValue = y_mean - (metaValue * x_mean);
-    for (i = 0; i < numberOfBooks; i++) {
+    for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-        reg_y_value[i] = betaValue + metaValue * x_value[i];
+        reg_y_value[iterator] = betaValue + metaValue * x_value[iterator];
     }
 
 return reg_y_value;

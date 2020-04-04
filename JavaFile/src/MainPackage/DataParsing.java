@@ -34,9 +34,7 @@ public class DataParsing {
     public void dataParsingMethods(BookData[] bookData, String[] writerName,
                                    String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
-        for (int i = 0; i < numberOfBooks; i++) {
 
-        }
         for (int i = 0; i < numberOfBooks; i++) {
             length = bookId[i].length();
             string = bookId[i].substring(0, 2);
@@ -80,7 +78,7 @@ public class DataParsing {
         x_value[1] = borrowPriority;
         x_value[2] = pricePriority;
 
-        for (int i = 0; i < 3; i++) {
+    //   for (int i = 0; i < 3; i++) {
 /*weight =linearRegression.linearRegressionMethods(x_value[i],y_value,numberOfBooks);
             System.out.println("Linear Regression _______ Optimization No : "+(i+1));
 sorting.sortingMethods(bookData,weight,numberOfBooks);
@@ -91,8 +89,8 @@ sorting.sortingMethods(bookData,weight,numberOfBooks);
 
             /* System.out.println("Doubly  Linear Regression _______  ");*/
 
-            doublyLinearRegression.doublyLinearRegressionMethods(priorityData);
+            //doublyLinearRegression.doublyLinearRegressionMethods(priorityData);
         }
-    }
+
 
 }
