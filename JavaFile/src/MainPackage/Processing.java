@@ -10,7 +10,6 @@ import java.io.FileReader;
 
 import java.io.IOException;
 public class Processing {
-    int x = 0;
      static   int numOfBook;
      BookData [] bookData = new BookData[1050];
 
@@ -19,14 +18,16 @@ public class Processing {
   //  Searching searching = new Searching();
   //  RankShow rankShow = new RankShow();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
+int iterator;
+    int charIndex ;
+    int wordIndex;
 
     public void fileReader()  throws IOException{
 
         File file = new File("IIT_SPL.txt");
         FileReader fr = new FileReader(file);
-        char[] a = new char[120500];
-        fr.read(a);
+        char[] arrayOfCharacter = new char[120500];
+        fr.read(arrayOfCharacter);
 
 
         // reads the content to the array
@@ -41,75 +42,74 @@ public class Processing {
 
 
 
-        bookName[x] = "\0";
-        writerName[x] = "\0";
-        bookId[x] = "\0";
-        borrowCount[x] = "\0";
-        bookPrice[x] = "\0";
+        bookName[wordIndex] = "\0";
+        writerName[wordIndex] = "\0";
+        bookId[wordIndex] = "\0";
+        borrowCount[wordIndex] = "\0";
+        bookPrice[wordIndex] = "\0";
 
-        int t = 0;
-        for (int i = 0; a[i] != '\0'; i++) {
-            if (a[i] == '\t') {
-                i++;
-                t++;
-                t = t % 5;
+        for (iterator = 0; arrayOfCharacter[iterator] != '\0'; iterator++) {
+            if (arrayOfCharacter[iterator] == '\t') {
+                iterator++;
+                charIndex++;
+                charIndex = charIndex % 5;
             }
-            if (a[i] == '\n') {
-                i++;
-                t++;
+            if (arrayOfCharacter[iterator] == '\n') {
+                iterator++;
+                charIndex++;
 
-                t = t % 5;
+                charIndex = charIndex % 5;
 
                 /*String string = bookName[x];
                 string=string.replace(" ","");
                 bookName[x] = string;*/
-                int n = bookName[x].length();
-bookName[x] = bookName[x].substring(1,n);
+                int bookNameSize = bookName[wordIndex].length();
+bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
 
-                int m = writerName[x].length();
-                writerName[x] = writerName[x].substring(1,m);
+                int writerNameSize = writerName[wordIndex].length();
+                writerName[wordIndex] = writerName[wordIndex].substring(1,writerNameSize);
 
-                int p = bookId[x].length();
-                bookId[x] = bookId[x].substring(1,p);
+                int bookIdSize = bookId[wordIndex].length();
+                bookId[wordIndex] = bookId[wordIndex].substring(1,bookIdSize);
 
-                bookData[x] = new BookData(  bookName[x],  writerName[x],
-         bookId[x],   borrowCount[x],
-           bookPrice[x],0.00);
-
-
-                x++;
-                bookName[x] = "\0";
-                writerName[x] = "\0";
-                bookId[x] = "\0";
-
-                borrowCount[x] = "\0";
-                bookPrice[x] = "\0";
-
-            }
-            if (t == 0) {
-
-                bookName[x] = bookName[x] + a[i];
-            } else if (t == 1) {
-
-                writerName[x] = writerName[x] + a[i];
-
-            } else if (t == 2) {
-                bookId[x] = bookId[x] + a[i];
+                bookData[wordIndex] = new BookData(  bookName[wordIndex],  writerName[wordIndex],
+         bookId[wordIndex],   borrowCount[wordIndex],
+           bookPrice[wordIndex],0.00);
 
 
-            } else if (t == 3) {
-                borrowCount[x] = borrowCount[x] + a[i];
+                wordIndex++;
+                bookName[wordIndex] = "\0";
+                writerName[wordIndex] = "\0";
+                bookId[wordIndex] = "\0";
+
+                borrowCount[wordIndex] = "\0";
+                bookPrice[wordIndex] = "\0";
 
             }
-            else if(t==4){
-                bookPrice[x]=bookPrice[x]+a[i];
+            if (charIndex == 0) {
+
+                bookName[wordIndex] = bookName[wordIndex] + arrayOfCharacter[iterator];
+            } else if (charIndex == 1) {
+
+                writerName[wordIndex] = writerName[wordIndex] + arrayOfCharacter[iterator];
+
+            } else if (charIndex == 2) {
+                bookId[wordIndex] = bookId[wordIndex] + arrayOfCharacter[iterator];
+
+
+            } else if (charIndex == 3) {
+                borrowCount[wordIndex] = borrowCount[wordIndex] + arrayOfCharacter[iterator];
+
+            }
+            else if(charIndex ==4){
+                bookPrice[wordIndex]=bookPrice[wordIndex]+arrayOfCharacter[iterator];
             }
         }
         fr.close();
 
       //  System.out.println();
 
- numOfBook= x;
+ numOfBook= wordIndex;
 
 int p= getNumber();
 double weight1[] = new double[1050];
@@ -122,7 +122,7 @@ double weight1[] = new double[1050];
         dataParsing.dataParsingMethods(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
     }
     public int getNumber(){
-        return  x ;
+        return wordIndex;
     }
 
 

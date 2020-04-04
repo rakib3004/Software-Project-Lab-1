@@ -24,7 +24,8 @@ public class DataParsing {
     int length;
     int integer1, integer2;
     int newYear, oldYear;
-    int index;
+    int  index;
+    int iterator;
     Sorting sorting = new Sorting();
     LinearRegression linearRegression = new LinearRegression();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
@@ -35,42 +36,44 @@ public class DataParsing {
                                    String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
 
-        for (int i = 0; i < numberOfBooks; i++) {
-            length = bookId[i].length();
-            string = bookId[i].substring(0, 2);
-            typeValue[i] = Integer.parseInt(string);
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            length = bookId[iterator].length();
+            string = bookId[iterator].substring(0, 2);
+            typeValue[iterator] = Integer.parseInt(string);
         }
 
-        for (int i = 0; i < numberOfBooks; i++) {
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             newYear = 3 + (20) * 12;
-            string1 = bookId[i].substring(3, 5);
+            string1 = bookId[iterator].substring(3, 5);
             integer1 = Integer.parseInt(string1);
-            string2 = bookId[i].substring(5, 7);
+            string2 = bookId[iterator].substring(5, 7);
 
             integer2 = Integer.parseInt(string2);
             oldYear = integer1 + (integer2 * 12);
-            timeCount[i] = newYear - oldYear;
+            timeCount[iterator] = newYear - oldYear;
 
         }
-        for (int i = 0; i < numberOfBooks; i++) {
-            length = borrowCount1[i].length();
-            string = borrowCount1[i].substring(1, length);
-            bookCount[i] = Integer.parseInt(string);
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            length = borrowCount1[iterator].length();
+            string = borrowCount1[iterator].substring(1, length);
+            bookCount[iterator] = Integer.parseInt(string);
         }
-        for (int i = 0; i < numberOfBooks; i++) {
-            length = bookPrice1[i].length();
-            string = bookPrice1[i].substring(1, length);
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            length = bookPrice1[iterator].length();
+            string = bookPrice1[iterator].substring(1, length);
             string = string.replaceAll("[\\t\\n\\r]+", "");
-            bookPrice[i] = Integer.parseInt(string) / 10;
+            bookPrice[iterator] = Integer.parseInt(string) / 10;
         }
-        for (int i = 0; i < numberOfBooks; i++) {
-            bookPriority[i] = (35 - typeValue[i]);
-            timePriority[i] = 16 - (timeCount[i] / 12);
-            borrowPriority[i] = bookCount[i];
-            pricePriority[i] = bookPrice[i];
-            index = i;
-            weight[i] = bookPriority[i];
-            priorityData[i] = new PriorityData(bookPriority[i], timePriority[i], borrowPriority[i], pricePriority[i], index, bookData[i], weight[i]);
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            bookPriority[iterator] = (35 - typeValue[iterator]);
+            timePriority[iterator] = 16 - (timeCount[iterator] / 12);
+            borrowPriority[iterator] = bookCount[iterator];
+            pricePriority[iterator] = bookPrice[iterator];
+            index = iterator;
+            weight[iterator] = bookPriority[iterator];
+            priorityData[iterator] = new PriorityData(bookPriority[iterator],
+                    timePriority[iterator], borrowPriority[iterator], pricePriority[iterator],
+                    index, bookData[iterator], weight[iterator]);
         }
 
         y_value = bookPriority;
@@ -78,7 +81,7 @@ public class DataParsing {
         x_value[1] = borrowPriority;
         x_value[2] = pricePriority;
 
-    //   for (int i = 0; i < 3; i++) {
+    //   for (i = 0; i < 3; i++) {
 /*weight =linearRegression.linearRegressionMethods(x_value[i],y_value,numberOfBooks);
             System.out.println("Linear Regression _______ Optimization No : "+(i+1));
 sorting.sortingMethods(bookData,weight,numberOfBooks);

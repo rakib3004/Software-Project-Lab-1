@@ -18,22 +18,23 @@ WriterCollection writerCollection = new WriterCollection();
 TypeCollection typeCollection = new TypeCollection();
 TimeCollection timeCollection  = new TimeCollection();
 BorrowCollection borrowCollection = new BorrowCollection();
+    int iterator;
+
     public void sortingProcess(PriorityData[] priorityData, int numberOfBooks){
 
-
-      /*  for (int i = 0; i < numberOfBooks; i++) {
-            System.out.println(i+"->->->->->"+priorityData[i].getBookPriority()+">>>>>>"+priorityData[i].bookData.bookName);
+      /*  for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            System.out.println(iterator+"->->->->->"+priorityData[iterator].getBookPriority()+">>>>>>"+priorityData[iterator].bookData.bookName);
             System.out.println();
         }*/
         double temporary;
         int temp;
         PriorityData tempData ;
-        for(int i=0;i<numberOfBooks;i++){
+        for(iterator=0;iterator<numberOfBooks;iterator++){
             for(int j=0;j<numberOfBooks;j++){
-                if(priorityData[i].getWeight()>priorityData[j].getWeight()){
+                if(priorityData[iterator].getWeight()>priorityData[j].getWeight()){
 
-                tempData =priorityData[i];
-                priorityData[i] = priorityData[j];
+                tempData =priorityData[iterator];
+                priorityData[iterator] = priorityData[j];
                 priorityData[j] = tempData;
                 }
             }
@@ -47,26 +48,26 @@ try {
             "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
     //     optimizedResult(priorityData,numberOfBooks);
 
-    int a = Integer.parseInt(aString);
-    JOptionPane.showMessageDialog(null, "You Pressed "+a);
+    int anInt = Integer.parseInt(aString);
+    JOptionPane.showMessageDialog(null, "You Pressed "+anInt);
 
-    if (a == 1) {
+    if (anInt == 1) {
 
         typeCollection.typeCollectionMethods(priorityData, numberOfBooks);
 
-    } else if (a == 2) {
+    } else if (anInt == 2) {
 
         writerCollection.writerCollectionMethods(priorityData, numberOfBooks);
 
-    } else if (a == 3) {
+    } else if (anInt == 3) {
 
         timeCollection.timeCollectionMethods(priorityData, numberOfBooks);
 
-    } else if (a == 4) {
+    } else if (anInt == 4) {
 
         borrowCollection.borrowCollectionMethods(priorityData, numberOfBooks);
 
-    } else if (a == 5) {
+    } else if (anInt == 5) {
 
         searching.search(priorityData, numberOfBooks);
 
@@ -82,13 +83,12 @@ catch (NullPointerException nullPointerException){
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){
-        int start= 20;
         String string="";
 
        try {
-            for (int i = 0; i < numberOfBooks; i++) {
-                System.out.println(i+"_____M R :"+priorityData[i].getWeight()+">>>>>>"+priorityData[i].bookData.bookName);
-                string = string + (i + "_____M R :" + priorityData[i].getWeight() + ">>>>>>" + priorityData[i].bookData.bookName+"\n");
+            for (iterator = 0; iterator < numberOfBooks; iterator++) {
+                System.out.println(iterator+"_____M R :"+priorityData[iterator].getWeight()+">>>>>>"+priorityData[iterator].bookData.bookName);
+                string = string + (iterator + "_____M R :" + priorityData[iterator].getWeight() + ">>>>>>" + priorityData[iterator].bookData.bookName+"\n");
             }
 
         }
