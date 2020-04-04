@@ -39,10 +39,12 @@ BorrowCollection borrowCollection = new BorrowCollection();
             }
         }
 
+
+
       String  aString=  JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
               "\n2.Writer Based Statistics \n3.Issue Date Base Statitics " +
               "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
-        optimizedResult(priorityData,numberOfBooks);
+   //     optimizedResult(priorityData,numberOfBooks);
 
       int a = Integer.parseInt(aString);
       if(a==1){
@@ -62,6 +64,9 @@ BorrowCollection borrowCollection = new BorrowCollection();
       else if(a==5){
           searching.search(priorityData,numberOfBooks);
 
+      }
+      else{
+          JOptionPane.showMessageDialog(null,"Empty Command");
       }
 
 

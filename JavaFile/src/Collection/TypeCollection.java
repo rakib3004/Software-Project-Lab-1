@@ -1,12 +1,12 @@
 package Collection;
 
 import ObjectOriented.PriorityData;
+import Processed.MedianCalculation;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class TypeCollection {
+    MedianCalculation medianCalculation = new MedianCalculation();
 
     public void typeCollectionMethods(PriorityData[] priorityData, int numberOfBooks){
         Set<String> typeId = new HashSet<>();
@@ -29,6 +29,7 @@ int j=0;
 
             int count =0;
 
+            List<Double> list = new ArrayList<>();
 
 
             number =0;
@@ -36,15 +37,23 @@ int j=0;
             for(i=0;i<numberOfBooks;i++){
 
                 if(priorityData[i].bookData.bookId.substring(0,2).equals(element)){
-                    //   System.out.println(number+" . "+priorityData[i].bookData.bookName);
+                    System.out.println(count+" . "+priorityData[i].bookData.bookName);
+                    list.add(priorityData[i].weight);
+
                     number++;
                     count++;
-                    System.out.println(count+" . "+priorityData[i].bookData.bookName);
                 }
 
             }
             double summation=0;
 
+            int sizeB = list.size();
+            if(sizeB>7){
+
+                medianCalculation.medianCalculationMethods(list);
+
+
+            }
 
             for(i=0;i<numberOfBooks;i++){
 

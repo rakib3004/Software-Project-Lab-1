@@ -1,12 +1,14 @@
 package Collection;
 
 import ObjectOriented.PriorityData;
+import Processed.MedianCalculation;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
+
 
 public class BorrowCollection {
+    MedianCalculation medianCalculation = new MedianCalculation();
+
     public void borrowCollectionMethods(PriorityData[] priorityData,int numberOfBooks){
         Set<String> borrowID = new HashSet<>();
         int i;
@@ -33,13 +35,14 @@ public class BorrowCollection {
             number =1;
             writerCount++;
 
+            List<Double> list = new ArrayList<>();
 
 
             System.out.println("##########Books of \""+element+"\" #########("+writerCount+")###");
             for(i=0;i<numberOfBooks;i++){
                 if(priorityData[i].bookData.borrowCount.equals(element)){
                     System.out.println(number+" . "+priorityData[i].bookData.bookName);
-
+list.add(priorityData[i].weight);
                     number++;
                     count++;
 
@@ -48,7 +51,17 @@ public class BorrowCollection {
             }
 
 
+
             double summation=0.0;
+
+            int sizeB = list.size();
+            if(sizeB>7){
+
+                medianCalculation.medianCalculationMethods(list);
+
+
+            }
+
 
 
             for(i=0;i<numberOfBooks;i++){

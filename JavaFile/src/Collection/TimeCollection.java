@@ -1,12 +1,13 @@
 package Collection;
 
 import ObjectOriented.PriorityData;
+import Processed.MedianCalculation;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class TimeCollection {
+    MedianCalculation medianCalculation = new MedianCalculation();
+
     public void timeCollectionMethods(PriorityData[] priorityData, int numberOfBooks){
 
 
@@ -35,12 +36,16 @@ public class TimeCollection {
             number =1;
             writerCount++;
 
+            List<Double> list = new ArrayList<>();
+
 
 
             System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
             for(i=0;i<numberOfBooks;i++){
                 if(priorityData[i].bookData.bookId.substring(3,6).equals(element)){
                     System.out.println(number+" . "+priorityData[i].bookData.bookName);
+                    list.add(priorityData[i].weight);
+
                     number++;
                     count++;
 
@@ -50,6 +55,13 @@ public class TimeCollection {
 
 
             double summation=0.0;
+            int sizeB = list.size();
+            if(sizeB>7){
+
+                medianCalculation.medianCalculationMethods(list);
+
+
+            }
 
 
             for(i=0;i<numberOfBooks;i++){

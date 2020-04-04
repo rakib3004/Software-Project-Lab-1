@@ -1,12 +1,13 @@
 package Collection;
 
 import ObjectOriented.PriorityData;
+import Processed.MedianCalculation;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class WriterCollection {
+    MedianCalculation medianCalculation = new MedianCalculation();
+
     public  void writerCollectionMethods(PriorityData[] priorityData, int numberOfBooks){
 
         Set<String> writerId = new HashSet<>();
@@ -17,7 +18,10 @@ public class WriterCollection {
             writerId.add(priorityData[i].bookData.writerName);
 
         }
+/*
 
+
+ */
         System.out.println(writerId.size());
         System.out.println();
         System.out.println();
@@ -35,17 +39,31 @@ int writerCount=0;
             writerCount++;
 
 
+            List<Double> list = new ArrayList<>();
+
 
             System.out.println("##########Books of \""+element+"\" #########("+writerCount+")###");
             for(i=0;i<numberOfBooks;i++){
                 if(priorityData[i].bookData.writerName.equals(element)){
                     System.out.println(number+" . "+priorityData[i].bookData.bookName);
-                            number++;
+                    list.add(priorityData[i].weight);
+
+                    number++;
                     count++;
 
                 }
 
             }
+
+            int sizeB = list.size();
+            if(sizeB>7){
+
+                medianCalculation.medianCalculationMethods(list);
+
+
+            }
+
+
 
 
             double summation=0.0;
