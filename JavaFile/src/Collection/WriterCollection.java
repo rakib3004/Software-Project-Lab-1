@@ -11,11 +11,11 @@ public class WriterCollection {
     public  void writerCollectionMethods(PriorityData[] priorityData, int numberOfBooks){
 
         Set<String> writerId = new HashSet<>();
-        int i;
+        int iterator1;
 
-        for(i=0;i<numberOfBooks;i++){
+        for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
-            writerId.add(priorityData[i].bookData.writerName);
+            writerId.add(priorityData[iterator1].bookData.writerName);
 
         }
 /*
@@ -43,10 +43,10 @@ int writerCount=0;
 
 
             System.out.println("##########Books of \""+element+"\" #########("+writerCount+")###");
-            for(i=0;i<numberOfBooks;i++){
-                if(priorityData[i].bookData.writerName.equals(element)){
-                    System.out.println(number+" . "+priorityData[i].bookData.bookName);
-                    list.add(priorityData[i].weight);
+            for(iterator1=0;iterator1<numberOfBooks;iterator1++){
+                if(priorityData[iterator1].bookData.writerName.equals(element)){
+                    System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
+                    list.add(priorityData[iterator1].weight);
 
                     number++;
                     count++;
@@ -69,12 +69,12 @@ int writerCount=0;
             double summation=0.0;
 
 
-            for(i=0;i<numberOfBooks;i++){
+            for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
-                if(priorityData[i].bookData.writerName.equals(element)){
-                    summation = summation + priorityData[i].weight;
+                if(priorityData[iterator1].bookData.writerName.equals(element)){
+                    summation = summation + priorityData[iterator1].weight;
 
-                    //   System.out.println(number+" . "+priorityData[i].bookData.bookName);
+                    //   System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
                 }
 
             }
@@ -83,12 +83,12 @@ int writerCount=0;
 
             double standard_deviation=0.0;
 
-            for(i=0;i<numberOfBooks;i++){
+            for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
-                if(priorityData[i].bookData.writerName.equals(element)){
+                if(priorityData[iterator1].bookData.writerName.equals(element)){
 
-                    standard_deviation = standard_deviation + ((mean-priorityData[i].weight)*
-                            (mean-priorityData[i].weight));
+                    standard_deviation = standard_deviation + ((mean-priorityData[iterator1].weight)*
+                            (mean-priorityData[iterator1].weight));
 
                 }
 

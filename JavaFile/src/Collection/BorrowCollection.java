@@ -11,11 +11,11 @@ public class BorrowCollection {
 
     public void borrowCollectionMethods(PriorityData[] priorityData,int numberOfBooks){
         Set<String> borrowID = new HashSet<>();
-        int i;
+        int iterator1;
 
-        for(i=0;i<numberOfBooks;i++){
+        for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
-            borrowID.add(priorityData[i].bookData.borrowCount);
+            borrowID.add(priorityData[iterator1].bookData.borrowCount);
 
         }
 
@@ -39,10 +39,10 @@ public class BorrowCollection {
 
 
             System.out.println("##########Books of \""+element+"\" #########("+writerCount+")###");
-            for(i=0;i<numberOfBooks;i++){
-                if(priorityData[i].bookData.borrowCount.equals(element)){
-                    System.out.println(number+" . "+priorityData[i].bookData.bookName);
-list.add(priorityData[i].weight);
+            for(iterator1=0;iterator1<numberOfBooks;iterator1++){
+                if(priorityData[iterator1].bookData.borrowCount.equals(element)){
+                    System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
+list.add(priorityData[iterator1].weight);
                     number++;
                     count++;
 
@@ -64,12 +64,12 @@ list.add(priorityData[i].weight);
 
 
 
-            for(i=0;i<numberOfBooks;i++){
+            for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
-                if(priorityData[i].bookData.borrowCount.equals(element)){
-                    summation = summation + priorityData[i].weight;
+                if(priorityData[iterator1].bookData.borrowCount.equals(element)){
+                    summation = summation + priorityData[iterator1].weight;
 
-                    //   System.out.println(number+" . "+priorityData[i].bookData.bookName);
+                    //   System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
                 }
 
             }
@@ -78,12 +78,12 @@ list.add(priorityData[i].weight);
 
             double standard_deviation=0.0;
 
-            for(i=0;i<numberOfBooks;i++){
+            for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
-                if(priorityData[i].bookData.borrowCount.equals(element)){
+                if(priorityData[iterator1].bookData.borrowCount.equals(element)){
 
-                    standard_deviation = standard_deviation + ((mean-priorityData[i].weight)*
-                            (mean-priorityData[i].weight));
+                    standard_deviation = standard_deviation + ((mean-priorityData[iterator1].weight)*
+                            (mean-priorityData[iterator1].weight));
 
                 }
 
