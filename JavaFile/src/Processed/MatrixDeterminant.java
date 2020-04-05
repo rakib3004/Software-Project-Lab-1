@@ -2,11 +2,11 @@ package Processed;
 
 public class MatrixDeterminant {
 double determinant;
-int i;
+int iterator;
    public double calculateDeterminant(double [][] a){
 
-       for(i=0;i<3;i++) {
-           determinant = determinant + (a[0][i] * (a[1][(i + 1) % 3] * a[2][(i + 2) % 3] - a[1][(i + 2) % 3] * a[2][(i + 1) % 3]));
+       for(iterator =0; iterator <3; iterator++) {
+           determinant = determinant + (a[0][iterator] * (a[1][(iterator + 1) % 3] * a[2][(iterator + 2) % 3] - a[1][(iterator + 2) % 3] * a[2][(iterator + 1) % 3]));
        }
 
 

@@ -11,16 +11,16 @@ public class CalculateWeight {
     public  void  regressionResult(double betaZero, double betaOne, double
             betaTwo, double betaThree, PriorityData[] priorityData, int numberOfBooks){
 
-        int i;
+        int iterator;
 
 
-            for(i=0;i<numberOfBooks;i++){
-            optimizeValue = ((betaOne * priorityData[i].borrowPriority)+
-                    (betaTwo * priorityData[i].timePriority)+(betaThree * priorityData[i].pricePriority));
+            for(iterator=0;iterator<numberOfBooks;iterator++){
+            optimizeValue = ((betaOne * priorityData[iterator].borrowPriority)+
+                    (betaTwo * priorityData[iterator].timePriority)+(betaThree * priorityData[iterator].pricePriority));
               //  System.out.println("********* "+optimizeValue+" *********");
 
 
-            priorityData[i].setWeight(optimizeValue);
+            priorityData[iterator].setWeight(optimizeValue);
             }
 
        resultClass.sortingProcess(priorityData,numberOfBooks);

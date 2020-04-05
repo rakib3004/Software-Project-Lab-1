@@ -9,20 +9,20 @@ public class Searching {
     public void search(PriorityData[] priorityData, int numberOfBooks) {
         char ch;
         String string = " ";
-        int i, j;
+        int iterator, jterator;
         System.out.println("##########Sorting by Book Name############" );
         System.out.println();
-        for (i = 65; i <=90; i++) {
-            ch = (char) i;
+        for (iterator = 65; iterator <=90; iterator++) {
+            ch = (char) iterator;
             string = Character.toString(ch);
             System.out.println("____________________________" );
             System.out.println("_____________"+ch+"_____________" );
             System.out.println("____________________________" );
 
 
-            for (j = 0; j < numberOfBooks; j++) {
-                if (priorityData[j].bookData.bookName.charAt(0) == ch) {
-                    System.out.println("Book Name : " + priorityData[j].bookData.bookName + "\t Book price : " + priorityData[j].bookData.bookPrice);
+            for (jterator = 0; jterator < numberOfBooks; jterator++) {
+                if (priorityData[jterator].bookData.bookName.charAt(0) == ch) {
+                    System.out.println("Book Name : " + priorityData[jterator].bookData.bookName + "\t Book price : " + priorityData[jterator].bookData.bookPrice);
                     //  }
 
 
@@ -35,15 +35,15 @@ public class Searching {
         System.out.println("########################################Sorting by Writer Name#########################" );
 
 
-        for (i = 65; i <=90; i++) {
-            ch = (char) i;
+        for (iterator = 65; iterator <=90; iterator++) {
+            ch = (char) iterator;
             string = Character.toString(ch);
             System.out.println("____________________________" );
             System.out.println("_____________"+ch+"_____________" );
             System.out.println("____________________________" );
-            for (j = 0; j < numberOfBooks; j++) {
-                if (priorityData[j].bookData.writerName.charAt(0) == ch) {
-                    System.out.println("Writer Name : " + priorityData[j].bookData.writerName + "\t Book weight : " + priorityData[j].weight);
+            for (jterator = 0; jterator < numberOfBooks; jterator++) {
+                if (priorityData[jterator].bookData.writerName.charAt(0) == ch) {
+                    System.out.println("Writer Name : " + priorityData[jterator].bookData.writerName + "\t Book weight : " + priorityData[jterator].weight);
 
                 }
 

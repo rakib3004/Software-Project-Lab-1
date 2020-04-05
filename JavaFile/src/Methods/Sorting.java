@@ -5,29 +5,29 @@ import ObjectOriented.GenericAlgo;
 
 public class Sorting {
 
-    int i;
+    int iterator;
 
     public void sortingMethods(BookData[] bookData, double [] weight, int numberOfBooks){
 
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
-        for( i =0;i<numberOfBooks;i++){
+        for(iterator =0; iterator <numberOfBooks; iterator++){
 
-            bookData[i].setWeight(weight[i]);
+            bookData[iterator].setWeight(weight[iterator]);
         }
-        for(int i = 0; i<numberOfBooks; i++){
-            genericAlgo[i] = new GenericAlgo(bookData[i].getWeight(),i);
+        for(iterator = 0; iterator <numberOfBooks; iterator++){
+            genericAlgo[iterator] = new GenericAlgo(bookData[iterator].getWeight(), iterator);
         }
         double temporary;
         int temp;
-        for(int i=0;i<numberOfBooks;i++){
-            for(int j=0;j<numberOfBooks;j++){
-                if(genericAlgo[i].getWeight()>genericAlgo[j].getWeight()){
-                    temporary= genericAlgo[i].getWeight();
-                    genericAlgo[i].setWeight(genericAlgo[j].getWeight());
-                    genericAlgo[j].setWeight(temporary);
-                    temp = genericAlgo[i].getIndex();
-                    genericAlgo[i].setIndex(genericAlgo[j].getIndex());
-                    genericAlgo[j].setIndex(temp);
+        for( iterator=0;iterator<numberOfBooks;iterator++){
+            for(int jterator=0;jterator<numberOfBooks;jterator++){
+                if(genericAlgo[iterator].getWeight()>genericAlgo[jterator].getWeight()){
+                    temporary= genericAlgo[iterator].getWeight();
+                    genericAlgo[iterator].setWeight(genericAlgo[jterator].getWeight());
+                    genericAlgo[jterator].setWeight(temporary);
+                    temp = genericAlgo[iterator].getIndex();
+                    genericAlgo[iterator].setIndex(genericAlgo[jterator].getIndex());
+                    genericAlgo[jterator].setIndex(temp);
                 }
             }
         }
@@ -38,10 +38,10 @@ public class Sorting {
 
 
        try {
-           for (int i = 0; i < numberOfBooks; i++) {
-               System.out.println("Book Name :" + bookData[genericAlgo[i].getIndex()].getBookName() +
-                       "; Writer Name : " + bookData[genericAlgo[i].getIndex()].getWriterName()
-                       + "; Weight : " + genericAlgo[i].getWeight()+" ID : "+bookData[genericAlgo[i].getIndex()].getBookId());
+           for (iterator = 0; iterator < numberOfBooks; iterator++) {
+               System.out.println("Book Name :" + bookData[genericAlgo[iterator].getIndex()].getBookName() +
+                       "; Writer Name : " + bookData[genericAlgo[iterator].getIndex()].getWriterName()
+                       + "; Weight : " + genericAlgo[iterator].getWeight()+" ID : "+bookData[genericAlgo[iterator].getIndex()].getBookId());
            }
 
        }
