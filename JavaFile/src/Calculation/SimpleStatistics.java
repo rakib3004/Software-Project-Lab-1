@@ -2,6 +2,10 @@ package Calculation;
 
 import ObjectOriented.PriorityData;
 import Regression.*;
+import Regression.newVersion.CountMonthRegression;
+import Regression.newVersion.CountPriceRegression;
+import Regression.newVersion.TypeCountRegression;
+import Regression.newVersion.TypePriceRegression;
 
 public class SimpleStatistics {
     TotalRegression totalRegression = new TotalRegression();

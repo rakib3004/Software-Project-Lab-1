@@ -3,7 +3,7 @@
  import ObjectOriented.BookData;
  import ObjectOriented.GenericAlgo;
 
- public class PriceCountRegression  {
+ public class PriceCountRegression {
     int iterator;
     double countMean=0;
     double priceMean=0;
@@ -16,7 +16,7 @@
 
     int length;
     String string;
-    public  void statistics(BookData[] bookData, String[] writerName,
+    public  void priceCountRegressionMethods(BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice9, String[] bookId, int numberOfBooks){
 
 

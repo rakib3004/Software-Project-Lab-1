@@ -63,7 +63,10 @@ weightMatrix[i] = weightMatrix[i] + AHPMatrix[j][i];
             }
             weightMatrix[i] = weightMatrix[i]/4;
         }
+        for(i=0;i<4;i++){
 
+            System.out.print(weightMatrix[i] +"  ");
+        }
 
     }
 }
