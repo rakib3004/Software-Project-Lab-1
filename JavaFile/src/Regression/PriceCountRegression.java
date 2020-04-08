@@ -4,7 +4,7 @@
  import ObjectOriented.GenericAlgo;
 
  public class PriceCountRegression  {
-    int i;
+    int iterator;
     double countMean=0;
     double priceMean=0;
     double bookCount [] = new double [1050];
@@ -20,21 +20,21 @@
                             String[] borrowCount1, String[] bookPrice9, String[] bookId, int numberOfBooks){
 
 
-        for( i=0;i<numberOfBooks;i++){
-            length = borrowCount1[i].length();
-            string =borrowCount1[i].substring(1,length);
-            bookCount[i] = Integer.parseInt(string);
+        for(iterator =0; iterator <numberOfBooks; iterator++){
+            length = borrowCount1[iterator].length();
+            string =borrowCount1[iterator].substring(1,length);
+            bookCount[iterator] = Integer.parseInt(string);
         }
-    for( i=0;i<numberOfBooks;i++){
-        length = bookPrice9[i].length();
-        string =bookPrice9[i].substring(1,length);
+    for(iterator =0; iterator <numberOfBooks; iterator++){
+        length = bookPrice9[iterator].length();
+        string =bookPrice9[iterator].substring(1,length);
         string=string.replaceAll("[\\t\\n\\r]+","");
-        bookPrice[i] = Integer.parseInt(string);
+        bookPrice[iterator] = Integer.parseInt(string);
     }
 
-    for( i=0;i<numberOfBooks;i++){
-        priceMean = priceMean +bookPrice[i];
-        countMean = countMean+bookCount[i];
+    for(iterator =0; iterator <numberOfBooks; iterator++){
+        priceMean = priceMean +bookPrice[iterator];
+        countMean = countMean+bookCount[iterator];
     }
 
     priceMean = priceMean/numberOfBooks;
@@ -42,41 +42,41 @@
 
     double assumpMean1  = 0;
     double assumpMean2  = 0;
-    for(i=0;i<numberOfBooks;i++){
-        bookPrice[i] =  bookPrice[i]  - priceMean;
-        bookCount[i]=bookCount[i]-countMean;
-        assumpMean1 = assumpMean1 +( bookPrice[i]*bookCount[i]);
-        assumpMean2 = assumpMean2 + (bookPrice[i]*bookPrice[i]);
+    for(iterator =0; iterator <numberOfBooks; iterator++){
+        bookPrice[iterator] =  bookPrice[iterator]  - priceMean;
+        bookCount[iterator]=bookCount[iterator]-countMean;
+        assumpMean1 = assumpMean1 +( bookPrice[iterator]*bookCount[iterator]);
+        assumpMean2 = assumpMean2 + (bookPrice[iterator]*bookPrice[iterator]);
 
     }
 
     double metaValue = assumpMean1/assumpMean2;
     double betaValue = countMean - (metaValue*priceMean);
-    for(i=0;i<numberOfBooks;i++) {
+    for(iterator =0; iterator <numberOfBooks; iterator++) {
 
-        bookCount1[i] = betaValue + metaValue * bookPrice[i];
+        bookCount1[iterator] = betaValue + metaValue * bookPrice[iterator];
         //     System.out.println(bookPrice0[i]+"\t"+bookPrice1[i]);
     }
-    for( i =0;i<numberOfBooks;i++){
+    for(iterator =0; iterator <numberOfBooks; iterator++){
 
-        bookData[i].setWeight(bookCount1[i]);
+        bookData[iterator].setWeight(bookCount1[iterator]);
     }
   //  SortingPriceCount sortingPriceCount = new SortingPriceCount();
    // sortingPriceCount.algorithm(bookData,numberOfBooks);
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
-        for( i = 0; i<numberOfBooks; i++){
-            genericAlgo[i] = new GenericAlgo(bookData[i].getWeight(),i);
+        for(iterator = 0; iterator <numberOfBooks; iterator++){
+            genericAlgo[iterator] = new GenericAlgo(bookData[iterator].getWeight(), iterator);
         }
         double temporary;
         int temp;
-        for( i=0;i<numberOfBooks;i++){
+        for(iterator =0; iterator <numberOfBooks; iterator++){
             for(int j=0;j<numberOfBooks;j++){
-                if(genericAlgo[i].getWeight()>genericAlgo[j].getWeight()){
-                    temporary= genericAlgo[i].getWeight();
-                    genericAlgo[i].setWeight(genericAlgo[j].getWeight());
+                if(genericAlgo[iterator].getWeight()>genericAlgo[j].getWeight()){
+                    temporary= genericAlgo[iterator].getWeight();
+                    genericAlgo[iterator].setWeight(genericAlgo[j].getWeight());
                     genericAlgo[j].setWeight(temporary);
-                    temp = genericAlgo[i].getIndex();
-                    genericAlgo[i].setIndex(genericAlgo[j].getIndex());
+                    temp = genericAlgo[iterator].getIndex();
+                    genericAlgo[iterator].setIndex(genericAlgo[j].getIndex());
                     genericAlgo[j].setIndex(temp);
                     bookData[j].setRank(temp,3);
 
@@ -89,10 +89,10 @@
         System.out.println( );
         System.out.println("Optimized View 4 :" );
 
-        for( i=190;i<numberOfBooks;i++){
-            System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
-                    "; Writer Name : "+bookData[genericAlgo[i].getIndex()].getWriterName()
-                    + "; Weight : "+genericAlgo[i].getWeight());
+        for(iterator =190; iterator <numberOfBooks; iterator++){
+            System.out.println("Book Name :"+bookData[genericAlgo[iterator].getIndex()].getBookName()+
+                    "; Writer Name : "+bookData[genericAlgo[iterator].getIndex()].getWriterName()
+                    + "; Weight : "+genericAlgo[iterator].getWeight());
         }
 
 }

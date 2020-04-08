@@ -12,6 +12,7 @@ d2 = a2X + b2Y + c2Z
 d3 = a3X + b3Y + c3Z
  */
 double a1,a2,a3;
+
 double b1,b2,b3;
 double c1,c2,c3;
 double d1,d2,d3;
