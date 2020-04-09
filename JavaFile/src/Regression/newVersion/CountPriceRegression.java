@@ -13,11 +13,10 @@ public class CountPriceRegression {
     double bookCount [] = new double [1050];
     double bookPrice [] =new double[1050];
     double bookPrice1 [] =new double[1050];
-    double bookPrice0 [] =new double[1050];
 
     int length;
     String string;
-    public  void countPriceRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
+    public  double countPriceRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
 
@@ -54,6 +53,7 @@ public class CountPriceRegression {
             //     System.out.println(bookPrice0[i]+"\t"+bookPrice1[i]);
         }
 
+        return  metaValue;
 
     }
 

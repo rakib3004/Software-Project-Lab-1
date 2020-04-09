@@ -14,9 +14,8 @@ public class TypePriceRegression {
     double typeValue0 [] =new double[1050];
     double assumpMean1  = 0;
     double assumpMean2  = 0;
-    int length;
-    String string;
-    public  void typePriceRegressionMethods(PriorityData[] priorityData, int numberOfBooks){
+
+    public  double typePriceRegressionMethods(PriorityData[] priorityData, int numberOfBooks){
 
 
 
@@ -54,6 +53,7 @@ public class TypePriceRegression {
             //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
 
+        return  metaValue;
 
     }
 

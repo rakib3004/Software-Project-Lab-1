@@ -13,7 +13,7 @@ public class TypeMonthRegression {
 
     double timeValue [] =new double[1050];
 
-    public  void typeMonthRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
+    public  double typeMonthRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
 
@@ -52,6 +52,7 @@ public class TypeMonthRegression {
             typeValue0[iterator] = betaValue + metaValue * timeValue[iterator];
         }
 
+        return  metaValue;
 
     }
 

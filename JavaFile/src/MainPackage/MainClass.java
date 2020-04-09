@@ -12,10 +12,8 @@ public class MainClass extends JFrame {
 
     public static void main(String[] args)throws IOException {
         Processing processing = new Processing();
-        AHPcalculation ahPcalculation = new AHPcalculation();
-      // processing.fileReader();
+        processing.fileReader();
 
-        ahPcalculation.AHPcalculationMethods();
     }
 
 }

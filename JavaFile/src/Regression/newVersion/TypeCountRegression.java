@@ -18,7 +18,7 @@ public class TypeCountRegression {
     String string;
     double assumpMean1  = 0;
     double assumpMean2  = 0;
-    public  void typeCountRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
+    public  double typeCountRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
 
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -55,6 +55,7 @@ assumpMean2 = assumpMean2 + (bookCount[iterator]*bookCount[iterator]);
             typeValue1[iterator] = betaValue + metaValue * bookCount[iterator];
        //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
+        return  metaValue;
 
 
     }

@@ -1,7 +1,5 @@
 package Regression.newVersion;
 
-import ObjectOriented.BookData;
-import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 
 public class CountMonthRegression {
@@ -9,23 +7,12 @@ public class CountMonthRegression {
     double countMean = 0;
     double timeMean = 0;
     double bookCount[] = new double[1050];
-    double bookCount0[] = new double[1050];
-    double bookCount1[] = new double[1050];
-
-    int timeCount[] = new int[1050];
 
     double timeValue[] = new double[1050];
     double timeValue1[] = new double[1050];
-    public void countMonthRegressionMethods(PriorityData [] priorityData, int numberOfBooks) {
+    public double countMonthRegressionMethods(PriorityData [] priorityData, int numberOfBooks) {
 
 
-
-
-         int length;
-        String string;
-        String string1, string2;
-
-        int newYear, oldYear, integer1, integer2;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             timeValue[iterator] = priorityData[iterator].timePriority;
@@ -62,7 +49,7 @@ public class CountMonthRegression {
             timeValue1[iterator] = betaValue + metaValue * bookCount[iterator];
             //     System.out.println(typeValue0[i]+"\t"+timeValue1[i]);
         }
-
+return  metaValue;
 
     }
 }

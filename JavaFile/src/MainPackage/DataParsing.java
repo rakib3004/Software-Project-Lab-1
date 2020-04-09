@@ -1,5 +1,6 @@
 package MainPackage;
 
+import AHPalgorithm.AHPcalculation;
 import Calculation.DoublyLinearRegression;
 import Calculation.LinearRegression;
 import Calculation.MultipleLinearRegression;
@@ -87,8 +88,10 @@ public class DataParsing {
 sorting.sortingMethods(bookData,weight,numberOfBooks);
         }*/
 
+        AHPcalculation ahPcalculation = new AHPcalculation();
 
-            multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+           // multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
             /* System.out.println("Doubly  Linear Regression _______  ");*/
 
