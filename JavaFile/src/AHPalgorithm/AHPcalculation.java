@@ -60,8 +60,6 @@ public class AHPcalculation {
             System.out.println();
 
         }
-
-
         double [] summationMatrix = new double[4];
 
         for(i=0;i<4;i++){

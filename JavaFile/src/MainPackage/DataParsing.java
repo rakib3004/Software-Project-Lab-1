@@ -91,7 +91,7 @@ sorting.sortingMethods(bookData,weight,numberOfBooks);
         AHPcalculation ahPcalculation = new AHPcalculation();
 
         ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
-           // multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+           multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
             /* System.out.println("Doubly  Linear Regression _______  ");*/
 
