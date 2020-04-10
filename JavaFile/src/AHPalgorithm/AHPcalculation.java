@@ -1,7 +1,9 @@
 package AHPalgorithm;
 
+import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import Regression.newVersion.*;
+
 
 
 public class AHPcalculation {
@@ -11,6 +13,13 @@ public class AHPcalculation {
     CountMonthRegression countMonthRegression = new CountMonthRegression();
     CountPriceRegression countPriceRegression = new CountPriceRegression();
     MonthPriceRegression  monthPriceRegression = new MonthPriceRegression();
+
+    AHPcriteriaWeight ahPcriteriaWeight;
+    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+    TypeCriteriaAHP typeCriteriaAHP = new TypeCriteriaAHP();
+    CountCriteriaAHP countCriteriaAHP = new CountCriteriaAHP();
+    MonthCriteriaAHP monthCriteriaAHP = new MonthCriteriaAHP();
+    PriceCriteriaAHP priceCriteriaAHP = new PriceCriteriaAHP();
 
     public void AHPcalculationMethods(PriorityData[] priorityData, int numberOfBooks){
         double [][] AHPMatrix = new double [4] [4];
@@ -35,20 +44,12 @@ public class AHPcalculation {
         for(i=0;i<4;i++){
             for(j=i+1;j<4;j++){
 
-              /*  AHPMatrix[i][j]=(i+j);
-                AHPMatrix[j][i]=1.0/(i+j);
-                AHPMatrix[j][i]=   Math.round(AHPMatrix[j][i] * 100.0) / 100.0;*/
-
-
                 AHPMatrix[j][i]=Math.pow(AHPMatrix[i][j],-1);
-                AHPMatrix[j][i]=   Math.round(AHPMatrix[j][i] * 100.0) / 100.0;
             }
         }
         for(i=0;i<4;i++){
 
-
                 AHPMatrix[i][i]=(1);
-
 
         }
 
@@ -89,6 +90,16 @@ weightMatrix[i] = weightMatrix[i] + AHPMatrix[j][i];
 
             System.out.print(weightMatrix[i] +"  ");
         }
+
+
+        typeCriteriaAHP.typeCriteriaAHPMethods(weightMatrix[0],priorityData,numberOfBooks);
+        countCriteriaAHP.countCriteriaAHPMethods(weightMatrix[1],priorityData,numberOfBooks);
+        monthCriteriaAHP.monthCriteriaAHPMethods(weightMatrix[2],priorityData,numberOfBooks);
+        priceCriteriaAHP.priceCriteriaAHPMethods(weightMatrix[3],priorityData,numberOfBooks);
+
+
+ahPprocessImplementation.ahpProcessImplementationMethods(priorityData,numberOfBooks);
+
 
     }
 }

@@ -25,10 +25,10 @@ import java.io.IOException;
 public class FxMainClass extends Application {
     PriorityData [] priorityData;
   int numberOfBooks;
-    public FxMainClass(PriorityData[] priorityData, int numberOfBooks){
+   /* public FxMainClass(PriorityData[] priorityData, int numberOfBooks){
         this.priorityData = priorityData;
         this.numberOfBooks = numberOfBooks;
-    }
+    }*/
     int x = 0;
     public static void main(String[] args) throws IOException
     {
@@ -37,7 +37,7 @@ public class FxMainClass extends Application {
         Application.launch(args);
     }
     @Override
-    public void start (Stage stage) throws IOException {
+    public void start (Stage stage)  {
 
         Label label = new Label("\t\"Recommendation Tool for Library Management\"");
   
@@ -153,7 +153,7 @@ label2.setFont(font1);
 ;
 
 
-        TableView tableView = new TableView();
+    /*    TableView tableView = new TableView();
 
         TableColumn<String, FxDatabase> column0 = new TableColumn<>("Serial No");
         column0.setCellValueFactory(new PropertyValueFactory<>("SerialNo"));
@@ -193,10 +193,8 @@ index = Integer.toString(i);
     tableView.getItems().add(new FxDatabase( index,priorityData[i].bookData.bookName,
             priorityData[i].bookData.writerName,priorityData[i].bookData.bookId,
             priorityData[i].bookData.borrowCount,priorityData[i].bookData.bookPrice));
-
-}
-
-
+            }
+     */
                /* x++;
                 bookName[x] = "\0";
                 writerName[x] = "\0";
@@ -224,15 +222,13 @@ index = Integer.toString(i);
                 bookPrice[x]=bookPrice[x]+a[i];
             }
         }
-        fr.close();*/
-
-
-
+        fr.close();
+*/
 
 
 
         VBox vBox3 = new VBox();
-       vBox3.getChildren().addAll(vBox2,hBox1,tableView);
+       vBox3.getChildren().addAll(vBox2,hBox1);
 
         vBox3.setMaxSize(850, 650);
         vBox3.setSpacing(5);

@@ -1,5 +1,7 @@
 package ObjectOriented;
 
+import JavFX.FxDatabase;
+
 public class PriorityData {
    public double bookPriority ;
    public double bookPriorityOne ;
@@ -41,6 +43,7 @@ public class PriorityData {
         this.index = index;
         this.bookData = bookData;
     }
+
     public PriorityData(double bookPriorityOne){
         this.bookPriorityOne =bookPriorityOne;
     }

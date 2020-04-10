@@ -3,6 +3,8 @@ package MainPackage;
 import Collection.BorrowCollection;
 import Collection.TimeCollection;
 import Collection.TypeCollection;
+import JavFX.FxDatabase;
+import JavFX.FxMainClass;
 import Methods.Searching;
 import ObjectOriented.PriorityData;
 import Collection.WriterCollection;
@@ -80,6 +82,8 @@ catch (NullPointerException nullPointerException){
     System.out.println("");
 
 }
+
+     //   FxMainClass fxMainClass = new FxMainClass(priorityData,numberOfBooks);
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){

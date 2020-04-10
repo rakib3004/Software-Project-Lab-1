@@ -4,7 +4,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
 public class MonthCriteriaAHP {
-    public void monthCriteriaAHPMethods(PriorityData[] priorityData, int numberOfBooks) {
+    public void monthCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] monthCriterAHPMatrix = new double[5][5];
 
 
@@ -22,13 +22,9 @@ priority = priority*(i+j);
         for (i = 0; i < 5; i++) {
             for (j = i + 1; j < 5; j++) {
 
-              /*  AHPMatrix[i][j]=(i+j);
-                AHPMatrix[j][i]=1.0/(i+j);
-                AHPMatrix[j][i]=   Math.round(AHPMatrix[j][i] * 100.0) / 100.0;*/
-
 
                 monthCriterAHPMatrix[j][i] = Math.pow(monthCriterAHPMatrix[i][j], -1);
-                monthCriterAHPMatrix[j][i] = Math.round(monthCriterAHPMatrix[j][i] * 100.0) / 100.0;
+
             }
         }
         for (i = 0; i < 5; i++) {
@@ -72,11 +68,24 @@ priority = priority*(i+j);
             }
             monthWeightMatrix[i] = monthWeightMatrix[i] / 5;
         }
+
+        for (i = 0; i < 5; i++) {
+
+            monthWeightMatrix[i] =  monthWeightMatrix[i]*criteria;;
+        }
+
         for (i = 0; i < 5; i++) {
 
             System.out.print(monthWeightMatrix[i] + "  ");
         }
         AHPcriteriaWeight ahPcriteriaWeight = new AHPcriteriaWeight(monthWeightMatrix[0],monthWeightMatrix[1],
                 monthWeightMatrix[2],monthWeightMatrix[3],monthWeightMatrix[4]);
+
+
+        System.out.println(ahPcriteriaWeight.latestBook+"---------->  ahPcriteriaWeight.latestBook");
+        System.out.println(ahPcriteriaWeight.newlyBook+"---------->  ahPcriteriaWeight.newlyBook");
+        System.out.println(ahPcriteriaWeight.recentlyOldBook+"---------->  ahPcriteriaWeight.recentlyOldBook");
+        System.out.println(ahPcriteriaWeight.oldBook+"---------->  ahPcriteriaWeight.oldBook");
+        System.out.println(ahPcriteriaWeight.oldestBook+"---------->  ahPcriteriaWeight.oldestBook");
     }
 }

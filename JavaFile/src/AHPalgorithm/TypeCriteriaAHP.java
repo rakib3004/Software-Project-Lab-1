@@ -4,7 +4,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
 public class TypeCriteriaAHP {
-    public void typeCriteriaAHPMethods(PriorityData[] priorityData, int numberOfBooks) {
+    public void typeCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] typeCriteriaAHPMatrix = new double[6][6];
 
 
@@ -22,13 +22,9 @@ int priority=1;
         for (i = 0; i < 6; i++) {
             for (j = i + 1; j < 6; j++) {
 
-              /*  AHPMatrix[i][j]=(i+j);
-                AHPMatrix[j][i]=1.0/(i+j);
-                AHPMatrix[j][i]=   Math.round(AHPMatrix[j][i] * 100.0) / 100.0;*/
 
 
                 typeCriteriaAHPMatrix[j][i] = Math.pow(typeCriteriaAHPMatrix[i][j], -1);
-                typeCriteriaAHPMatrix[j][i] = Math.round(typeCriteriaAHPMatrix[j][i] * 100.0) / 100.0;
             }
         }
         for (i = 0; i < 6; i++) {
@@ -74,10 +70,24 @@ int priority=1;
         }
         for (i = 0; i < 6; i++) {
 
+   typeWeightMatrix[i]  =    typeWeightMatrix[i]*criteria;
+        }
+
+        for (i = 0; i < 6; i++) {
+
             System.out.print(typeWeightMatrix[i] + "  ");
         }
 
         AHPcriteriaWeight ahPcriteriaWeight = new AHPcriteriaWeight(typeWeightMatrix[0],
                 typeWeightMatrix[1],typeWeightMatrix[2],typeWeightMatrix[3],typeWeightMatrix[4]);
+
+
+
+        System.out.println(ahPcriteriaWeight.uponnashType+"---------->  ahPcriteriaWeight.uponnashType");
+        System.out.println(ahPcriteriaWeight.kobitaType+"---------->  ahPcriteriaWeight.kobitaType");
+        System.out.println(ahPcriteriaWeight.kisorUponnashType+"---------->  ahPcriteriaWeight.kisorUponnashType");
+        System.out.println(ahPcriteriaWeight.scienceFictionType+"---------->  ahPcriteriaWeight.scienceFictionType");
+        System.out.println(ahPcriteriaWeight.religionType+"---------->  ahPcriteriaWeight.religionType");
+        System.out.println(ahPcriteriaWeight.othersType+"---------->  ahPcriteriaWeight.othersType");
     }
 }

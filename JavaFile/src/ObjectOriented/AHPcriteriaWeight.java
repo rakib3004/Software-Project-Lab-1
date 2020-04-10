@@ -5,6 +5,11 @@ public class AHPcriteriaWeight {
     public double highPrice;
     public double lowPrice;
     public double highlyDemand;
+    public double highMediumDemand;
+    public double mediumPrice;
+    public double lowMediumDemand;
+    public double lowlyDemand;
+
     public double latestBook;
     public double newlyBook;
     public double recentlyOldBook;
@@ -14,8 +19,15 @@ public class AHPcriteriaWeight {
     public double kobitaType;
     public double scienceFictionType;
     public double religionType;
-    public double KisorUponnashType;
+    public double kisorUponnashType;
     public double othersType;
+
+
+
+
+    public AHPcriteriaWeight() {
+
+    }
 
 
     public AHPcriteriaWeight(double highPrice, double lowPrice, double mediumPrice) {
@@ -31,7 +43,7 @@ public class AHPcriteriaWeight {
         this.kobitaType = kobitaType;
         this.scienceFictionType = scienceFictionType;
         this.religionType = religionType;
-        KisorUponnashType = kisorUponnashType;
+        this.kisorUponnashType = kisorUponnashType;
         this.othersType = othersType;
     }
 
@@ -63,7 +75,7 @@ public class AHPcriteriaWeight {
         this.kobitaType = kobitaType;
         this.scienceFictionType = scienceFictionType;
         this.religionType = religionType;
-        KisorUponnashType = kisorUponnashType;
+        this.kisorUponnashType = kisorUponnashType;
         this.othersType = othersType;
     }
 
@@ -75,10 +87,7 @@ public class AHPcriteriaWeight {
         this.oldestBook = oldestBook;
     }
 
-    public double mediumPrice;
-    public double lowlyDemand;
-    public double lowMediumDemand;
-    public double highMediumDemand;
+
 
     public double getHighPrice() {
         return highPrice;
@@ -209,11 +218,11 @@ public class AHPcriteriaWeight {
     }
 
     public double getKisorUponnashType() {
-        return KisorUponnashType;
+        return kisorUponnashType;
     }
 
     public void setKisorUponnashType(double kisorUponnashType) {
-        KisorUponnashType = kisorUponnashType;
+        this.kisorUponnashType = kisorUponnashType;
     }
 
     public double getOthersType() {

@@ -5,7 +5,7 @@ import ObjectOriented.PriorityData;
 
 public class PriceCriteriaAHP {
 
-    public void priceCriteriaAHPMethods(PriorityData[] priorityData, int numberOfBooks) {
+    public void priceCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] priceCriteriaAHPMatrix = new double[3][3];
 
 
@@ -26,7 +26,7 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
             for (j = i + 1; j < 3; j++) {
 
                 priceCriteriaAHPMatrix[j][i] = Math.pow(priceCriteriaAHPMatrix[i][j], -1);
-            //    priceCriteriaAHPMatrix[j][i] = Math.round(priceCriteriaAHPMatrix[j][i] * 100.0) / 100.0;
+
             }
         }
         for (i = 0; i < 3; i++) {
@@ -67,6 +67,12 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
             }
             priceWeightMatrix[i] = priceWeightMatrix[i] / 3;
         }
+
+        for (i = 0; i < 3; i++) {
+
+        priceWeightMatrix[i]  =  priceWeightMatrix[i]*criteria;
+        }
+
         for (i = 0; i < 3; i++) {
 
             System.out.print(priceWeightMatrix[i] + "  ");
@@ -74,5 +80,9 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
 
         AHPcriteriaWeight ahPcriteriaWeight = new AHPcriteriaWeight(priceWeightMatrix[0],
                 priceWeightMatrix[1],priceWeightMatrix[2]);
+
+        System.out.println(ahPcriteriaWeight.highPrice+"---------->  ahPcriteriaWeight.highPrice");
+        System.out.println(ahPcriteriaWeight.mediumPrice+"---------->  ahPcriteriaWeight.mediumPrice");
+        System.out.println(ahPcriteriaWeight.lowPrice+"---------->  ahPcriteriaWeight.lowPrice");
     }
 }
