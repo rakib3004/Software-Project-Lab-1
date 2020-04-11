@@ -1,5 +1,6 @@
 package JavFX;
 
+import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;

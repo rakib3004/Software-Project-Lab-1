@@ -27,9 +27,7 @@ public class DataParsing {
     int newYear, oldYear;
     int  index;
     int iterator;
-    Sorting sorting = new Sorting();
-    LinearRegression linearRegression = new LinearRegression();
-    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
     public static PriorityData priorityData[] = new PriorityData[1050];
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 

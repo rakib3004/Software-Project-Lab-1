@@ -22,6 +22,9 @@ TypeCountRegression typeCountRegression = new TypeCountRegression();
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 typeCountRegression.typeCountRegressionMethods(priorityData,numberOfBooks);
+
 System.exit(0);
+
+
     }
 }
