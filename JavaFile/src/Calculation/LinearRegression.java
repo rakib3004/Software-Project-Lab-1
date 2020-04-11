@@ -1,5 +1,7 @@
 package Calculation;
 
+import ObjectOriented.PriorityData;
+
 public class LinearRegression {
 
     int iterator;
@@ -41,4 +43,6 @@ public  double [] linearRegressionMethods(double x_value[], double y_value[], in
 
 return reg_y_value;
 }
+
+
 }

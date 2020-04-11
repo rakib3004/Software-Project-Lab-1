@@ -33,7 +33,7 @@ public class DataParsing {
     public static PriorityData priorityData[] = new PriorityData[1050];
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
-    public void dataParsingMethods(BookData[] bookData, String[] writerName,
+    public PriorityData [] dataParsingMethods(BookData[] bookData, String[] writerName,
                                    String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
 
@@ -88,14 +88,15 @@ public class DataParsing {
 sorting.sortingMethods(bookData,weight,numberOfBooks);
         }*/
 
-        AHPcalculation ahPcalculation = new AHPcalculation();
+        //AHPcalculation ahPcalculation = new AHPcalculation();
 
-        ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+        //ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
          //  multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
             /* System.out.println("Doubly  Linear Regression _______  ");*/
 
             //doublyLinearRegression.doublyLinearRegressionMethods(priorityData);
+        return  priorityData;
         }
 
 
