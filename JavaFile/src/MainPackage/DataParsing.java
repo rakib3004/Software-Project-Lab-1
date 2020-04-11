@@ -42,7 +42,7 @@ public class DataParsing {
         }
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            newYear = 3 + (20) * 12;
+            newYear = 4 + (20) * 12;
             string1 = bookId[iterator].substring(3, 5);
             integer1 = Integer.parseInt(string1);
             string2 = bookId[iterator].substring(5, 7);

@@ -80,26 +80,21 @@ public class AHPprocessImplementation {
 
 
                 for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
-                    if (priorityData[iterator1].borrowPriority <= 10) {
-                        System.out.println(iterator1 + ":::: 10 er niche");
-                        priorityData[iterator1].borrowPriority = ahPcriteriaWeight.lowlyDemand;
-                    } else if (priorityData[iterator1].borrowPriority <= 20) {
-                        System.out.println(iterator1 + ":::: 20 er niche");
-
-                        priorityData[iterator1].borrowPriority = ahPcriteriaWeight.lowMediumDemand;
-                    } else if (priorityData[iterator1].borrowPriority <= 30) {
-                        System.out.println(iterator1 + ":::: 30 er niche");
-
-                        priorityData[iterator1].borrowPriority = ahPcriteriaWeight.highMediumDemand;
-                    } else if (priorityData[iterator1].borrowPriority <= 40) {
-                        System.out.println(iterator1 + ":::: 40 er niche");
-
-                        priorityData[iterator1].borrowPriority = ahPcriteriaWeight.highlyDemand;
+                    if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 180) {
+                        System.out.println(iterator1 + ":::: 180 er niche dam");
+                        priorityData[iterator1].pricePriority = ahPcriteriaWeight.lowPrice;
                     }
+                    else  if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 250) {
+                        System.out.println(iterator1 + ":::: 250 er niche dam");
+                        priorityData[iterator1].pricePriority = ahPcriteriaWeight.mediumPrice;
+                    }
+
+                    else   {
+                        System.out.println(iterator1 + ":::: Besi dam");
+                        priorityData[iterator1].pricePriority = ahPcriteriaWeight.highPrice;
+                    }
+
                 }
-
-
-
 
 
 
