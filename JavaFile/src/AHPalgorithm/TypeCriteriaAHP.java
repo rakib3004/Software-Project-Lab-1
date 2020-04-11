@@ -4,7 +4,8 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
 public class TypeCriteriaAHP {
-    public void typeCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
+    AHPcriteriaWeight ahPcriteriaWeight;
+    public AHPcriteriaWeight typeCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] typeCriteriaAHPMatrix = new double[6][6];
 
 
@@ -15,7 +16,6 @@ int priority=1;
                 typeCriteriaAHPMatrix[i][j] = priority;
 
                 priority++;
-                System.out.println(typeCriteriaAHPMatrix[i][j]);
             }
         }
 
@@ -35,14 +35,8 @@ int priority=1;
 
         }
 
-        for (i = 0; i < 6; i++) {
-            for (j = 0; j < 6; j++) {
 
-                System.out.print(typeCriteriaAHPMatrix[i][j] + "  ");
-            }
-            System.out.println();
 
-        }
         double[] summationMatrix = new double[6];
 
         for (i = 0; i < 6; i++) {
@@ -73,13 +67,10 @@ int priority=1;
    typeWeightMatrix[i]  =    typeWeightMatrix[i]*criteria;
         }
 
-        for (i = 0; i < 6; i++) {
 
-            System.out.print(typeWeightMatrix[i] + "  ");
-        }
 
-        AHPcriteriaWeight ahPcriteriaWeight = new AHPcriteriaWeight(typeWeightMatrix[0],
-                typeWeightMatrix[1],typeWeightMatrix[2],typeWeightMatrix[3],typeWeightMatrix[4]);
+         ahPcriteriaWeight = new AHPcriteriaWeight(typeWeightMatrix[0],
+                typeWeightMatrix[1],typeWeightMatrix[2],typeWeightMatrix[3],typeWeightMatrix[4],typeWeightMatrix[5]);
 
 
 
@@ -89,5 +80,7 @@ int priority=1;
         System.out.println(ahPcriteriaWeight.scienceFictionType+"---------->  ahPcriteriaWeight.scienceFictionType");
         System.out.println(ahPcriteriaWeight.religionType+"---------->  ahPcriteriaWeight.religionType");
         System.out.println(ahPcriteriaWeight.othersType+"---------->  ahPcriteriaWeight.othersType");
+        return ahPcriteriaWeight;
+
     }
 }

@@ -4,7 +4,9 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
 public class CountCriteriaAHP {
-    public void countCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
+    AHPcriteriaWeight ahPcriteriaWeight;
+
+    public AHPcriteriaWeight countCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] countCriteriaAHPMatrix = new double[4][4];
 
 
@@ -14,7 +16,7 @@ int priorityCount=2;
             for (j = i + 1; j < 4; j++) {
                 countCriteriaAHPMatrix[i][j] = priorityCount;
                 priorityCount = priorityCount * 2;
-                System.out.println(countCriteriaAHPMatrix[i][j]);
+              //  System.out.println(countCriteriaAHPMatrix[i][j]);
             }
         }
 
@@ -32,14 +34,14 @@ int priorityCount=2;
 
         }
 
-        for (i = 0; i < 4; i++) {
-            for (j = 0; j < 4; j++) {
-
-                System.out.print(countCriteriaAHPMatrix[i][j] + "  ");
-            }
-            System.out.println();
-
-        }
+//        for (i = 0; i < 4; i++) {
+//            for (j = 0; j < 4; j++) {
+//
+//                System.out.print(countCriteriaAHPMatrix[i][j] + "  ");
+//            }
+//            System.out.println();
+//
+//        }
         double[] summationMatrix = new double[4];
 
         for (i = 0; i < 4; i++) {
@@ -70,18 +72,13 @@ int priorityCount=2;
           countWeightMatrix[i] = countWeightMatrix[i]*criteria;
         }
 
-        for (i = 0; i < 4; i++) {
 
-            System.out.print(countWeightMatrix[i] + "  ");
-        }
-        AHPcriteriaWeight ahPcriteriaWeight = new AHPcriteriaWeight(countWeightMatrix[0],countWeightMatrix[1],countWeightMatrix[2],countWeightMatrix[3]);
-
-
+         ahPcriteriaWeight = new AHPcriteriaWeight(countWeightMatrix[0],countWeightMatrix[1],countWeightMatrix[2],countWeightMatrix[3]);
 
         System.out.println(ahPcriteriaWeight.highlyDemand+"---------->  ahPcriteriaWeight.highlyDemand");
         System.out.println(ahPcriteriaWeight.highMediumDemand+"---------->  ahPcriteriaWeight.highMediumDemand");
         System.out.println(ahPcriteriaWeight.lowMediumDemand+"---------->  ahPcriteriaWeight.lowMediumDemand");
         System.out.println(ahPcriteriaWeight.lowlyDemand+"---------->  ahPcriteriaWeight.lowlyDemand");
-
+                return ahPcriteriaWeight;
     }
 }

@@ -4,8 +4,9 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
 public class PriceCriteriaAHP {
+    AHPcriteriaWeight ahPcriteriaWeight;
 
-    public void priceCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
+    public AHPcriteriaWeight priceCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] priceCriteriaAHPMatrix = new double[3][3];
 
 
@@ -18,7 +19,6 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
         for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
                 priceCriteriaAHPMatrix[i][j] = Math.abs(priceCriteriaAHPMatrix[i][j]);
-                System.out.println(priceCriteriaAHPMatrix[i][j]);
             }
         }
 
@@ -34,14 +34,7 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
             priceCriteriaAHPMatrix[i][i] = (1);
         }
 
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {
 
-                System.out.print(priceCriteriaAHPMatrix[i][j] + "  ");
-            }
-            System.out.println();
-
-        }
         double[] summationMatrix = new double[3];
 
         for (i = 0; i < 3; i++) {
@@ -73,16 +66,12 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
         priceWeightMatrix[i]  =  priceWeightMatrix[i]*criteria;
         }
 
-        for (i = 0; i < 3; i++) {
-
-            System.out.print(priceWeightMatrix[i] + "  ");
-        }
-
-        AHPcriteriaWeight ahPcriteriaWeight = new AHPcriteriaWeight(priceWeightMatrix[0],
+         ahPcriteriaWeight = new AHPcriteriaWeight(priceWeightMatrix[0],
                 priceWeightMatrix[1],priceWeightMatrix[2]);
 
         System.out.println(ahPcriteriaWeight.highPrice+"---------->  ahPcriteriaWeight.highPrice");
         System.out.println(ahPcriteriaWeight.mediumPrice+"---------->  ahPcriteriaWeight.mediumPrice");
         System.out.println(ahPcriteriaWeight.lowPrice+"---------->  ahPcriteriaWeight.lowPrice");
+       return ahPcriteriaWeight;
     }
 }

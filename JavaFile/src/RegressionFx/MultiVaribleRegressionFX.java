@@ -1,6 +1,7 @@
 package RegressionFx;
 
 import JavFX.FxMainClass;
+import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -109,9 +110,10 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            FxMainClass fxMainClass = new FxMainClass();
+            StatisticsFX statisticsFX = new StatisticsFX();
+
             try {
-                fxMainClass.start(primaryStage);
+                statisticsFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -155,7 +157,8 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         Image image = new Image("libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,twoVariableRegression,fourVariableRegression,threeVariableRegression,exit,back);
+        group.getChildren().addAll(canvas,twoVariableRegression,fourVariableRegression,
+                threeVariableRegression,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

@@ -1,6 +1,7 @@
 package RankingAlgorithmFx;
 
 import JavFX.FxMainClass;
+import JavFX.MenuFX;
 import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -111,9 +112,10 @@ try {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            FxMainClass fxMainClass = new FxMainClass();
-            try {
-                fxMainClass.start(primaryStage);
+            MenuFX menuFX = new MenuFX();
+
+        try {
+                menuFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -156,7 +158,8 @@ try {
         Image image = new Image("libraryBackground4.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,analyticHierarchy,exit,back);
+        group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,
+                analyticHierarchy,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

@@ -36,15 +36,14 @@ public class AHPcriteriaWeight {
         this.mediumPrice = mediumPrice;
     }
 
-    public AHPcriteriaWeight(double highPrice, double uponnashType, double kobitaType, double scienceFictionType,
-                             double religionType, double kisorUponnashType, double othersType) {
-        this.highPrice = highPrice;
-        this.uponnashType = uponnashType;
-        this.kobitaType = kobitaType;
-        this.scienceFictionType = scienceFictionType;
-        this.religionType = religionType;
-        this.kisorUponnashType = kisorUponnashType;
-        this.othersType = othersType;
+
+
+    public AHPcriteriaWeight(double latestBook, double newlyBook, double recentlyOldBook, double oldBook, double oldestBook) {
+        this.latestBook = latestBook;
+        this.newlyBook = newlyBook;
+        this.recentlyOldBook = recentlyOldBook;
+        this.oldBook = oldBook;
+        this.oldestBook = oldestBook;
     }
 
     public AHPcriteriaWeight(double lowlyDemand, double lowMediumDemand, double highMediumDemand, double highlyDemand) {
@@ -54,8 +53,20 @@ public class AHPcriteriaWeight {
         this.highlyDemand = highlyDemand;
     }
 
-    public AHPcriteriaWeight(double highPrice, double lowPrice, double mediumPrice, double lowlyDemand,
-                             double lowMediumDemand, double highMediumDemand, double highlyDemand,
+
+    public AHPcriteriaWeight( double uponnashType, double kobitaType, double scienceFictionType,
+                             double religionType, double kisorUponnashType, double othersType) {
+        this.uponnashType = uponnashType;
+        this.kobitaType = kobitaType;
+        this.scienceFictionType = scienceFictionType;
+        this.religionType = religionType;
+        this.kisorUponnashType = kisorUponnashType;
+        this.othersType = othersType;
+    }
+
+
+    public AHPcriteriaWeight(double highPrice, double mediumPrice, double lowPrice, double highlyDemand,
+                             double highMediumDemand, double lowMediumDemand , double lowlyDemand,
                              double latestBook, double newlyBook, double recentlyOldBook, double oldBook,
                              double oldestBook, double uponnashType, double kobitaType, double scienceFictionType,
                              double religionType, double kisorUponnashType, double othersType) {
@@ -78,16 +89,6 @@ public class AHPcriteriaWeight {
         this.kisorUponnashType = kisorUponnashType;
         this.othersType = othersType;
     }
-
-    public AHPcriteriaWeight(double latestBook, double newlyBook, double recentlyOldBook, double oldBook, double oldestBook) {
-        this.latestBook = latestBook;
-        this.newlyBook = newlyBook;
-        this.recentlyOldBook = recentlyOldBook;
-        this.oldBook = oldBook;
-        this.oldestBook = oldestBook;
-    }
-
-
 
     public double getHighPrice() {
         return highPrice;

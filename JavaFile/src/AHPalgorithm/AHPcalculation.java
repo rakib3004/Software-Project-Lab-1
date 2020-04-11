@@ -7,6 +7,7 @@ import Regression.newVersion.*;
 
 
 public class AHPcalculation {
+    AHPcriteriaWeight ahPcriteriaWeight;
     TypeCountRegression typeCountRegression = new TypeCountRegression();
     TypeMonthRegression typeMonthRegression = new TypeMonthRegression();
     TypePriceRegression typePriceRegression = new TypePriceRegression();
@@ -14,14 +15,14 @@ public class AHPcalculation {
     CountPriceRegression countPriceRegression = new CountPriceRegression();
     MonthPriceRegression  monthPriceRegression = new MonthPriceRegression();
 
-    AHPcriteriaWeight ahPcriteriaWeight;
+    AHPcriteriaWeight ahPcriteriaWeight4,ahPcriteriaWeight2,ahPcriteriaWeight3, ahPcriteriaWeight1;
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     TypeCriteriaAHP typeCriteriaAHP = new TypeCriteriaAHP();
     CountCriteriaAHP countCriteriaAHP = new CountCriteriaAHP();
     MonthCriteriaAHP monthCriteriaAHP = new MonthCriteriaAHP();
     PriceCriteriaAHP priceCriteriaAHP = new PriceCriteriaAHP();
 
-    public void AHPcalculationMethods(PriorityData[] priorityData, int numberOfBooks){
+    public AHPcriteriaWeight AHPcalculationMethods(PriorityData[] priorityData, int numberOfBooks){
         double [][] AHPMatrix = new double [4] [4];
 
 
@@ -37,7 +38,6 @@ public class AHPcalculation {
         for(i=0;i<4;i++){
             for(j=i+1;j<4;j++){
                 AHPMatrix[i][j]=Math.abs(AHPMatrix[i][j]);
-                System.out.println(AHPMatrix[i][j]);
             }
         }
 
@@ -53,14 +53,15 @@ public class AHPcalculation {
 
         }
 
-        for(i=0;i<4;i++){
-            for(j=0;j<4;j++){
+//        for(i=0;i<4;i++){
+//            for(j=0;j<4;j++){
+//
+//                System.out.print(AHPMatrix[i][j]+"  ");
+//            }
+//            System.out.println(); }
 
-                System.out.print(AHPMatrix[i][j]+"  ");
-            }
-            System.out.println();
 
-        }
+
         double [] summationMatrix = new double[4];
 
         for(i=0;i<4;i++){
@@ -86,20 +87,27 @@ weightMatrix[i] = weightMatrix[i] + AHPMatrix[j][i];
             }
             weightMatrix[i] = weightMatrix[i]/4;
         }
-        for(i=0;i<4;i++){
-
-            System.out.print(weightMatrix[i] +"  ");
-        }
 
 
-        typeCriteriaAHP.typeCriteriaAHPMethods(weightMatrix[0],priorityData,numberOfBooks);
-        countCriteriaAHP.countCriteriaAHPMethods(weightMatrix[1],priorityData,numberOfBooks);
-        monthCriteriaAHP.monthCriteriaAHPMethods(weightMatrix[2],priorityData,numberOfBooks);
-        priceCriteriaAHP.priceCriteriaAHPMethods(weightMatrix[3],priorityData,numberOfBooks);
+        ahPcriteriaWeight1 =    priceCriteriaAHP.priceCriteriaAHPMethods(weightMatrix[3],priorityData,numberOfBooks);
+        ahPcriteriaWeight2=    countCriteriaAHP.countCriteriaAHPMethods(weightMatrix[1],priorityData,numberOfBooks);
+         ahPcriteriaWeight3=   monthCriteriaAHP.monthCriteriaAHPMethods(weightMatrix[2],priorityData,numberOfBooks);
+        ahPcriteriaWeight4 =    typeCriteriaAHP.typeCriteriaAHPMethods(weightMatrix[0],priorityData,numberOfBooks);
 
 
-ahPprocessImplementation.ahpProcessImplementationMethods(priorityData,numberOfBooks);
 
+         ahPcriteriaWeight = new AHPcriteriaWeight(ahPcriteriaWeight1.highPrice, ahPcriteriaWeight1.mediumPrice,
+                ahPcriteriaWeight1.lowPrice,ahPcriteriaWeight2.highlyDemand,
+                ahPcriteriaWeight2.highMediumDemand,ahPcriteriaWeight2.lowMediumDemand,
+                ahPcriteriaWeight2.lowlyDemand,ahPcriteriaWeight3.latestBook,
+                ahPcriteriaWeight3.newlyBook,ahPcriteriaWeight3.recentlyOldBook
+                ,ahPcriteriaWeight3.oldBook,ahPcriteriaWeight3.oldestBook,
+                ahPcriteriaWeight4.uponnashType, ahPcriteriaWeight4.kobitaType,
+                ahPcriteriaWeight4.scienceFictionType, ahPcriteriaWeight4.scienceFictionType,
+                ahPcriteriaWeight4.kisorUponnashType, ahPcriteriaWeight4.othersType);
+
+
+                return  ahPcriteriaWeight;
 
     }
 }
