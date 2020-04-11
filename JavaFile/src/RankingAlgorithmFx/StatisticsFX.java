@@ -1,6 +1,7 @@
-package JavFX;
+package RankingAlgorithmFx;
 
-import RankingAlgorithmFx.StatisticsFX;
+import JavFX.FxMainClass;
+import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -10,51 +11,40 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class MenuFX extends Application {
+public class StatisticsFX extends Application {
 
 
     @Override
     public void start(Stage primaryStage) {
 
-
-        Button bookSelf = new Button("Book Self");
-        Button bookInfo = new Button("Book Info");
-        Button statistics = new Button("Statistics");
-
-
-        bookSelf.setTranslateX(500);
-        bookSelf.setTranslateY(250);
-        bookInfo.setTranslateX(500);
-        bookInfo.setTranslateY(350);
-        statistics.setTranslateX(500);
-        statistics.setTranslateY(450);
+        Button multiVariableRegression = new Button("MultiVariable Regression");
+        Button analyticHierarchy = new Button("Analytic Hierarchy");
+        Button pageRankAlgorithm = new Button("Page Rank Algorithm");
 
 
-        bookSelf.setOnAction(actionEvent -> {
+        multiVariableRegression.setTranslateX(500);
+        multiVariableRegression.setTranslateY(250);
+        analyticHierarchy.setTranslateX(500);
+        analyticHierarchy.setTranslateY(350);
+        pageRankAlgorithm.setTranslateX(500);
+        pageRankAlgorithm.setTranslateY(450);
 
-            StatisticsFX statisticsFX = new StatisticsFX();
+
+        multiVariableRegression.setOnAction(actionEvent -> {
+
+            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
             try {
 
-                statisticsFX.start(primaryStage);
+                multiVaribleRegressionFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
-        bookInfo.setOnAction(actionEvent -> {
-            FxMainClass fxMainClass = new FxMainClass();
-            try {
-                fxMainClass.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        statistics.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
-            try {
-
-                statisticsFX.start(primaryStage);
+        analyticHierarchy.setOnAction(actionEvent -> {
+AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+        try {
+                analyticHierarchyAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -62,9 +52,19 @@ public class MenuFX extends Application {
         });
 
 
+        pageRankAlgorithm.setOnAction(actionEvent -> {
 
+PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
 
-        bookSelf.setStyle("-fx-padding: 8 15 15 15;\n" +
+try {
+                pageRankAlgorithmFx.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        multiVariableRegression.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -76,7 +76,7 @@ public class MenuFX extends Application {
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
 
-        statistics.setStyle("-fx-padding: 8 15 15 15;\n" +
+        pageRankAlgorithm.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -87,7 +87,7 @@ public class MenuFX extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        bookInfo.setStyle("-fx-padding: 8 15 15 15;\n" +
+        analyticHierarchy.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -99,10 +99,9 @@ public class MenuFX extends Application {
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
 
-        bookSelf.setPrefSize(200, 80);
-        bookInfo.setPrefSize(200, 80);
-        statistics.setPrefSize(200, 80);
-
+        multiVariableRegression.setPrefSize(350, 80);
+        analyticHierarchy.setPrefSize(350, 80);
+        pageRankAlgorithm.setPrefSize(350, 80);
 
 
         Button back = new Button("Back");
@@ -152,25 +151,17 @@ public class MenuFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("libraryBackground3.jpg");
+
+
+        Image image = new Image("libraryBackground4.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,bookSelf,statistics,bookInfo,exit,back);
+        group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,analyticHierarchy,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-      /*  HBox hBox = new HBox();
-        hBox.getChildren().addAll(exit,menu,back);
-
-    //    hBox.setSpacing(60);*/
 
 
-
-      /*  VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(vBox2,group);
-
-        vBox3.setMaxSize(850, 650);
-        vBox3.setSpacing(5);*/
 
         Scene scene1 = new Scene(group,1500,950);
 

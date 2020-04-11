@@ -43,11 +43,11 @@ public class FxSecondWindow extends Application {
 
 
         menu.setTranslateX(500);
-        menu.setTranslateY(250);
+        menu.setTranslateY(300);
         back.setTranslateX(0);
-        back.setTranslateY(550);
+        back.setTranslateY(650);
         exit.setTranslateX(1100);
-        exit.setTranslateY(550);
+        exit.setTranslateY(650);
 
 
         menu.setOnAction(actionEvent -> {
@@ -69,6 +69,7 @@ FxMainClass fxMainClass = new FxMainClass();
             }
 
         });
+
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 
