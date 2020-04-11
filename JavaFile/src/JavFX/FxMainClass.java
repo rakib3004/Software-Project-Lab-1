@@ -9,7 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.util.Scanner;
@@ -21,8 +26,8 @@ public class FxMainClass extends Application {
     public void start(Stage stage) throws Exception {
 
         Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(440);
-        welcome.setTranslateY(550);
+        welcome.setTranslateX(520);
+        welcome.setTranslateY(570);
         welcome.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -34,11 +39,28 @@ public class FxMainClass extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
+
+
+        javafx.scene.control.Label label = new javafx.scene.control.Label("\t\t\t\"Recommendation Tool for Library Management\"");
+
+        javafx.scene.text.Font font = javafx.scene.text.Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
+        javafx.scene.text.Font font1 = Font.font("Verdana", FontWeight.BOLD, 15);
+
+        label.setFont(font);
+        label.setStyle("-fx-body-color: white;");
+        label.setTextFill(Color.WHITE);
+        javafx.scene.control.Label label2 = new Label("\t\t\t\t\t\t\t\t\"All Statistical Analysis For Library Books\"");
+        label2.setFont(font1);
+
+
+
+
+
+
+
+
+
         welcome.setPrefSize(250, 100);
-        Image background = new Image("libraryBackground.jpg");
-        Canvas canvas = new Canvas(1300, 700);
-        Group root = new Group();
-        root.getChildren().addAll(canvas, welcome);
 
         welcome.setOnAction(actionEvent -> {
 
@@ -51,11 +73,38 @@ FxSecondWindow fxSecondWindow = new FxSecondWindow();
             }
         });
 
+        Image background = new Image("libraryBackground.jpg");
+        Canvas canvas = new Canvas(1200, 770);
+
+
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(label,canvas);
+
+        //   vBox.setMinSize(550, 650);
+        vBox.setSpacing(5);
+
+      /*  vBox.setStyle("-fx-padding: 5;" +
+                "-fx-border-style: inset;" +
+                "-fx-border-width: 2;" +
+                "-fx-border-insets: 5;" +
+                "-fx-border-radius: 0;" +
+                "-fx-border-color: #9900FF;" +
+                "-fx-background-color: #3399FF;");*/
+
+        vBox.setStyle("-fx-background-color: #3399FF;");
+        Group root = new Group();
+        root.getChildren().addAll(vBox, welcome);
+
+
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.drawImage(background,0,0);
-     //   gc.drawImage(fusics,450,150);
-        Scene scene = new Scene(root,1300,700);
+
+
+
+        //   gc.drawImage(fusics,450,150);
+        Scene scene = new Scene(root,1200,780);
         stage.setScene(scene);
+       stage.setFullScreen(true);
         stage.show();
     }
 

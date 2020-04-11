@@ -1,67 +1,47 @@
 package JavFX;
 
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.chart.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.Group;
-import javafx.scene.Group;
-
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import java.awt.*;
-import java.util.Scanner;
 
-import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-
-import java.awt.*;
-
-public class FxSecondWindow extends Application {
+public class MenuFX extends Application {
 
 
     @Override
     public void start(Stage primaryStage) {
 
 
-
-        Button menu = new Button("Menu");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-
-
-        menu.setTranslateX(500);
-        menu.setTranslateY(250);
-        back.setTranslateX(0);
-        back.setTranslateY(550);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(550);
+        Button bookSelf = new Button("Book Self");
+        Button bookInfo = new Button("Book Info");
+        Button statistics = new Button("Statistics");
 
 
-        menu.setOnAction(actionEvent -> {
+        bookSelf.setTranslateX(500);
+        bookSelf.setTranslateY(250);
+        bookInfo.setTranslateX(500);
+        bookInfo.setTranslateY(350);
+        statistics.setTranslateX(500);
+        statistics.setTranslateY(450);
 
-            MenuFX menuFX = new MenuFX();
+
+        bookSelf.setOnAction(actionEvent -> {
+
+            StatisticsFX statisticsFX = new StatisticsFX();
             try {
-                menuFX.start(primaryStage);
+
+                statisticsFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
-        back.setOnAction(actionEvent -> {
-FxMainClass fxMainClass = new FxMainClass();
+        bookInfo.setOnAction(actionEvent -> {
+            FxMainClass fxMainClass = new FxMainClass();
             try {
                 fxMainClass.start(primaryStage);
             } catch (Exception exception) {
@@ -69,13 +49,18 @@ FxMainClass fxMainClass = new FxMainClass();
             }
 
         });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
+        statistics.setOnAction(actionEvent -> {
+            StatisticsFX statisticsFX = new StatisticsFX();
+            try {
 
+                statisticsFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
 
         });
 
-        menu.setStyle("-fx-padding: 8 15 15 15;\n" +
+        bookSelf.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -87,7 +72,7 @@ FxMainClass fxMainClass = new FxMainClass();
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
 
-        exit.setStyle("-fx-padding: 8 15 15 15;\n" +
+        statistics.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -98,7 +83,7 @@ FxMainClass fxMainClass = new FxMainClass();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        back.setStyle("-fx-padding: 8 15 15 15;\n" +
+        bookInfo.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -110,18 +95,18 @@ FxMainClass fxMainClass = new FxMainClass();
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
 
-        menu.setPrefSize(200, 80);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        bookSelf.setPrefSize(200, 80);
+        bookInfo.setPrefSize(200, 80);
+        statistics.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground2.jpg");
+        Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,menu,exit,back);
+        group.getChildren().addAll(canvas,bookSelf,statistics,bookInfo);
 
-GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-graphicsContext.drawImage(image,0,0);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image,0,0);
       /*  HBox hBox = new HBox();
         hBox.getChildren().addAll(exit,menu,back);
 
