@@ -156,7 +156,7 @@ try {
 
 
         Image image = new Image("libraryBackground4.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Canvas canvas = new Canvas(1400,750);
         Group group = new Group();
         group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,
                 analyticHierarchy,exit,back);
@@ -166,7 +166,7 @@ try {
 
 
 
-        Scene scene1 = new Scene(group,1500,950);
+        Scene scene1 = new Scene(group,1400,750);
 
 
         primaryStage.setScene(scene1);

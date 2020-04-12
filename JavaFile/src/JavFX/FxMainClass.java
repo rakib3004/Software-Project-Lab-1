@@ -28,7 +28,7 @@ public class FxMainClass extends Application {
 
         Button welcome = new Button("Welcome to RTML");
         welcome.setTranslateX(520);
-        welcome.setTranslateY(570);
+        welcome.setTranslateY(520);
         welcome.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -42,7 +42,7 @@ public class FxMainClass extends Application {
                 "    -fx-font-size: 2.1em;");
 
 
-        javafx.scene.control.Label label = new javafx.scene.control.Label("\t\t\t\"Recommendation Tool for Library Management\"");
+      /*  javafx.scene.control.Label label = new javafx.scene.control.Label("\t\t\t\"Recommendation Tool for Library Management\"");
 
         javafx.scene.text.Font font = javafx.scene.text.Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         javafx.scene.text.Font font1 = Font.font("Verdana", FontWeight.BOLD, 15);
@@ -51,7 +51,7 @@ public class FxMainClass extends Application {
         label.setStyle("-fx-body-color: white;");
         label.setTextFill(Color.WHITE);
         javafx.scene.control.Label label2 = new Label("\t\t\t\t\t\t\t\t\"All Statistical Analysis For Library Books\"");
-        label2.setFont(font1);
+        label2.setFont(font1);*/
 
 
 
@@ -99,21 +99,21 @@ FxSecondWindow fxSecondWindow = new FxSecondWindow();
 
 
 
-        Image background = new Image("libraryBackground10.jpg");
-        Canvas canvas = new Canvas(1200, 770);
+        Image background = new Image("libraryBackground11.jpg");
+        Canvas canvas = new Canvas(1400, 770);
 
 
-        VBox vBox = new VBox();
-        vBox.getChildren().addAll(label,canvas);
+//        VBox vBox = new VBox();
+//        vBox.getChildren().addAll(canvas);
+//
+//        //   vBox.setMinSize(550, 650);
+//        vBox.setSpacing(5);
 
-        //   vBox.setMinSize(550, 650);
-        vBox.setSpacing(5);
 
 
-
-        vBox.setStyle("-fx-background-color: #3399FF;");
+     //   vBox.setStyle("-fx-background-color: #3399FF;");
         Group root = new Group();
-        root.getChildren().addAll(vBox, welcome,exit);
+        root.getChildren().addAll(canvas, welcome,exit);
 
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -122,7 +122,7 @@ FxSecondWindow fxSecondWindow = new FxSecondWindow();
 
 
         //   gc.drawImage(fusics,450,150);
-        Scene scene = new Scene(root,1200,780);
+        Scene scene = new Scene(root,1400,780);
         stage.setScene(scene);
        stage.setFullScreen(true);
         stage.show();

@@ -43,7 +43,7 @@ public class FxSecondWindow extends Application {
 
 
         menu.setTranslateX(500);
-        menu.setTranslateY(300);
+        menu.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
