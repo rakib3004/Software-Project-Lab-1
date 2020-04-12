@@ -1,23 +1,56 @@
 package JavFX;
 
+import AHPalgorithm.AHPcalculation;
+import AHPalgorithm.AHPprocessImplementation;
+import MainPackage.BookNumber;
+import MainPackage.Processing;
+import ObjectOriented.AHPcriteriaWeight;
+import ObjectOriented.PriorityData;
 import javafx.application.Application;
+import javafx.scene.chart.*;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-import java.awt.*;
+import RankingAlgorithmFx.StatisticsFX;
+import javafx.application.Application;
+
+import javafx.scene.Group;
+
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+
+import java.io.IOException;
 
 public class DampFX extends Application {
+
+    PriorityData[] priorityData;
+
+    int numberOfBooks;
+    Processing processing = new Processing();
+    BookNumber bookNumber = new BookNumber();
 
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
      Label label = new Label("\t\"Recommendation Tool for Library Management\"");
 
-       /* Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
+        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font1 = Font.font("Verdana", FontWeight.BOLD, 15);
 
         label.setFont(font);
@@ -28,8 +61,6 @@ label2.setFont(font1);
         vBox2.getChildren().addAll(label,label2);
 
 
-
-     //   vBox.setMinSize(550, 650);
            vBox2.setSpacing(5);
 
         vBox2.setStyle("-fx-padding: 5;" +
@@ -40,9 +71,6 @@ label2.setFont(font1);
                 "-fx-border-color: white;" +
                 "-fx-background-color: lime;");
 
-        // Create the Scene
-
-        // Create the Scene
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Destination");
@@ -99,10 +127,6 @@ label2.setFont(font1);
         barChart.getData().add(series5);
 
 
-
-
-
-
         PieChart pieChart = new PieChart();
 
         PieChart.Data slice1 = new PieChart.Data("Golpo", 23);
@@ -128,28 +152,27 @@ label2.setFont(font1);
         HBox hBox1 = new HBox(barChart,pieChart);
 ;
 
+       TableView tableView = new TableView();
 
-    /*    TableView tableView = new TableView();
+        TableColumn<FxDatabase,String > column0 = new TableColumn<>("Serial No");
+        column0.setCellValueFactory(new PropertyValueFactory<>("index"));
 
-        TableColumn<String, FxDatabase> column0 = new TableColumn<>("Serial No");
-        column0.setCellValueFactory(new PropertyValueFactory<>("SerialNo"));
-
-        TableColumn<String, FxDatabase> column1 = new TableColumn<>("Book Name");
+        TableColumn<FxDatabase,String > column1 = new TableColumn<>("Book Name");
         column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
 
 
-        TableColumn<String, FxDatabase> column2 = new TableColumn<>("Writer Name");
-        column2.setCellValueFactory(new PropertyValueFactory<>("WriterName"));
+        TableColumn<FxDatabase,String > column2 = new TableColumn<>("Writer Name");
+        column2.setCellValueFactory(new PropertyValueFactory<>("writerName"));
 
-TableColumn<String, FxDatabase> column3 = new TableColumn<>("Book ID");
+TableColumn<FxDatabase,String > column3 = new TableColumn<>("Book ID");
         column3.setCellValueFactory(new PropertyValueFactory<>("bookId"));
 
 
-        TableColumn<String, FxDatabase> column4 = new TableColumn<>("Borrow Count");
-        column4.setCellValueFactory(new PropertyValueFactory<>("BorrowCount"));
+        TableColumn<FxDatabase,String > column4 = new TableColumn<>("Borrow Count");
+        column4.setCellValueFactory(new PropertyValueFactory<>("borrowCount"));
 
-        TableColumn<String, FxDatabase> column5 = new TableColumn<>("Book Price");
-        column5.setCellValueFactory(new PropertyValueFactory<>("BookPrice"));
+        TableColumn<FxDatabase,String > column5 = new TableColumn<>("Book Price");
+        column5.setCellValueFactory(new PropertyValueFactory<>("priceCount"));
 
 
         tableView.getColumns().add(column0);
@@ -163,6 +186,9 @@ TableColumn<String, FxDatabase> column3 = new TableColumn<>("Book ID");
         int i;
         String index;
 
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+
 for(i=0;i<numberOfBooks;i++){
 index = Integer.toString(i);
 
@@ -170,55 +196,22 @@ index = Integer.toString(i);
             priorityData[i].bookData.writerName,priorityData[i].bookData.bookId,
             priorityData[i].bookData.borrowCount,priorityData[i].bookData.bookPrice));
             }
-     */
-               /* x++;
-                bookName[x] = "\0";
-                writerName[x] = "\0";
-                bookId[x] = "\0";
-
-                borrowCount[x] = "\0";
-                bookPrice[x] = "\0";
-
-            }
-            if (t == 0) {
-
-                bookName[x] = bookName[x] + a[i];
-            } else if (t == 1) {
-                writerName[x] = writerName[x] + a[i];
-
-            } else if (t == 2) {
-                bookId[x] = bookId[x] + a[i];
 
 
-            } else if (t == 3) {
-                borrowCount[x] = borrowCount[x] + a[i];
 
-            }
-            else if(t==4){
-                bookPrice[x]=bookPrice[x]+a[i];
-            }
-        }
-        fr.close();*/
-      /*  VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(vBox2,hBox1);
+      VBox vBox3 = new VBox();
+        vBox3.getChildren().addAll(vBox2,hBox1,tableView);
 
         vBox3.setMaxSize(850, 650);
         vBox3.setSpacing(5);
 
-//scrollPane.pannableProperty().set(true);
-//scrollPane.fitToHeightProperty().set(true);
-//scrollPane.fitToWidthProperty().set(true);
-//scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
+
         Scene scene1 = new Scene(vBox3,900,700);
 
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setContent(vBox3);
-// Add the scene to the Stage
-        stage.setScene(scene1);
-// Set the title of the Stage
-        stage.setTitle("Books Statistics");
-// Display the Stage
-        stage.show();*/
+
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.show();
 
     }
 }
