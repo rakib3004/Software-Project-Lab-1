@@ -68,6 +68,14 @@ bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
                 int bookIdSize = bookId[wordIndex].length();
                 bookId[wordIndex] = bookId[wordIndex].substring(1,bookIdSize);
 
+                int bookIdPrice = bookPrice[wordIndex].length();
+                bookPrice[wordIndex] = bookPrice[wordIndex].substring(1,bookIdPrice);
+
+             String string = bookPrice[wordIndex];
+                     string = string.replaceAll("[\\t\\n\\r]+", "");
+                bookPrice[wordIndex] = string;
+
+
                 bookData[wordIndex] = new BookData(  bookName[wordIndex],  writerName[wordIndex],
          bookId[wordIndex],   borrowCount[wordIndex],
            bookPrice[wordIndex],0.00);

@@ -16,9 +16,9 @@ public class DataParsing {
     double[][] x_value = new double[3][1050];
     double[] y_value = new double[1050];
     int[] typeValue = new int[1050];
-    int[] timeCount = new int[1050];
+    double[] timeCount = new double[1050];
     int[] bookCount = new int[1050];
-    int[] bookPrice = new int[1050];
+    double [] bookPrice = new double [1050];
     double[] weight = new double[1050];
 
     String string, string1, string2;
