@@ -24,6 +24,7 @@ alphabetLink = findAlphabetLink(index,priorityData,numberOfBooks);
     public int findBorrowLink(int index,PriorityData[] priorityData, int numberOfBooks){
         int countingBorrrow=0;
         String linkCompare = priorityData[index].bookData.borrowCount;
+
         for(iterator1=0;(iterator1<numberOfBooks&&iterator1!=index);iterator1++){
             if(priorityData[iterator1].bookData.borrowCount.equals(linkCompare)){
                 countingBorrrow++;

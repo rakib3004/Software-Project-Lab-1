@@ -154,24 +154,24 @@ label2.setFont(font1);
 
        TableView tableView = new TableView();
 
-        TableColumn<FxDatabase,String > column0 = new TableColumn<>("Serial No");
+        TableColumn<FxDatabase,String > column0 = new TableColumn<>("index");
         column0.setCellValueFactory(new PropertyValueFactory<>("index"));
 
-        TableColumn<FxDatabase,String > column1 = new TableColumn<>("Book Name");
+        TableColumn<FxDatabase,String > column1 = new TableColumn<>("bookName");
         column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
 
 
-        TableColumn<FxDatabase,String > column2 = new TableColumn<>("Writer Name");
+        TableColumn<FxDatabase,String > column2 = new TableColumn<>("writerName");
         column2.setCellValueFactory(new PropertyValueFactory<>("writerName"));
 
-TableColumn<FxDatabase,String > column3 = new TableColumn<>("Book ID");
+TableColumn<FxDatabase,String > column3 = new TableColumn<>("bookId");
         column3.setCellValueFactory(new PropertyValueFactory<>("bookId"));
 
 
-        TableColumn<FxDatabase,String > column4 = new TableColumn<>("Borrow Count");
+        TableColumn<FxDatabase,String > column4 = new TableColumn<>("borrowCount");
         column4.setCellValueFactory(new PropertyValueFactory<>("borrowCount"));
 
-        TableColumn<FxDatabase,String > column5 = new TableColumn<>("Book Price");
+        TableColumn<FxDatabase,String > column5 = new TableColumn<>("priceCount");
         column5.setCellValueFactory(new PropertyValueFactory<>("priceCount"));
 
 
@@ -203,7 +203,7 @@ index = Integer.toString(i);
         vBox3.getChildren().addAll(vBox2,hBox1,tableView);
 
         vBox3.setMaxSize(850, 650);
-        vBox3.setSpacing(5);
+       // vBox3.setSpacing(5);
 
 
         Scene scene1 = new Scene(vBox3,900,700);
@@ -211,6 +211,7 @@ index = Integer.toString(i);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
