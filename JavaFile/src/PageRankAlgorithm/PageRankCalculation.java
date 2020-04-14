@@ -4,7 +4,9 @@ import ObjectOriented.PriorityData;
 
 public class PageRankCalculation {
 double linkValue;
+boolean checkLink;
 PageRankLink pageRankLink = new PageRankLink();
+CheckPageLink checkPageLink = new CheckPageLink();
     public void pageRankCalculationMethods(PriorityData[] priorityData, int numberOfBooks){
         double initialProbability = Math.pow(numberOfBooks,-1);
         double [] pageWeight = new double[numberOfBooks];
@@ -21,7 +23,15 @@ PageRankLink pageRankLink = new PageRankLink();
 
             for(jterator=0;(jterator<numberOfBooks&&jterator!=iterator);jterator++){
 
-pageRankMatrix[jterator][iterator] = linkValue;
+                checkLink = checkPageLink.checkPageLinkMethods(iterator,jterator,priorityData,numberOfBooks);
+                if(checkLink==true){
+                    pageRankMatrix[jterator][iterator] = linkValue;
+
+                }
+                else if(checkLink==false){
+                    pageRankMatrix[jterator][iterator] = 0.0;
+
+                }
 
             }
         }

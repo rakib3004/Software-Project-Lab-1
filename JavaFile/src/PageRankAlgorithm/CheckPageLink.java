@@ -3,6 +3,8 @@ package PageRankAlgorithm;
 import ObjectOriented.PriorityData;
 
 public class CheckPageLink {
+    String  compareDataOne;
+    String  compareDataTwo;
     public boolean checkPageLinkMethods(int index, int jIndex,PriorityData[] priorityData, int numberOfBooks){
         boolean linkPageBool = true;
 
@@ -18,20 +20,44 @@ public class CheckPageLink {
     }
 
     public boolean checkBorrowLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
-        return  true;
+       compareDataOne = priorityData[index].bookData.borrowCount;
+       compareDataTwo = priorityData[jIndex].bookData.borrowCount;
+
+       if(compareDataOne.equals(compareDataTwo)){
+           return  true;
+       }
+        else{
+           return  false;
+
+       }
 
     }
      public boolean checkTypeLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
-         return  true;
+         if(compareDataOne.equals(compareDataTwo)){
+             return  true;
+         }
+         else{
+             return  false;
 
+         }
      }
      public boolean checkWriterLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
-         return  true;
+         if(compareDataOne.equals(compareDataTwo)){
+             return  true;
+         }
+         else{
+             return  false;
 
+         }
      }
      public boolean checkAlphabetLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
-         return  true;
+         if(compareDataOne.equals(compareDataTwo)){
+             return  true;
+         }
+         else{
+             return  false;
 
+         }
      }
 
 }
