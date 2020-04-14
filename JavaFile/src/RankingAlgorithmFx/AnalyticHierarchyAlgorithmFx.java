@@ -42,7 +42,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         Button exit = new Button("Exit");
 
 
-        Start.setTranslateX(500);
+        Start.setTranslateX(550);
         Start.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
