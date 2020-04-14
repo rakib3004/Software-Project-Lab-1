@@ -33,6 +33,9 @@ public class CheckPageLink {
 
     }
      public boolean checkTypeLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
+         compareDataOne = priorityData[index].bookData.bookId.substring(0,2);
+         compareDataTwo = priorityData[jIndex].bookData.bookId.substring(0,2);
+
          if(compareDataOne.equals(compareDataTwo)){
              return  true;
          }
@@ -42,6 +45,9 @@ public class CheckPageLink {
          }
      }
      public boolean checkWriterLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
+         compareDataOne = priorityData[index].bookData.writerName;
+         compareDataTwo = priorityData[jIndex].bookData.writerName;
+
          if(compareDataOne.equals(compareDataTwo)){
              return  true;
          }
@@ -51,6 +57,9 @@ public class CheckPageLink {
          }
      }
      public boolean checkAlphabetLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
+         compareDataOne = priorityData[index].bookData.bookName.substring(0,1);
+         compareDataTwo = priorityData[jIndex].bookData.bookName.substring(0,1);
+
          if(compareDataOne.equals(compareDataTwo)){
              return  true;
          }

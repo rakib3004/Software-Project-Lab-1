@@ -39,9 +39,12 @@ CheckPageLink checkPageLink = new CheckPageLink();
 
         for(jterator=0;jterator<numberOfBooks;jterator++){
 
-            pageRankMatrix[jterator][jterator] = 0;
+            pageRankMatrix[jterator][jterator] = 0.0;
 
         }
+
+        
+
 
     }
 }
