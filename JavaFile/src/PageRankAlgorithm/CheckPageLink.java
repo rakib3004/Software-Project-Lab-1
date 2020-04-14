@@ -5,8 +5,9 @@ import ObjectOriented.PriorityData;
 public class CheckPageLink {
     String  compareDataOne;
     String  compareDataTwo;
+    Character compareCharacterOne,compareCharacterTwo;
     public boolean checkPageLinkMethods(int index, int jIndex,PriorityData[] priorityData, int numberOfBooks){
-        boolean linkPageBool = true;
+        boolean linkPageBool;
 
         boolean borrowLinkBool,typeLinkBool,writerLinkBool,alphabetLinkBool;
         borrowLinkBool = checkBorrowLinkBool(index,jIndex,priorityData,numberOfBooks);
@@ -57,8 +58,8 @@ public class CheckPageLink {
          }
      }
      public boolean checkAlphabetLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){
-         compareDataOne = priorityData[index].bookData.bookName.substring(0,1);
-         compareDataTwo = priorityData[jIndex].bookData.bookName.substring(0,1);
+         compareCharacterOne = priorityData[index].bookData.bookName.charAt(0);
+         compareCharacterTwo = priorityData[jIndex].bookData.bookName.charAt(0);
 
          if(compareDataOne.equals(compareDataTwo)){
              return  true;

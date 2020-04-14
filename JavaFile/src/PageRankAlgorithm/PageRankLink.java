@@ -65,9 +65,9 @@ public int findWriterLink(int index,PriorityData[] priorityData, int numberOfBoo
 public int findAlphabetLink(int index,PriorityData[] priorityData, int numberOfBooks){
     int countingAlphabet=0;
 
-    String linkCompare = priorityData[index].bookData.bookName.substring(0,1);
+    Character linkCompare = priorityData[index].bookData.bookName.charAt(0);
     for(iterator1=0;(iterator1<numberOfBooks&&iterator1!=index);iterator1++){
-        if(priorityData[iterator1].bookData.bookName.substring(0,1).equals(linkCompare)){
+        if(priorityData[iterator1].bookData.bookName.charAt(0)==linkCompare){
             countingAlphabet++;
         }
 

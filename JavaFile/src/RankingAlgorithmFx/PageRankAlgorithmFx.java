@@ -6,6 +6,7 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import PageRankAlgorithm.PageRankCalculation;
 import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -49,12 +50,13 @@ public class PageRankAlgorithmFx extends Application {
 
 
         Start.setOnAction(actionEvent -> {
+            PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
             try {
 
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-
+pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
                 System.exit(0);
 
 
