@@ -23,6 +23,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class BookInformationFX extends Application {
@@ -42,7 +44,8 @@ public class BookInformationFX extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
-
+        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
+        Font font1 = Font.font("Verdana", FontWeight.BOLD, 12);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -72,54 +75,71 @@ public class BookInformationFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Label SVelo = new Label("Velocity: 0" );
-        SVelo.setTranslateX(1000);
+
+
+        Label SVelo = new Label(" 632 Books !!!" );
+        SVelo.setFont(font1);
+        SVelo.setPrefSize(400, 180);
+        SVelo.setTranslateX(250);
         SVelo.setTranslateY(70);
-        Paint svColor = Color.rgb(0,255,0);
+        Paint svColor = Color.rgb(102,111,200);
         SVelo.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SVelo.setTextFill(Color.WHITE);
-        SVelo.setScaleX(2);
-        SVelo.setScaleY(2);
+        SVelo.setScaleX(7);
+        SVelo.setScaleY(5);
 
-        Label STime = new Label("Time: 0" );
+        Label STime = new Label("350 Writers " );
+        STime.setPrefSize(400, 180);
+
+        STime.setFont(font1);
         STime.setTranslateX(1000);
-        STime.setTranslateY(120);
-        Paint sttColor = Color.rgb(0,255,0);
+        STime.setTranslateY(70);
+        Paint sttColor = Color.rgb(0,96,11);
         SVelo.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        Paint stColor = Color.rgb(0,255,0);
+        Paint stColor = Color.rgb(100,150,50);
         STime.setBackground(new Background(new BackgroundFill(stColor, CornerRadii.EMPTY, Insets.EMPTY)));
         STime.setTextFill(Color.WHITE);
-        STime.setScaleX(2);
-        STime.setScaleY(2);
+        STime.setScaleX(7);
+        STime.setScaleY(5);
 
-        Label SHmax = new Label( "Hmax: 0" );
-        SHmax.setTranslateX(1000);
+        Label SHmax = new Label( " 12 Years " );
+        SHmax.setPrefSize(200, 80);
+
+        SHmax.setFont(font1);
+        SHmax.setTranslateX(200);
         SHmax.setTranslateY(170);
-        Paint shColor = Color.rgb(0,255,0);
-        SVelo.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        Paint shColor = Color.rgb(200,20,30);
+        SHmax.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SHmax.setTextFill(Color.WHITE);
-        SHmax.setScaleX(2);
-        SHmax.setScaleY(2);
+        SHmax.setScaleX(7);
+        SHmax.setScaleY(5);
 
-        Label SR = new Label("Range: 0");
+        Label SR = new Label("6 types");
+        SR.setFont(font1);
+        SR.setPrefSize(200, 80);
+
         SR.setTranslateX(1000);
-        SR.setTranslateY(220);
-        Paint srColor = Color.rgb(0,255,0);
-        SVelo.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        SR.setTranslateY(170);
+        Paint srColor = Color.rgb(214,158,33);
+        SR.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SR.setTextFill(Color.WHITE);
-        SR.setScaleX(2);
-        SR.setScaleY(2);
+        SR.setScaleX(7);
+        SR.setScaleY(5);
 
-        Label STmax = new Label("Tmax: 0");
+     /*   Label STmax = new Label("Tmax: 0");
+        STmax.setFont(font1);
         STmax.setTranslateX(1000);
         STmax.setTranslateY(270);
-        Paint staColor = Color.rgb(0,255,0);
+        Paint staColor = Color.rgb(120,25,168);
         SVelo.setBackground(new Background(new BackgroundFill(staColor, CornerRadii.EMPTY, Insets.EMPTY)));
         STmax.setTextFill(Color.WHITE);
         STmax.setScaleX(2);
         STmax.setScaleY(2);
 
-        Label SX = new Label("X: 0");
+       Label SX = new Label("X: 0");
+        SX.setFont(font1);
+        Paint sxColor = Color.rgb(230,25,180);
+        SX.setBackground(new Background(new BackgroundFill(sxColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SX.setTranslateX(1000);
         SX.setTranslateY(320);
         SX.setTextFill(Color.WHITE);
@@ -127,15 +147,18 @@ public class BookInformationFX extends Application {
         SX.setScaleY(2);
 
         Label SY = new Label("Y: 0");
-        Paint syColor = Color.rgb(0,255,0);
+        SY.setFont(font1);
+        Paint syColor = Color.rgb(166,55,67);
         SY.setBackground(new Background(new BackgroundFill(syColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SY.setTranslateX(1000);
         SY.setTranslateY(370);
         SY.setTextFill(Color.WHITE);
         SY.setScaleX(2);
-        SY.setScaleY(2);
+        SY.setScaleY(2);*/
+
+
 Group semiGroup = new Group();;
-semiGroup.getChildren().addAll(SVelo,STime,SHmax,SR,STmax,SX,SY);
+semiGroup.getChildren().addAll(SVelo,STime,SHmax,SR/*,STmax,SX,SY*/);
 
 
         Image image = new Image("libraryBackground9.jpg");
