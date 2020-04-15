@@ -1,6 +1,6 @@
 package JavFX;
 
-import InfoDisplay.BookInformation;
+import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -44,9 +44,9 @@ public class MenuFX extends Application {
         });
 
         bookInfo.setOnAction(actionEvent -> {
-            BookInformation bookInformation = new BookInformation();
+            BookInformationFX bookInformationFX = new BookInformationFX();
             try {
-                bookInformation.start(primaryStage);
+                bookInformationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
