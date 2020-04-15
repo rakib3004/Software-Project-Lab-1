@@ -79,7 +79,7 @@ try {
 
 }
 catch (NullPointerException nullPointerException){
-    System.out.println("");
+    System.out.println();
 
 }
 
