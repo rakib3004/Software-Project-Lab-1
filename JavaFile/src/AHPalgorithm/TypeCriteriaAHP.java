@@ -5,10 +5,13 @@ import ObjectOriented.PriorityData;
 
 public class TypeCriteriaAHP {
     AHPcriteriaWeight ahPcriteriaWeight;
+    AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
+    int [] typeCounter = new int[6];
+
     public AHPcriteriaWeight typeCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] typeCriteriaAHPMatrix = new double[6][6];
 
-
+typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData,numberOfBooks);
         int i, j;
 int priority=1;
         for (i = 0; i < 6; i++) {

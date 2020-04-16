@@ -5,12 +5,16 @@ import ObjectOriented.PriorityData;
 
 public class PriceCriteriaAHP {
     AHPcriteriaWeight ahPcriteriaWeight;
+    AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
+    int [] priceCounter = new int[3];
 
     public AHPcriteriaWeight priceCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] priceCriteriaAHPMatrix = new double[3][3];
 
 
         int i, j;
+        priceCounter  = ahpSubCriteriaProcess.priceCriteriaCalculationMethods(priorityData,numberOfBooks);
+
 priceCriteriaAHPMatrix[0][1] = Math.pow(2,-1);
 priceCriteriaAHPMatrix[0][2] = Math.pow(7,-1);
 priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);

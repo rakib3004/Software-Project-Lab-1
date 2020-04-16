@@ -16,7 +16,7 @@ public class AHPcriteriaWeight {
     public double recentlyOldBook;
     public double oldBook;
     public double oldestBook;
-    
+
     public double uponnashType;
     public double kobitaType;
     public double scienceFictionType;

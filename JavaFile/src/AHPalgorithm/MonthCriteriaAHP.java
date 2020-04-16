@@ -5,10 +5,13 @@ import ObjectOriented.PriorityData;
 
 public class MonthCriteriaAHP {
     AHPcriteriaWeight ahPcriteriaWeight;
+    AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
+    int [] monthCounter = new int[5];
+
     public AHPcriteriaWeight monthCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] monthCriterAHPMatrix = new double[5][5];
 
-
+monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityData,numberOfBooks);
         int i, j;
 
         int priority=1;
