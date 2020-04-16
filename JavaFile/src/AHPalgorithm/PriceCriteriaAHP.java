@@ -22,13 +22,13 @@ priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
             }
         }
 
-        for (i = 0; i < 3; i++) {
+
+         for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
-
                 priceCriteriaAHPMatrix[j][i] = Math.pow(priceCriteriaAHPMatrix[i][j], -1);
-
             }
         }
+
         for (i = 0; i < 3; i++) {
 
             priceCriteriaAHPMatrix[i][i] = (1);

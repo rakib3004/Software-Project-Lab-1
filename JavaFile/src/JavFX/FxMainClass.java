@@ -1,5 +1,6 @@
 package JavFX;
 
+import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 
@@ -10,12 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.util.Scanner;
@@ -36,13 +32,15 @@ public class FxMainClass extends Application {
 
         welcome.setOnAction(actionEvent -> {
 
-            try {
-FxSecondWindow fxSecondWindow = new FxSecondWindow();
-                fxSecondWindow.start(stage);
 
+
+            BookInformationFX bookInformationFX = new BookInformationFX();
+            try {
+                bookInformationFX.start(stage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
         });
 
 

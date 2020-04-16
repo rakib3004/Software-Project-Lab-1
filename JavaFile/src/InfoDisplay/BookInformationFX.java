@@ -24,8 +24,12 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class BookInformationFX extends Application {
 
@@ -45,7 +49,8 @@ public class BookInformationFX extends Application {
         Button exit = new Button("Exit");
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font1 = Font.font("Verdana", FontWeight.BOLD, 12);
+        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
+        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 8);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -61,12 +66,9 @@ public class BookInformationFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
 
         setStyle(exit);
@@ -75,25 +77,32 @@ public class BookInformationFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
+        try {
+            numberOfBooks = bookNumber.bookNumberFindingMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-        Label SVelo = new Label(" 632 Books !!!" );
+        Label SVelo = new Label(numberOfBooks+" Books !!!" );
         SVelo.setFont(font1);
-        SVelo.setPrefSize(400, 180);
+        SVelo.setPrefSize(110, 80);
+        SVelo.setTextAlignment(TextAlignment.CENTER);
         SVelo.setTranslateX(250);
-        SVelo.setTranslateY(70);
+        SVelo.setTranslateY(55);
         Paint svColor = Color.rgb(102,111,200);
         SVelo.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SVelo.setTextFill(Color.WHITE);
         SVelo.setScaleX(7);
         SVelo.setScaleY(5);
 
-        Label STime = new Label("350 Writers " );
-        STime.setPrefSize(400, 180);
 
+
+        Label STime = new Label("350 Writers " );
+        STime.setPrefSize(110, 80);
+        STime.setTextAlignment(TextAlignment.CENTER);
         STime.setFont(font1);
         STime.setTranslateX(1000);
-        STime.setTranslateY(70);
+        STime.setTranslateY(55);
         Paint sttColor = Color.rgb(0,96,11);
         SVelo.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
         Paint stColor = Color.rgb(100,150,50);
@@ -102,29 +111,34 @@ public class BookInformationFX extends Application {
         STime.setScaleX(7);
         STime.setScaleY(5);
 
-        Label SHmax = new Label( " 12 Years " );
-        SHmax.setPrefSize(200, 80);
 
+
+        Label SHmax = new Label( " 12 Years " );
+        SHmax.setPrefSize(110, 80);
+        SHmax.setTextAlignment(TextAlignment.CENTER);
         SHmax.setFont(font1);
-        SHmax.setTranslateX(200);
-        SHmax.setTranslateY(170);
+        SHmax.setTranslateX(250);
+        SHmax.setTranslateY(500);
         Paint shColor = Color.rgb(200,20,30);
         SHmax.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SHmax.setTextFill(Color.WHITE);
         SHmax.setScaleX(7);
         SHmax.setScaleY(5);
 
+
+
         Label SR = new Label("6 types");
         SR.setFont(font1);
-        SR.setPrefSize(200, 80);
-
+        SR.setTextAlignment(TextAlignment.CENTER);
+        SR.setPrefSize(110, 80);
         SR.setTranslateX(1000);
-        SR.setTranslateY(170);
+        SR.setTranslateY(500);
         Paint srColor = Color.rgb(214,158,33);
         SR.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
         SR.setTextFill(Color.WHITE);
         SR.setScaleX(7);
         SR.setScaleY(5);
+
 
      /*   Label STmax = new Label("Tmax: 0");
         STmax.setFont(font1);

@@ -4,9 +4,10 @@ public class AHPcriteriaWeight {
 
     public double highPrice;
     public double lowPrice;
+    public double mediumPrice;
+
     public double highlyDemand;
     public double highMediumDemand;
-    public double mediumPrice;
     public double lowMediumDemand;
     public double lowlyDemand;
 
@@ -15,14 +16,13 @@ public class AHPcriteriaWeight {
     public double recentlyOldBook;
     public double oldBook;
     public double oldestBook;
+    
     public double uponnashType;
     public double kobitaType;
     public double scienceFictionType;
     public double religionType;
     public double kisorUponnashType;
     public double othersType;
-
-
 
 
     public AHPcriteriaWeight() {

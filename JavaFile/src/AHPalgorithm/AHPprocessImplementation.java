@@ -15,6 +15,7 @@ public class AHPprocessImplementation {
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             if (priorityData[iterator1].borrowPriority <= 10) {
                 //System.out.println(iterator1 + ":::: 10 er niche");
+
                 priorityData[iterator1].borrowPriority = ahPcriteriaWeight.lowlyDemand;
             } else if (priorityData[iterator1].borrowPriority <= 20) {
                 //System.out.println(iterator1 + ":::: 20 er niche");
@@ -118,7 +119,6 @@ catch (Exception exception){
                         }
                     }
 
-
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             priorityData[iterator1].weight = priorityData[iterator1].bookPriority+
                     priorityData[iterator1].borrowPriority+
@@ -126,10 +126,6 @@ catch (Exception exception){
                     priorityData[iterator1].pricePriority;
             System.out.println(priorityData[iterator1].bookData.bookName+"\t"+priorityData[iterator1].weight);
         }
-
- 
- 
-
 
                     }
 
