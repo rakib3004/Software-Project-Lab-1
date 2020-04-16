@@ -16,9 +16,7 @@ typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData
 int priority=1;
         for (i = 0; i < 6; i++) {
             for (j = i + 1; j < 6; j++) {
-                typeCriteriaAHPMatrix[i][j] = priority;
-
-                priority++;
+                typeCriteriaAHPMatrix[i][j] = typeCounter[i]/typeCounter[j];
             }
         }
 

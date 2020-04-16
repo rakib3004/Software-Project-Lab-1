@@ -18,8 +18,7 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
 
         for (i = 0; i < 5; i++) {
             for (j = i + 1; j < 5; j++) {
-                monthCriterAHPMatrix[i][j] = priority*(i+j);
-priority = priority*(i+j);
+                monthCriterAHPMatrix[i][j] = (monthCounter[i]/monthCounter[j]);
             }
         }
 

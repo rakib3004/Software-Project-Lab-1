@@ -17,8 +17,7 @@ countCounter = ahpSubCriteriaProcess.countCriteriaCalculationMethods(priorityDat
 int priorityCount=2;
         for (i = 0; i < 4; i++) {
             for (j = i + 1; j < 4; j++) {
-                countCriteriaAHPMatrix[i][j] = priorityCount;
-                priorityCount = priorityCount * 2;
+                countCriteriaAHPMatrix[i][j] = Math.abs(countCounter[i]/countCounter[j]);
               //  System.out.println(countCriteriaAHPMatrix[i][j]);
             }
         }

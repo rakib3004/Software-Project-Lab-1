@@ -15,14 +15,12 @@ public class PriceCriteriaAHP {
         int i, j;
         priceCounter  = ahpSubCriteriaProcess.priceCriteriaCalculationMethods(priorityData,numberOfBooks);
 
-priceCriteriaAHPMatrix[0][1] = Math.pow(2,-1);
-priceCriteriaAHPMatrix[0][2] = Math.pow(7,-1);
-priceCriteriaAHPMatrix[1][2] = Math.pow(5,-1);
+
 
 
         for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
-                priceCriteriaAHPMatrix[i][j] = Math.abs(priceCriteriaAHPMatrix[i][j]);
+                priceCriteriaAHPMatrix[i][j] = Math.abs(priceCounter[i]/priceCounter[j]);
             }
         }
 
