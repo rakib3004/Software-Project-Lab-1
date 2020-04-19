@@ -2,21 +2,26 @@ package JavaSwing;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import Calculation.DoublyLinearRegression;
 import Calculation.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
+import Regression.newVersion.TypeCountRegression;
 
 import javax.swing.*;
 import java.io.IOException;
 
 public class SwingMainClass {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         PriorityData[] priorityData;
         AHPcriteriaWeight ahPcriteriaWeight;
+        TypeCountRegression typeCountRegression = new TypeCountRegression();
+        MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+        DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
         int numberOfBooks;
         Processing processing = new Processing();
@@ -24,38 +29,46 @@ public class SwingMainClass {
 
         AHPcalculation ahPcalculation = new AHPcalculation();
         AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-        MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+        int input1,input2;
+        String stringInput,stringInput2;
 
-        int input;
-        String stringInput;
+
       stringInput =  JOptionPane.showInputDialog("What do you want???\n1.Multivariable Linear Regression \n" +
                 "2.Analytic Heirarcy Process\n3.Page Rank Algorithm");
 
-      input = Integer.parseInt(stringInput);
+      input1 = Integer.parseInt(stringInput);
 
-      if(input==1){
-          try {
-          priorityData = processing.fileReaderMethods();
-          numberOfBooks = bookNumber.bookNumberFindingMethods();
-          multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
 
-          } catch (IOException e) {
-              e.printStackTrace();
+
+
+      if(input1==1){
+
+          stringInput2 =  JOptionPane.showInputDialog("What do you want???\n1.Multivariable Linear Regression \n" +
+                  "2.Analytic Heirarcy Process\n3.Page Rank Algorithm");
+
+          input2 = Integer.parseInt(stringInput2);
+
+          if(input2==1){
+              typeCountRegression.typeCountRegressionMethods(priorityData,numberOfBooks);
+
           }
+          else if(input2==2){
+              doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
+
+          }
+          else if(input2==3){
+              multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+          }
+
 
 
       }
-      else if(input==2){
-          try {
-              priorityData = processing.fileReaderMethods();
-              numberOfBooks = bookNumber.bookNumberFindingMethods();
-              ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+      else if(input1==2){
 
-              ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
-
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
+          ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+          ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
 
       }
       else{
@@ -63,12 +76,8 @@ public class SwingMainClass {
 
           try {
 
-              priorityData = processing.fileReaderMethods();
-              numberOfBooks = bookNumber.bookNumberFindingMethods();
               pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
               System.exit(0);
-
-
           }
 
           catch (Exception exception) {
