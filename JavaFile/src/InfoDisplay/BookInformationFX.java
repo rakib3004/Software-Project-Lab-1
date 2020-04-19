@@ -7,8 +7,9 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import PageRankAlgorithm.PageRankCalculation;
-import RankingAlgorithmFx.StatisticsFX;
+import javafx.animation.KeyFrame;
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -29,6 +30,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -38,8 +40,13 @@ public class BookInformationFX extends Application {
     AHPcriteriaWeight ahPcriteriaWeight;
 
     int numberOfBooks;
+    int typeCounter=6,writerCounter=350, yearCounter =12;
+    int typePalse,writerPalse,yearPalse;
+    int timeSec = 1;
+ int bookCounter=0;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+    Timeline time = new Timeline();
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
@@ -84,14 +91,16 @@ public class BookInformationFX extends Application {
             e.printStackTrace();
         }
 
-        Label BookNumbers = new Label(numberOfBooks+" Books !!!" );
+
+
+        Label BookNumbers = new Label((numberOfBooks/6)+" Books" );
         BookNumbers.setAlignment(Pos.CENTER);
         setStyle1(BookNumbers);
         BookNumbers.setFont(font1);
         BookNumbers.setPrefSize(110, 80);
         BookNumbers.setTextAlignment(TextAlignment.CENTER);
         BookNumbers.setTranslateX(250);
-        BookNumbers.setTranslateY(90);
+        BookNumbers.setTranslateY(130);
         Paint svColor = Color.rgb(102,111,200);
         BookNumbers.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
         BookNumbers.setTextFill(Color.BLACK);
@@ -100,25 +109,26 @@ public class BookInformationFX extends Application {
 
 
 
-        Label WriterNumbers = new Label("350 Writers " );
+
+        Label WriterNumbers = new Label((writerCounter/6)+" Writers " );
         WriterNumbers.setAlignment(Pos.CENTER);
         setStyle2(WriterNumbers);
         WriterNumbers.setPrefSize(110, 80);
         WriterNumbers.setTextAlignment(TextAlignment.CENTER);
         WriterNumbers.setFont(font1);
         WriterNumbers.setTranslateX(1000);
-        WriterNumbers.setTranslateY(90);
+        WriterNumbers.setTranslateY(130);
         Paint sttColor = Color.rgb(0,96,11);
         BookNumbers.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
         Paint stColor = Color.rgb(100,150,50);
         WriterNumbers.setBackground(new Background(new BackgroundFill(stColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        WriterNumbers.setTextFill(Color.AQUA);
+        WriterNumbers.setTextFill(Color.BLACK);
         WriterNumbers.setScaleX(6);
         WriterNumbers.setScaleY(3.4);
 
 
 
-        Label YearsNumbers = new Label( " 12 Years " );
+        Label YearsNumbers = new Label( (yearCounter /6)+" Years " );
         YearsNumbers.setAlignment(Pos.CENTER);
         setStyle3(YearsNumbers);
         YearsNumbers.setPrefSize(110, 80);
@@ -128,13 +138,13 @@ public class BookInformationFX extends Application {
         YearsNumbers.setTranslateY(465);
         Paint shColor = Color.rgb(200,20,30);
         YearsNumbers.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        YearsNumbers.setTextFill(Color.FUCHSIA);
+        YearsNumbers.setTextFill(Color.BLACK);
         YearsNumbers.setScaleX(6);
         YearsNumbers.setScaleY(3.4);
 
 
 
-        Label TypeNumbers = new Label("6 types");
+        Label TypeNumbers = new Label((typeCounter/6)+" types");
         TypeNumbers.setAlignment(Pos.CENTER);
         setStyle4(TypeNumbers);
         TypeNumbers.setFont(font1);
@@ -144,15 +154,53 @@ public class BookInformationFX extends Application {
         TypeNumbers.setTranslateY(465);
         Paint srColor = Color.rgb(214,158,33);
         TypeNumbers.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        TypeNumbers.setTextFill(Color.DARKSEAGREEN);
+        TypeNumbers.setTextFill(Color.BLACK);
         TypeNumbers.setScaleX(6);
         TypeNumbers.setScaleY(3.4);
 
+        PathTransition pt = new PathTransition();
+        pt.setDuration(Duration.seconds(6));
+        // pt.setNode(ball);
+//        pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+        pt.setCycleCount(1);
+        pt.setAutoReverse(false);
+        pt.play();
+
+
+
+        time = new Timeline();
+        time.setCycleCount(6);
+        time.setAutoReverse(false);
+        time.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1.13),
+                        event -> {
+                            timeSec++;
+                            bookCounter = (numberOfBooks/6)*timeSec;
+                            writerPalse =  (writerCounter/6)*timeSec;
+                            typePalse = (typeCounter/6)*timeSec;
+                            yearPalse =  (yearCounter/6)*timeSec;
+                            BookNumbers.setText(bookCounter+" Books" );
+                            WriterNumbers.setText(writerCounter+" Writers" );
+                            TypeNumbers.setText(typeCounter+" types" );
+                            YearsNumbers.setText(yearCounter+" Years" );
+
+                            if (timeSec == 6) {
+
+                                time.stop();
+                            }
+                        })
+        );
+
+        time.play();
 
 
 
 
-Group semiGroup = new Group();;
+
+
+
+
+        Group semiGroup = new Group();;
 semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
 
 
@@ -198,11 +246,11 @@ semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumber
         label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #CC0000 \n" +
+                "    -fx-background-color: #00FFFF \n" +
                 "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
                 "        #8d9092,\n" +
                 "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #00ffff, #a1a3a6);\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.6em;");
@@ -230,11 +278,11 @@ semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumber
         label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #33FF66 \n" +
+                "    -fx-background-color: #00FFFF \n" +
                 "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
                 "        #8d9092,\n" +
                 "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffff00, #a1a3a6);\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.6em;");
@@ -246,11 +294,11 @@ semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumber
         label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #CC6600 \n" +
+                "    -fx-background-color: #00FFFF \n" +
                 "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
                 "        #8d9092,\n" +
                 "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ff00ff, #a1a3a6);\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.6em;");
