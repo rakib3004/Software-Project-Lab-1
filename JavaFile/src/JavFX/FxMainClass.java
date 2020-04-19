@@ -32,19 +32,19 @@ public class FxMainClass extends Application {
 
         welcome.setOnAction(actionEvent -> {
 
-          /*  BookInformationFX bookInformationFX = new BookInformationFX();
+         BookInformationFX bookInformationFX = new BookInformationFX();
             try {
                 bookInformationFX.start(stage);
             } catch (Exception exception) {
                 exception.printStackTrace();
-            }*/
+            }
 
-          FxSecondWindow fxSecondWindow = new FxSecondWindow();
+         /* FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
                 fxSecondWindow.start(stage);
             } catch (Exception exception) {
                 exception.printStackTrace();
-            }
+            }*/
 
         });
 
@@ -107,8 +107,7 @@ public class FxMainClass extends Application {
     
 
     public static void main(String[] args) {
-//            Processing processing = new Processing();
-//            processing.fileReader();
+
         Application.launch(args);
     }
 }

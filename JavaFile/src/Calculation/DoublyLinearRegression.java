@@ -8,6 +8,7 @@ public class DoublyLinearRegression {
     int iterator;
 double sumYX2,sumYX3,sumX3square,sumX2square,sumX2X3;
 double meanY,meanX2,meanX3;
+
 CalculateDoublyRegression calculateDoublyRegression = new CalculateDoublyRegression();
     public void doublyLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks){
 

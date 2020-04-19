@@ -11,6 +11,7 @@ import PageRankAlgorithm.PageRankCalculation;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -83,96 +84,76 @@ public class BookInformationFX extends Application {
             e.printStackTrace();
         }
 
-        Label SVelo = new Label(numberOfBooks+" Books !!!" );
-        SVelo.setFont(font1);
-        SVelo.setPrefSize(110, 80);
-        SVelo.setTextAlignment(TextAlignment.CENTER);
-        SVelo.setTranslateX(250);
-        SVelo.setTranslateY(55);
+        Label BookNumbers = new Label(numberOfBooks+" Books !!!" );
+        BookNumbers.setAlignment(Pos.CENTER);
+        setStyle(BookNumbers);
+        BookNumbers.setFont(font1);
+        BookNumbers.setPrefSize(110, 80);
+        BookNumbers.setTextAlignment(TextAlignment.CENTER);
+        BookNumbers.setTranslateX(250);
+        BookNumbers.setTranslateY(55);
         Paint svColor = Color.rgb(102,111,200);
-        SVelo.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        SVelo.setTextFill(Color.WHITE);
-        SVelo.setScaleX(7);
-        SVelo.setScaleY(5);
+        BookNumbers.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
+      //  BookNumbers.setTextFill(Color.WHITE);
+        BookNumbers.setScaleX(7);
+        BookNumbers.setScaleY(5);
 
 
 
-        Label STime = new Label("350 Writers " );
-        STime.setPrefSize(110, 80);
-        STime.setTextAlignment(TextAlignment.CENTER);
-        STime.setFont(font1);
-        STime.setTranslateX(1000);
-        STime.setTranslateY(55);
+        Label WriterNumbers = new Label("350 Writers " );
+        WriterNumbers.setAlignment(Pos.CENTER);
+        setStyle(WriterNumbers);
+        WriterNumbers.setPrefSize(110, 80);
+        WriterNumbers.setTextAlignment(TextAlignment.CENTER);
+        WriterNumbers.setFont(font1);
+        WriterNumbers.setTranslateX(1000);
+        WriterNumbers.setTranslateY(55);
         Paint sttColor = Color.rgb(0,96,11);
-        SVelo.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        BookNumbers.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
         Paint stColor = Color.rgb(100,150,50);
-        STime.setBackground(new Background(new BackgroundFill(stColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        STime.setTextFill(Color.WHITE);
-        STime.setScaleX(7);
-        STime.setScaleY(5);
+        WriterNumbers.setBackground(new Background(new BackgroundFill(stColor, CornerRadii.EMPTY, Insets.EMPTY)));
+     //   WriterNumbers.setTextFill(Color.WHITE);
+        WriterNumbers.setScaleX(7);
+        WriterNumbers.setScaleY(5);
 
 
 
-        Label SHmax = new Label( " 12 Years " );
-        SHmax.setPrefSize(110, 80);
-        SHmax.setTextAlignment(TextAlignment.CENTER);
-        SHmax.setFont(font1);
-        SHmax.setTranslateX(250);
-        SHmax.setTranslateY(500);
+        Label YearsNumbers = new Label( " 12 Years " );
+        YearsNumbers.setAlignment(Pos.CENTER);
+        setStyle(YearsNumbers);
+        YearsNumbers.setPrefSize(110, 80);
+        YearsNumbers.setTextAlignment(TextAlignment.CENTER);
+        YearsNumbers.setFont(font1);
+        YearsNumbers.setTranslateX(250);
+        YearsNumbers.setTranslateY(450);
         Paint shColor = Color.rgb(200,20,30);
-        SHmax.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        SHmax.setTextFill(Color.WHITE);
-        SHmax.setScaleX(7);
-        SHmax.setScaleY(5);
+        YearsNumbers.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
+    //    YearsNumbers.setTextFill(Color.WHITE);
+        YearsNumbers.setScaleX(7);
+        YearsNumbers.setScaleY(5);
 
 
 
-        Label SR = new Label("6 types");
-        SR.setFont(font1);
-        SR.setTextAlignment(TextAlignment.CENTER);
-        SR.setPrefSize(110, 80);
-        SR.setTranslateX(1000);
-        SR.setTranslateY(500);
+        Label TypeNumbers = new Label("6 types");
+        TypeNumbers.setAlignment(Pos.CENTER);
+        setStyle(TypeNumbers);
+        TypeNumbers.setFont(font1);
+        TypeNumbers.setTextAlignment(TextAlignment.CENTER);
+        TypeNumbers.setPrefSize(110, 80);
+        TypeNumbers.setTranslateX(1000);
+        TypeNumbers.setTranslateY(450);
         Paint srColor = Color.rgb(214,158,33);
-        SR.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        SR.setTextFill(Color.WHITE);
-        SR.setScaleX(7);
-        SR.setScaleY(5);
+        TypeNumbers.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
+     //   TypeNumbers.setTextFill(Color.WHITE);
+        TypeNumbers.setScaleX(7);
+        TypeNumbers.setScaleY(5);
 
 
-     /*   Label STmax = new Label("Tmax: 0");
-        STmax.setFont(font1);
-        STmax.setTranslateX(1000);
-        STmax.setTranslateY(270);
-        Paint staColor = Color.rgb(120,25,168);
-        SVelo.setBackground(new Background(new BackgroundFill(staColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        STmax.setTextFill(Color.WHITE);
-        STmax.setScaleX(2);
-        STmax.setScaleY(2);
 
-       Label SX = new Label("X: 0");
-        SX.setFont(font1);
-        Paint sxColor = Color.rgb(230,25,180);
-        SX.setBackground(new Background(new BackgroundFill(sxColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        SX.setTranslateX(1000);
-        SX.setTranslateY(320);
-        SX.setTextFill(Color.WHITE);
-        SX.setScaleX(2);
-        SX.setScaleY(2);
-
-        Label SY = new Label("Y: 0");
-        SY.setFont(font1);
-        Paint syColor = Color.rgb(166,55,67);
-        SY.setBackground(new Background(new BackgroundFill(syColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        SY.setTranslateX(1000);
-        SY.setTranslateY(370);
-        SY.setTextFill(Color.WHITE);
-        SY.setScaleX(2);
-        SY.setScaleY(2);*/
 
 
 Group semiGroup = new Group();;
-semiGroup.getChildren().addAll(SVelo,STime,SHmax,SR/*,STmax,SX,SY*/);
+semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
 
 
         Image image = new Image("libraryBackground9.jpg");
@@ -210,5 +191,21 @@ semiGroup.getChildren().addAll(SVelo,STime,SHmax,SR/*,STmax,SX,SY*/);
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  button;
+    }
+
+    public Label setStyle(Label label)
+    {
+        label.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color: \n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 0.6em;");
+        return  label;
     }
 }

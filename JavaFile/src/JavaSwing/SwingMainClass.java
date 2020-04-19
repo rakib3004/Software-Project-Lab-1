@@ -38,6 +38,7 @@ public class SwingMainClass {
 
       input1 = Integer.parseInt(stringInput);
 
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 
@@ -45,8 +46,8 @@ public class SwingMainClass {
 
       if(input1==1){
 
-          stringInput2 =  JOptionPane.showInputDialog("What do you want???\n1.Multivariable Linear Regression \n" +
-                  "2.Analytic Heirarcy Process\n3.Page Rank Algorithm");
+          stringInput2 =  JOptionPane.showInputDialog("What do you want???\n1.Two Variable Linear Regression \n" +
+                  "2.Three Variable Linear Regression \n3.Four Variable Linear Regression ");
 
           input2 = Integer.parseInt(stringInput2);
 
