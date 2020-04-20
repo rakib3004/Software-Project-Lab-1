@@ -18,9 +18,21 @@ public class PriceCriteriaAHP {
 
 
         for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                System.out.print(priceCriteriaAHPMatrix[i][j]);
+
+            }
+            System.out.println();
+        }
+
+        System.out.println("Main Problem :::::: ");
+        for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
 
-                priceCriteriaAHPMatrix[i][j] = Math.abs(priceCounter[i]/priceCounter[j]);
+                priceCriteriaAHPMatrix[i][j] = priceCounter[i]/priceCounter[j];
+
+
+                System.out.println(priceCriteriaAHPMatrix[i][j]);
 
             }
         }
@@ -30,13 +42,24 @@ public class PriceCriteriaAHP {
             for (j = i + 1; j < 3; j++) {
 
                 priceCriteriaAHPMatrix[j][i] = Math.pow(priceCriteriaAHPMatrix[i][j], -1);
+                System.out.println(priceCriteriaAHPMatrix[j][i]);
 
             }
         }
 
         for (i = 0; i < 3; i++) {
 
-            priceCriteriaAHPMatrix[i][i] = (1.0);
+            priceCriteriaAHPMatrix[i][i] = 1.00;
+        }
+
+
+
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                System.out.print(priceCriteriaAHPMatrix[i][j]);
+
+            }
+            System.out.println();
         }
 
 
@@ -46,7 +69,7 @@ public class PriceCriteriaAHP {
             for (j = 0; j < 3; j++) {
 
                 summationMatrix[i] = summationMatrix[i] + priceCriteriaAHPMatrix[i][j];
-                System.out.println("Summation Matrix :");
+                System.out.println("Summation Matrix "+"["+i+"]"+"["+j+"]"+":");
                 System.out.println(summationMatrix[i]);
 
 
