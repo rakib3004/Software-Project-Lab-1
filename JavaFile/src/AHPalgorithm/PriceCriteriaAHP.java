@@ -6,7 +6,7 @@ import ObjectOriented.PriorityData;
 public class PriceCriteriaAHP {
     AHPcriteriaWeight ahPcriteriaWeight;
     AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
-    int [] priceCounter = new int[3];
+    double [] priceCounter = new double[3];
 
     public AHPcriteriaWeight priceCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] priceCriteriaAHPMatrix = new double[3][3];
@@ -16,23 +16,10 @@ public class PriceCriteriaAHP {
         priceCounter  = ahpSubCriteriaProcess.priceCriteriaCalculationMethods(priorityData,numberOfBooks);
 
 
-
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {
-                System.out.print(priceCriteriaAHPMatrix[i][j]);
-
-            }
-            System.out.println();
-        }
-
-        System.out.println("Main Problem :::::: ");
         for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
 
                 priceCriteriaAHPMatrix[i][j] = priceCounter[i]/priceCounter[j];
-
-
-                System.out.println(priceCriteriaAHPMatrix[i][j]);
 
             }
         }
@@ -42,7 +29,6 @@ public class PriceCriteriaAHP {
             for (j = i + 1; j < 3; j++) {
 
                 priceCriteriaAHPMatrix[j][i] = Math.pow(priceCriteriaAHPMatrix[i][j], -1);
-                System.out.println(priceCriteriaAHPMatrix[j][i]);
 
             }
         }
@@ -53,30 +39,14 @@ public class PriceCriteriaAHP {
         }
 
 
-
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {
-                System.out.print(priceCriteriaAHPMatrix[i][j]);
-
-            }
-            System.out.println();
-        }
-
-
         double[] summationMatrix = new double[3];
 
         for (i = 0; i < 3; i++) {
             for (j = 0; j < 3; j++) {
 
                 summationMatrix[i] = summationMatrix[i] + priceCriteriaAHPMatrix[i][j];
-                System.out.println("Summation Matrix "+"["+i+"]"+"["+j+"]"+":");
-                System.out.println(summationMatrix[i]);
-
-
 
             }
-
-
 
         }
 
@@ -85,8 +55,6 @@ public class PriceCriteriaAHP {
             for (j = 0; j < 3; j++) {
 
                 priceCriteriaAHPMatrix[i][j] = priceCriteriaAHPMatrix[i][j] / summationMatrix[i];
-                System.out.println("Price Criteria AHP : ");
-                System.out.println(priceCriteriaAHPMatrix[i][j]);
             }
         }
         double[] priceWeightMatrix = new double[3];
@@ -95,8 +63,6 @@ public class PriceCriteriaAHP {
             for (j = 0; j < 3; j++) {
 
                 priceWeightMatrix[i] = priceWeightMatrix[i] + priceCriteriaAHPMatrix[j][i];
-                System.out.println("Price Weight Matrix : ");
-                System.out.println(priceWeightMatrix[i]);
 
             }
             priceWeightMatrix[i] = priceWeightMatrix[i] / 3;
@@ -105,8 +71,6 @@ public class PriceCriteriaAHP {
         for (i = 0; i < 3; i++) {
 
         priceWeightMatrix[i]  =  priceWeightMatrix[i]*criteria;
-            System.out.println("Price Weight Matrix 2 : ");
-            System.out.println(priceWeightMatrix[i]);
 
         }
 
@@ -116,6 +80,7 @@ public class PriceCriteriaAHP {
         System.out.println(ahPcriteriaWeight.highPrice+"---------->  ahPcriteriaWeight.highPrice");
         System.out.println(ahPcriteriaWeight.mediumPrice+"---------->  ahPcriteriaWeight.mediumPrice");
         System.out.println(ahPcriteriaWeight.lowPrice+"---------->  ahPcriteriaWeight.lowPrice");
+        System.out.println();
        return ahPcriteriaWeight;
     }
 }

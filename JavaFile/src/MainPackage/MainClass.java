@@ -69,6 +69,12 @@ public class MainClass extends JFrame {
             ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
 
         }
+        else if(input1==6){
+            int i;
+            for(i=0;i<numberOfBooks;i++){
+                System.out.println(priorityData[i].timePriority);
+            }
+        }
         else{
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
 

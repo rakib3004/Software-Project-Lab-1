@@ -1,11 +1,11 @@
 package Processed;
 
-import MainPackage.ResultClass;
+import ResultPackage.MLR_Result;
 import ObjectOriented.PriorityData;
 
 public class CalculateWeight {
     double optimizeValue;
-    ResultClass resultClass = new ResultClass();
+    MLR_Result MLRResult = new MLR_Result();
     public  void  regressionResult(double betaZero, double betaOne, double
             betaTwo, double betaThree, PriorityData[] priorityData, int numberOfBooks){
 
@@ -21,7 +21,7 @@ public class CalculateWeight {
             priorityData[iterator].setMLRweight(optimizeValue);
             }
 
-       resultClass.sortingProcess(priorityData,numberOfBooks);
+       MLRResult.sortingProcess(priorityData,numberOfBooks);
 
     }
 }
