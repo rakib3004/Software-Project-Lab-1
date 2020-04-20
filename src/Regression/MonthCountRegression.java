@@ -22,7 +22,7 @@ public class MonthCountRegression {
     String string1,string2;
 
     int newYear,oldYear,integer1,integer2;
-    public  void statistics(BookData[] bookData, String[] writerName,
+    public  void monthCountRegressionMethods(BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
 
         for(iterator =0; iterator <numberOfBooks; iterator++){

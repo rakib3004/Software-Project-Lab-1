@@ -1,11 +1,8 @@
 package MainPackage;
 
 import Calculation.DoublyLinearRegression;
-import Calculation.LinearRegression;
-import Calculation.MultipleLinearRegression;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
-import Methods.Sorting;
 
 public class DataParsing {
     double[] bookPriority = new double[1050];
@@ -15,10 +12,12 @@ public class DataParsing {
     double[][] x_value = new double[3][1050];
     double[] y_value = new double[1050];
     int[] typeValue = new int[1050];
-    int[] timeCount = new int[1050];
+    double[] timeCount = new double[1050];
     int[] bookCount = new int[1050];
-    int[] bookPrice = new int[1050];
-    double[] weight = new double[1050];
+    double [] bookPrice = new double [1050];
+    double[] MLRweight = new double[1050];
+    double[] AHPweight = new double[1050];
+    double[] PRAweight = new double[1050];
 
     String string, string1, string2;
     int length;
@@ -26,13 +25,11 @@ public class DataParsing {
     int newYear, oldYear;
     int  index;
     int iterator;
-    Sorting sorting = new Sorting();
-    LinearRegression linearRegression = new LinearRegression();
-    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
     public static PriorityData priorityData[] = new PriorityData[1050];
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
-    public void dataParsingMethods(BookData[] bookData, String[] writerName,
+    public PriorityData [] dataParsingMethods(BookData[] bookData, String[] writerName,
                                    String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
 
@@ -43,7 +40,7 @@ public class DataParsing {
         }
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            newYear = 3 + (20) * 12;
+            newYear = 4 + (20) * 12;
             string1 = bookId[iterator].substring(3, 5);
             integer1 = Integer.parseInt(string1);
             string2 = bookId[iterator].substring(5, 7);
@@ -62,7 +59,7 @@ public class DataParsing {
             length = bookPrice1[iterator].length();
             string = bookPrice1[iterator].substring(1, length);
             string = string.replaceAll("[\\t\\n\\r]+", "");
-            bookPrice[iterator] = Integer.parseInt(string) / 10;
+            bookPrice[iterator] = Integer.parseInt(string);
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             bookPriority[iterator] = (35 - typeValue[iterator]);
@@ -70,10 +67,13 @@ public class DataParsing {
             borrowPriority[iterator] = bookCount[iterator];
             pricePriority[iterator] = bookPrice[iterator];
             index = iterator;
-            weight[iterator] = bookPriority[iterator];
+            MLRweight[iterator] = 0.0;
+            AHPweight[iterator] = 0.0;
+            PRAweight[iterator] = 0.0;
+
             priorityData[iterator] = new PriorityData(bookPriority[iterator],
                     timePriority[iterator], borrowPriority[iterator], pricePriority[iterator],
-                    index, bookData[iterator], weight[iterator]);
+                    index, bookData[iterator], MLRweight[iterator],AHPweight[iterator],PRAweight[iterator]);
         }
 
         y_value = bookPriority;
@@ -87,12 +87,15 @@ public class DataParsing {
 sorting.sortingMethods(bookData,weight,numberOfBooks);
         }*/
 
+        //AHPcalculation ahPcalculation = new AHPcalculation();
 
-            multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        //ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+         //  multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
             /* System.out.println("Doubly  Linear Regression _______  ");*/
 
             //doublyLinearRegression.doublyLinearRegressionMethods(priorityData);
+        return  priorityData;
         }
 
 

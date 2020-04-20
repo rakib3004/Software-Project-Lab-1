@@ -42,7 +42,7 @@ public class BorrowCollection {
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
                 if(priorityData[iterator1].bookData.borrowCount.equals(element)){
                     System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
-list.add(priorityData[iterator1].weight);
+list.add(priorityData[iterator1].MLRweight);
                     number++;
                     count++;
 
@@ -67,7 +67,7 @@ list.add(priorityData[iterator1].weight);
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
                 if(priorityData[iterator1].bookData.borrowCount.equals(element)){
-                    summation = summation + priorityData[iterator1].weight;
+                    summation = summation + priorityData[iterator1].MLRweight;
 
                     //   System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
                 }
@@ -82,8 +82,8 @@ list.add(priorityData[iterator1].weight);
 
                 if(priorityData[iterator1].bookData.borrowCount.equals(element)){
 
-                    standard_deviation = standard_deviation + ((mean-priorityData[iterator1].weight)*
-                            (mean-priorityData[iterator1].weight));
+                    standard_deviation = standard_deviation + ((mean-priorityData[iterator1].MLRweight)*
+                            (mean-priorityData[iterator1].MLRweight));
 
                 }
 

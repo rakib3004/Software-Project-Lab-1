@@ -10,6 +10,7 @@ public class MedianCalculation {
 
     int firstQuartile;
     int thirdQuartile;
+
     public void medianCalculationMethods(List<Double> list){
         Collections.sort(list);
         System.out.println(list);
@@ -92,15 +93,19 @@ median = (median1 + median2)/2;
         System.out.println("Third Quartile Value : "+list.get(thirdQuartile));
     } public void findMaximumValue(List<Double> list){
 
+
+
         System.out.println("Maximum Value : "+list.get(sizeA-1));
 
+        
 
     }
 
 
     public void findInterQuartileRange(List<Double> list){
 
-interQuartileRange = list.get(thirdQuartile) -  list.get(firstQuartile) ;
+
+        interQuartileRange = list.get(thirdQuartile) -  list.get(firstQuartile) ;
 
     }
 

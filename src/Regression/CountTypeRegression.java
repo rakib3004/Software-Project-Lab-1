@@ -17,7 +17,7 @@ public class CountTypeRegression {
     int length;
     String string;
 
-    public  void statistics(BookData[] bookData, String[] writerName,
+    public  void countTypeRegressionMethods (BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
 

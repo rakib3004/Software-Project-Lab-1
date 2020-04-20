@@ -16,7 +16,7 @@ public class PriceTypeRegression {
 
     int length;
     String string;
-    public  void statistics(BookData[] bookData, String[] writerName,
+    public  void priceTypeRegressionMethods(BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
 
 

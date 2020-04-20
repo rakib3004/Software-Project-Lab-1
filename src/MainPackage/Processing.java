@@ -4,25 +4,23 @@ package MainPackage;
 import Calculation.MultipleLinearRegression;
 import Methods.PrintInfo;
 import ObjectOriented.BookData;
+import ObjectOriented.PriorityData;
 
 import java.io.File;
 import java.io.FileReader;
 
 import java.io.IOException;
 public class Processing {
-     static   int numOfBook;
+        int numOfBook;
      BookData [] bookData = new BookData[1050];
 
   DataParsing dataParsing = new DataParsing();
   PrintInfo printInfo = new PrintInfo();
-  //  Searching searching = new Searching();
-  //  RankShow rankShow = new RankShow();
-    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-int iterator;
+  int iterator;
     int charIndex ;
     int wordIndex;
-
-    public void fileReader()  throws IOException{
+PriorityData [] priorityData;
+    public PriorityData [] fileReaderMethods()  throws IOException{
 
         File file = new File("IIT_SPL.txt");
         FileReader fr = new FileReader(file);
@@ -60,9 +58,7 @@ int iterator;
 
                 charIndex = charIndex % 5;
 
-                /*String string = bookName[x];
-                string=string.replace(" ","");
-                bookName[x] = string;*/
+
                 int bookNameSize = bookName[wordIndex].length();
 bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
 
@@ -71,6 +67,14 @@ bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
 
                 int bookIdSize = bookId[wordIndex].length();
                 bookId[wordIndex] = bookId[wordIndex].substring(1,bookIdSize);
+
+                int bookIdPrice = bookPrice[wordIndex].length();
+                bookPrice[wordIndex] = bookPrice[wordIndex].substring(1,bookIdPrice);
+
+             String string = bookPrice[wordIndex];
+                     string = string.replaceAll("[\\t\\n\\r]+", "");
+                bookPrice[wordIndex] = string;
+
 
                 bookData[wordIndex] = new BookData(  bookName[wordIndex],  writerName[wordIndex],
          bookId[wordIndex],   borrowCount[wordIndex],
@@ -107,22 +111,13 @@ bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
         }
         fr.close();
 
-      //  System.out.println();
-
  numOfBook= wordIndex;
 
-int p= getNumber();
-double weight1[] = new double[1050];
 
 
-       // rankShow.showCase(bookData,numOfBook);
-        //searching.search(bookData,numOfBook);
-       // printInfo.printAll(bookData,numOfBook);
+   priorityData =      dataParsing.dataParsingMethods(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
 
-        dataParsing.dataParsingMethods(bookData,writerName,borrowCount,bookPrice,bookId,numOfBook);
-    }
-    public int getNumber(){
-        return wordIndex;
+ return  priorityData;
     }
 
 

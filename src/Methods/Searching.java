@@ -1,6 +1,5 @@
 package Methods;
 
-import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
 
 public class Searching {
@@ -43,7 +42,7 @@ public class Searching {
             System.out.println("____________________________" );
             for (jterator = 0; jterator < numberOfBooks; jterator++) {
                 if (priorityData[jterator].bookData.writerName.charAt(0) == ch) {
-                    System.out.println("Writer Name : " + priorityData[jterator].bookData.writerName + "\t Book weight : " + priorityData[jterator].weight);
+                    System.out.println("Writer Name : " + priorityData[jterator].bookData.writerName + "\t Book weight : " + priorityData[jterator].MLRweight);
 
                 }
 

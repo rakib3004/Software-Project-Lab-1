@@ -31,7 +31,7 @@ BorrowCollection borrowCollection = new BorrowCollection();
         PriorityData tempData ;
         for(iterator=0;iterator<numberOfBooks;iterator++){
             for(int j=0;j<numberOfBooks;j++){
-                if(priorityData[iterator].getWeight()>priorityData[j].getWeight()){
+                if(priorityData[iterator].getMLRweight()>priorityData[j].getMLRweight()){
 
                 tempData =priorityData[iterator];
                 priorityData[iterator] = priorityData[j];
@@ -77,9 +77,11 @@ try {
 
 }
 catch (NullPointerException nullPointerException){
-    System.out.println("");
+    System.out.println();
 
 }
+
+     //   FxMainClass fxMainClass = new FxMainClass(priorityData,numberOfBooks);
     }
 
     public void optimizedResult(PriorityData[] priorityData,int numberOfBooks){
@@ -87,8 +89,8 @@ catch (NullPointerException nullPointerException){
 
        try {
             for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                System.out.println(iterator+"_____M R :"+priorityData[iterator].getWeight()+">>>>>>"+priorityData[iterator].bookData.bookName);
-                string = string + (iterator + "_____M R :" + priorityData[iterator].getWeight() + ">>>>>>" + priorityData[iterator].bookData.bookName+"\n");
+                System.out.println(iterator+"_____M R :"+priorityData[iterator].getMLRweight()+">>>>>>"+priorityData[iterator].bookData.bookName);
+                string = string + (iterator + "_____M R :" + priorityData[iterator].getMLRweight() + ">>>>>>" + priorityData[iterator].bookData.bookName+"\n");
             }
 
         }
