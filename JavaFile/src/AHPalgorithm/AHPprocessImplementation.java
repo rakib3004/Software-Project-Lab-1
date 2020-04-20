@@ -119,12 +119,14 @@ catch (Exception exception){
                         }
                     }
 
+ double newPriorityValue;
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
-            priorityData[iterator1].weight = priorityData[iterator1].bookPriority+
+            newPriorityValue = priorityData[iterator1].bookPriority+
                     priorityData[iterator1].borrowPriority+
                     priorityData[iterator1].timePriority+
                     priorityData[iterator1].pricePriority;
-            System.out.println(priorityData[iterator1].bookData.bookName+"\t"+priorityData[iterator1].weight);
+            priorityData[iterator1].setAHPweight(newPriorityValue);
+            System.out.println(priorityData[iterator1].bookData.bookName+"\t"+newPriorityValue);
         }
 
                     }

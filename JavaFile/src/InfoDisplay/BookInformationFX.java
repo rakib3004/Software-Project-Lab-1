@@ -180,9 +180,9 @@ public class BookInformationFX extends Application {
                             typePalse = (typeCounter/6)*timeSec;
                             yearPalse =  (yearCounter/6)*timeSec;
                             BookNumbers.setText(bookCounter+" Books" );
-                            WriterNumbers.setText(writerCounter+" Writers" );
-                            TypeNumbers.setText(typeCounter+" types" );
-                            YearsNumbers.setText(yearCounter+" Years" );
+                            WriterNumbers.setText(writerPalse+" Writers" );
+                            TypeNumbers.setText(typePalse+" types" );
+                            YearsNumbers.setText(yearPalse+" Years" );
 
                             if (timeSec == 6) {
 
@@ -194,17 +194,11 @@ public class BookInformationFX extends Application {
         time.play();
 
 
-
-
-
-
-
-
         Group semiGroup = new Group();;
 semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
+String string = "libraryBackground9.jpg";
 
-
-        Image image = new Image("libraryBackground9.jpg");
+        Image image = new Image(string);
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,semiGroup,exit,back);

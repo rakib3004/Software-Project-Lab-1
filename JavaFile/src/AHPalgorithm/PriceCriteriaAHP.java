@@ -17,23 +17,26 @@ public class PriceCriteriaAHP {
 
 
 
-
         for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
+
                 priceCriteriaAHPMatrix[i][j] = Math.abs(priceCounter[i]/priceCounter[j]);
+
             }
         }
 
 
          for (i = 0; i < 3; i++) {
             for (j = i + 1; j < 3; j++) {
+
                 priceCriteriaAHPMatrix[j][i] = Math.pow(priceCriteriaAHPMatrix[i][j], -1);
+
             }
         }
 
         for (i = 0; i < 3; i++) {
 
-            priceCriteriaAHPMatrix[i][i] = (1);
+            priceCriteriaAHPMatrix[i][i] = (1.0);
         }
 
 
@@ -43,13 +46,24 @@ public class PriceCriteriaAHP {
             for (j = 0; j < 3; j++) {
 
                 summationMatrix[i] = summationMatrix[i] + priceCriteriaAHPMatrix[i][j];
+                System.out.println("Summation Matrix :");
+                System.out.println(summationMatrix[i]);
+
+
+
             }
+
+
+
         }
+
 
         for (i = 0; i < 3; i++) {
             for (j = 0; j < 3; j++) {
 
                 priceCriteriaAHPMatrix[i][j] = priceCriteriaAHPMatrix[i][j] / summationMatrix[i];
+                System.out.println("Price Criteria AHP : ");
+                System.out.println(priceCriteriaAHPMatrix[i][j]);
             }
         }
         double[] priceWeightMatrix = new double[3];
@@ -58,6 +72,8 @@ public class PriceCriteriaAHP {
             for (j = 0; j < 3; j++) {
 
                 priceWeightMatrix[i] = priceWeightMatrix[i] + priceCriteriaAHPMatrix[j][i];
+                System.out.println("Price Weight Matrix : ");
+                System.out.println(priceWeightMatrix[i]);
 
             }
             priceWeightMatrix[i] = priceWeightMatrix[i] / 3;
@@ -66,6 +82,9 @@ public class PriceCriteriaAHP {
         for (i = 0; i < 3; i++) {
 
         priceWeightMatrix[i]  =  priceWeightMatrix[i]*criteria;
+            System.out.println("Price Weight Matrix 2 : ");
+            System.out.println(priceWeightMatrix[i]);
+
         }
 
          ahPcriteriaWeight = new AHPcriteriaWeight(priceWeightMatrix[0],

@@ -22,9 +22,12 @@ PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculat
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             linkValue = pageRankLink.pageRankLinkMethods(iterator, priorityData, numberOfBooks);
 
-            for (jterator = 0; (jterator < numberOfBooks && jterator != iterator); jterator++) {
+        //    System.out.println(linkValue);
+
+            for (jterator = 0; jterator < numberOfBooks ; jterator++) {
 
                 checkLink = checkPageLink.checkPageLinkMethods(iterator, jterator, priorityData, numberOfBooks);
+             //   System.out.println(checkLink);
                 if (checkLink == true) {
                     pageRankMatrix[jterator][iterator] = linkValue;
 
@@ -32,8 +35,10 @@ PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculat
                     pageRankMatrix[jterator][iterator] = 0.0;
 
                 }
+              //  System.out.println(pageRankMatrix[jterator][iterator]);
 
             }
+        //    System.out.println();
         }
 
 
@@ -42,24 +47,26 @@ PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculat
             pageRankMatrix[jterator][jterator] = 0.0;
 
         }
-
-        for (jterator = 0; jterator < numberOfBooks; jterator++) {
-
-            System.out.println(pageWeight[jterator]);
-
-        }
+//
+//        for (jterator = 0; jterator < numberOfBooks; jterator++) {
+//
+//            System.out.println(pageWeight[jterator]);
+//
+//        }
 
         int processingCounter = 0;
-        for (processingCounter = 0; processingCounter <2; processingCounter++) {
+        for (processingCounter = 1; processingCounter <=1; processingCounter++) {
 
 
         pageWeight = pageRankMatrixCalculation.pageRankMatrixCalculationMethods(pageWeight, pageRankMatrix, numberOfBooks);
 
-         }
+
+
+        }
 
         for(jterator=0;jterator<numberOfBooks;jterator++){
 
-            System.out.println(pageWeight[jterator]);
+            priorityData[jterator].setPRAweight(pageWeight[jterator]);
 
         }
 

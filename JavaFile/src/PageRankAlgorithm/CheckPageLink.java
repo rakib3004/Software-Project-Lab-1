@@ -15,7 +15,7 @@ public class CheckPageLink {
         writerLinkBool = checkWriterLinkBool(index,jIndex,priorityData,numberOfBooks);
         alphabetLinkBool = checkAlphabetLinkBool(index,jIndex,priorityData,numberOfBooks);
 
-        linkPageBool = (borrowLinkBool&&typeLinkBool&&writerLinkBool&&alphabetLinkBool);
+        linkPageBool = (borrowLinkBool||typeLinkBool||writerLinkBool||alphabetLinkBool);
         return linkPageBool;
 
     }

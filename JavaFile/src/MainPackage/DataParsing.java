@@ -1,12 +1,8 @@
 package MainPackage;
 
-import AHPalgorithm.AHPcalculation;
 import Calculation.DoublyLinearRegression;
-import Calculation.LinearRegression;
-import Calculation.MultipleLinearRegression;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
-import Methods.Sorting;
 
 public class DataParsing {
     double[] bookPriority = new double[1050];
@@ -19,7 +15,9 @@ public class DataParsing {
     double[] timeCount = new double[1050];
     int[] bookCount = new int[1050];
     double [] bookPrice = new double [1050];
-    double[] weight = new double[1050];
+    double[] MLRweight = new double[1050];
+    double[] AHPweight = new double[1050];
+    double[] PRAweight = new double[1050];
 
     String string, string1, string2;
     int length;
@@ -61,7 +59,7 @@ public class DataParsing {
             length = bookPrice1[iterator].length();
             string = bookPrice1[iterator].substring(1, length);
             string = string.replaceAll("[\\t\\n\\r]+", "");
-            bookPrice[iterator] = Integer.parseInt(string) / 10;
+            bookPrice[iterator] = Integer.parseInt(string);
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             bookPriority[iterator] = (35 - typeValue[iterator]);
@@ -69,10 +67,13 @@ public class DataParsing {
             borrowPriority[iterator] = bookCount[iterator];
             pricePriority[iterator] = bookPrice[iterator];
             index = iterator;
-            weight[iterator] = bookPriority[iterator];
+            MLRweight[iterator] = 0.0;
+            AHPweight[iterator] = 0.0;
+            PRAweight[iterator] = 0.0;
+
             priorityData[iterator] = new PriorityData(bookPriority[iterator],
                     timePriority[iterator], borrowPriority[iterator], pricePriority[iterator],
-                    index, bookData[iterator], weight[iterator]);
+                    index, bookData[iterator], MLRweight[iterator],AHPweight[iterator],PRAweight[iterator]);
         }
 
         y_value = bookPriority;

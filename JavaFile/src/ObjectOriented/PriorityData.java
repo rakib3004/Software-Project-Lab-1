@@ -1,38 +1,54 @@
 package ObjectOriented;
 
-import JavFX.FxDatabase;
-
 public class PriorityData {
    public double bookPriority ;
-   public double bookPriorityOne ;
     public  double timePriority;
     public   double borrowPriority ;
     public  double pricePriority;
+    public int index;
+    public   BookData bookData;
+    public double MLRweight;
+    public double AHPweight;
+    public double PRAweight;
+    public double bookPriorityOne ;
 
-    public PriorityData(double bookPriority,
-                        double timePriority, double borrowPriority,
-                        double pricePriority,int index , BookData
-                                bookData,double weight ) {
+
+    public PriorityData(double bookPriority, double timePriority, double borrowPriority,
+                        double pricePriority, int index, BookData bookData, double MLRweight,
+                        double AHPweight, double PRAweight) {
         this.bookPriority = bookPriority;
         this.timePriority = timePriority;
         this.borrowPriority = borrowPriority;
         this.pricePriority = pricePriority;
-        this.weight = weight;
+        this.index = index;
+        this.bookData = bookData;
+        this.MLRweight = MLRweight;
+        this.AHPweight = AHPweight;
+        this.PRAweight = PRAweight;
+    }
+
+    public PriorityData(double bookPriority,
+                        double timePriority, double borrowPriority,
+                        double pricePriority,int index , BookData
+                                bookData,double MLRweight) {
+        this.bookPriority = bookPriority;
+        this.timePriority = timePriority;
+        this.borrowPriority = borrowPriority;
+        this.pricePriority = pricePriority;
+        this.MLRweight = MLRweight;
         this.bookData = bookData;
         this.index = index;
     }
 
-    public double getWeight() {
-        return weight;
+    public double getMLRweight() {
+        return MLRweight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setMLRweight(double MLRweight) {
+        this.MLRweight = MLRweight;
     }
 
-    public double weight;
-    public   BookData bookData;
-   public int index;
+
     public PriorityData(double bookPriority , double timePriority,
                         double borrowPriority ,  double pricePriority,
                         int index,BookData bookData){
@@ -62,4 +78,19 @@ public int getIndex(){
     return  this.index;
 }
 
+    public double getAHPweight() {
+        return AHPweight;
+    }
+
+    public void setAHPweight(double AHPweight) {
+        this.AHPweight = AHPweight;
+    }
+
+    public double getPRAweight() {
+        return PRAweight;
+    }
+
+    public void setPRAweight(double PRAweight) {
+        this.PRAweight = PRAweight;
+    }
 }

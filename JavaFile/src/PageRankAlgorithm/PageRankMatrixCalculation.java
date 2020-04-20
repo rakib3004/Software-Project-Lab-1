@@ -9,10 +9,23 @@ public class PageRankMatrixCalculation {
 
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
+                weightSum[iterator] =0.0;
+
+
+        }
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
             for(jterator=0;jterator<numberOfBooks;jterator++){
 weightSum[iterator] = weightSum[iterator]+ (pageRankMatrix[iterator][jterator]*pageWeight[jterator]);
 
             }
+        }
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            System.out.println(weightSum[iterator]);
+
         }
         pageWeight =weightSum;
         return pageWeight;

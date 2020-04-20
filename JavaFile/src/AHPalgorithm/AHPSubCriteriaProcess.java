@@ -7,22 +7,29 @@ public class AHPSubCriteriaProcess {
 int iterator1;
     public int[] priceCriteriaCalculationMethods(PriorityData[] priorityData, int numberOfBooks){
         int [] priceCounter = new int[3];
+priceCounter[0] =1;priceCounter[1] =1;priceCounter[2] =1;
 
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 180) {
                 priceCounter[0]++;
                 //System.out.println(iterator1 + ":::: 180 er niche dam");
-            } else if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 250) {
+            }
+            else if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 250) {
                 //System.out.println(iterator1 + ":::: 250 er niche dam");
                 priceCounter[1]++;
-            } else {
-                //System.out.println(iterator1 + ":::: Besi dam");
+            }
+
+            else /*if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 750) */{
+                //System.out.println(iterator1 + ":::: 250 er niche dam");
                 priceCounter[2]++;
             }
 
         }
 
-
+        System.out.println("Price Count :  ");
+        for(iterator1=0;iterator1<3;iterator1++){
+            System.out.println(priceCounter[iterator1]);
+        }
 return  priceCounter;
     }
 

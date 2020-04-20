@@ -3,8 +3,6 @@ package Processed;
 import MainPackage.ResultClass;
 import ObjectOriented.PriorityData;
 
-import javax.swing.*;
-
 public class CalculateWeight {
     double optimizeValue;
     ResultClass resultClass = new ResultClass();
@@ -20,7 +18,7 @@ public class CalculateWeight {
               //  System.out.println("********* "+optimizeValue+" *********");
 
 
-            priorityData[iterator].setWeight(optimizeValue);
+            priorityData[iterator].setMLRweight(optimizeValue);
             }
 
        resultClass.sortingProcess(priorityData,numberOfBooks);
