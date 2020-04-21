@@ -27,7 +27,7 @@ double y_mean;
 Matrix matrix = new Matrix();
 
 
- public void multipleLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks ){
+ public PriorityData[] multipleLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks ){
 
      for(iterator =0; iterator <numberOfBooks; iterator++){
          y_mean = y_mean + priorityData[iterator].bookPriority;
@@ -88,8 +88,10 @@ for(iterator =0; iterator <numberOfBooks; iterator++){
   d_array[2] = d3;
 
 
-matrix.evaluateMatrix(a_array,b_array,c_array,d_array,priorityData,numberOfBooks,y_mean);
+priorityData = matrix.evaluateMatrix(a_array,b_array,c_array,d_array,priorityData,numberOfBooks,y_mean);
 //,a2,a3,b1,b2,b3,c1,c2,c3,d1,d2,d3;
 
+
+     return priorityData;
  }
 }

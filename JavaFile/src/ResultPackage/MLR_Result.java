@@ -19,6 +19,15 @@ public class MLR_Result {
 
     public void MLR_ResultMethods(PriorityData[] priorityData, int numberOfBooks) {
 
+
+
+
+    }
+    
+    public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks){
+
+
+
         double temporary;
         int temp;
         PriorityData tempData;
@@ -73,8 +82,8 @@ public class MLR_Result {
 
         }
 
+
+
     }
-
-
 
 }

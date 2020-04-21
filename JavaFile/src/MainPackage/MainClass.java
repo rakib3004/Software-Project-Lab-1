@@ -57,7 +57,7 @@ public class MainClass extends JFrame {
 
             }
             else if(input2==3){
-                multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+                priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
             }
 
 

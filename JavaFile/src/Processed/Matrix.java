@@ -14,7 +14,7 @@ double betaZero,betaOne,betaTwo,betaThree;
 MatrixDeterminant matrixDeterminant = new MatrixDeterminant();
 CalculateWeight calculateWeight = new CalculateWeight();
 
-    public void evaluateMatrix(double [] a_array , double [] b_array ,
+    public PriorityData[] evaluateMatrix(double [] a_array , double [] b_array ,
                                double [] c_array, double [] d_array, PriorityData[] priorityData,
                                int numberOfBooks, double y_mean){
 
@@ -68,12 +68,13 @@ betaThree = determinantT/determinantZ;
 betaZero  = y_mean - betaOne - betaTwo - betaThree;
 
 
-calculateWeight.calculateWeightMethods(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+priorityData =calculateWeight.calculateWeightMethods(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
        /* betaOne = Math.pow(betaOne,-1);
         betaTwo = Math.pow(betaTwo,-1);
         betaThree = Math.pow(betaThree,-1);*/
 
 
+        return priorityData;
     }
 
 }
