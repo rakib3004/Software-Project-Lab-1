@@ -68,18 +68,11 @@ betaThree = determinantT/determinantZ;
 betaZero  = y_mean - betaOne - betaTwo - betaThree;
 
 
-calculateWeight.regressionResult(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
-        betaOne = Math.pow(betaOne,-1);
+calculateWeight.calculateWeightMethods(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+       /* betaOne = Math.pow(betaOne,-1);
         betaTwo = Math.pow(betaTwo,-1);
-        betaThree = Math.pow(betaThree,-1);
-        calculateWeight.regressionResult(betaZero,betaOne,betaTwo,betaThree,priorityData,numberOfBooks);
+        betaThree = Math.pow(betaThree,-1);*/
 
-      /*  System.out.println("###################################");
-
-        System.out.print("######"); System.out.print("Alpha : "+betaOne);System.out.println("######");
-        System.out.print("######");  System.out.print("Beta : "+betaTwo);System.out.println("######");
-        System.out.print("######");  System.out.print("Gama : "+betaThree);System.out.println("######");
-        System.out.println("###################################");*/
 
     }
 

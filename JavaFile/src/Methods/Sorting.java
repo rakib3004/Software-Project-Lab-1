@@ -2,20 +2,18 @@ package Methods;
 
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
+import ObjectOriented.PriorityData;
 
 public class Sorting {
 
     int iterator;
 
-    public void sortingMethods(BookData[] bookData, double [] weight, int numberOfBooks){
+    public void sortingMethods(PriorityData[] priorityData, int numberOfBooks){
 
-        GenericAlgo genericAlgo[] = new GenericAlgo[1050];
-        for(iterator =0; iterator <numberOfBooks; iterator++){
+        GenericAlgo genericAlgo[] = new GenericAlgo[632];
 
-            bookData[iterator].setWeight(weight[iterator]);
-        }
         for(iterator = 0; iterator <numberOfBooks; iterator++){
-            genericAlgo[iterator] = new GenericAlgo(bookData[iterator].getWeight(), iterator);
+            genericAlgo[iterator] = new GenericAlgo(priorityData[iterator].getMLRweight(), iterator);
         }
         double temporary;
         int temp;
@@ -39,9 +37,9 @@ public class Sorting {
 
        try {
            for (iterator = 0; iterator < numberOfBooks; iterator++) {
-               System.out.println("Book Name :" + bookData[genericAlgo[iterator].getIndex()].getBookName() +
-                       "; Writer Name : " + bookData[genericAlgo[iterator].getIndex()].getWriterName()
-                       + "; Weight : " + genericAlgo[iterator].getWeight()+" ID : "+bookData[genericAlgo[iterator].getIndex()].getBookId());
+               System.out.println("Book Name :" + priorityData[genericAlgo[iterator].getIndex()].bookData.getBookName() +
+                       "; Writer Name : " + priorityData[genericAlgo[iterator].getIndex()].bookData.getWriterName()
+                       + "; Weight : " + genericAlgo[iterator].getWeight()+" ID : "+priorityData[genericAlgo[iterator].getIndex()].bookData.getBookId());
            }
 
        }
