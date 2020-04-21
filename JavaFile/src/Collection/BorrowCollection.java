@@ -50,19 +50,13 @@ list.add(priorityData[iterator1].MLRweight);
 
             }
 
-
-
             double summation=0.0;
 
             int sizeB = list.size();
             if(sizeB>7){
 
                 medianCalculation.medianCalculationMethods(list);
-
-
-            }
-
-
+     }
 
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 

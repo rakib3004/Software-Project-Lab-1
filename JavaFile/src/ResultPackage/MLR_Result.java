@@ -1,11 +1,10 @@
 package ResultPackage;
 
-import Collection.BorrowCollection;
-import Collection.TimeCollection;
-import Collection.TypeCollection;
+import Collection.*;
+import Methods.PrintInfo;
 import Methods.Searching;
+import Methods.Sorting;
 import ObjectOriented.PriorityData;
-import Collection.WriterCollection;
 
 import javax.swing.*;
 import java.util.Scanner;
@@ -16,6 +15,9 @@ public class MLR_Result {
     TypeCollection typeCollection = new TypeCollection();
     TimeCollection timeCollection = new TimeCollection();
     BorrowCollection borrowCollection = new BorrowCollection();
+    PriceCollection priceCollection = new PriceCollection();
+    Sorting sorting = new Sorting();
+    PrintInfo printInfo = new PrintInfo();
     int iterator;
 
     public void MLR_ResultMethods(PriorityData[] priorityData, int numberOfBooks) {
@@ -34,27 +36,30 @@ Scanner scanner = new Scanner(System.in);
 
 enterChoice = scanner.nextInt();
 if(enterChoice==1){
-    showMLRProcessResult(priorityData,numberOfBooks);
+    printInfo.showMLRProcessResult(priorityData,numberOfBooks);
 }
 else if(enterChoice==2){
-
+sorting.sortingMLRmethods(priorityData,numberOfBooks);
+}
+else if(enterChoice==3){
+    timeCollection.timeCollectionMLRMethods(priorityData,numberOfBooks);
+}
+else if(enterChoice==4){
+    writerCollection.writerCollectionMLRMethods(priorityData,numberOfBooks);
+}
+else if (enterChoice==5){
+priceCollection.priceCollectionMLRMethods(priorityData,numberOfBooks);
+}
+else if (enterChoice==6){
+timeCollection.timeCollectionMLRMethods(priorityData,numberOfBooks);
+}
+else if (enterChoice==7){
+        borrowCollection.borrowCollectionMLRMethods(priorityData,numberOfBooks);
 }
 
 
-
     }
 
-    public void showMLRProcessResult(PriorityData[] priorityData, int numberOfBooks) {
-
-        System.out.println("Book Name :\t Writer Name : \t Weight ");
-        for(iterator=0;iterator<numberOfBooks;iterator++){
-
-            System.out.println(priorityData[iterator].bookData.bookName+"\t"
-                    +priorityData[iterator].bookData.writerName+"\t"+priorityData[iterator].getMLRweight());
-
-        }
-
-    }
 
 
 
