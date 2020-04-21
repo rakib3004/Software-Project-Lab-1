@@ -9,6 +9,7 @@ package MainPackage;
         import ObjectOriented.PriorityData;
         import PageRankAlgorithm.PageRankCalculation;
         import Regression.newVersion.TypeCountRegression;
+        import ResultPackage.MLR_Result;
 
         import javax.swing.*;
 
@@ -28,7 +29,7 @@ public class MainClass extends JFrame {
         int numberOfBooks;
         Processing processing = new Processing();
         BookNumber bookNumber = new BookNumber();
-
+        MLR_Result mlrResult = new MLR_Result();
         AHPcalculation ahPcalculation = new AHPcalculation();
         AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
         Scanner scanner = new Scanner(System.in);
@@ -58,6 +59,8 @@ public class MainClass extends JFrame {
             }
             else if(input2==3){
                 priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+mlrResult.MLR_ResultMethods(priorityData,numberOfBooks);
+
             }
 
 

@@ -8,6 +8,7 @@ import ObjectOriented.PriorityData;
 import Collection.WriterCollection;
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class MLR_Result {
     Searching searching = new Searching();
@@ -19,12 +20,48 @@ public class MLR_Result {
 
     public void MLR_ResultMethods(PriorityData[] priorityData, int numberOfBooks) {
 
+int enterChoice;
+Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter Your Choice : ");
+        System.out.println("1. Show Result");
+        System.out.println("2. Sorting and show result");
+        System.out.println("3. Type Based Analysis");
+        System.out.println("4. Writer Based Analysis");
+        System.out.println("5. Price Based Analysis");
+        System.out.println("6. Time Based Analysis");
+        System.out.println("7. borrow Based Analysis");
+
+enterChoice = scanner.nextInt();
+if(enterChoice==1){
+    showMLRProcessResult(priorityData,numberOfBooks);
+}
+else if(enterChoice==2){
+
+}
 
 
 
     }
-    
-    public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks){
+
+    public void showMLRProcessResult(PriorityData[] priorityData, int numberOfBooks) {
+
+        System.out.println("Book Name :\t Writer Name : \t Weight ");
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            System.out.println(priorityData[iterator].bookData.bookName+"\t"
+                    +priorityData[iterator].bookData.writerName+"\t"+priorityData[iterator].getMLRweight());
+
+        }
+
+    }
+
+
+
+
+
+
+        public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks){
 
 
 
