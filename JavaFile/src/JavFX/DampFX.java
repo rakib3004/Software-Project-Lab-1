@@ -1,11 +1,8 @@
 package JavFX;
-
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
@@ -15,21 +12,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
-import RankingAlgorithmFx.StatisticsFX;
-import javafx.application.Application;
-
-import javafx.scene.Group;
-
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
@@ -213,6 +197,15 @@ index = Integer.toString(i);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
+    }
+
+    TableView<FxDatabase> tableView;
+
+    TypeCountRegression typeCountRegression = new TypeCountRegression();
+    public void backupFxCode(Stage primaryStage) throws Exception{
+
+
 
     }
 }
