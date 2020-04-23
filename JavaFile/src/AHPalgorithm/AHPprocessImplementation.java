@@ -130,6 +130,12 @@ public class AHPprocessImplementation {
 
         }
 
+        for(iterator1=0;iterator1<numberOfBooks;iterator1++){
+
+            System.out.println("Book Name : "+priorityData[iterator1].bookData.bookName+"\t"+
+                    "Writer Name: "+priorityData[iterator1].bookData.writerName+"\t"+"Weight"+priorityData[iterator1].getAHPweight());
+        }
+
         return priorityData;
 
     }

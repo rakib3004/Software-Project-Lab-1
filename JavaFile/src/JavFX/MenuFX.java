@@ -1,5 +1,6 @@
 package JavFX;
 
+import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
@@ -18,25 +19,26 @@ public class MenuFX extends Application {
     public void start(Stage primaryStage) {
 
 
-        Button bookSelf = new Button("Book Self");
+        Button bookApplications = new Button("Book Applications");
         Button bookInfo = new Button("Book Info");
         Button statistics = new Button("Statistics");
 
 
-        bookSelf.setTranslateX(500);
-        bookSelf.setTranslateY(250);
+        bookApplications.setTranslateX(500);
+        bookApplications.setTranslateY(350);
         bookInfo.setTranslateX(500);
-        bookInfo.setTranslateY(350);
+        bookInfo.setTranslateY(250);
         statistics.setTranslateX(500);
         statistics.setTranslateY(450);
 
 
-        bookSelf.setOnAction(actionEvent -> {
+        bookApplications.setOnAction(actionEvent -> {
 
-            StatisticsFX statisticsFX = new StatisticsFX();
+            BookApplication bookApplication = new BookApplication();
+
             try {
 
-                statisticsFX.start(primaryStage);
+                bookApplication.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -64,11 +66,11 @@ public class MenuFX extends Application {
         });
 
 
-        setStyle(bookSelf);
+        setStyle(bookApplications);
         setStyle(bookInfo);
         setStyle(statistics);
 
-        bookSelf.setPrefSize(200, 80);
+        bookApplications.setPrefSize(200, 80);
         bookInfo.setPrefSize(200, 80);
         statistics.setPrefSize(200, 80);
 
@@ -105,7 +107,7 @@ public class MenuFX extends Application {
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,bookSelf,statistics,bookInfo,exit,back);
+        group.getChildren().addAll(canvas,bookApplications,statistics,bookInfo,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

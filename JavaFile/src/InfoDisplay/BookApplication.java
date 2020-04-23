@@ -28,7 +28,7 @@ public class BookApplication extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-
+UIDisplayFX uiDisplayFX = new UIDisplayFX();
     @Override
     public void start(Stage primaryStage) {
 
@@ -60,35 +60,24 @@ public class BookApplication extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         
-        typeBased.setTranslateX(0);
-        typeBased.setTranslateY(650);
-        timeBased.setTranslateX(1100);
-        timeBased.setTranslateY(650);
+        typeBased.setTranslateX(500);
+        typeBased.setTranslateY(200);
+        timeBased.setTranslateX(500);
+        timeBased.setTranslateY(300);
 
-        borrowBased.setTranslateX(0);
-        borrowBased.setTranslateY(650);
-        priceBased.setTranslateX(1100);
-        priceBased.setTranslateY(650);
+        borrowBased.setTranslateX(500);
+        borrowBased.setTranslateY(400);
+        priceBased.setTranslateX(500);
+        priceBased.setTranslateY(500);
 
 
-       /* Start.setOnAction(actionEvent -> {
-
-            try {
-
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
-                System.exit(0);    }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });*/
+        
         back.setOnAction(actionEvent -> {
-            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
-            try {
-                multiVaribleRegressionFX.start(primaryStage);
+MenuFX menuFX = new MenuFX();
+
+try {
+
+                menuFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -100,108 +89,75 @@ public class BookApplication extends Application {
 
 
         });
-
-
-
-          typeBased.setOnAction(actionEvent -> {
-            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+typeBased.setOnAction(actionEvent -> {
             try {
-                multiVaribleRegressionFX.start(primaryStage);
+uiDisplayFX.typeStatistics(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
 
-        timeBased.setOnAction(actionEvent -> {
-            System.exit(0);
-
-
-        });
-
-
-
-          borrowBased.setOnAction(actionEvent -> {
-            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+        borrowBased.setOnAction(actionEvent -> {
             try {
-                multiVaribleRegressionFX.start(primaryStage);
+                uiDisplayFX.borrowStatistics(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
+
+
+timeBased.setOnAction(actionEvent -> {
+    try {
+        uiDisplayFX.timeStatistics(primaryStage);
+
+    } catch (Exception exception) {
+        exception.printStackTrace();
+    }
+
+});
 
         priceBased.setOnAction(actionEvent -> {
-            System.exit(0);
+            try {
+                uiDisplayFX.priceStatistics(primaryStage);
 
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
 
         });
-
-
 
 
 
     //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
-setStyle(timeBased);
+
+       setStyle(timeBased);
         setStyle(typeBased);
-setStyle(borrowBased);
+
+       setStyle(borrowBased);
         setStyle(priceBased);
 
       //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-   typeBased.setPrefSize(200, 80);
-        timeBased.setPrefSize(200, 80);
+         timeBased.setPrefSize(200, 80);
+        typeBased.setPrefSize(200, 80);
 
-   borrowBased.setPrefSize(200, 80);
-        priceBased.setPrefSize(200, 80);
-
-      /*  MenuButton statistics = new MenuButton("Statistics");
-
-        MenuItem pieChart = new MenuItem("Pie Chart");
-
-        MenuItem barChart = new MenuItem("Bar Chart");
-
-        MenuItem lineChart = new MenuItem("Line Chart");
-
-
-        statistics.getItems().addAll(pieChart,barChart, lineChart);
-        statistics.setPrefSize(150,65);
-        statistics.setFont(font1);
+         priceBased.setPrefSize(200, 80);
+        borrowBased.setPrefSize(200, 80);
 
 
 
-        MenuButton analysisType = new MenuButton("Analysis Type");
-        analysisType.setPrefSize(230,65);
-        analysisType.setFont(font1);
-
-        MenuItem typeBased = new MenuItem("Type Based");
-        MenuItem timeBased = new MenuItem("Time Based");
-        MenuItem borrowBased = new MenuItem("Borrow Based");
-        MenuItem priceBased = new MenuItem("Price Based");
-
-        analysisType.getItems().addAll(typeBased,timeBased,borrowBased,priceBased);
-
-
-        GridPane gridPane = new GridPane();
-        gridPane.setMinSize(1000, 700);
-        gridPane.setPrefSize(900,600);
-        gridPane.setPadding(new Insets(10, 10, 10, 10));
-
-        gridPane.setVgap(5);
-        gridPane.setHgap(5);
-
-gridPane.add(statistics,42,35);
-gridPane.add(analysisType,43,35);**/
-        
-
-        Image image = new Image("libraryBackground19.jpg");
+        Image image = new Image("libraryBackground13.jpg");
        Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(canvas,exit,back,typeBased,timeBased,priceBased,borrowBased);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
