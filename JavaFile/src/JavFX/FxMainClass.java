@@ -32,19 +32,19 @@ public class FxMainClass extends Application {
 
         welcome.setOnAction(actionEvent -> {
 
-         BookInformationFX bookInformationFX = new BookInformationFX();
+       /*  BookInformationFX bookInformationFX = new BookInformationFX();
             try {
                 bookInformationFX.start(stage);
             } catch (Exception exception) {
                 exception.printStackTrace();
-            }
+            }*/
 
-         /* FxSecondWindow fxSecondWindow = new FxSecondWindow();
+          FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
                 fxSecondWindow.start(stage);
             } catch (Exception exception) {
                 exception.printStackTrace();
-            }*/
+            }
 
         });
 
