@@ -1,6 +1,8 @@
 package BookDataBaseFX;
 
 import InfoDisplay.BookApplication;
+import VisualRepresentation.InfoBarChart;
+import VisualRepresentation.InfoPieChart;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -16,6 +18,8 @@ import javafx.stage.Stage;
 
 public class TypesOfBookFX extends Application {
 
+InfoBarChart infoBarChart = new InfoBarChart();
+InfoPieChart infoPieChart = new InfoPieChart();
 
     @Override
     public void start(Stage primaryStage) {
@@ -31,7 +35,6 @@ public class TypesOfBookFX extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button barChart = new Button("Bar Chart");
-        Button lineChart = new Button("Line Chart");
         Button pieChart = new Button("Pie Chart");
 
 
@@ -46,11 +49,9 @@ public class TypesOfBookFX extends Application {
 
         barChart.setTranslateX(500);
         barChart.setTranslateY(200);
-        lineChart.setTranslateX(500);
-        lineChart.setTranslateY(300);
 
         pieChart.setTranslateX(500);
-        pieChart.setTranslateY(400);
+        pieChart.setTranslateY(300);
 
 
         back.setOnAction(actionEvent -> {
@@ -70,7 +71,7 @@ public class TypesOfBookFX extends Application {
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                barChartFX.startPricing(primaryStage);
+                infoBarChart.startTypeBook(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -80,18 +81,7 @@ public class TypesOfBookFX extends Application {
 
         pieChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.startPricing(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-
-        lineChart.setOnAction(actionEvent -> {
-            try {
-                lineChartFX.startPricing(primaryStage);
+                infoPieChart.startTypeBook(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -105,16 +95,13 @@ public class TypesOfBookFX extends Application {
         setStyle(exit);
         setStyle(back);
 
-        setStyle(lineChart);
         setStyle(barChart);
-
         setStyle(pieChart);
 
         //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        lineChart.setPrefSize(200, 80);
         barChart.setPrefSize(200, 80);
 
         pieChart.setPrefSize(200, 80);
@@ -126,7 +113,7 @@ public class TypesOfBookFX extends Application {
         Image image = new Image("libraryBackground17.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,barChart,lineChart,pieChart);
+        group.getChildren().addAll(canvas,exit,back,barChart,pieChart);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
