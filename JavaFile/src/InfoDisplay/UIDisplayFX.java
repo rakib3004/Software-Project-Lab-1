@@ -12,4 +12,22 @@ public class UIDisplayFX extends Application {
     }
 
 
+
+    public void typeStatistics(Stage typeStatisticsStage) {
+
+    }
+
+    public void timeStatistics(Stage timeStatisticsStage) {
+
+    }
+
+    public void borrowStatistics(Stage borrowStatisticsStage) {
+
+    }
+
+     public void priceStatistics(Stage priceStatisticsStage) {
+
+    }
+
+
 }

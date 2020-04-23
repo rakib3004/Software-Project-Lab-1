@@ -45,14 +45,30 @@ public class BookApplication extends Application {
       //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
+        Button typeBased = new Button("Type Based");
+        Button timeBased = new Button("Time Based");
+        Button borrowBased = new Button("Borrow Based");
+        Button priceBased = new Button("Price Based");
 
 
       //  Start.setTranslateX(500);
       //  Start.setTranslateY(400);
+
+
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
+        
+        typeBased.setTranslateX(0);
+        typeBased.setTranslateY(650);
+        timeBased.setTranslateX(1100);
+        timeBased.setTranslateY(650);
+
+        borrowBased.setTranslateX(0);
+        borrowBased.setTranslateY(650);
+        priceBased.setTranslateX(1100);
+        priceBased.setTranslateY(650);
 
 
        /* Start.setOnAction(actionEvent -> {
@@ -85,15 +101,65 @@ public class BookApplication extends Application {
 
         });
 
+
+
+          typeBased.setOnAction(actionEvent -> {
+            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+            try {
+                multiVaribleRegressionFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        timeBased.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+
+
+          borrowBased.setOnAction(actionEvent -> {
+            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+            try {
+                multiVaribleRegressionFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        priceBased.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+
+
+
+
     //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
+setStyle(timeBased);
+        setStyle(typeBased);
+setStyle(borrowBased);
+        setStyle(priceBased);
 
       //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        MenuButton statistics = new MenuButton("Statistics");
+   typeBased.setPrefSize(200, 80);
+        timeBased.setPrefSize(200, 80);
+
+   borrowBased.setPrefSize(200, 80);
+        priceBased.setPrefSize(200, 80);
+
+      /*  MenuButton statistics = new MenuButton("Statistics");
 
         MenuItem pieChart = new MenuItem("Pie Chart");
 
@@ -129,13 +195,13 @@ public class BookApplication extends Application {
         gridPane.setHgap(5);
 
 gridPane.add(statistics,42,35);
-gridPane.add(analysisType,43,35);
+gridPane.add(analysisType,43,35);**/
         
 
         Image image = new Image("libraryBackground19.jpg");
        Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,gridPane);
+        group.getChildren().addAll(canvas,exit,back);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
