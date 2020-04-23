@@ -1,19 +1,7 @@
-package InfoDisplay;
+package BookDataBaseFX;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
-import BookDataBaseFX.*;
-import JavFX.MenuFX;
-import MainPackage.BookNumber;
-import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.PriorityData;
-import javafx.animation.KeyFrame;
-import javafx.animation.PathTransition;
-import javafx.animation.Timeline;
+import InfoDisplay.BookApplication;
 import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -21,67 +9,30 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.io.IOException;
+public class TypesOfBookFX extends Application {
 
-public class BookInformationFX extends Application {
-
-    PriorityData[] priorityData;
-    AHPcriteriaWeight ahPcriteriaWeight;
-
-    int numberOfBooks;
-    int typeCounter=6,writerCounter=350, yearCounter =12;
-    int typePalse,writerPalse,yearPalse;
-    int timeSec = 1;
- int bookCounter=0;
-    Processing processing = new Processing();
-    BookNumber bookNumber = new BookNumber();
-    Timeline time = new Timeline();
-
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
-    TypesOfBookFX typesOfBookFX = new TypesOfBookFX();
-    DemandsOfBookFX demandsOfBookFX = new DemandsOfBookFX();
-    GenericsOfBookFX genericsOfBookFX = new GenericsOfBookFX();
-    ClassesOfBookFX classesOfBookFX = new ClassesOfBookFX();
-
-    BorrrowCountOfBookFX borrrowCountOfBookFX = new BorrrowCountOfBookFX();
 
     @Override
     public void start(Stage primaryStage) {
 
 
-UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
         Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
 
 
-
-
         //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        Button typesOfBook = new Button("Types Of Book");
-        Button demandsOfBook = new Button("Demands Of Book");
-        Button genericsOfBook = new Button("Generics Of Book");
-        Button classesOfBooks = new Button("Classes of Books");
-        Button borrowCountOfBook = new Button("Borrow Count Of Book");
-        Button numberDisplay = new Button("Number Display");
-
+        Button barChart = new Button("Bar Chart");
+        Button lineChart = new Button("Line Chart");
+        Button pieChart = new Button("Pie Chart");
 
 
         //  Start.setTranslateX(500);
@@ -93,29 +44,19 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        typesOfBook.setTranslateX(500);
-        typesOfBook.setTranslateY(100);
-        demandsOfBook.setTranslateX(500);
-        demandsOfBook.setTranslateY(200);
+        barChart.setTranslateX(500);
+        barChart.setTranslateY(200);
+        lineChart.setTranslateX(500);
+        lineChart.setTranslateY(300);
 
-        genericsOfBook.setTranslateX(500);
-        genericsOfBook.setTranslateY(300);
-        classesOfBooks.setTranslateX(500);
-        classesOfBooks.setTranslateY(400);
-
-        borrowCountOfBook.setTranslateX(500);
-        borrowCountOfBook.setTranslateY(500);
-        numberDisplay.setTranslateX(500);
-        numberDisplay.setTranslateY(600);
-
+        pieChart.setTranslateX(500);
+        pieChart.setTranslateY(400);
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
-
+            BookApplication bookApplication = new BookApplication();
             try {
-
-                menuFX.start(primaryStage);
+                bookApplication.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -127,37 +68,20 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
 
         });
-        typesOfBook.setOnAction(actionEvent -> {
+        barChart.setOnAction(actionEvent -> {
             try {
-        typesOfBookFX.start(primaryStage);
+                barChartFX.startPricing(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
 
-        genericsOfBook.setOnAction(actionEvent -> {
+        pieChart.setOnAction(actionEvent -> {
             try {
-   genericsOfBookFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+                pieChartFX.startPricing(primaryStage);
 
-        });
-
-
-        demandsOfBook.setOnAction(actionEvent -> {
-            try {
-demandsOfBookFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-        classesOfBooks.setOnAction(actionEvent -> {
-            try {
-classesOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -165,19 +89,9 @@ classesOfBookFX.start(primaryStage);
         });
 
 
- borrowCountOfBook.setOnAction(actionEvent -> {
+        lineChart.setOnAction(actionEvent -> {
             try {
-borrrowCountOfBookFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-        numberDisplay.setOnAction(actionEvent -> {
-            BookNumberDisplayFX bookNumberDisplayFX = new BookNumberDisplayFX();
-            try {
-                bookNumberDisplayFX.start(primaryStage);
+                lineChartFX.startPricing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -191,36 +105,28 @@ borrrowCountOfBookFX.start(primaryStage);
         setStyle(exit);
         setStyle(back);
 
-        setStyle(demandsOfBook);
-        setStyle(typesOfBook);
+        setStyle(lineChart);
+        setStyle(barChart);
 
-        setStyle(genericsOfBook);
-        setStyle(classesOfBooks);
-
-        setStyle(borrowCountOfBook);
-        setStyle(numberDisplay);
+        setStyle(pieChart);
 
         //  Start.setPrefSize(200, 80);
-        back.setPrefSize(270, 80);
-        exit.setPrefSize(270, 80);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
 
-        demandsOfBook.setPrefSize(270, 80);
-        typesOfBook.setPrefSize(270, 80);
+        lineChart.setPrefSize(200, 80);
+        barChart.setPrefSize(200, 80);
 
-        classesOfBooks.setPrefSize(270, 80);
-        genericsOfBook.setPrefSize(270, 80);
-
-         borrowCountOfBook.setPrefSize(270, 80);
-        numberDisplay.setPrefSize(270, 80);
+        pieChart.setPrefSize(200, 80);
 
 
 
-        Image image = new Image("libraryBackground13.jpg");
+
+
+        Image image = new Image("libraryBackground17.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,typesOfBook);
-        group.getChildren().addAll(demandsOfBook,classesOfBooks,genericsOfBook);
-        group.getChildren().addAll(borrowCountOfBook,numberDisplay);
+        group.getChildren().addAll(canvas,exit,back,barChart,lineChart,pieChart);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -234,7 +140,9 @@ borrrowCountOfBookFX.start(primaryStage);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
     }
+
 
     public Button setStyle( Button button)
     {
