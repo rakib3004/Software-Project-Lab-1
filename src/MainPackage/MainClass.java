@@ -9,6 +9,9 @@ package MainPackage;
         import ObjectOriented.PriorityData;
         import PageRankAlgorithm.PageRankCalculation;
         import Regression.newVersion.TypeCountRegression;
+        import ResultPackage.AHP_Result;
+        import ResultPackage.MLR_Result;
+        import ResultPackage.PRA_Result;
 
         import javax.swing.*;
 
@@ -28,7 +31,9 @@ public class MainClass extends JFrame {
         int numberOfBooks;
         Processing processing = new Processing();
         BookNumber bookNumber = new BookNumber();
-
+        MLR_Result mlrResult = new MLR_Result();
+        AHP_Result ahpResult = new AHP_Result();
+        PRA_Result praResult = new PRA_Result();
         AHPcalculation ahPcalculation = new AHPcalculation();
         AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
         Scanner scanner = new Scanner(System.in);
@@ -57,7 +62,9 @@ public class MainClass extends JFrame {
 
             }
             else if(input2==3){
-                multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+                priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+                mlrResult.MLR_ResultMethods(priorityData,numberOfBooks);
+
             }
 
 
@@ -66,15 +73,22 @@ public class MainClass extends JFrame {
         else if(input1==2){
 
             ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-            ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
-
+       priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+             ahpResult.AHP_ResultMethods(priorityData,numberOfBooks);
+        }
+        else if(input1==6){
+            int i;
+            for(i=0;i<numberOfBooks;i++){
+                System.out.println(priorityData[i].timePriority);
+            }
         }
         else{
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
             try {
 
-                pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+           priorityData=   pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+praResult.PRA_ResultMethods(priorityData,numberOfBooks);
                 System.exit(0);
             }
 

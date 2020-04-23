@@ -1,35 +1,19 @@
 package JavFX;
-
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
-import RankingAlgorithmFx.StatisticsFX;
-import javafx.application.Application;
-
-import javafx.scene.Group;
-
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
@@ -206,13 +190,32 @@ index = Integer.toString(i);
        // vBox3.setSpacing(5);
 
 
+        Image background = new Image("libraryBackground10.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vBox3.setBackground(bg);
         Scene scene1 = new Scene(vBox3,900,700);
+
 
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
+    }
+
+    TableView<FxDatabase> tableView;
+
+    TypeCountRegression typeCountRegression = new TypeCountRegression();
+    public void backupFxCode(Stage primaryStage) throws Exception{
+
+
 
     }
 }

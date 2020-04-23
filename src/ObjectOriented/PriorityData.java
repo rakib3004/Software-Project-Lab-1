@@ -40,6 +40,46 @@ public class PriorityData {
         this.index = index;
     }
 
+    public double getTimePriority() {
+        return timePriority;
+    }
+
+    public void setTimePriority(double timePriority) {
+        this.timePriority = timePriority;
+    }
+
+    public double getBorrowPriority() {
+        return borrowPriority;
+    }
+
+    public void setBorrowPriority(double borrowPriority) {
+        this.borrowPriority = borrowPriority;
+    }
+
+    public double getPricePriority() {
+        return pricePriority;
+    }
+
+    public void setPricePriority(double pricePriority) {
+        this.pricePriority = pricePriority;
+    }
+
+    public BookData getBookData() {
+        return bookData;
+    }
+
+    public void setBookData(BookData bookData) {
+        this.bookData = bookData;
+    }
+
+    public double getBookPriorityOne() {
+        return bookPriorityOne;
+    }
+
+    public void setBookPriorityOne(double bookPriorityOne) {
+        this.bookPriorityOne = bookPriorityOne;
+    }
+
     public double getMLRweight() {
         return MLRweight;
     }

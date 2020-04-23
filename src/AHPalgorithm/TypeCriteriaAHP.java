@@ -6,7 +6,7 @@ import ObjectOriented.PriorityData;
 public class TypeCriteriaAHP {
     AHPcriteriaWeight ahPcriteriaWeight;
     AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
-    int [] typeCounter = new int[6];
+    double [] typeCounter = new double[6];
 
     public AHPcriteriaWeight typeCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] typeCriteriaAHPMatrix = new double[6][6];
@@ -81,6 +81,8 @@ int priority=1;
         System.out.println(ahPcriteriaWeight.scienceFictionType+"---------->  ahPcriteriaWeight.scienceFictionType");
         System.out.println(ahPcriteriaWeight.religionType+"---------->  ahPcriteriaWeight.religionType");
         System.out.println(ahPcriteriaWeight.othersType+"---------->  ahPcriteriaWeight.othersType");
+        System.out.println();
+
         return ahPcriteriaWeight;
 
     }

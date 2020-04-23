@@ -6,7 +6,7 @@ import ObjectOriented.PriorityData;
 public class CountCriteriaAHP {
     AHPcriteriaWeight ahPcriteriaWeight;
     AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
-    int [] countCounter = new int[4];
+    double [] countCounter = new double[4];
 
     public AHPcriteriaWeight countCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
         double[][] countCriteriaAHPMatrix = new double[4][4];
@@ -83,6 +83,7 @@ int priorityCount=2;
         System.out.println(ahPcriteriaWeight.highMediumDemand+"---------->  ahPcriteriaWeight.highMediumDemand");
         System.out.println(ahPcriteriaWeight.lowMediumDemand+"---------->  ahPcriteriaWeight.lowMediumDemand");
         System.out.println(ahPcriteriaWeight.lowlyDemand+"---------->  ahPcriteriaWeight.lowlyDemand");
-                return ahPcriteriaWeight;
+        System.out.println();
+        return ahPcriteriaWeight;
     }
 }

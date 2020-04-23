@@ -9,7 +9,7 @@ PageRankLink pageRankLink = new PageRankLink();
 CheckPageLink checkPageLink = new CheckPageLink();
     int iterator,jterator;
 PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculation();
-    public void pageRankCalculationMethods(PriorityData[] priorityData, int numberOfBooks) {
+    public PriorityData[]  pageRankCalculationMethods(PriorityData[] priorityData, int numberOfBooks) {
         double initialProbability = Math.pow(numberOfBooks, -1);
         double[] pageWeight = new double[numberOfBooks];
         double[][] pageRankMatrix = new double[numberOfBooks][numberOfBooks];
@@ -47,12 +47,7 @@ PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculat
             pageRankMatrix[jterator][jterator] = 0.0;
 
         }
-//
-//        for (jterator = 0; jterator < numberOfBooks; jterator++) {
-//
-//            System.out.println(pageWeight[jterator]);
-//
-//        }
+
 
         int processingCounter = 0;
         for (processingCounter = 1; processingCounter <=1; processingCounter++) {
@@ -70,5 +65,6 @@ PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculat
 
         }
 
+        return priorityData;
     }
 }

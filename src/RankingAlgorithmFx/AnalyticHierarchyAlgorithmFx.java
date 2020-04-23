@@ -58,7 +58,8 @@ AHPcalculation ahPcalculation = new AHPcalculation();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
                 ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
 
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
+                        priorityData,numberOfBooks);
 
                 System.exit(0);
             }

@@ -5,19 +5,19 @@ import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
 
 public class DataParsing {
-    double[] bookPriority = new double[1050];
-    double[] timePriority = new double[1050];
-    double[] borrowPriority = new double[1050];
-    double[] pricePriority = new double[1050];
-    double[][] x_value = new double[3][1050];
-    double[] y_value = new double[1050];
-    int[] typeValue = new int[1050];
-    double[] timeCount = new double[1050];
-    int[] bookCount = new int[1050];
-    double [] bookPrice = new double [1050];
-    double[] MLRweight = new double[1050];
-    double[] AHPweight = new double[1050];
-    double[] PRAweight = new double[1050];
+    double[] bookPriority = new double[632];
+    double[] timePriority = new double[632];
+    double[] borrowPriority = new double[632];
+    double[] pricePriority = new double[632];
+    double[][] x_value = new double[3][632];
+    double[] y_value = new double[632];
+    int[] typeValue = new int[632];
+    double[] timeCount = new double[632];
+    int[] bookCount = new int[632];
+    double [] bookPrice = new double [632];
+    double[] MLRweight = new double[632];
+    double[] AHPweight = new double[632];
+    double[] PRAweight = new double[632];
 
     String string, string1, string2;
     int length;
@@ -26,7 +26,7 @@ public class DataParsing {
     int  index;
     int iterator;
 
-    public static PriorityData priorityData[] = new PriorityData[1050];
+    public static PriorityData priorityData[] = new PriorityData[632];
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
 
     public PriorityData [] dataParsingMethods(BookData[] bookData, String[] writerName,
@@ -57,7 +57,7 @@ public class DataParsing {
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = bookPrice1[iterator].length();
-            string = bookPrice1[iterator].substring(1, length);
+           string = bookPrice1[iterator].substring(1, length);
             string = string.replaceAll("[\\t\\n\\r]+", "");
             bookPrice[iterator] = Integer.parseInt(string);
         }

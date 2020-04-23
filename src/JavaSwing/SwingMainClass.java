@@ -60,7 +60,7 @@ public class SwingMainClass {
 
           }
           else if(input2==3){
-              multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+              priorityData =      multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
           }
 
 
