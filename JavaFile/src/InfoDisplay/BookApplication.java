@@ -1,21 +1,24 @@
 package InfoDisplay;
 
 import Calculation.DoublyLinearRegression;
+import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
 import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class BookApplication extends Application {
@@ -32,22 +35,27 @@ public class BookApplication extends Application {
 
 
 
+        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
+        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
+        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
 
 
-        Button Start = new Button("Start");
+
+
+      //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
 
-        Start.setTranslateX(500);
-        Start.setTranslateY(400);
+      //  Start.setTranslateX(500);
+      //  Start.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
 
-        Start.setOnAction(actionEvent -> {
+       /* Start.setOnAction(actionEvent -> {
 
             try {
 
@@ -60,7 +68,7 @@ public class BookApplication extends Application {
                 exception.printStackTrace();
             }
 
-        });
+        });*/
         back.setOnAction(actionEvent -> {
             MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
             try {
@@ -77,33 +85,33 @@ public class BookApplication extends Application {
 
         });
 
-        setStyle(Start);
+    //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
 
-        Start.setPrefSize(200, 80);
+      //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Menu statistics = new Menu("Statistics");
+        MenuButton statistics = new MenuButton("Statistics");
 
         MenuItem pieChart = new MenuItem("Pie Chart");
- //       FileInputStream it1 = new FileInputStream("src/circle.png");
-     //   Image inp1 = new Image(it1);
-    //    item1.setGraphic(new ImageView(inp1));
+
         MenuItem barChart = new MenuItem("Bar Chart");
 
         MenuItem lineChart = new MenuItem("Line Chart");
-   //     FileInputStream it2 = new FileInputStream("src/rectangle.png");
-    //    Image inp2 = new Image(it2);
-    //    item2.setGraphic(new ImageView(inp2));
+
 
         statistics.getItems().addAll(pieChart,barChart, lineChart);
-    //    FileInputStream input = new FileInputStream("src/A.png");
-     //   Image im = new Image(input);
-      //  m1.setGraphic(new ImageView(im));
+        statistics.setPrefSize(150,65);
+        statistics.setFont(font1);
 
-        Menu analysisType = new Menu("Analysis Type");
+
+
+        MenuButton analysisType = new MenuButton("Analysis Type");
+        analysisType.setPrefSize(230,65);
+        analysisType.setFont(font1);
+
         MenuItem typeBased = new MenuItem("Type Based");
         MenuItem timeBased = new MenuItem("Time Based");
         MenuItem borrowBased = new MenuItem("Borrow Based");
@@ -112,27 +120,26 @@ public class BookApplication extends Application {
         analysisType.getItems().addAll(typeBased,timeBased,borrowBased,priceBased);
 
 
-Pane pane = new Pane();
-        boolean b = pane.getChildren().addAll(statistics, typeBased);
+        GridPane gridPane = new GridPane();
+        gridPane.setMinSize(1000, 700);
+        gridPane.setPrefSize(900,600);
+        gridPane.setPadding(new Insets(10, 10, 10, 10));
 
+        gridPane.setVgap(5);
+        gridPane.setHgap(5);
+
+gridPane.add(statistics,42,35);
+gridPane.add(analysisType,43,35);
+        
 
         Image image = new Image("libraryBackground19.jpg");
-        Canvas canvas = new Canvas(1500,950);
+       Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,Start,exit,back);
+        group.getChildren().addAll(canvas,exit,back,gridPane);
+
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
- /*       Pane pane = new Pane();
-
-        BackgroundImage backgroundImage = new BackgroundImage(image,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background background = new Background(backgroundImage);
-        pane.setBackground(background);*/
-
 
 
         Scene scene1 = new Scene(group,1500,950);
@@ -158,5 +165,20 @@ Pane pane = new Pane();
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  button;
+    }
+    public MenuButton setStyle( MenuButton menuButton)
+    {
+        menuButton.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color: \n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  menuButton;
     }
 }
