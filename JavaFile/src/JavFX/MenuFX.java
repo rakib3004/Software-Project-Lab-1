@@ -70,9 +70,10 @@ public class MenuFX extends Application {
         setStyle(bookInfo);
         setStyle(statistics);
 
-        bookApplications.setPrefSize(200, 80);
-        bookInfo.setPrefSize(200, 80);
-        statistics.setPrefSize(200, 80);
+
+        bookInfo.setPrefSize(300, 80);
+        bookApplications.setPrefSize(300, 80);
+        statistics.setPrefSize(300, 80);
 
 
 

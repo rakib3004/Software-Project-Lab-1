@@ -34,7 +34,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class BookInformationFX extends Application {
+public class BookNumberDisplayFX extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -43,7 +43,7 @@ public class BookInformationFX extends Application {
     int typeCounter=6,writerCounter=350, yearCounter =12;
     int typePalse,writerPalse,yearPalse;
     int timeSec = 1;
- int bookCounter=0;
+    int bookCounter=0;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     Timeline time = new Timeline();
@@ -53,170 +53,156 @@ public class BookInformationFX extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-
-UIDisplayFX uiDisplayFX = new UIDisplayFX();
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
-
-
-
-
-        //  Button Start = new Button("Start");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        Button typesOfBook = new Button("Types Of Book");
-        Button demandsOfBook = new Button("Demands Of Book");
-        Button genericsOfBook = new Button("Generics Of Book");
-        Button qualityOfBooks = new Button("Quality of Books");
-        Button borrowCountOfBook = new Button("Borrow Count Of Book");
-        Button numberDisplay = new Button("Number Display");
-
-
-
-        //  Start.setTranslateX(500);
-        //  Start.setTranslateY(400);
-
+        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 8);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        typesOfBook.setTranslateX(500);
-        typesOfBook.setTranslateY(100);
-        demandsOfBook.setTranslateX(500);
-        demandsOfBook.setTranslateY(200);
-
-        genericsOfBook.setTranslateX(500);
-        genericsOfBook.setTranslateY(300);
-        qualityOfBooks.setTranslateX(500);
-        qualityOfBooks.setTranslateY(400);
-
-        borrowCountOfBook.setTranslateX(500);
-        borrowCountOfBook.setTranslateY(500);
-        numberDisplay.setTranslateX(500);
-        numberDisplay.setTranslateY(600);
-
-
 
         back.setOnAction(actionEvent -> {
             MenuFX menuFX = new MenuFX();
 
             try {
-
                 menuFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
-        });
-        typesOfBook.setOnAction(actionEvent -> {
-            try {
-                uiDisplayFX.typeStatistics(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
         });
 
-        genericsOfBook.setOnAction(actionEvent -> {
-            try {
-                uiDisplayFX.borrowStatistics(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-
-        demandsOfBook.setOnAction(actionEvent -> {
-            try {
-                uiDisplayFX.timeStatistics(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-        qualityOfBooks.setOnAction(actionEvent -> {
-            try {
-                uiDisplayFX.priceStatistics(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-
- borrowCountOfBook.setOnAction(actionEvent -> {
-            try {
-                uiDisplayFX.timeStatistics(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-        numberDisplay.setOnAction(actionEvent -> {
-            BookNumberDisplayFX bookNumberDisplayFX = new BookNumberDisplayFX();
-            try {
-                bookNumberDisplayFX.start(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-
-
-
-        //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
 
-        setStyle(demandsOfBook);
-        setStyle(typesOfBook);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
 
-        setStyle(genericsOfBook);
-        setStyle(qualityOfBooks);
-
-        setStyle(borrowCountOfBook);
-        setStyle(numberDisplay);
-
-        //  Start.setPrefSize(200, 80);
-        back.setPrefSize(270, 80);
-        exit.setPrefSize(270, 80);
-
-        demandsOfBook.setPrefSize(270, 80);
-        typesOfBook.setPrefSize(270, 80);
-
-        qualityOfBooks.setPrefSize(270, 80);
-        genericsOfBook.setPrefSize(270, 80);
-
-         borrowCountOfBook.setPrefSize(270, 80);
-        numberDisplay.setPrefSize(270, 80);
+        try {
+            numberOfBooks = bookNumber.bookNumberFindingMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
 
-        Image image = new Image("libraryBackground13.jpg");
+        Label BookNumbers = new Label((numberOfBooks/6)+" Books" );
+        BookNumbers.setAlignment(Pos.CENTER);
+        setStyle1(BookNumbers);
+        BookNumbers.setFont(font1);
+        BookNumbers.setPrefSize(110, 80);
+        BookNumbers.setTextAlignment(TextAlignment.CENTER);
+        BookNumbers.setTranslateX(250);
+        BookNumbers.setTranslateY(130);
+        Paint svColor = Color.rgb(102,111,200);
+        BookNumbers.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        BookNumbers.setTextFill(Color.BLACK);
+        BookNumbers.setScaleX(6);
+        BookNumbers.setScaleY(3.4);
+
+
+
+
+        Label WriterNumbers = new Label((writerCounter/6)+" Writers " );
+        WriterNumbers.setAlignment(Pos.CENTER);
+        setStyle2(WriterNumbers);
+        WriterNumbers.setPrefSize(110, 80);
+        WriterNumbers.setTextAlignment(TextAlignment.CENTER);
+        WriterNumbers.setFont(font1);
+        WriterNumbers.setTranslateX(1000);
+        WriterNumbers.setTranslateY(130);
+        Paint sttColor = Color.rgb(0,96,11);
+        BookNumbers.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        Paint stColor = Color.rgb(100,150,50);
+        WriterNumbers.setBackground(new Background(new BackgroundFill(stColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        WriterNumbers.setTextFill(Color.BLACK);
+        WriterNumbers.setScaleX(6);
+        WriterNumbers.setScaleY(3.4);
+
+
+
+        Label YearsNumbers = new Label( (yearCounter /6)+" Years " );
+        YearsNumbers.setAlignment(Pos.CENTER);
+        setStyle3(YearsNumbers);
+        YearsNumbers.setPrefSize(110, 80);
+        YearsNumbers.setTextAlignment(TextAlignment.CENTER);
+        YearsNumbers.setFont(font1);
+        YearsNumbers.setTranslateX(250);
+        YearsNumbers.setTranslateY(465);
+        Paint shColor = Color.rgb(200,20,30);
+        YearsNumbers.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        YearsNumbers.setTextFill(Color.BLACK);
+        YearsNumbers.setScaleX(6);
+        YearsNumbers.setScaleY(3.4);
+
+
+
+        Label TypeNumbers = new Label((typeCounter/6)+" types");
+        TypeNumbers.setAlignment(Pos.CENTER);
+        setStyle4(TypeNumbers);
+        TypeNumbers.setFont(font1);
+        TypeNumbers.setTextAlignment(TextAlignment.CENTER);
+        TypeNumbers.setPrefSize(110, 80);
+        TypeNumbers.setTranslateX(1000);
+        TypeNumbers.setTranslateY(465);
+        Paint srColor = Color.rgb(214,158,33);
+        TypeNumbers.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        TypeNumbers.setTextFill(Color.BLACK);
+        TypeNumbers.setScaleX(6);
+        TypeNumbers.setScaleY(3.4);
+
+        PathTransition pt = new PathTransition();
+        pt.setDuration(Duration.seconds(6));
+        // pt.setNode(ball);
+//        pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+        pt.setCycleCount(1);
+        pt.setAutoReverse(false);
+        pt.play();
+
+
+
+        time = new Timeline();
+        time.setCycleCount(6);
+        time.setAutoReverse(false);
+        time.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1.13),
+                        event -> {
+                            timeSec++;
+                            bookCounter = (numberOfBooks/6)*timeSec;
+                            writerPalse =  (writerCounter/6)*timeSec;
+                            typePalse = (typeCounter/6)*timeSec;
+                            yearPalse =  (yearCounter/6)*timeSec;
+                            BookNumbers.setText(bookCounter+" Books" );
+                            WriterNumbers.setText(writerPalse+" Writers" );
+                            TypeNumbers.setText(typePalse+" types" );
+                            YearsNumbers.setText(yearPalse+" Years" );
+
+                            if (timeSec == 6) {
+
+                                time.stop();
+                            }
+                        })
+        );
+
+        time.play();
+
+
+        Group semiGroup = new Group();;
+        semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
+        String string = "libraryBackground9.jpg";
+
+        Image image = new Image(string);
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,typesOfBook);
-        group.getChildren().addAll(demandsOfBook,qualityOfBooks,genericsOfBook);
-        group.getChildren().addAll(borrowCountOfBook,numberDisplay);
+        group.getChildren().addAll(canvas,semiGroup,exit,back);
+
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -230,6 +216,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
     }
 
     public Button setStyle( Button button)

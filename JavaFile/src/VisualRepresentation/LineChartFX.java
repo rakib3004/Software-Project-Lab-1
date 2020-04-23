@@ -1,6 +1,10 @@
 package VisualRepresentation;
+import AHPalgorithm.AHPcalculation;
+import AHPalgorithm.AHPprocessImplementation;
+import Calculation.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
@@ -25,12 +29,23 @@ public class LineChartFX extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+    AHPcalculation ahPcalculation = new AHPcalculation();
+    AHPcriteriaWeight ahPcriteriaWeight;
+
     @Override
     public void start(Stage primaryStage) {
 
     }
 
-    public void startTyping(Stage primaryStage) {
+    public void startTyping(Stage primaryStage) throws IOException {
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
 
         NumberAxis xAxis = new NumberAxis();
         xAxis.setLabel("Book No");
@@ -43,12 +58,21 @@ public class LineChartFX extends Application {
         XYChart.Series dataSeries1 = new XYChart.Series();
         dataSeries1.setName("Library");
 
-        dataSeries1.getData().add(new XYChart.Data( 1, 567));
+
+        int iterator;
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+            dataSeries1.getData().add(new XYChart.Data( iterator, priorityData[iterator].getMLRweight()));
+
+        }
+
+
+      /*  dataSeries1.getData().add(new XYChart.Data( 1, 567));
         dataSeries1.getData().add(new XYChart.Data( 5, 612));
         dataSeries1.getData().add(new XYChart.Data(10, 800));
         dataSeries1.getData().add(new XYChart.Data(20, 780));
         dataSeries1.getData().add(new XYChart.Data(40, 810));
-        dataSeries1.getData().add(new XYChart.Data(80, 850));
+        dataSeries1.getData().add(new XYChart.Data(80, 850));*/
 
         lineChart.getData().add(dataSeries1);
 
@@ -73,7 +97,63 @@ public class LineChartFX extends Application {
         primaryStage.show();
     }
 
-    public void startTiming(Stage primaryStage) {
+    public void startTiming(Stage primaryStage) throws IOException {
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+
+
+        NumberAxis xAxis = new NumberAxis();
+        xAxis.setLabel("Book No");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Weight");
+
+        LineChart lineChart = new LineChart(xAxis, yAxis);
+
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("Library");
+
+
+        int iterator;
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+            dataSeries1.getData().add(new XYChart.Data( iterator, priorityData[iterator].getAHPweight()));
+
+        }
+
+
+      /*  dataSeries1.getData().add(new XYChart.Data( 1, 567));
+        dataSeries1.getData().add(new XYChart.Data( 5, 612));
+        dataSeries1.getData().add(new XYChart.Data(10, 800));
+        dataSeries1.getData().add(new XYChart.Data(20, 780));
+        dataSeries1.getData().add(new XYChart.Data(40, 810));
+        dataSeries1.getData().add(new XYChart.Data(80, 850));*/
+
+        lineChart.getData().add(dataSeries1);
+
+        VBox vbox = new VBox(lineChart);
+
+
+        Image background = new Image("libraryBackground10.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vbox.setBackground(bg);
+
+        Scene scene = new Scene(vbox, 900, 750);
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("LineChart Experiments");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
 
     }
 
