@@ -45,11 +45,6 @@ PieChartFX pieChartFX = new PieChartFX();
         Button lineChart = new Button("Line Chart");
         Button pieChart = new Button("Pie Chart");
 
-
-        //  Start.setTranslateX(500);
-        //  Start.setTranslateY(400);
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -63,22 +58,6 @@ PieChartFX pieChartFX = new PieChartFX();
         pieChart.setTranslateX(500);
         pieChart.setTranslateY(400);
 
-
-
-       /* Start.setOnAction(actionEvent -> {
-
-            try {
-
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
-                System.exit(0);    }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });*/
         back.setOnAction(actionEvent -> {
 BookApplication bookApplication = new BookApplication();
             try {
@@ -96,7 +75,7 @@ BookApplication bookApplication = new BookApplication();
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.start(typeStatisticsStage);
+                lineChartFX.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -106,7 +85,7 @@ BookApplication bookApplication = new BookApplication();
 
         pieChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.start(typeStatisticsStage);
+                pieChartFX.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -117,7 +96,7 @@ BookApplication bookApplication = new BookApplication();
 
         lineChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.start(typeStatisticsStage);
+                lineChartFX.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -221,7 +200,7 @@ BookApplication bookApplication = new BookApplication();
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.start(timeStatisticsStage);
+                lineChartFX.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -231,7 +210,7 @@ BookApplication bookApplication = new BookApplication();
 
         pieChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.start(timeStatisticsStage);
+                pieChartFX.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -242,7 +221,7 @@ BookApplication bookApplication = new BookApplication();
 
         lineChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.start(timeStatisticsStage);
+                lineChartFX.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -344,7 +323,7 @@ BookApplication bookApplication = new BookApplication();
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.start(borrowStatisticsStage);
+                lineChartFX.startBorrowing(borrowStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -354,7 +333,7 @@ BookApplication bookApplication = new BookApplication();
 
         pieChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.start(borrowStatisticsStage);
+                pieChartFX.startBorrowing(borrowStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -365,7 +344,7 @@ BookApplication bookApplication = new BookApplication();
 
         lineChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.start(borrowStatisticsStage);
+                lineChartFX.startBorrowing(borrowStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -472,7 +451,7 @@ BookApplication bookApplication = new BookApplication();
          });
          barChart.setOnAction(actionEvent -> {
              try {
-                 lineChartFX.start(priceStatisticsStage);
+                 lineChartFX.startPricing(priceStatisticsStage);
 
              } catch (Exception exception) {
                  exception.printStackTrace();
@@ -482,7 +461,7 @@ BookApplication bookApplication = new BookApplication();
 
          pieChart.setOnAction(actionEvent -> {
              try {
-                 pieChartFX.start(priceStatisticsStage);
+                 pieChartFX.startPricing(priceStatisticsStage);
 
              } catch (Exception exception) {
                  exception.printStackTrace();
@@ -493,7 +472,7 @@ BookApplication bookApplication = new BookApplication();
 
          lineChart.setOnAction(actionEvent -> {
              try {
-                 lineChartFX.start(priceStatisticsStage);
+                 lineChartFX.startPricing(priceStatisticsStage);
 
              } catch (Exception exception) {
                  exception.printStackTrace();

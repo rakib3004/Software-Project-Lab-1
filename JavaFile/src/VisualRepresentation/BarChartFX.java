@@ -10,4 +10,21 @@ public class BarChartFX extends Application {
     public void start(Stage primaryStage) {
 
     }
+
+    public void startTyping(Stage primaryStage) {
+
+    }
+
+    public void startTiming(Stage primaryStage) {
+
+    }
+
+
+    public void startBorrowing(Stage primaryStage) {
+
+    }
+
+    public void startPricing(Stage primaryStage) {
+
+    }
 }

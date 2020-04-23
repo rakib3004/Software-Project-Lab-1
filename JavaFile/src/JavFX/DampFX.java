@@ -8,8 +8,8 @@ import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -190,7 +190,17 @@ index = Integer.toString(i);
        // vBox3.setSpacing(5);
 
 
+        Image background = new Image("libraryBackground10.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vBox3.setBackground(bg);
         Scene scene1 = new Scene(vBox3,900,700);
+
 
 
         primaryStage.setScene(scene1);
