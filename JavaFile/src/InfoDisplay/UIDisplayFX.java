@@ -75,7 +75,7 @@ BookApplication bookApplication = new BookApplication();
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.startTyping(typeStatisticsStage);
+                barChartFX.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -200,7 +200,7 @@ BookApplication bookApplication = new BookApplication();
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.startTiming(timeStatisticsStage);
+                barChartFX.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -323,7 +323,7 @@ BookApplication bookApplication = new BookApplication();
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.startBorrowing(borrowStatisticsStage);
+                barChartFX.startBorrowing(borrowStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -451,7 +451,7 @@ BookApplication bookApplication = new BookApplication();
          });
          barChart.setOnAction(actionEvent -> {
              try {
-                 lineChartFX.startPricing(priceStatisticsStage);
+                 barChartFX.startPricing(priceStatisticsStage);
 
              } catch (Exception exception) {
                  exception.printStackTrace();
