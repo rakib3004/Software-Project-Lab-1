@@ -1,6 +1,5 @@
 package BookDataBaseFX;
 
-import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
