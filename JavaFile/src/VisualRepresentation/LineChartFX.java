@@ -208,12 +208,166 @@ public class LineChartFX extends Application {
     }
 
 
-    public void startBorrowing(Stage primaryStage) {
+    public void startBorrowing(Stage primaryStage) throws IOException {
 
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+
+            try {
+                uiDisplayFX.borrowStatistics(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+        setStyle(exit);
+        setStyle(back);
+
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
+
+        NumberAxis xAxis = new NumberAxis();
+        xAxis.setLabel("Book No");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Weight");
+
+        LineChart lineChart = new LineChart(xAxis, yAxis);
+
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("Library");
+
+
+        int iterator;
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+            dataSeries1.getData().add(new XYChart.Data( iterator, priorityData[iterator].getMLRweight()));
+
+        }
+
+
+
+        lineChart.getData().add(dataSeries1);
+
+        VBox vbox = new VBox(lineChart);
+
+
+        Image background = new Image("libraryBackground10.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vbox.setBackground(bg);
+
+        Scene scene = new Scene(vbox, 900, 750);
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("LineChart Experiments");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
     }
 
-    public void startPricing(Stage primaryStage) {
+    public void startPricing(Stage primaryStage) throws IOException {
 
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+
+            try {
+                uiDisplayFX.priceStatistics(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+        setStyle(exit);
+        setStyle(back);
+
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
+
+        NumberAxis xAxis = new NumberAxis();
+        xAxis.setLabel("Book No");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Weight");
+
+        LineChart lineChart = new LineChart(xAxis, yAxis);
+
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("Library");
+
+
+        int iterator;
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+            dataSeries1.getData().add(new XYChart.Data( iterator, priorityData[iterator].getMLRweight()));
+
+        }
+
+
+
+        lineChart.getData().add(dataSeries1);
+
+        VBox vbox = new VBox(lineChart);
+
+
+        Image background = new Image("libraryBackground10.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vbox.setBackground(bg);
+
+        Scene scene = new Scene(vbox, 900, 750);
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("LineChart Experiments");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
     }
 
 
