@@ -1,7 +1,9 @@
 package VisualRepresentation;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import BookDataBaseFX.GenericsOfBookFX;
 import Calculation.MultipleLinearRegression;
+import InfoDisplay.UIDisplayFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -9,6 +11,7 @@ import ObjectOriented.PriorityData;
 import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.chart.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,6 +45,36 @@ public class LineChartFX extends Application {
     public void startTyping(Stage primaryStage) throws IOException {
 
 
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+
+            try {
+                uiDisplayFX.typeStatistics(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+        setStyle(exit);
+        setStyle(back);
+
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
@@ -67,12 +100,6 @@ public class LineChartFX extends Application {
         }
 
 
-      /*  dataSeries1.getData().add(new XYChart.Data( 1, 567));
-        dataSeries1.getData().add(new XYChart.Data( 5, 612));
-        dataSeries1.getData().add(new XYChart.Data(10, 800));
-        dataSeries1.getData().add(new XYChart.Data(20, 780));
-        dataSeries1.getData().add(new XYChart.Data(40, 810));
-        dataSeries1.getData().add(new XYChart.Data(80, 850));*/
 
         lineChart.getData().add(dataSeries1);
 
@@ -98,6 +125,36 @@ public class LineChartFX extends Application {
     }
 
     public void startTiming(Stage primaryStage) throws IOException {
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+
+            try {
+                uiDisplayFX.timeStatistics(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+        setStyle(exit);
+        setStyle(back);
+
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
 
 
         priorityData = processing.fileReaderMethods();
@@ -126,16 +183,9 @@ public class LineChartFX extends Application {
         }
 
 
-      /*  dataSeries1.getData().add(new XYChart.Data( 1, 567));
-        dataSeries1.getData().add(new XYChart.Data( 5, 612));
-        dataSeries1.getData().add(new XYChart.Data(10, 800));
-        dataSeries1.getData().add(new XYChart.Data(20, 780));
-        dataSeries1.getData().add(new XYChart.Data(40, 810));
-        dataSeries1.getData().add(new XYChart.Data(80, 850));*/
-
         lineChart.getData().add(dataSeries1);
 
-        VBox vbox = new VBox(lineChart);
+        VBox vbox = new VBox(lineChart,back,exit);
 
 
         Image background = new Image("libraryBackground10.jpg");
@@ -164,5 +214,22 @@ public class LineChartFX extends Application {
 
     public void startPricing(Stage primaryStage) {
 
+    }
+
+
+    public Button setStyle(Button button)
+    {
+        button.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color: \n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  button;
     }
 }
