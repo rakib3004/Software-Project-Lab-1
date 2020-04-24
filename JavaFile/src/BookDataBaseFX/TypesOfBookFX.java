@@ -1,6 +1,7 @@
 package BookDataBaseFX;
 
 import InfoDisplay.BookApplication;
+import InfoDisplay.BookInformationFX;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
 import javafx.application.Application;
@@ -55,9 +56,9 @@ InfoPieChart infoPieChart = new InfoPieChart();
 
 
         back.setOnAction(actionEvent -> {
-            BookApplication bookApplication = new BookApplication();
+            BookInformationFX bookInformationFX = new BookInformationFX();
             try {
-                bookApplication.start(primaryStage);
+                bookInformationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -110,7 +111,7 @@ InfoPieChart infoPieChart = new InfoPieChart();
 
 
 
-        Image image = new Image("libraryBackground17.jpg");
+        Image image = new Image("libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,barChart,pieChart);
