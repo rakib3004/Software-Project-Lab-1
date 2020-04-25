@@ -272,23 +272,24 @@ public class InfoBarChart extends Application {
          for(iterator=0;iterator<numberOfBooks;iterator++){
 
 
-              if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=350.00){
+
+         /*     if(Integer.parseInt(Double.parseDouble(priorityData[iterator].borrowPriority)>=30.00){
                  over30Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=300.00){
+             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=300.00){
                  over25Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=250.00){
+             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=250.00){
                  over20Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=210.00){
+             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=210.00){
                  over15Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=180.00){
+             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=180.00){
                  over10Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=160.00){
+             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=160.00){
                  over7Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>140.00){
                  over4Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=100.00){
+             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=100.00){
                  below4Count++;
-             }
+             }*/
 
 
          }
