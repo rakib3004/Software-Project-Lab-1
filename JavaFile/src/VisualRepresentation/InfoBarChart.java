@@ -274,26 +274,27 @@ public class InfoBarChart extends Application {
          for(iterator=0;iterator<numberOfBooks;iterator++){
 
 
-             if(priorityData[iterator].pricePriority>=500.00){
+             if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=500.00){
                  over500Count++;
+                 
              }
-             else if(priorityData[iterator].pricePriority>=400.00){
+             else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=400.00){
                  over400Count++;
-             }else if(priorityData[iterator].pricePriority>=350.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=350.00){
                  over350Count++;
-             }else if(priorityData[iterator].pricePriority>=300.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=300.00){
                  over300Count++;
-             }else if(priorityData[iterator].pricePriority>=250.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=250.00){
                  over250Count++;
-             }else if(priorityData[iterator].pricePriority>=210.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=210.00){
                  over210Count++;
-             }else if(priorityData[iterator].pricePriority>=180.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=180.00){
                  over180Count++;
-             }else if(priorityData[iterator].pricePriority>=160.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=160.00){
                  over160Count++;
-             }else if(priorityData[iterator].pricePriority>140.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>140.00){
                  over140Count++;
-             }else if(priorityData[iterator].pricePriority>=100.00){
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=100.00){
                  over100Count++;
              }
 
@@ -310,10 +311,10 @@ public class InfoBarChart extends Application {
 
 
          CategoryAxis categoryAxis = new CategoryAxis();
-         categoryAxis.setLabel("Generics of Book Bar Chart");
+         categoryAxis.setLabel("Book Price Category");
 
          NumberAxis numberAxis = new NumberAxis();
-         numberAxis.setLabel("Generics of Book");
+         numberAxis.setLabel("Price Range");
 
          BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
