@@ -257,14 +257,13 @@ public class InfoBarChart extends Application {
          exit.setPrefSize(200, 80);
 
 
-         String below4,over4,over7,over10,over15,over20,over25,over30,over400,over500;
+         String below4,over4,over7,over10,over15,over20,over25,over30;
          int  below4Count,over4Count,over7Count,over10Count,over15Count,
-                 over20Count,over300Count,over350Count,over400Count,over500Count;
+                 over20Count,over25Count,over30Count;
 
 
          below4Count=0;over4Count=0;over7Count=0;over10Count=0;
-         over15Count=0;over20Count=0;over300Count=0;over350Count=0;
-         over400Count=0;over500Count=0;
+         over15Count=0;over20Count=0;over25Count=0;over30Count=0;
 
          int iterator;
          priorityData = processing.fileReaderMethods();
@@ -273,16 +272,10 @@ public class InfoBarChart extends Application {
          for(iterator=0;iterator<numberOfBooks;iterator++){
 
 
-             if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=500.00){
-                 over500Count++;
-
-             }
-             else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=400.00){
-                 over400Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=350.00){
-                 over350Count++;
+              if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=350.00){
+                 over30Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=300.00){
-                 over300Count++;
+                 over25Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=250.00){
                  over20Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=210.00){
@@ -302,10 +295,10 @@ public class InfoBarChart extends Application {
 
 
 
-         below4 =  "100-140" ;
-         over4 =  "140-160" ; over7 =  "160-180" ; over10 =  "180-210" ;
-         over15=   "210-250" ;over20 =  "250-300" ; over25 =  "300-350" ;
-         over30 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
+         below4 =  "0-3" ;
+         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
+         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
+         over30 =  "30+" ;
 
 
 
@@ -334,9 +327,7 @@ public class InfoBarChart extends Application {
          XYChart.Series series8 = new XYChart.Series();
          series8.setName(over30);
          XYChart.Series series9 = new XYChart.Series();
-         series9.setName(over400);
-         XYChart.Series series10 = new XYChart.Series();
-         series10.setName(over500);
+
 
 
 
@@ -346,10 +337,9 @@ public class InfoBarChart extends Application {
          series4.getData().add(new XYChart.Data(over10,over10Count));
          series5.getData().add(new XYChart.Data(over15,over15Count));
          series6.getData().add(new XYChart.Data(over20,over20Count));
-         series7.getData().add(new XYChart.Data(over25,over300Count));
-         series8.getData().add(new XYChart.Data(over30,over350Count));
-         series9.getData().add(new XYChart.Data(over400,over400Count));
-         series10.getData().add(new XYChart.Data(over500,over500Count));
+         series7.getData().add(new XYChart.Data(over25,over25Count));
+         series8.getData().add(new XYChart.Data(over30,over30Count));
+
 
          barChart.getData().add(series1);
          barChart.getData().add(series2);
@@ -360,7 +350,6 @@ public class InfoBarChart extends Application {
          barChart.getData().add(series7);
          barChart.getData().add(series8);
          barChart.getData().add(series9);
-         barChart.getData().add(series10);
 
 
 
