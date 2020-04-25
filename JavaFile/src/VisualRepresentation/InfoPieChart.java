@@ -5,6 +5,7 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
@@ -92,10 +93,10 @@ public class InfoPieChart extends Application  {
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
-        VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(hBox1);
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
 
-        vBox3.setMaxSize(850, 650);
+        vbox.setMaxSize(850, 650);
         // vBox3.setSpacing(5);
 
 
@@ -107,12 +108,15 @@ public class InfoPieChart extends Application  {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vBox3.setBackground(bg);
-        Scene scene1 = new Scene(vBox3,900,700);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
 
-
-        primaryStage.setScene(scene1);
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
@@ -243,10 +247,10 @@ public class InfoPieChart extends Application  {
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
-        VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(hBox1);
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
 
-        vBox3.setMaxSize(850, 650);
+        vbox.setMaxSize(850, 650);
         // vBox3.setSpacing(5);
 
 
@@ -258,12 +262,15 @@ public class InfoPieChart extends Application  {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vBox3.setBackground(bg);
-        Scene scene1 = new Scene(vBox3,900,700);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
 
-
-        primaryStage.setScene(scene1);
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
@@ -395,10 +402,10 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
-        VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(hBox1);
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
 
-        vBox3.setMaxSize(850, 650);
+        vbox.setMaxSize(850, 650);
         // vBox3.setSpacing(5);
 
 
@@ -410,12 +417,15 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vBox3.setBackground(bg);
-        Scene scene1 = new Scene(vBox3,900,700);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
 
-
-        primaryStage.setScene(scene1);
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
@@ -548,10 +558,10 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
-        VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(hBox1);
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
 
-        vBox3.setMaxSize(850, 650);
+        vbox.setMaxSize(850, 650);
         // vBox3.setSpacing(5);
 
 
@@ -563,12 +573,15 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vBox3.setBackground(bg);
-        Scene scene1 = new Scene(vBox3,900,700);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
 
-
-        primaryStage.setScene(scene1);
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
@@ -700,10 +713,10 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
-        VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(hBox1);
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
 
-        vBox3.setMaxSize(850, 650);
+        vbox.setMaxSize(850, 650);
         // vBox3.setSpacing(5);
 
 
@@ -715,12 +728,15 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vBox3.setBackground(bg);
-        Scene scene1 = new Scene(vBox3,900,700);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
 
-
-        primaryStage.setScene(scene1);
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();

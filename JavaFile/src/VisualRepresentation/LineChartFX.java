@@ -202,8 +202,11 @@ vbox.setPrefSize(1400,750);
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
+        Group group = new Group(vbox,exit,back);
 
-        Scene scene = new Scene(vbox, 900, 750);
+        Scene scene = new Scene(group ,1400, 770);
+
+
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("LineChart Experiments");
@@ -286,7 +289,10 @@ vbox.setPrefSize(1400,750);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
 
-        Scene scene = new Scene(vbox, 900, 750);
+vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("LineChart Experiments");
@@ -367,7 +373,12 @@ vbox.setPrefSize(1400,750);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
 
-        Scene scene = new Scene(vbox, 1400, 800);
+
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("LineChart Experiments");
