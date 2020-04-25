@@ -10,6 +10,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -102,11 +103,13 @@ public class LineChartFX extends Application {
 
 
         lineChart.getData().add(dataSeries1);
+        lineChart.setPrefSize(1200,680);
 
         VBox vbox = new VBox(lineChart);
 
+vbox.setPrefSize(1400,750);
 
-        Image background = new Image("libraryBackground10.jpg");
+       Image background = new Image("libraryBackground10.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -116,7 +119,9 @@ public class LineChartFX extends Application {
         Background bg = new Background(bi);
         vbox.setBackground(bg);
 
-        Scene scene = new Scene(vbox, 900, 750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("LineChart Experiments");
@@ -268,7 +273,7 @@ public class LineChartFX extends Application {
 
         lineChart.getData().add(dataSeries1);
 
-        VBox vbox = new VBox(lineChart);
+        VBox vbox = new VBox(lineChart,exit,back);
 
 
         Image background = new Image("libraryBackground10.jpg");
@@ -349,7 +354,7 @@ public class LineChartFX extends Application {
 
         lineChart.getData().add(dataSeries1);
 
-        VBox vbox = new VBox(lineChart);
+        VBox vbox = new VBox(lineChart,exit,back);
 
 
         Image background = new Image("libraryBackground10.jpg");
@@ -362,7 +367,7 @@ public class LineChartFX extends Application {
         Background bg = new Background(bi);
         vbox.setBackground(bg);
 
-        Scene scene = new Scene(vbox, 900, 750);
+        Scene scene = new Scene(vbox, 1400, 800);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("LineChart Experiments");
