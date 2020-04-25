@@ -228,8 +228,7 @@ public class InfoBarChart extends Application {
      }
 
      public void startDemandBook(Stage primaryStage) throws IOException {
-
-         Button back = new Button("Back");
+     Button back = new Button("Back");
          Button exit = new Button("Exit");
          back.setTranslateX(0);
          back.setTranslateY(650);
@@ -258,13 +257,13 @@ public class InfoBarChart extends Application {
          exit.setPrefSize(200, 80);
 
 
-         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
-         int  over100Count,over140Count,over160Count,over180Count,over210Count,
-                 over250Count,over300Count,over350Count,over400Count,over500Count;
+         String below4,over4,over7,over10,over15,over20,over25,over30,over400,over500;
+         int  below4Count,over4Count,over7Count,over10Count,over15Count,
+                 over20Count,over300Count,over350Count,over400Count,over500Count;
 
 
-         over100Count=0;over140Count=0;over160Count=0;over180Count=0;
-         over210Count=0;over250Count=0;over300Count=0;over350Count=0;
+         below4Count=0;over4Count=0;over7Count=0;over10Count=0;
+         over15Count=0;over20Count=0;over300Count=0;over350Count=0;
          over400Count=0;over500Count=0;
 
          int iterator;
@@ -276,7 +275,7 @@ public class InfoBarChart extends Application {
 
              if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=500.00){
                  over500Count++;
-                 
+
              }
              else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=400.00){
                  over400Count++;
@@ -285,17 +284,17 @@ public class InfoBarChart extends Application {
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=300.00){
                  over300Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=250.00){
-                 over250Count++;
+                 over20Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=210.00){
-                 over210Count++;
+                 over15Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=180.00){
-                 over180Count++;
+                 over10Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=160.00){
-                 over160Count++;
+                 over7Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>140.00){
-                 over140Count++;
+                 over4Count++;
              }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=100.00){
-                 over100Count++;
+                 below4Count++;
              }
 
 
@@ -303,52 +302,52 @@ public class InfoBarChart extends Application {
 
 
 
-         over100 =  "100-140" ;
-         over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
-         over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
-         over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
+         below4 =  "100-140" ;
+         over4 =  "140-160" ; over7 =  "160-180" ; over10 =  "180-210" ;
+         over15=   "210-250" ;over20 =  "250-300" ; over25 =  "300-350" ;
+         over30 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
 
 
 
          CategoryAxis categoryAxis = new CategoryAxis();
-         categoryAxis.setLabel("Book Price Category");
+         categoryAxis.setLabel("Book Class Category");
 
          NumberAxis numberAxis = new NumberAxis();
-         numberAxis.setLabel("Price Range");
+         numberAxis.setLabel("Numbers of Book");
 
          BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
          XYChart.Series series1 = new XYChart.Series();
-         series1.setName(over100);
-          XYChart.Series series2 = new XYChart.Series();
-         series2.setName(over140);
-          XYChart.Series series3 = new XYChart.Series();
-         series3.setName(over160);
-          XYChart.Series series4 = new XYChart.Series();
-         series4.setName(over180);
-          XYChart.Series series5 = new XYChart.Series();
-         series5.setName(over210);
-          XYChart.Series series6 = new XYChart.Series();
-         series6.setName(over250);
-          XYChart.Series series7 = new XYChart.Series();
-         series7.setName(over300);
-          XYChart.Series series8 = new XYChart.Series();
-         series8.setName(over350);
-          XYChart.Series series9 = new XYChart.Series();
+         series1.setName(below4);
+         XYChart.Series series2 = new XYChart.Series();
+         series2.setName(over4);
+         XYChart.Series series3 = new XYChart.Series();
+         series3.setName(over7);
+         XYChart.Series series4 = new XYChart.Series();
+         series4.setName(over10);
+         XYChart.Series series5 = new XYChart.Series();
+         series5.setName(over15);
+         XYChart.Series series6 = new XYChart.Series();
+         series6.setName(over20);
+         XYChart.Series series7 = new XYChart.Series();
+         series7.setName(over25);
+         XYChart.Series series8 = new XYChart.Series();
+         series8.setName(over30);
+         XYChart.Series series9 = new XYChart.Series();
          series9.setName(over400);
-          XYChart.Series series10 = new XYChart.Series();
+         XYChart.Series series10 = new XYChart.Series();
          series10.setName(over500);
 
 
 
-         series1.getData().add(new XYChart.Data(over100,over100Count));
-         series2.getData().add(new XYChart.Data(over140,over140Count));
-         series3.getData().add(new XYChart.Data(over160,over160Count));
-         series4.getData().add(new XYChart.Data(over180,over180Count));
-         series5.getData().add(new XYChart.Data(over210,over210Count));
-         series6.getData().add(new XYChart.Data(over250,over250Count));
-         series7.getData().add(new XYChart.Data(over300,over300Count));
-         series8.getData().add(new XYChart.Data(over350,over350Count));
+         series1.getData().add(new XYChart.Data(below4,below4Count));
+         series2.getData().add(new XYChart.Data(over4,over4Count));
+         series3.getData().add(new XYChart.Data(over7,over7Count));
+         series4.getData().add(new XYChart.Data(over10,over10Count));
+         series5.getData().add(new XYChart.Data(over15,over15Count));
+         series6.getData().add(new XYChart.Data(over20,over20Count));
+         series7.getData().add(new XYChart.Data(over25,over300Count));
+         series8.getData().add(new XYChart.Data(over30,over350Count));
          series9.getData().add(new XYChart.Data(over400,over400Count));
          series10.getData().add(new XYChart.Data(over500,over500Count));
 
@@ -368,8 +367,6 @@ public class InfoBarChart extends Application {
          barChart.setTranslateX(65);
          barChart.setTranslateY(55);
          barChart.setPrefSize(1000,700);
-
-
 
 
 
@@ -406,6 +403,8 @@ public class InfoBarChart extends Application {
 
 
      }
+
+
 
      public void startGenericBook(Stage primaryStage) throws IOException {
 
@@ -578,6 +577,7 @@ public class InfoBarChart extends Application {
 
      public void startClassBook(Stage primaryStage) throws IOException {
 
+
          Button back = new Button("Back");
          Button exit = new Button("Exit");
          back.setTranslateX(0);
@@ -607,22 +607,14 @@ public class InfoBarChart extends Application {
          exit.setPrefSize(200, 80);
 
 
-         CategoryAxis categoryAxis = new CategoryAxis();
-         categoryAxis.setLabel("Generics of Book Bar Chart");
+         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
+         int  over100Count,over140Count,over160Count,over180Count,over210Count,
+                 over250Count,over300Count,over350Count,over400Count,over500Count;
 
-         NumberAxis numberAxis = new NumberAxis();
-         numberAxis.setLabel("Generics of Book");
 
-         BarChart barChart = new BarChart(categoryAxis,numberAxis);
-
-         XYChart.Series series1 = new XYChart.Series();
-         series1.setName("Number of Books");
-         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
-         int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
-                 year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
-         year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
-         year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
-         year2016Books=0;year2017Books=0;
+         over100Count=0;over140Count=0;over160Count=0;over180Count=0;
+         over210Count=0;over250Count=0;over300Count=0;over350Count=0;
+         over400Count=0;over500Count=0;
 
          int iterator;
          priorityData = processing.fileReaderMethods();
@@ -631,40 +623,28 @@ public class InfoBarChart extends Application {
          for(iterator=0;iterator<numberOfBooks;iterator++){
 
 
+             if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=500.00){
+                 over500Count++;
 
-             if(priorityData[iterator].bookData.bookId.contains("17")){
-                 year2017Books++;
              }
-             else if(priorityData[iterator].bookData.bookId.contains("16")){
-                 year2016Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("15")){
-                 year2015Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("14")){
-                 year2014Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("13")){
-                 year2013Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0812")){
-                 year2012Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0212")){
-                 year2012Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1211")){
-                 year2011Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0311")){
-                 year2011Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1210")){
-                 year2010Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0810")){
-                 year2010Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0410")){
-                 year2010Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1009")){
-                 year2009Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0409")){
-                 year2009Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1208")){
-                 year2008Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0608")){
-                 year2008Books++;
+             else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=400.00){
+                 over400Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=350.00){
+                 over350Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=300.00){
+                 over300Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=250.00){
+                 over250Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=210.00){
+                 over210Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=180.00){
+                 over180Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=160.00){
+                 over160Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>140.00){
+                 over140Count++;
+             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=100.00){
+                 over100Count++;
              }
 
 
@@ -672,41 +652,75 @@ public class InfoBarChart extends Application {
 
 
 
-         year2008 =  "year2008" ;
-         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
-         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
-         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
+         over100 =  "100-140" ;
+         over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
+         over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
+         over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
 
 
 
+         CategoryAxis categoryAxis = new CategoryAxis();
+         categoryAxis.setLabel("Book Class Category");
 
-         series1.getData().add(new XYChart.Data(year2008,year2008Books));
-         series1.getData().add(new XYChart.Data(year2009,year2009Books));
-         series1.getData().add(new XYChart.Data(year2010,year2010Books));
-         series1.getData().add(new XYChart.Data(year2011,year2011Books));
-         series1.getData().add(new XYChart.Data(year2012,year2012Books));
-         series1.getData().add(new XYChart.Data(year2013,year2013Books));
-         series1.getData().add(new XYChart.Data(year2014,year2014Books));
-         series1.getData().add(new XYChart.Data(year2015,year2015Books));
-         series1.getData().add(new XYChart.Data(year2016,year2016Books));
-         series1.getData().add(new XYChart.Data(year2017,year2017Books));
+         NumberAxis numberAxis = new NumberAxis();
+         numberAxis.setLabel("Numbers of Book");
+
+         BarChart barChart = new BarChart(categoryAxis,numberAxis);
+
+         XYChart.Series series1 = new XYChart.Series();
+         series1.setName(over100);
+         XYChart.Series series2 = new XYChart.Series();
+         series2.setName(over140);
+         XYChart.Series series3 = new XYChart.Series();
+         series3.setName(over160);
+         XYChart.Series series4 = new XYChart.Series();
+         series4.setName(over180);
+         XYChart.Series series5 = new XYChart.Series();
+         series5.setName(over210);
+         XYChart.Series series6 = new XYChart.Series();
+         series6.setName(over250);
+         XYChart.Series series7 = new XYChart.Series();
+         series7.setName(over300);
+         XYChart.Series series8 = new XYChart.Series();
+         series8.setName(over350);
+         XYChart.Series series9 = new XYChart.Series();
+         series9.setName(over400);
+         XYChart.Series series10 = new XYChart.Series();
+         series10.setName(over500);
+
+
+
+         series1.getData().add(new XYChart.Data(over100,over100Count));
+         series2.getData().add(new XYChart.Data(over140,over140Count));
+         series3.getData().add(new XYChart.Data(over160,over160Count));
+         series4.getData().add(new XYChart.Data(over180,over180Count));
+         series5.getData().add(new XYChart.Data(over210,over210Count));
+         series6.getData().add(new XYChart.Data(over250,over250Count));
+         series7.getData().add(new XYChart.Data(over300,over300Count));
+         series8.getData().add(new XYChart.Data(over350,over350Count));
+         series9.getData().add(new XYChart.Data(over400,over400Count));
+         series10.getData().add(new XYChart.Data(over500,over500Count));
 
          barChart.getData().add(series1);
+         barChart.getData().add(series2);
+         barChart.getData().add(series3);
+         barChart.getData().add(series4);
+         barChart.getData().add(series5);
+         barChart.getData().add(series6);
+         barChart.getData().add(series7);
+         barChart.getData().add(series8);
+         barChart.getData().add(series9);
+         barChart.getData().add(series10);
 
 
 
          barChart.setTranslateX(65);
          barChart.setTranslateY(55);
-         barChart.setPrefSize(500,500);
-
-
-         barChart.getData().add(series1);
+         barChart.setPrefSize(1000,700);
 
 
 
-         barChart.setTranslateX(65);
-         barChart.setTranslateY(55);
-         barChart.setPrefSize(500,500);
+
 
          HBox hBox1 = new HBox(barChart,exit,back);
 
@@ -741,172 +755,172 @@ public class InfoBarChart extends Application {
 
 
      }
+    public void startBorrowCount(Stage primaryStage) throws IOException {
 
-     public void startBorrowCount(Stage primaryStage) throws IOException {
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            BorrrowCountOfBookFX borrrowCountOfBookFX = new BorrrowCountOfBookFX();
+            try {
+                borrrowCountOfBookFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
 
-         Button back = new Button("Back");
-         Button exit = new Button("Exit");
-         back.setTranslateX(0);
-         back.setTranslateY(650);
-         exit.setTranslateX(1100);
-         exit.setTranslateY(650);
-         back.setOnAction(actionEvent -> {
-             BorrrowCountOfBookFX borrrowCountOfBookFX = new BorrrowCountOfBookFX();
-             try {
-                 borrrowCountOfBookFX.start(primaryStage);
-             } catch (Exception exception) {
-                 exception.printStackTrace();
-             }
-
-         });
-         exit.setOnAction(actionEvent -> {
-             System.exit(0);
-
-
-         });
-
-         setStyle(exit);
-         setStyle(back);
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
 
 
-         back.setPrefSize(200, 80);
-         exit.setPrefSize(200, 80);
+        });
+
+        setStyle(exit);
+        setStyle(back);
 
 
-         CategoryAxis categoryAxis = new CategoryAxis();
-         categoryAxis.setLabel("Generics of Book Bar Chart");
-
-         NumberAxis numberAxis = new NumberAxis();
-         numberAxis.setLabel("Generics of Book");
-
-         BarChart barChart = new BarChart(categoryAxis,numberAxis);
-
-         XYChart.Series series1 = new XYChart.Series();
-         series1.setName("Number of Books");
-         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
-         int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
-                 year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
-         year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
-         year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
-         year2016Books=0;year2017Books=0;
-
-         int iterator;
-         priorityData = processing.fileReaderMethods();
-         numberOfBooks = bookNumber.bookNumberFindingMethods();
-
-         for(iterator=0;iterator<numberOfBooks;iterator++){
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
 
 
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Generics of Book Bar Chart");
 
-             if(priorityData[iterator].bookData.bookId.contains("17")){
-                 year2017Books++;
-             }
-             else if(priorityData[iterator].bookData.bookId.contains("16")){
-                 year2016Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("15")){
-                 year2015Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("14")){
-                 year2014Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("13")){
-                 year2013Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0812")){
-                 year2012Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0212")){
-                 year2012Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1211")){
-                 year2011Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0311")){
-                 year2011Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1210")){
-                 year2010Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0810")){
-                 year2010Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0410")){
-                 year2010Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1009")){
-                 year2009Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0409")){
-                 year2009Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("1208")){
-                 year2008Books++;
-             }else if(priorityData[iterator].bookData.bookId.contains("0608")){
-                 year2008Books++;
-             }
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Generics of Book");
 
+        BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
-         }
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName("Number of Books");
+        String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
+        int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
+                year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
+        year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
+        year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
+        year2016Books=0;year2017Books=0;
+
+        int iterator;
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
 
 
 
-         year2008 =  "year2008" ;
-         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
-         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
-         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
+            if(priorityData[iterator].bookData.bookId.contains("17")){
+                year2017Books++;
+            }
+            else if(priorityData[iterator].bookData.bookId.contains("16")){
+                year2016Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("15")){
+                year2015Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("14")){
+                year2014Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("13")){
+                year2013Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0812")){
+                year2012Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0212")){
+                year2012Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1211")){
+                year2011Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0311")){
+                year2011Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1210")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0810")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0410")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1009")){
+                year2009Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0409")){
+                year2009Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1208")){
+                year2008Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0608")){
+                year2008Books++;
+            }
+
+
+        }
+
+
+
+        year2008 =  "year2008" ;
+        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
+        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
+        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
 
 
 
 
-         series1.getData().add(new XYChart.Data(year2008,year2008Books));
-         series1.getData().add(new XYChart.Data(year2009,year2009Books));
-         series1.getData().add(new XYChart.Data(year2010,year2010Books));
-         series1.getData().add(new XYChart.Data(year2011,year2011Books));
-         series1.getData().add(new XYChart.Data(year2012,year2012Books));
-         series1.getData().add(new XYChart.Data(year2013,year2013Books));
-         series1.getData().add(new XYChart.Data(year2014,year2014Books));
-         series1.getData().add(new XYChart.Data(year2015,year2015Books));
-         series1.getData().add(new XYChart.Data(year2016,year2016Books));
-         series1.getData().add(new XYChart.Data(year2017,year2017Books));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books));
+        series1.getData().add(new XYChart.Data(year2009,year2009Books));
+        series1.getData().add(new XYChart.Data(year2010,year2010Books));
+        series1.getData().add(new XYChart.Data(year2011,year2011Books));
+        series1.getData().add(new XYChart.Data(year2012,year2012Books));
+        series1.getData().add(new XYChart.Data(year2013,year2013Books));
+        series1.getData().add(new XYChart.Data(year2014,year2014Books));
+        series1.getData().add(new XYChart.Data(year2015,year2015Books));
+        series1.getData().add(new XYChart.Data(year2016,year2016Books));
+        series1.getData().add(new XYChart.Data(year2017,year2017Books));
 
-         barChart.getData().add(series1);
-
-
-
-         barChart.setTranslateX(65);
-         barChart.setTranslateY(55);
-         barChart.setPrefSize(500,500);
-
-
-         barChart.getData().add(series1);
+        barChart.getData().add(series1);
 
 
 
-         barChart.setTranslateX(65);
-         barChart.setTranslateY(55);
-         barChart.setPrefSize(500,500);
-
-         HBox hBox1 = new HBox(barChart,exit,back);
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(500,500);
 
 
-         VBox vbox = new VBox();
-         vbox.getChildren().addAll(hBox1);
-
-         vbox.setMaxSize(850, 650);
-         // vBox3.setSpacing(5);
+        barChart.getData().add(series1);
 
 
-         Image background = new Image("libraryBackground4.jpg");
 
-         BackgroundImage bi = new BackgroundImage(background,
-                 BackgroundRepeat.NO_REPEAT,
-                 BackgroundRepeat.NO_REPEAT,
-                 BackgroundPosition.DEFAULT,
-                 BackgroundSize.DEFAULT);
-         Background bg = new Background(bi);
-         vbox.setBackground(bg);
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(500,500);
 
-         vbox.setPrefSize(1400,750);
-         Group group = new Group(vbox,exit,back);
-
-         Scene scene = new Scene(group ,1400, 770);
+        HBox hBox1 = new HBox(barChart,exit,back);
 
 
-         primaryStage.setScene(scene);
-         primaryStage.setTitle("Books Statistics");
-         primaryStage.setFullScreen(true);
-         primaryStage.show();
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
+
+        vbox.setMaxSize(850, 650);
+        // vBox3.setSpacing(5);
 
 
-     }
+        Image background = new Image("libraryBackground4.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
+
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+
+
+
+    }
 
     public Button setStyle( Button button)
     {
