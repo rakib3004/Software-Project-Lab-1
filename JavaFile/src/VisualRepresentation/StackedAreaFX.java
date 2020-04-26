@@ -1,4 +1,5 @@
 package VisualRepresentation;
+import BookDataBaseFX.DemandsOfBookFX;
 import BookDataBaseFX.TypesOfBookFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -237,7 +238,170 @@ public class StackedAreaFX extends Application {
     }
 
 
-    public void startBorrowing(Stage primaryStage) {
+    public void startBorrowing(Stage primaryStage) throws IOException {
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            DemandsOfBookFX demandsOfBookFX = new DemandsOfBookFX();
+            try {
+                demandsOfBookFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+        setStyle(exit);
+        setStyle(back);
+
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        String below4,over4,over7,over10,over15,over20,over25,over30;
+        int  below4Count,over4Count,over7Count,over10Count,over15Count,
+                over20Count,over25Count,over30Count;
+
+
+        below4Count=0;over4Count=0;over7Count=0;over10Count=0;
+        over15Count=0;over20Count=0;over25Count=0;over30Count=0;
+
+        int iterator;
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+
+
+            if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
+                over30Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
+                over25Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
+                over20Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
+                over15Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
+                over10Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
+                over7Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
+                over4Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
+                below4Count++;
+            }
+
+
+        }
+
+
+
+        below4 =  "0-3" ;
+        over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
+        over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
+        over30 =  "30+" ;
+
+
+
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Book Class Category");
+
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Numbers of Book");
+
+        BarChart barChart = new BarChart(categoryAxis,numberAxis);
+
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(below4);
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(over4);
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName(over7);
+        XYChart.Series series4 = new XYChart.Series();
+        series4.setName(over10);
+        XYChart.Series series5 = new XYChart.Series();
+        series5.setName(over15);
+        XYChart.Series series6 = new XYChart.Series();
+        series6.setName(over20);
+        XYChart.Series series7 = new XYChart.Series();
+        series7.setName(over25);
+        XYChart.Series series8 = new XYChart.Series();
+        series8.setName(over30);
+        XYChart.Series series9 = new XYChart.Series();
+
+
+
+
+        series1.getData().add(new XYChart.Data(below4,below4Count));
+        series2.getData().add(new XYChart.Data(over4,over4Count));
+        series3.getData().add(new XYChart.Data(over7,over7Count));
+        series4.getData().add(new XYChart.Data(over10,over10Count));
+        series5.getData().add(new XYChart.Data(over15,over15Count));
+        series6.getData().add(new XYChart.Data(over20,over20Count));
+        series7.getData().add(new XYChart.Data(over25,over25Count));
+        series8.getData().add(new XYChart.Data(over30,over30Count));
+
+
+        barChart.getData().add(series1);
+        barChart.getData().add(series2);
+        barChart.getData().add(series3);
+        barChart.getData().add(series4);
+        barChart.getData().add(series5);
+        barChart.getData().add(series6);
+        barChart.getData().add(series7);
+        barChart.getData().add(series8);
+        barChart.getData().add(series9);
+
+
+
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(1000,700);
+
+
+
+        HBox hBox1 = new HBox(barChart,exit,back);
+
+
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
+
+        vbox.setMaxSize(850, 650);
+        // vBox3.setSpacing(5);
+
+
+        Image background = new Image("libraryBackground4.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
+
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+
 
     }
 
