@@ -1,6 +1,7 @@
 package VisualRepresentation;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import BookDataBaseFX.TypesOfBookFX;
 import MultiVariableRegression.MultipleLinearRegression;
 import InfoDisplay.UIDisplayFX;
 import MainPackage.BookNumber;
@@ -36,8 +37,6 @@ public class LineChartFX extends Application {
     }
 
     public void startTyping(Stage primaryStage) throws IOException {
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -45,10 +44,9 @@ public class LineChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            UIDisplayFX uiDisplayFX = new UIDisplayFX();
-
+            TypesOfBookFX typesOfBookFX = new TypesOfBookFX();
             try {
-                uiDisplayFX.typeStatistics(primaryStage);
+                typesOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -68,40 +66,148 @@ public class LineChartFX extends Application {
         exit.setPrefSize(200, 80);
 
 
-        priorityData = processing.fileReaderMethods();
-        numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
-
-        NumberAxis xAxis = new NumberAxis();
-        xAxis.setLabel("Book No");
-
-        NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Weight");
-
-        LineChart lineChart = new LineChart(xAxis, yAxis);
-
-        XYChart.Series dataSeries1 = new XYChart.Series();
-        dataSeries1.setName("Library");
 
 
         int iterator;
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
 
-        for(iterator=0;iterator<numberOfBooks;iterator++){
-            dataSeries1.getData().add(new XYChart.Data( iterator, priorityData[iterator].getMLRweight()));
 
+        String uponnashType,kobitaType,rochonaBoliType,
+                religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
+
+
+        int uponnashTypeNO,kobitaTypeNO,rochonaBoliTypeNO,
+                religionTypeNO,bigganTypeNO,sciFicTypeNO,shisuSahittoTypeNO,kisoreUponnashTypeNO,onubadTypeNO,othersTypeNO;
+
+        uponnashTypeNO=0;kobitaTypeNO=0;rochonaBoliTypeNO=0;
+        religionTypeNO=0;bigganTypeNO=0;sciFicTypeNO=0;
+        shisuSahittoTypeNO=0; kisoreUponnashTypeNO=0;
+        onubadTypeNO=0;othersTypeNO=0;
+
+        uponnashType="Uponnash";
+        kobitaType = "Kobita";
+        rochonaBoliType = "Rochhona Boli";
+        religionType= "Religion";
+        bigganType = "Biggan";
+        sciFicType = "Science Fiction";
+        shisuSahittoType = "SHishu Sahitto";
+        kisoreUponnashType = "Kisore";
+        onubadType = "Onubad";
+        othersType= "Others";
+
+
+        int [] typeCounter = new int[6];
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
+                uponnashTypeNO++;
+
+            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
+                rochonaBoliTypeNO++;
+
+            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
+                kobitaTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
+                bigganTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
+                bigganTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
+                sciFicTypeNO++;
+
+            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
+                kisoreUponnashTypeNO++;
+
+            }  else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
+                shisuSahittoTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
+                religionTypeNO++;
+
+            }  else {
+                othersTypeNO++;
+
+            }
         }
 
 
 
-        lineChart.getData().add(dataSeries1);
-        lineChart.setPrefSize(1200,680);
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Book Types");
 
-        VBox vbox = new VBox(lineChart);
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Numbers of Book");
 
-vbox.setPrefSize(1400,750);
+        BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
-       Image background = new Image("libraryBackground10.jpg");
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(uponnashType);
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(kobitaType);
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName(rochonaBoliType);
+        XYChart.Series series4 = new XYChart.Series();
+        series4.setName(religionType);
+        XYChart.Series series5 = new XYChart.Series();
+        series5.setName(bigganType);
+        XYChart.Series series6 = new XYChart.Series();
+        series6.setName(sciFicType);
+        XYChart.Series series7 = new XYChart.Series();
+        series7.setName(shisuSahittoType);
+        XYChart.Series series8 = new XYChart.Series();
+        series8.setName(kisoreUponnashType);
+        XYChart.Series series9 = new XYChart.Series();
+        series9.setName(onubadType);
+        XYChart.Series series10 = new XYChart.Series();
+        series10.setName(othersType);
+
+
+
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO));
+
+        barChart.getData().add(series1);
+        barChart.getData().add(series2);
+        barChart.getData().add(series3);
+        barChart.getData().add(series4);
+        barChart.getData().add(series5);
+        barChart.getData().add(series6);
+        barChart.getData().add(series7);
+        barChart.getData().add(series8);
+        barChart.getData().add(series9);
+        barChart.getData().add(series10);
+
+
+
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(1000,700);
+
+
+
+
+        HBox hBox1 = new HBox(barChart,exit,back);
+
+
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
+
+        vbox.setMaxSize(850, 650);
+        // vBox3.setSpacing(5);
+
+
+        Image background = new Image("libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -111,14 +217,19 @@ vbox.setPrefSize(1400,750);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
 
+        vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
 
         Scene scene = new Scene(group ,1400, 770);
 
+
         primaryStage.setScene(scene);
-        primaryStage.setTitle("LineChart Experiments");
+        primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
+
+
     }
 
     public void startTiming(Stage primaryStage) throws IOException {
