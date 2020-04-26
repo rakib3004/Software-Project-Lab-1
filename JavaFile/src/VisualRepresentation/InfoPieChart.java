@@ -526,12 +526,14 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         exit.setPrefSize(200, 80);
 
 
-        String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
-        int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
-                year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
-        year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
-        year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
-        year2016Books=0;year2017Books=0;
+        String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
+        int  over100Count,over140Count,over160Count,over180Count,over210Count,
+                over250Count,over300Count,over350Count,over400Count,over500Count;
+
+
+        over100Count=0;over140Count=0;over160Count=0;over180Count=0;
+        over210Count=0;over250Count=0;over300Count=0;over350Count=0;
+        over400Count=0;over500Count=0;
 
         int iterator;
         priorityData = processing.fileReaderMethods();
@@ -539,65 +541,54 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
 
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
-            if(priorityData[iterator].bookData.bookId.contains("17")){
-                year2017Books++;
+
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
+                over500Count++;
+
             }
-            else if(priorityData[iterator].bookData.bookId.contains("16")){
-                year2016Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("15")){
-                year2015Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("14")){
-                year2014Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("13")){
-                year2013Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0812")){
-                year2012Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0212")){
-                year2012Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1211")){
-                year2011Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0311")){
-                year2011Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1210")){
-                year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0810")){
-                year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0410")){
-                year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1009")){
-                year2009Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0409")){
-                year2009Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1208")){
-                year2008Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0608")){
-                year2008Books++;
+            else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
+                over400Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
+                over350Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
+                over300Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
+                over250Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
+                over210Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
+                over180Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
+                over160Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
+                over140Count++;
+            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
+                over100Count++;
             }
+
+
         }
 
 
 
-        year2008 =  "year2008" ;
-        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
-        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
-        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
-
-
+        over100 =  "100-140" ;
+        over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
+        over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
+        over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
 
 
         PieChart pieChart = new PieChart();
 
-        PieChart.Data slice1 = new PieChart.Data(year2008,year2008Books);
-        PieChart.Data slice2 = new PieChart.Data(year2009,year2009Books);
-        PieChart.Data slice3 = new PieChart.Data(year2010,year2010Books);
-        PieChart.Data slice4 = new PieChart.Data(year2011,year2011Books);
-        PieChart.Data slice5 = new PieChart.Data(year2012,year2012Books);
-        PieChart.Data slice6 = new PieChart.Data(year2013,year2013Books);
-        PieChart.Data slice7 = new PieChart.Data(year2014,year2014Books);
-        PieChart.Data slice8 = new PieChart.Data(year2015,year2015Books);
-        PieChart.Data slice9 = new PieChart.Data(year2016,year2016Books);
-        PieChart.Data slice10 = new PieChart.Data(year2017,year2017Books);
+        PieChart.Data slice1 = new PieChart.Data(over100,over100Count);
+        PieChart.Data slice2 = new PieChart.Data(over140,over140Count);
+        PieChart.Data slice3 = new PieChart.Data(over160,over160Count);
+        PieChart.Data slice4 = new PieChart.Data(over180,over180Count);
+        PieChart.Data slice5 = new PieChart.Data(over210,over210Count);
+        PieChart.Data slice6 = new PieChart.Data(over250,over250Count);
+        PieChart.Data slice7 = new PieChart.Data(over300,over300Count);
+        PieChart.Data slice8 = new PieChart.Data(over350,over350Count);
+        PieChart.Data slice9 = new PieChart.Data(over400,over400Count);
+        PieChart.Data slice10 = new PieChart.Data(over500,over500Count);
 
         pieChart.getData().add(slice1);
         pieChart.getData().add(slice2);
@@ -613,7 +604,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
 
         pieChart.setTranslateX(55);
         pieChart.setTranslateY(55);
-        pieChart.setPrefSize(500,500);
+        pieChart.setPrefSize(590,590);
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
