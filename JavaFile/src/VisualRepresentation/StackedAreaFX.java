@@ -1,5 +1,6 @@
 package VisualRepresentation;
 import BookDataBaseFX.DemandsOfBookFX;
+import BookDataBaseFX.GenericsOfBookFX;
 import BookDataBaseFX.TypesOfBookFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -233,7 +234,233 @@ public class StackedAreaFX extends Application {
 
     }
 
-    public void startTiming(Stage primaryStage) {
+    public void startTiming(Stage primaryStage) throws IOException {
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            GenericsOfBookFX genericsOfBookFX = new GenericsOfBookFX();
+            try {
+                genericsOfBookFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+
+        setStyle(exit);
+        setStyle(back);
+
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Generics of Book Bar Chart");
+
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Generics of Book");
+
+        BarChart barChart = new BarChart(categoryAxis,numberAxis);
+
+
+        String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
+        int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
+                year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
+        year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
+        year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
+        year2016Books=0;year2017Books=0;
+
+        int iterator;
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+
+
+            if(priorityData[iterator].bookData.bookId.contains("17")){
+                year2017Books++;
+            }
+            else if(priorityData[iterator].bookData.bookId.contains("16")){
+                year2016Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("15")){
+                year2015Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("14")){
+                year2014Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("13")){
+                year2013Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0812")){
+                year2012Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0212")){
+                year2012Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1211")){
+                year2011Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0311")){
+                year2011Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1210")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0810")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0410")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1009")){
+                year2009Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0409")){
+                year2009Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1208")){
+                year2008Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0608")){
+                year2008Books++;
+            }
+
+
+        }
+
+        year2008 =  "year2008" ;
+        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
+        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
+        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
+
+
+
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(year2008);
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(year2009);
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName(year2010);
+        XYChart.Series series4 = new XYChart.Series();
+        series4.setName(year2011);
+        XYChart.Series series5 = new XYChart.Series();
+        series5.setName(year2012);
+        XYChart.Series series6 = new XYChart.Series();
+        series6.setName(year2013);
+        XYChart.Series series7 = new XYChart.Series();
+        series7.setName(year2014);
+        XYChart.Series series8 = new XYChart.Series();
+        series8.setName(year2015);
+        XYChart.Series series9 = new XYChart.Series();
+        series9.setName(year2016);
+        XYChart.Series series10 = new XYChart.Series();
+        series9.setName(year2017);
+
+
+
+
+        series1.getData().add(new XYChart.Data(year2008,year2008Books));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books));
+
+
+        barChart.getData().add(series1);
+        barChart.getData().add(series2);
+        barChart.getData().add(series3);
+        barChart.getData().add(series4);
+        barChart.getData().add(series5);
+        barChart.getData().add(series6);
+        barChart.getData().add(series7);
+        barChart.getData().add(series8);
+        barChart.getData().add(series9);
+        barChart.getData().add(series10);
+
+
+
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(1000,700);
+
+
+
+
+        year2008 =  "year2008" ;
+        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
+        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
+        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
+
+
+
+
+        series1.getData().add(new XYChart.Data(year2008,year2008Books));
+        series1.getData().add(new XYChart.Data(year2009,year2009Books));
+        series1.getData().add(new XYChart.Data(year2010,year2010Books));
+        series1.getData().add(new XYChart.Data(year2011,year2011Books));
+        series1.getData().add(new XYChart.Data(year2012,year2012Books));
+        series1.getData().add(new XYChart.Data(year2013,year2013Books));
+        series1.getData().add(new XYChart.Data(year2014,year2014Books));
+        series1.getData().add(new XYChart.Data(year2015,year2015Books));
+        series1.getData().add(new XYChart.Data(year2016,year2016Books));
+        series1.getData().add(new XYChart.Data(year2017,year2017Books));
+
+        barChart.getData().add(series1);
+
+
+
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(500,500);
+
+
+        barChart.getData().add(series1);
+
+
+
+        barChart.setTranslateX(65);
+        barChart.setTranslateY(55);
+        barChart.setPrefSize(500,500);
+
+        HBox hBox1 = new HBox(barChart,exit,back);
+
+
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hBox1);
+
+        vbox.setMaxSize(850, 650);
+        // vBox3.setSpacing(5);
+
+
+        Image background = new Image("libraryBackground4.jpg");
+
+        BackgroundImage bi = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bg = new Background(bi);
+        vbox.setBackground(bg);
+
+        vbox.setPrefSize(1400,750);
+        Group group = new Group(vbox,exit,back);
+
+        Scene scene = new Scene(group ,1400, 770);
+
+
+        primaryStage.setScene(scene);
+
+
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+
+
 
     }
 
