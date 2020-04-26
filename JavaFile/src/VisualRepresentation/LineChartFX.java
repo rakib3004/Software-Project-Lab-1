@@ -47,9 +47,9 @@ public class LineChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TypesOfBookFX typesOfBookFX = new TypesOfBookFX();
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
             try {
-                typesOfBookFX.start(primaryStage);
+                uiDisplayFX.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -474,13 +474,12 @@ public class LineChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            DemandsOfBookFX demandsOfBookFX = new DemandsOfBookFX();
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
             try {
-                demandsOfBookFX.start(primaryStage);
+                uiDisplayFX.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);

@@ -3,6 +3,7 @@ import BookDataBaseFX.ClassesOfBookFX;
 import BookDataBaseFX.DemandsOfBookFX;
 import BookDataBaseFX.GenericsOfBookFX;
 import BookDataBaseFX.TypesOfBookFX;
+import InfoDisplay.UIDisplayFX;
 import JavFX.FxDatabase;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -47,13 +48,12 @@ public class ScatterChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TypesOfBookFX typesOfBookFX = new TypesOfBookFX();
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
             try {
-                typesOfBookFX.start(primaryStage);
+                uiDisplayFX.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
@@ -474,9 +474,9 @@ public class ScatterChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            DemandsOfBookFX demandsOfBookFX = new DemandsOfBookFX();
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
             try {
-                demandsOfBookFX.start(primaryStage);
+                uiDisplayFX.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
