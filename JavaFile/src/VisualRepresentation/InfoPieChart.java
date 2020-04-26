@@ -230,12 +230,14 @@ public class InfoPieChart extends Application  {
         exit.setPrefSize(200, 80);
 
 
-        String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
-        int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
-                year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
-        year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
-        year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
-        year2016Books=0;year2017Books=0;
+
+        String below4,over4,over7,over10,over15,over20,over25,over30;
+        int  below4Count,over4Count,over7Count,over10Count,over15Count,
+                over20Count,over25Count,over30Count;
+
+
+        below4Count=0;over4Count=0;over7Count=0;over10Count=0;
+        over15Count=0;over20Count=0;over25Count=0;over30Count=0;
 
         int iterator;
         priorityData = processing.fileReaderMethods();
@@ -243,65 +245,50 @@ public class InfoPieChart extends Application  {
 
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
-            if(priorityData[iterator].bookData.bookId.contains("17")){
-                year2017Books++;
+
+
+            if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
+                over30Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
+                over25Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
+                over20Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
+                over15Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
+                over10Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
+                over7Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
+                over4Count++;
+            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
+                below4Count++;
             }
-            else if(priorityData[iterator].bookData.bookId.contains("16")){
-                year2016Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("15")){
-                year2015Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("14")){
-                year2014Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("13")){
-                year2013Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0812")){
-                year2012Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0212")){
-                year2012Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1211")){
-                year2011Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0311")){
-                year2011Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1210")){
-                year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0810")){
-                year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0410")){
-                year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1009")){
-                year2009Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0409")){
-                year2009Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1208")){
-                year2008Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0608")){
-                year2008Books++;
-            }
+
+
         }
 
 
 
-        year2008 =  "year2008" ;
-        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
-        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
-        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
+        below4 =  "0-3" ;
+        over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
+        over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
+        over30 =  "30+" ;
 
 
 
 
         PieChart pieChart = new PieChart();
 
-        PieChart.Data slice1 = new PieChart.Data(year2008,year2008Books);
-        PieChart.Data slice2 = new PieChart.Data(year2009,year2009Books);
-        PieChart.Data slice3 = new PieChart.Data(year2010,year2010Books);
-        PieChart.Data slice4 = new PieChart.Data(year2011,year2011Books);
-        PieChart.Data slice5 = new PieChart.Data(year2012,year2012Books);
-        PieChart.Data slice6 = new PieChart.Data(year2013,year2013Books);
-        PieChart.Data slice7 = new PieChart.Data(year2014,year2014Books);
-        PieChart.Data slice8 = new PieChart.Data(year2015,year2015Books);
-        PieChart.Data slice9 = new PieChart.Data(year2016,year2016Books);
-        PieChart.Data slice10 = new PieChart.Data(year2017,year2017Books);
+        PieChart.Data slice1 = new PieChart.Data(below4,below4Count);
+        PieChart.Data slice2 = new PieChart.Data(over4,over4Count);
+        PieChart.Data slice3 = new PieChart.Data(over7,over7Count);
+        PieChart.Data slice4 = new PieChart.Data(over10,over10Count);
+        PieChart.Data slice5 = new PieChart.Data(over15,over15Count);
+        PieChart.Data slice6 = new PieChart.Data(over20,over20Count);
+        PieChart.Data slice7 = new PieChart.Data(over25,over25Count);
+        PieChart.Data slice8 = new PieChart.Data(over30,over30Count);
+
 
         pieChart.getData().add(slice1);
         pieChart.getData().add(slice2);
@@ -311,13 +298,11 @@ public class InfoPieChart extends Application  {
         pieChart.getData().add(slice6);
         pieChart.getData().add(slice7);
         pieChart.getData().add(slice8);
-        pieChart.getData().add(slice9);
-        pieChart.getData().add(slice10);
 
 
         pieChart.setTranslateX(55);
         pieChart.setTranslateY(55);
-        pieChart.setPrefSize(500,500);
+        pieChart.setPrefSize(590,590);
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
