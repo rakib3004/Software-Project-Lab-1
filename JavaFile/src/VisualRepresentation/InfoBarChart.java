@@ -273,23 +273,23 @@ public class InfoBarChart extends Application {
 
 
 
-         /*     if(Integer.parseInt(Double.parseDouble(priorityData[iterator].borrowPriority)>=30.00){
+          if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                  over30Count++;
-             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=300.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                  over25Count++;
-             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=250.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                  over20Count++;
-             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=210.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                  over15Count++;
-             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=180.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                  over10Count++;
-             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=160.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                  over7Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>140.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                  over4Count++;
-             }else if(Integer.parseInt(priorityData[iterator].borrowPriority>=100.00){
+             }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
                  below4Count++;
-             }*/
+             }
 
 
          }
@@ -613,27 +613,27 @@ public class InfoBarChart extends Application {
          for(iterator=0;iterator<numberOfBooks;iterator++){
 
 
-             if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=500.00){
+             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
                  over500Count++;
 
              }
-             else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=400.00){
+             else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
                  over400Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=350.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
                  over350Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=300.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
                  over300Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=250.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
                  over250Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=210.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
                  over210Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=180.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
                  over180Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=160.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
                  over160Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>140.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
                  over140Count++;
-             }else if(Integer.parseInt(priorityData[iterator].bookData.bookPrice)>=100.00){
+             }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
                  over100Count++;
              }
 
