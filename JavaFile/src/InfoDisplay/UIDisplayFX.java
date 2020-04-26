@@ -1,9 +1,8 @@
 package InfoDisplay;
 
-import JavFX.MenuFX;
-import VisualRepresentation.BarChartFX;
+import VisualRepresentation.ScatterChartFX;
 import VisualRepresentation.LineChartFX;
-import VisualRepresentation.PieChartFX;
+import VisualRepresentation.StackedAreaFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -19,9 +18,9 @@ import javafx.stage.Stage;
 
 public class UIDisplayFX extends Application {
 
-BarChartFX barChartFX = new BarChartFX();
+ScatterChartFX scatterChartFX = new ScatterChartFX();
 LineChartFX lineChartFX = new LineChartFX();
-PieChartFX pieChartFX = new PieChartFX();
+StackedAreaFX stackedAreaFX = new StackedAreaFX();
     @Override
     public void start(Stage primaryStage) {
 
@@ -41,22 +40,22 @@ PieChartFX pieChartFX = new PieChartFX();
         //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        Button barChart = new Button("Bar Chart");
+        Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
-        Button pieChart = new Button("Pie Chart");
+        Button stackedAreaChart = new Button("Stacked Area Chart");
 
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        barChart.setTranslateX(500);
-        barChart.setTranslateY(200);
+        scatterChart.setTranslateX(500);
+        scatterChart.setTranslateY(200);
         lineChart.setTranslateX(500);
         lineChart.setTranslateY(300);
 
-        pieChart.setTranslateX(500);
-        pieChart.setTranslateY(400);
+        stackedAreaChart.setTranslateX(500);
+        stackedAreaChart.setTranslateY(400);
 
         back.setOnAction(actionEvent -> {
 BookApplication bookApplication = new BookApplication();
@@ -73,9 +72,9 @@ BookApplication bookApplication = new BookApplication();
 
 
         });
-        barChart.setOnAction(actionEvent -> {
+        scatterChart.setOnAction(actionEvent -> {
             try {
-                barChartFX.startTyping(typeStatisticsStage);
+                scatterChartFX.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -83,9 +82,9 @@ BookApplication bookApplication = new BookApplication();
 
         });
 
-        pieChart.setOnAction(actionEvent -> {
+        stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.startTyping(typeStatisticsStage);
+                stackedAreaFX.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -111,18 +110,18 @@ BookApplication bookApplication = new BookApplication();
         setStyle(back);
 
         setStyle(lineChart);
-        setStyle(barChart);
+        setStyle(scatterChart);
 
-        setStyle(pieChart);
+        setStyle(stackedAreaChart);
 
         //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         lineChart.setPrefSize(200, 80);
-        barChart.setPrefSize(200, 80);
+        scatterChart.setPrefSize(200, 80);
 
-        pieChart.setPrefSize(200, 80);
+        stackedAreaChart.setPrefSize(200, 80);
 
 
 
@@ -131,7 +130,7 @@ BookApplication bookApplication = new BookApplication();
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,barChart,lineChart,pieChart);
+        group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -160,9 +159,9 @@ BookApplication bookApplication = new BookApplication();
         //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        Button barChart = new Button("Bar Chart");
+        Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
-        Button pieChart = new Button("Pie Chart");
+        Button stackedAreaChart = new Button("Stacked Area Chart");
 
 
         //  Start.setTranslateX(500);
@@ -174,13 +173,13 @@ BookApplication bookApplication = new BookApplication();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        barChart.setTranslateX(500);
-        barChart.setTranslateY(200);
+        scatterChart.setTranslateX(500);
+        scatterChart.setTranslateY(200);
         lineChart.setTranslateX(500);
         lineChart.setTranslateY(300);
 
-        pieChart.setTranslateX(500);
-        pieChart.setTranslateY(400);
+        stackedAreaChart.setTranslateX(500);
+        stackedAreaChart.setTranslateY(400);
 
 
         back.setOnAction(actionEvent -> {
@@ -198,9 +197,9 @@ BookApplication bookApplication = new BookApplication();
 
 
         });
-        barChart.setOnAction(actionEvent -> {
+        scatterChart.setOnAction(actionEvent -> {
             try {
-                barChartFX.startTiming(timeStatisticsStage);
+                scatterChartFX.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -208,9 +207,9 @@ BookApplication bookApplication = new BookApplication();
 
         });
 
-        pieChart.setOnAction(actionEvent -> {
+        stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.startTiming(timeStatisticsStage);
+                stackedAreaFX.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -236,25 +235,25 @@ BookApplication bookApplication = new BookApplication();
         setStyle(back);
 
         setStyle(lineChart);
-        setStyle(barChart);
+        setStyle(scatterChart);
 
-        setStyle(pieChart);
+        setStyle(stackedAreaChart);
 
         //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         lineChart.setPrefSize(200, 80);
-        barChart.setPrefSize(200, 80);
+        scatterChart.setPrefSize(200, 80);
 
-        pieChart.setPrefSize(200, 80);
+        stackedAreaChart.setPrefSize(200, 80);
 
 
 
         Image image = new Image("libraryBackground20.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,barChart,lineChart,pieChart);
+        group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -283,9 +282,9 @@ BookApplication bookApplication = new BookApplication();
         //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        Button barChart = new Button("Bar Chart");
+        Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
-        Button pieChart = new Button("Pie Chart");
+        Button stackedAreaChart = new Button("Stacked Area Chart");
 
 
         //  Start.setTranslateX(500);
@@ -297,13 +296,13 @@ BookApplication bookApplication = new BookApplication();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        barChart.setTranslateX(500);
-        barChart.setTranslateY(200);
+        scatterChart.setTranslateX(500);
+        scatterChart.setTranslateY(200);
         lineChart.setTranslateX(500);
         lineChart.setTranslateY(300);
 
-        pieChart.setTranslateX(500);
-        pieChart.setTranslateY(400);
+        stackedAreaChart.setTranslateX(500);
+        stackedAreaChart.setTranslateY(400);
 
 
         back.setOnAction(actionEvent -> {
@@ -321,9 +320,9 @@ BookApplication bookApplication = new BookApplication();
 
 
         });
-        barChart.setOnAction(actionEvent -> {
+        scatterChart.setOnAction(actionEvent -> {
             try {
-                barChartFX.startBorrowing(borrowStatisticsStage);
+                scatterChartFX.startBorrowing(borrowStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -331,9 +330,9 @@ BookApplication bookApplication = new BookApplication();
 
         });
 
-        pieChart.setOnAction(actionEvent -> {
+        stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                pieChartFX.startBorrowing(borrowStatisticsStage);
+                stackedAreaFX.startBorrowing(borrowStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -359,18 +358,18 @@ BookApplication bookApplication = new BookApplication();
         setStyle(back);
 
         setStyle(lineChart);
-        setStyle(barChart);
+        setStyle(scatterChart);
 
-        setStyle(pieChart);
+        setStyle(stackedAreaChart);
 
         //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         lineChart.setPrefSize(200, 80);
-        barChart.setPrefSize(200, 80);
+        scatterChart.setPrefSize(200, 80);
 
-        pieChart.setPrefSize(200, 80);
+        stackedAreaChart.setPrefSize(200, 80);
 
 
 
@@ -379,7 +378,7 @@ BookApplication bookApplication = new BookApplication();
         Image image = new Image("libraryBackground21.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,barChart,lineChart,pieChart);
+        group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -411,9 +410,9 @@ BookApplication bookApplication = new BookApplication();
          //  Button Start = new Button("Start");
          Button back = new Button("Back");
          Button exit = new Button("Exit");
-         Button barChart = new Button("Bar Chart");
+         Button scatterChart = new Button("Scatter Chart");
          Button lineChart = new Button("Line Chart");
-         Button pieChart = new Button("Pie Chart");
+         Button stackedAreaChart = new Button("Stacked Area Chart");
 
 
          //  Start.setTranslateX(500);
@@ -425,13 +424,13 @@ BookApplication bookApplication = new BookApplication();
          exit.setTranslateX(1100);
          exit.setTranslateY(650);
 
-         barChart.setTranslateX(500);
-         barChart.setTranslateY(200);
+         scatterChart.setTranslateX(500);
+         scatterChart.setTranslateY(200);
          lineChart.setTranslateX(500);
          lineChart.setTranslateY(300);
 
-         pieChart.setTranslateX(500);
-         pieChart.setTranslateY(400);
+         stackedAreaChart.setTranslateX(500);
+         stackedAreaChart.setTranslateY(400);
 
 
          back.setOnAction(actionEvent -> {
@@ -449,9 +448,9 @@ BookApplication bookApplication = new BookApplication();
 
 
          });
-         barChart.setOnAction(actionEvent -> {
+         scatterChart.setOnAction(actionEvent -> {
              try {
-                 barChartFX.startPricing(priceStatisticsStage);
+                 scatterChartFX.startPricing(priceStatisticsStage);
 
              } catch (Exception exception) {
                  exception.printStackTrace();
@@ -459,9 +458,9 @@ BookApplication bookApplication = new BookApplication();
 
          });
 
-         pieChart.setOnAction(actionEvent -> {
+         stackedAreaChart.setOnAction(actionEvent -> {
              try {
-                 pieChartFX.startPricing(priceStatisticsStage);
+                 stackedAreaFX.startPricing(priceStatisticsStage);
 
              } catch (Exception exception) {
                  exception.printStackTrace();
@@ -487,18 +486,18 @@ BookApplication bookApplication = new BookApplication();
          setStyle(back);
 
          setStyle(lineChart);
-         setStyle(barChart);
+         setStyle(scatterChart);
 
-         setStyle(pieChart);
+         setStyle(stackedAreaChart);
 
          //  Start.setPrefSize(200, 80);
          back.setPrefSize(200, 80);
          exit.setPrefSize(200, 80);
 
          lineChart.setPrefSize(200, 80);
-         barChart.setPrefSize(200, 80);
+         scatterChart.setPrefSize(200, 80);
 
-         pieChart.setPrefSize(200, 80);
+         stackedAreaChart.setPrefSize(200, 80);
 
 
 
@@ -507,7 +506,7 @@ BookApplication bookApplication = new BookApplication();
          Image image = new Image("libraryBackground17.jpg");
          Canvas canvas = new Canvas(1500,950);
          Group group = new Group();
-         group.getChildren().addAll(canvas,exit,back,barChart,lineChart,pieChart);
+         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
 
          GraphicsContext graphicsContext = canvas.getGraphicsContext2D();

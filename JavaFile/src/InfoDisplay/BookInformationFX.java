@@ -204,14 +204,14 @@ borrrowCountOfBookFX.start(primaryStage);
         back.setPrefSize(270, 80);
         exit.setPrefSize(270, 80);
 
-        demandsOfBook.setPrefSize(270, 80);
-        typesOfBook.setPrefSize(270, 80);
+        demandsOfBook.setPrefSize(333, 80);
+        typesOfBook.setPrefSize(333, 80);
 
-        classesOfBooks.setPrefSize(270, 80);
-        genericsOfBook.setPrefSize(270, 80);
+        classesOfBooks.setPrefSize(333, 80);
+        genericsOfBook.setPrefSize(333, 80);
 
-         borrowCountOfBook.setPrefSize(270, 80);
-        numberDisplay.setPrefSize(270, 80);
+         borrowCountOfBook.setPrefSize(333, 80);
+        numberDisplay.setPrefSize(333, 80);
 
 
 
