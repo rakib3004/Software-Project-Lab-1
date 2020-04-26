@@ -3,8 +3,8 @@ package MainPackage;
 
         import AHPalgorithm.AHPcalculation;
         import AHPalgorithm.AHPprocessImplementation;
-        import Calculation.DoublyLinearRegression;
-        import Calculation.MultipleLinearRegression;
+        import SimpleRegression.DoublyLinearRegression;
+        import MultiVariableRegression.MultipleLinearRegression;
         import ObjectOriented.AHPcriteriaWeight;
         import ObjectOriented.PriorityData;
         import PageRankAlgorithm.PageRankCalculation;

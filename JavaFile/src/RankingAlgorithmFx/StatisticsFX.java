@@ -118,7 +118,7 @@ try {
 
 
 
-        Scene scene1 = new Scene(group,1400,750);
+        Scene scene1 = new Scene(group,1400,800);
 
 
         primaryStage.setScene(scene1);

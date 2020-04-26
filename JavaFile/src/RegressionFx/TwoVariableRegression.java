@@ -1,8 +1,5 @@
 package RegressionFx;
 
-import Calculation.LinearRegression;
-import JavFX.FxMainClass;
-import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;

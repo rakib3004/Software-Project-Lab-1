@@ -1,6 +1,6 @@
 package MainPackage;
 
-import Calculation.DoublyLinearRegression;
+import SimpleRegression.DoublyLinearRegression;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
 
@@ -53,6 +53,8 @@ public class DataParsing {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = borrowCount1[iterator].length();
             string = borrowCount1[iterator].substring(1, length);
+            string = string.replaceAll("[\\t\\n\\r]+", "");
+
             bookCount[iterator] = Integer.parseInt(string);
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {

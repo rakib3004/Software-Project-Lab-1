@@ -1,7 +1,7 @@
 package Collection;
 
 import ObjectOriented.PriorityData;
-import Processed.MedianCalculation;
+import MultiVariableRegression.MedianCalculation;
 
 import java.util.*;
 

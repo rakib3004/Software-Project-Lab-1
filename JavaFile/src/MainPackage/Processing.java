@@ -1,7 +1,6 @@
 package MainPackage;
 
 
-import Calculation.MultipleLinearRegression;
 import Methods.PrintInfo;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;

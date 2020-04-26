@@ -1,6 +1,6 @@
 package RegressionFx;
 
-import Calculation.DoublyLinearRegression;
+import SimpleRegression.DoublyLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;

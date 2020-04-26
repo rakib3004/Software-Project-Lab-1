@@ -2,12 +2,10 @@ package RankingAlgorithmFx;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
-import Calculation.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;

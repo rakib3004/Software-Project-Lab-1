@@ -1,6 +1,6 @@
 package RegressionFx;
 
-import Calculation.MultipleLinearRegression;
+import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
