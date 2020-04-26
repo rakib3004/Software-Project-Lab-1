@@ -435,8 +435,7 @@ public class InfoBarChart extends Application {
 
          BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
-         XYChart.Series series1 = new XYChart.Series();
-         series1.setName("Number of Books");
+
          String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
          int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
                  year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
@@ -489,6 +488,67 @@ public class InfoBarChart extends Application {
 
 
          }
+
+         year2008 =  "year2008" ;
+         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
+         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
+         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
+
+
+
+         XYChart.Series series1 = new XYChart.Series();
+         series1.setName(year2008);
+         XYChart.Series series2 = new XYChart.Series();
+         series2.setName(year2009);
+         XYChart.Series series3 = new XYChart.Series();
+         series3.setName(year2010);
+         XYChart.Series series4 = new XYChart.Series();
+         series4.setName(year2011);
+         XYChart.Series series5 = new XYChart.Series();
+         series5.setName(year2012);
+         XYChart.Series series6 = new XYChart.Series();
+         series6.setName(year2013);
+         XYChart.Series series7 = new XYChart.Series();
+         series7.setName(year2014);
+         XYChart.Series series8 = new XYChart.Series();
+         series8.setName(year2015);
+         XYChart.Series series9 = new XYChart.Series();
+         series9.setName(year2016);
+        XYChart.Series series10 = new XYChart.Series();
+         series9.setName(year2017);
+
+
+
+
+         series1.getData().add(new XYChart.Data(year2008,year2008Books));
+         series2.getData().add(new XYChart.Data(year2009,year2009Books));
+         series3.getData().add(new XYChart.Data(year2010,year2010Books));
+         series4.getData().add(new XYChart.Data(year2011,year2011Books));
+         series5.getData().add(new XYChart.Data(year2012,year2012Books));
+         series6.getData().add(new XYChart.Data(year2013,year2013Books));
+         series7.getData().add(new XYChart.Data(year2014,year2014Books));
+         series8.getData().add(new XYChart.Data(year2015,year2015Books));
+         series9.getData().add(new XYChart.Data(year2016,year2016Books));
+         series10.getData().add(new XYChart.Data(year2017,year2017Books));
+
+
+         barChart.getData().add(series1);
+         barChart.getData().add(series2);
+         barChart.getData().add(series3);
+         barChart.getData().add(series4);
+         barChart.getData().add(series5);
+         barChart.getData().add(series6);
+         barChart.getData().add(series7);
+         barChart.getData().add(series8);
+         barChart.getData().add(series9);
+         barChart.getData().add(series10);
+
+
+
+         barChart.setTranslateX(65);
+         barChart.setTranslateY(55);
+         barChart.setPrefSize(1000,700);
+
 
 
 
