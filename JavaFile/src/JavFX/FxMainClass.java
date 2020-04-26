@@ -2,6 +2,7 @@ package JavFX;
 
 import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
+import VisualRepresentation.LineChartFX;
 import javafx.application.Application;
 
 import javafx.scene.Group;
@@ -23,8 +24,8 @@ public class FxMainClass extends Application {
     public void start(Stage stage) throws Exception {
 
         Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(520);
-        welcome.setTranslateY(520);
+        welcome.setTranslateX(480);
+        welcome.setTranslateY(370);
         setStyle(welcome);
 
 
@@ -32,12 +33,12 @@ public class FxMainClass extends Application {
 
         welcome.setOnAction(actionEvent -> {
 
-       /*  BookInformationFX bookInformationFX = new BookInformationFX();
-            try {
-                bookInformationFX.start(stage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }*/
+                  /*  LineChartFX bookInformationFX = new LineChartFX();
+                    try {
+                        bookInformationFX.startTyping(stage);
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }*/
 
           FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
@@ -66,7 +67,7 @@ public class FxMainClass extends Application {
 
 
 
-        Image background = new Image("libraryBackground11.jpg");
+        Image background = new Image("libraryBackground20.jpg");
         Canvas canvas = new Canvas(1400, 770);
 
 
@@ -85,8 +86,8 @@ public class FxMainClass extends Application {
         stage.setScene(scene);
        stage.setFullScreen(true);
         stage.show();
-    }
 
+    }
 
     public Button setStyle( Button button)
     {

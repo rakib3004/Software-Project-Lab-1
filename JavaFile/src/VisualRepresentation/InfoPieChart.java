@@ -29,7 +29,7 @@ public class InfoPieChart extends Application  {
     }
 
 
-    public void startTypeBook(Stage primaryStage) {
+    public void startTypeBook(Stage primaryStage) throws IOException {
 
 
 
@@ -63,17 +63,91 @@ public class InfoPieChart extends Application  {
 
 
 
+
+
+
+        int iterator;
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+
+
+        String uponnashType,kobitaType,rochonaBoliType,
+                religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
+
+
+        int uponnashTypeNO,kobitaTypeNO,rochonaBoliTypeNO,
+                religionTypeNO,bigganTypeNO,sciFicTypeNO,shisuSahittoTypeNO,kisoreUponnashTypeNO,onubadTypeNO,othersTypeNO;
+
+        uponnashTypeNO=0;kobitaTypeNO=0;rochonaBoliTypeNO=0;
+        religionTypeNO=0;bigganTypeNO=0;sciFicTypeNO=0;
+        shisuSahittoTypeNO=0; kisoreUponnashTypeNO=0;
+        onubadTypeNO=0;othersTypeNO=0;
+
+        uponnashType="Uponnash";
+        kobitaType = "Kobita";
+        rochonaBoliType = "Rochhona Boli";
+        religionType= "Religion";
+        bigganType = "Biggan";
+        sciFicType = "Science Fiction";
+        shisuSahittoType = "SHishu Sahitto";
+        kisoreUponnashType = "Kisore";
+        onubadType = "Onubad";
+        othersType= "Others";
+
+
+        int [] typeCounter = new int[6];
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
+                uponnashTypeNO++;
+
+            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
+                rochonaBoliTypeNO++;
+
+            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
+                kobitaTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
+                bigganTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
+                bigganTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
+                sciFicTypeNO++;
+
+            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
+                kisoreUponnashTypeNO++;
+
+            }  else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
+                shisuSahittoTypeNO++;
+
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
+                religionTypeNO++;
+
+            }  else {
+                othersTypeNO++;
+
+            }
+        }
+
+
+
+
+
+
         PieChart pieChart = new PieChart();
 
-        PieChart.Data slice1 = new PieChart.Data("Golpo", 23);
-        PieChart.Data slice2 = new PieChart.Data("Kobita"  , 17);
-        PieChart.Data slice3 = new PieChart.Data("Kisore Uponnash" , 36);
-        PieChart.Data slice4 = new PieChart.Data("Romantic Uponnash" , 26);
-        PieChart.Data slice5 = new PieChart.Data("History" , 14);
-        PieChart.Data slice6 = new PieChart.Data("General Knowledge" , 17);
-        PieChart.Data slice7 = new PieChart.Data("Science Fiction" , 9);
-        PieChart.Data slice8 = new PieChart.Data("Probondho" , 33);
-        PieChart.Data slice9 = new PieChart.Data("Rocona Somogro" , 26);
+        PieChart.Data slice1 = new PieChart.Data(uponnashType,uponnashTypeNO);
+        PieChart.Data slice2 = new PieChart.Data(kobitaType,kobitaTypeNO);
+        PieChart.Data slice3 = new PieChart.Data(rochonaBoliType,rochonaBoliTypeNO);
+        PieChart.Data slice4 = new PieChart.Data(religionType,religionTypeNO);
+        PieChart.Data slice5= new PieChart.Data(bigganType,bigganTypeNO);
+        PieChart.Data slice6 = new PieChart.Data(sciFicType,sciFicTypeNO);
+        PieChart.Data slice7 = new PieChart.Data(shisuSahittoType,shisuSahittoTypeNO);
+        PieChart.Data slice8 = new PieChart.Data(kisoreUponnashType,kisoreUponnashTypeNO);
+        PieChart.Data slice9 = new PieChart.Data(onubadType,onubadTypeNO);
+        PieChart.Data slice10 = new PieChart.Data(othersType,othersTypeNO);
 
         pieChart.getData().add(slice1);
         pieChart.getData().add(slice2);
@@ -84,11 +158,12 @@ public class InfoPieChart extends Application  {
         pieChart.getData().add(slice7);
         pieChart.getData().add(slice8);
         pieChart.getData().add(slice9);
+        pieChart.getData().add(slice10);
 
 
         pieChart.setTranslateX(55);
         pieChart.setTranslateY(55);
-        pieChart.setPrefSize(500,500);
+        pieChart.setPrefSize(590,590);
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
