@@ -177,7 +177,7 @@ public class InfoPieChart extends Application  {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
 
@@ -189,7 +189,7 @@ public class InfoPieChart extends Application  {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vbox.setBackground(bg);
+         // vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
@@ -316,7 +316,7 @@ public class InfoPieChart extends Application  {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
 
@@ -328,7 +328,7 @@ public class InfoPieChart extends Application  {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vbox.setBackground(bg);
+         // vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
@@ -471,7 +471,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
 
@@ -483,7 +483,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vbox.setBackground(bg);
+         // vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
@@ -618,7 +618,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
 
@@ -630,7 +630,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vbox.setBackground(bg);
+         // vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
@@ -773,7 +773,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
 
@@ -785,7 +785,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vbox.setBackground(bg);
+         // vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);

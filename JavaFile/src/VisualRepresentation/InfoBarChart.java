@@ -193,7 +193,7 @@ public class InfoBarChart extends Application {
 
 
          barChart.setTranslateX(65);
-         barChart.setTranslateY(55);
+         barChart.setTranslateY(25);
          barChart.setPrefSize(1000,700);
 
 
@@ -205,7 +205,9 @@ public class InfoBarChart extends Application {
          VBox vbox = new VBox();
          vbox.getChildren().addAll(hBox1);
 
-         vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
+         vbox.setTranslateX(0);
+         vbox.setTranslateY(0);
          // vBox3.setSpacing(5);
 
 
@@ -217,12 +219,12 @@ public class InfoBarChart extends Application {
                  BackgroundPosition.DEFAULT,
                  BackgroundSize.DEFAULT);
          Background bg = new Background(bi);
-         vbox.setBackground(bg);
+        //  // vbox.setBackground(bg);
 
-         vbox.setPrefSize(1400,750);
+         vbox.setPrefSize(1400,800);
          Group group = new Group(vbox,exit,back);
 
-         Scene scene = new Scene(group ,1400, 770);
+         Scene scene = new Scene(group ,1400, 800);
 
 
          primaryStage.setScene(scene);
@@ -374,7 +376,7 @@ public class InfoBarChart extends Application {
          VBox vbox = new VBox();
          vbox.getChildren().addAll(hBox1);
 
-         vbox.setMaxSize(850, 650);
+          vbox.setMaxSize(1400, 800);
          // vBox3.setSpacing(5);
 
 
@@ -386,7 +388,7 @@ public class InfoBarChart extends Application {
                  BackgroundPosition.DEFAULT,
                  BackgroundSize.DEFAULT);
          Background bg = new Background(bi);
-         vbox.setBackground(bg);
+          // vbox.setBackground(bg);
 
          vbox.setPrefSize(1400,750);
          Group group = new Group(vbox,exit,back);
@@ -602,7 +604,7 @@ public class InfoBarChart extends Application {
          VBox vbox = new VBox();
          vbox.getChildren().addAll(hBox1);
 
-         vbox.setMaxSize(850, 650);
+          vbox.setMaxSize(1400, 800);
          // vBox3.setSpacing(5);
 
 
@@ -614,7 +616,7 @@ public class InfoBarChart extends Application {
                  BackgroundPosition.DEFAULT,
                  BackgroundSize.DEFAULT);
          Background bg = new Background(bi);
-         vbox.setBackground(bg);
+          // vbox.setBackground(bg);
 
          vbox.setPrefSize(1400,750);
          Group group = new Group(vbox,exit,back);
@@ -786,7 +788,7 @@ public class InfoBarChart extends Application {
          VBox vbox = new VBox();
          vbox.getChildren().addAll(hBox1);
 
-         vbox.setMaxSize(850, 650);
+          vbox.setMaxSize(1400, 800);
          // vBox3.setSpacing(5);
 
 
@@ -798,7 +800,7 @@ public class InfoBarChart extends Application {
                  BackgroundPosition.DEFAULT,
                  BackgroundSize.DEFAULT);
          Background bg = new Background(bi);
-         vbox.setBackground(bg);
+          // vbox.setBackground(bg);
 
          vbox.setPrefSize(1400,750);
          Group group = new Group(vbox,exit,back);
@@ -951,7 +953,7 @@ public class InfoBarChart extends Application {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+         vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
 
@@ -963,7 +965,7 @@ public class InfoBarChart extends Application {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
-        vbox.setBackground(bg);
+         // vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
