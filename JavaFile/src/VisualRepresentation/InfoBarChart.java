@@ -121,7 +121,15 @@ public class InfoBarChart extends Application {
              }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
                 religionTypeNO++;
 
-             }  else {
+             }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
+                onubadTypeNO++;
+
+             }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
+                onubadTypeNO++;
+
+             }
+
+             else {
               othersTypeNO++;
 
              }

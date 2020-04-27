@@ -118,10 +118,10 @@ BookApplication bookApplication = new BookApplication();
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        lineChart.setPrefSize(200, 80);
-        scatterChart.setPrefSize(200, 80);
+        lineChart.setPrefSize(275, 80);
+        scatterChart.setPrefSize(275, 80);
 
-        stackedAreaChart.setPrefSize(200, 80);
+        stackedAreaChart.setPrefSize(275, 80);
 
 
 
@@ -243,10 +243,10 @@ BookApplication bookApplication = new BookApplication();
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        lineChart.setPrefSize(200, 80);
-        scatterChart.setPrefSize(200, 80);
+        lineChart.setPrefSize(275, 80);
+        scatterChart.setPrefSize(275, 80);
 
-        stackedAreaChart.setPrefSize(200, 80);
+        stackedAreaChart.setPrefSize(275, 80);
 
 
 
@@ -366,10 +366,10 @@ BookApplication bookApplication = new BookApplication();
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        lineChart.setPrefSize(200, 80);
-        scatterChart.setPrefSize(200, 80);
+        lineChart.setPrefSize(275, 80);
+        scatterChart.setPrefSize(275, 80);
 
-        stackedAreaChart.setPrefSize(200, 80);
+        stackedAreaChart.setPrefSize(275, 80);
 
 
 
@@ -494,10 +494,10 @@ BookApplication bookApplication = new BookApplication();
          back.setPrefSize(200, 80);
          exit.setPrefSize(200, 80);
 
-         lineChart.setPrefSize(200, 80);
-         scatterChart.setPrefSize(200, 80);
+         lineChart.setPrefSize(275, 80);
+         scatterChart.setPrefSize(275, 80);
 
-         stackedAreaChart.setPrefSize(200, 80);
+         stackedAreaChart.setPrefSize(275, 80);
 
 
 

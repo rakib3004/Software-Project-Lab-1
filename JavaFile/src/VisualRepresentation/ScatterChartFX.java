@@ -1,12 +1,10 @@
 package VisualRepresentation;
-import BookDataBaseFX.ClassesOfBookFX;
-import BookDataBaseFX.DemandsOfBookFX;
-import BookDataBaseFX.GenericsOfBookFX;
-import BookDataBaseFX.TypesOfBookFX;
+import BookDataBaseFX.*;
 import InfoDisplay.UIDisplayFX;
 import JavFX.FxDatabase;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.PriorityData;
 import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
@@ -25,6 +23,8 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScatterChartFX extends Application {
 
@@ -33,6 +33,10 @@ public class ScatterChartFX extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
+
+    double [] uponnashTypeNO= new double[7] ;
 
     @Override
     public void start(Stage primaryStage) {
@@ -72,21 +76,28 @@ public class ScatterChartFX extends Application {
 
 
         int iterator;
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
 
 
         String uponnashType,kobitaType,rochonaBoliType,
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
 
 
-        int uponnashTypeNO,kobitaTypeNO,rochonaBoliTypeNO,
-                religionTypeNO,bigganTypeNO,sciFicTypeNO,shisuSahittoTypeNO,kisoreUponnashTypeNO,onubadTypeNO,othersTypeNO;
+        double []kobitaTypeNO= new double[7] ;
+        double []rochonaBoliTypeNO= new double[7] ;
+        double []  religionTypeNO= new double[7] ;
+        double []bigganTypeNO= new double[7] ;
+        double []sciFicTypeNO= new double[7] ;
+        double []shisuSahittoTypeNO= new double[7] ;
+        double []  kisoreUponnashTypeNO= new double[7] ;
+        double []onubadTypeNO= new double[7] ;
+        double []othersTypeNO = new double[7];
 
-        uponnashTypeNO=0;kobitaTypeNO=0;rochonaBoliTypeNO=0;
-        religionTypeNO=0;bigganTypeNO=0;sciFicTypeNO=0;
-        shisuSahittoTypeNO=0; kisoreUponnashTypeNO=0;
-        onubadTypeNO=0;othersTypeNO=0;
+
+
 
         uponnashType="Uponnash";
         kobitaType = "Kobita";
@@ -100,38 +111,156 @@ public class ScatterChartFX extends Application {
         othersType= "Others";
 
 
-        int [] typeCounter = new int[6];
+        List<Double> list = new ArrayList<>();
+
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
-                uponnashTypeNO++;
+             //   uponnashTypeNO++;
+                list.add(priorityData[iterator].getMLRweight());
 
-            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
-                rochonaBoliTypeNO++;
+            }
 
-            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
-                kobitaTypeNO++;
+            int sizeB = list.size();
+            if(sizeB>7){
+                uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
 
-            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
-                bigganTypeNO++;
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
+            //    rochonaBoliTypeNO++;
 
-            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
-                bigganTypeNO++;
+                list.add(priorityData[iterator].getMLRweight());
 
-            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
-                sciFicTypeNO++;
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                rochonaBoliTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
 
-            } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
-                kisoreUponnashTypeNO++;
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
+            //    kobitaTypeNO++;
 
-            }  else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
-                shisuSahittoTypeNO++;
+            list.add(priorityData[iterator].getMLRweight());
 
-            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
-                religionTypeNO++;
+        }
+            int sizeB = list.size();
+            if(sizeB>7){
+                kobitaTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
 
-            }  else {
-                othersTypeNO++;
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
+              //  bigganTypeNO++;
+
+            list.add(priorityData[iterator].getMLRweight());
+
+        }
+
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
+             //   bigganTypeNO++;
+
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                bigganTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
+             //   sciFicTypeNO++;
+
+            list.add(priorityData[iterator].getMLRweight());
+
+        }
+
+            int sizeB = list.size();
+            if(sizeB>7){
+                sciFicTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
+              //  kisoreUponnashTypeNO++;
+
+            }  } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
+              //  shisuSahittoTypeNO++;
+
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+
+
+            int sizeB = list.size();
+            if(sizeB>7){
+                shisuSahittoTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+
+        }
+        list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
+               // onubadTypeNO++;
+
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+
+            int sizeB = list.size();
+            if(sizeB>7){
+
+                onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+            }
+
+
+        }
+        list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
+              //  onubadTypeNO++;
+
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+
+            int sizeB = list.size();
+            if(sizeB>7){
+                onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+
+            }
+
+
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
+           //     religionTypeNO++;
+
+            list.add(priorityData[iterator].getMLRweight());
+
+        }
+
+            int sizeB = list.size();
+            if(sizeB>7){
+                religionTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+            }
+
+
+        }for (iterator = 0; iterator < numberOfBooks; iterator++) { {
+             //   othersTypeNO++;
 
             }
         }
@@ -169,16 +298,96 @@ public class ScatterChartFX extends Application {
 
 
 
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[0]));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[1]));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[2]));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[3]));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[4]));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[5]));
+        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[6]));
+
+
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[0]));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[1]));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[2]));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[3]));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[4]));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[5]));
+        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[6]));
+
+
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[0]));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[1]));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[2]));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[3]));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[4]));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[5]));
+        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[6]));
+
+
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[0]));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[1]));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[2]));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[3]));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[4]));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[5]));
+        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[6]));
+
+
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[0]));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[1]));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[2]));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[3]));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[4]));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[5]));
+        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[6]));
+
+
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[0]));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[1]));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[2]));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[3]));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[4]));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[5]));
+        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[6]));
+
+
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[0]));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[1]));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[2]));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[3]));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[4]));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[5]));
+        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[6]));
+
+
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[0]));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[1]));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[2]));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[3]));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[4]));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[5]));
+        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[6]));
+
+
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[0]));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[1]));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[2]));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[3]));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[4]));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[5]));
+        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[6]));
+
+
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[0]));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[1]));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[2]));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[3]));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[4]));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[5]));
+        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[6]));
+
+
 
         ScatterChart .getData().add(series1);
         ScatterChart .getData().add(series2);
@@ -287,42 +496,128 @@ public class ScatterChartFX extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 
+        List<Double> list = new ArrayList<>();
+
+
+
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
 
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 year2017Books++;
             }
-            else if(priorityData[iterator].bookData.bookId.contains("16")){
+            } for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("16")){
                 year2016Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("15")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("15")){
                 year2015Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("14")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("14")){
                 year2014Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("13")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("13")){
                 year2013Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0812")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0812")){
                 year2012Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0212")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0212")){
                 year2012Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1211")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1211")){
                 year2011Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0311")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0311")){
                 year2011Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1210")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1210")){
                 year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0810")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0810")){
                 year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0410")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0410")){
                 year2010Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1009")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1009")){
                 year2009Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0409")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0409")){
                 year2009Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("1208")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1208")){
                 year2008Books++;
-            }else if(priorityData[iterator].bookData.bookId.contains("0608")){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0608")){
                 year2008Books++;
             }
 
@@ -508,25 +803,67 @@ public class ScatterChartFX extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 
+
+        List<Double> list = new ArrayList<>();
+
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
-
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 over30Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 over25Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 over20Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 over15Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 over10Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 over7Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 over4Count++;
-            }else if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
                 below4Count++;
             }
 
@@ -677,30 +1014,80 @@ public class ScatterChartFX extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        List<Double> list = new ArrayList<>();
 
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
 
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
                 over500Count++;
 
             }
-            else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
+            } for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
                 over400Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
                 over350Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
                 over300Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
                 over250Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
                 over210Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
                 over180Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
                 over160Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
                 over140Count++;
-            }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
+              list.add(priorityData[iterator].getMLRweight());
+
+            }
+          uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
                 over100Count++;
             }
 

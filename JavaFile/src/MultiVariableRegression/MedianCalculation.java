@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class MedianCalculation {
+public class  MedianCalculation {
     public int sizeA;
     public double interQuartileRange;
 
