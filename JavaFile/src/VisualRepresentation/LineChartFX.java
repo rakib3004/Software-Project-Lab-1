@@ -144,7 +144,7 @@ public class LineChartFX extends Application {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-        BarChart barChart = new BarChart(categoryAxis,numberAxis);
+        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(uponnashType);
@@ -180,27 +180,27 @@ public class LineChartFX extends Application {
         series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO));
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO));
 
-        barChart.getData().add(series1);
-        barChart.getData().add(series2);
-        barChart.getData().add(series3);
-        barChart.getData().add(series4);
-        barChart.getData().add(series5);
-        barChart.getData().add(series6);
-        barChart.getData().add(series7);
-        barChart.getData().add(series8);
-        barChart.getData().add(series9);
-        barChart.getData().add(series10);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
+        LineChart .getData().add(series10);
 
 
 
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(1000,700);
+        LineChart .setTranslateX(65);
+        LineChart .setTranslateY(55);
+        LineChart .setPrefSize(1000,700);
 
 
 
 
-        HBox hBox1 = new HBox(barChart,exit,back);
+        HBox hBox1 = new HBox(LineChart ,exit,back);
 
 
         VBox vbox = new VBox();
@@ -244,9 +244,9 @@ public class LineChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            GenericsOfBookFX genericsOfBookFX = new GenericsOfBookFX();
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
             try {
-                genericsOfBookFX.start(primaryStage);
+                uiDisplayFX.timeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -272,7 +272,7 @@ public class LineChartFX extends Application {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
 
-        BarChart barChart = new BarChart(categoryAxis,numberAxis);
+        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
 
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
@@ -371,22 +371,22 @@ public class LineChartFX extends Application {
         series10.getData().add(new XYChart.Data(year2017,year2017Books));
 
 
-        barChart.getData().add(series1);
-        barChart.getData().add(series2);
-        barChart.getData().add(series3);
-        barChart.getData().add(series4);
-        barChart.getData().add(series5);
-        barChart.getData().add(series6);
-        barChart.getData().add(series7);
-        barChart.getData().add(series8);
-        barChart.getData().add(series9);
-        barChart.getData().add(series10);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
+        LineChart .getData().add(series10);
 
 
 
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(1000,700);
+        LineChart .setTranslateX(65);
+        LineChart .setTranslateY(55);
+        LineChart .setPrefSize(1000,700);
 
 
 
@@ -410,24 +410,24 @@ public class LineChartFX extends Application {
         series1.getData().add(new XYChart.Data(year2016,year2016Books));
         series1.getData().add(new XYChart.Data(year2017,year2017Books));
 
-        barChart.getData().add(series1);
+        LineChart .getData().add(series1);
 
 
 
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(500,500);
+        LineChart .setTranslateX(65);
+        LineChart .setTranslateY(55);
+        LineChart .setPrefSize(500,500);
 
 
-        barChart.getData().add(series1);
+        LineChart .getData().add(series1);
 
 
 
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(500,500);
+        LineChart .setTranslateX(65);
+        LineChart .setTranslateY(55);
+        LineChart .setPrefSize(500,500);
 
-        HBox hBox1 = new HBox(barChart,exit,back);
+        HBox hBox1 = new HBox(LineChart ,exit,back);
 
 
         VBox vbox = new VBox();
@@ -547,7 +547,7 @@ public class LineChartFX extends Application {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-        BarChart barChart = new BarChart(categoryAxis,numberAxis);
+        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(below4);
@@ -580,25 +580,25 @@ public class LineChartFX extends Application {
         series8.getData().add(new XYChart.Data(over30,over30Count));
 
 
-        barChart.getData().add(series1);
-        barChart.getData().add(series2);
-        barChart.getData().add(series3);
-        barChart.getData().add(series4);
-        barChart.getData().add(series5);
-        barChart.getData().add(series6);
-        barChart.getData().add(series7);
-        barChart.getData().add(series8);
-        barChart.getData().add(series9);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
 
 
 
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(1000,700);
+        LineChart .setTranslateX(65);
+        LineChart .setTranslateY(55);
+        LineChart .setPrefSize(1000,700);
 
 
 
-        HBox hBox1 = new HBox(barChart,exit,back);
+        HBox hBox1 = new HBox(LineChart ,exit,back);
 
 
         VBox vbox = new VBox();
@@ -642,12 +642,13 @@ public class LineChartFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            ClassesOfBookFX classesOfBookFX = new ClassesOfBookFX();
+            UIDisplayFX uiDisplayFX = new UIDisplayFX();
             try {
-                classesOfBookFX.start(primaryStage);
+                uiDisplayFX.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
 
         });
         exit.setOnAction(actionEvent -> {
@@ -722,7 +723,7 @@ public class LineChartFX extends Application {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-        BarChart barChart = new BarChart(categoryAxis,numberAxis);
+        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(over100);
@@ -758,28 +759,28 @@ public class LineChartFX extends Application {
         series9.getData().add(new XYChart.Data(over400,over400Count));
         series10.getData().add(new XYChart.Data(over500,over500Count));
 
-        barChart.getData().add(series1);
-        barChart.getData().add(series2);
-        barChart.getData().add(series3);
-        barChart.getData().add(series4);
-        barChart.getData().add(series5);
-        barChart.getData().add(series6);
-        barChart.getData().add(series7);
-        barChart.getData().add(series8);
-        barChart.getData().add(series9);
-        barChart.getData().add(series10);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
+        LineChart .getData().add(series10);
 
 
 
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(1000,700);
+        LineChart .setTranslateX(65);
+        LineChart .setTranslateY(55);
+        LineChart .setPrefSize(1000,700);
 
 
 
 
 
-        HBox hBox1 = new HBox(barChart,exit,back);
+        HBox hBox1 = new HBox(LineChart ,exit,back);
 
 
         VBox vbox = new VBox();
