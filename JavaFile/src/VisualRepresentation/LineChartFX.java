@@ -482,58 +482,215 @@ public class LineChartFX extends Application {
         LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
 
+
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
-        int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
-                year2013Books,year2014Books,year2015Books,year2016Books,year2017Books;
-        year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
-        year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
-        year2016Books=0;year2017Books=0;
+        double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
+                year2013Books= new double [7] ; double []year2014Books= new double [7] ; double []year2015Books= new double [7] ; double []year2016Books= new double [7] ; double []year2017Books = new double[7];
+
 
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 
+        List<Double> list = new ArrayList<>();
+
+
+
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
-
-
             if(priorityData[iterator].bookData.bookId.contains("17")){
-                year2017Books++;
-            }
-            } for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("16")){
-                year2016Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("15")){
-                year2015Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("14")){
-                year2014Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("13")){
-                year2013Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0812")){
-                year2012Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0212")){
-                year2012Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1211")){
-                year2011Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0311")){
-                year2011Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1210")){
-                year2010Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0810")){
-                year2010Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0410")){
-                year2010Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1009")){
-                year2009Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0409")){
-                year2009Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("1208")){
-                year2008Books++;
-            }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(priorityData[iterator].bookData.bookId.contains("0608")){
-                year2008Books++;
-            }
+                //year2017Books++;
+                list.add(priorityData[iterator].getMLRweight());
 
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
 
         }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("16")){
+                //year2016Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2016Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("15")){
+                //year2015Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2015Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("14")){
+                //year2014Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2014Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("13")){
+                //year2013Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2013Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0812")){
+                //year2012Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0212")){
+                //year2012Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("1211")){
+                //year2011Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0311")){
+                //year2011Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("1210")){
+                //year2010Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0810")){
+                //year2010Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0410")){
+                //year2010Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("1009")){
+                //year2009Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2009Books =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0409")){
+                //year2009Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2009Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("1208")){
+                //year2008Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].bookData.bookId.contains("0608")){
+                //year2008Books++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+
+
 
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
@@ -566,16 +723,101 @@ public class LineChartFX extends Application {
 
 
 
-        series1.getData().add(new XYChart.Data(year2008,year2008Books));
-        series2.getData().add(new XYChart.Data(year2009,year2009Books));
-        series3.getData().add(new XYChart.Data(year2010,year2010Books));
-        series4.getData().add(new XYChart.Data(year2011,year2011Books));
-        series5.getData().add(new XYChart.Data(year2012,year2012Books));
-        series6.getData().add(new XYChart.Data(year2013,year2013Books));
-        series7.getData().add(new XYChart.Data(year2014,year2014Books));
-        series8.getData().add(new XYChart.Data(year2015,year2015Books));
-        series9.getData().add(new XYChart.Data(year2016,year2016Books));
-        series10.getData().add(new XYChart.Data(year2017,year2017Books));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[0]));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[1]));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[2]));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[3]));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[4]));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[5]));
+        series1.getData().add(new XYChart.Data(year2008,year2008Books[6]));
+
+
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[0]));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[1]));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[2]));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[3]));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[4]));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[5]));
+        series2.getData().add(new XYChart.Data(year2009,year2009Books[6]));
+
+
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[0]));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[1]));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[2]));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[3]));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[4]));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[5]));
+        series3.getData().add(new XYChart.Data(year2010,year2010Books[6]));
+
+
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[0]));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[1]));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[2]));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[3]));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[4]));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[5]));
+        series4.getData().add(new XYChart.Data(year2011,year2011Books[6]));
+
+
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[0]));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[1]));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[2]));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[3]));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[4]));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[5]));
+        series5.getData().add(new XYChart.Data(year2012,year2012Books[6]));
+
+
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[0]));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[1]));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[2]));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[3]));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[4]));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[5]));
+        series6.getData().add(new XYChart.Data(year2013,year2013Books[6]));
+
+
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[0]));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[1]));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[2]));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[3]));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[4]));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[5]));
+        series7.getData().add(new XYChart.Data(year2014,year2014Books[6]));
+
+
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[0]));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[1]));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[2]));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[3]));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[4]));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[5]));
+        series8.getData().add(new XYChart.Data(year2015,year2015Books[6]));
+
+
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[0]));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[1]));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[2]));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[3]));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[4]));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[5]));
+        series9.getData().add(new XYChart.Data(year2016,year2016Books[6]));
+
+
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[0]));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[1]));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[2]));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[3]));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[4]));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[5]));
+        series10.getData().add(new XYChart.Data(year2017,year2017Books[6]));
+
+
+
+
+
+
+
 
 
         LineChart .getData().add(series1);
@@ -598,41 +840,10 @@ public class LineChartFX extends Application {
 
 
 
-        year2008 =  "year2008" ;
-        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
-        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
-        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
 
 
 
 
-        series1.getData().add(new XYChart.Data(year2008,year2008Books));
-        series1.getData().add(new XYChart.Data(year2009,year2009Books));
-        series1.getData().add(new XYChart.Data(year2010,year2010Books));
-        series1.getData().add(new XYChart.Data(year2011,year2011Books));
-        series1.getData().add(new XYChart.Data(year2012,year2012Books));
-        series1.getData().add(new XYChart.Data(year2013,year2013Books));
-        series1.getData().add(new XYChart.Data(year2014,year2014Books));
-        series1.getData().add(new XYChart.Data(year2015,year2015Books));
-        series1.getData().add(new XYChart.Data(year2016,year2016Books));
-        series1.getData().add(new XYChart.Data(year2017,year2017Books));
-
-        LineChart .getData().add(series1);
-
-
-
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
-        LineChart .setPrefSize(500,500);
-
-
-        LineChart .getData().add(series1);
-
-
-
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
-        LineChart .setPrefSize(500,500);
 
         HBox hBox1 = new HBox(LineChart ,exit,back);
 

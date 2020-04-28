@@ -962,41 +962,6 @@ public class StackedAreaFX extends Application {
 
 
 
-        year2008 =  "year2008" ;
-        year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
-        year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
-        year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
-
-
-
-        series1.getData().add(new XYChart.Data(year2008,year2008Books));
-        series1.getData().add(new XYChart.Data(year2009,year2009Books));
-        series1.getData().add(new XYChart.Data(year2010,year2010Books));
-        series1.getData().add(new XYChart.Data(year2011,year2011Books));
-        series1.getData().add(new XYChart.Data(year2012,year2012Books));
-        series1.getData().add(new XYChart.Data(year2013,year2013Books));
-        series1.getData().add(new XYChart.Data(year2014,year2014Books));
-        series1.getData().add(new XYChart.Data(year2015,year2015Books));
-        series1.getData().add(new XYChart.Data(year2016,year2016Books));
-        series1.getData().add(new XYChart.Data(year2017,year2017Books));
-
-        StackedAreaChart.getData().add(series1);
-
-
-
-        StackedAreaChart.setTranslateX(65);
-        StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(500,500);
-
-
-        StackedAreaChart.getData().add(series1);
-
-
-
-        StackedAreaChart.setTranslateX(65);
-        StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(500,500);
 
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
 
