@@ -1252,125 +1252,17 @@ double []  year2017Books = new double[7];
         exit.setPrefSize(200, 80);
 
 
+
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Book Class Category");
+
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Numbers of Book");
+
+        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
+
+
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
-        int  over100Count,over140Count,over160Count,over180Count,over210Count,
-                over250Count,over300Count,over350Count,over400Count,over500Count;
-
-
-        over100Count=0;over140Count=0;over160Count=0;over180Count=0;
-        over210Count=0;over250Count=0;over300Count=0;over350Count=0;
-        over400Count=0;over500Count=0;
-
-        int iterator;
-        priorityData = processing.fileReaderMethods();
-        numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        List<Double> list = new ArrayList<>();
-
-
-
-
-        for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
-                over500Count++;
-
-            }
-            } for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
-                over400Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
-                over350Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
-                over300Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
-                over250Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
-                over210Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
-                over180Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
-                over160Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
-                over140Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
-            }
-            int sizeB = list.size();
-            if(sizeB>7){
-                year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
-            }
-
-        }
-        list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
-                over100Count++;
-            }
-
-
-        }
 
 
 
@@ -1381,13 +1273,172 @@ double []  year2017Books = new double[7];
 
 
 
-        CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        double [] over100Count= new double[7];
+        double[] over140Count= new double[7];
+        double[] over160Count= new double[7];
+        double[] over180Count= new double[7];
+        double[] over210Count= new double[7];
+        double[]  over250Count= new double[7];
+        double[] over300Count= new double[7];
+        double[] over350Count= new double[7];
+        double[] over400Count= new double[7];
+        double[] over500Count= new double[7];
 
-        NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
 
-        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
+
+        int iterator;
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
+        List<Double> list = new ArrayList<>();
+
+
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
+                //over500Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over500Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
+                //over400Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over400Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
+                //over350Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over350Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
+                //over300Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over300Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
+                //over250Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over250Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
+                //over210Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over210Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
+                //over180Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over180Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
+                //over160Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over160Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
+                //over140Count++;
+                list.add(priorityData[iterator].getMLRweight());
+
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over140Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
+                //over100Count++;
+            }
+            int sizeB = list.size();
+            if(sizeB>7){
+                over100Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            }
+
+        }
+        list.clear();
+
+
+
+
+
+
+
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(over100);
@@ -1412,16 +1463,97 @@ double []  year2017Books = new double[7];
 
 
 
-        series1.getData().add(new XYChart.Data(over100,over100Count));
-        series2.getData().add(new XYChart.Data(over140,over140Count));
-        series3.getData().add(new XYChart.Data(over160,over160Count));
-        series4.getData().add(new XYChart.Data(over180,over180Count));
-        series5.getData().add(new XYChart.Data(over210,over210Count));
-        series6.getData().add(new XYChart.Data(over250,over250Count));
-        series7.getData().add(new XYChart.Data(over300,over300Count));
-        series8.getData().add(new XYChart.Data(over350,over350Count));
-        series9.getData().add(new XYChart.Data(over400,over400Count));
-        series10.getData().add(new XYChart.Data(over500,over500Count));
+
+        series1.getData().add(new XYChart.Data(over100,over100Count[0]));
+        series1.getData().add(new XYChart.Data(over100,over100Count[1]));
+        series1.getData().add(new XYChart.Data(over100,over100Count[2]));
+        series1.getData().add(new XYChart.Data(over100,over100Count[3]));
+        series1.getData().add(new XYChart.Data(over100,over100Count[4]));
+        series1.getData().add(new XYChart.Data(over100,over100Count[5]));
+        series1.getData().add(new XYChart.Data(over100,over100Count[6]));
+
+
+        series2.getData().add(new XYChart.Data(over140,over140Count[0]));
+        series2.getData().add(new XYChart.Data(over140,over140Count[1]));
+        series2.getData().add(new XYChart.Data(over140,over140Count[2]));
+        series2.getData().add(new XYChart.Data(over140,over140Count[3]));
+        series2.getData().add(new XYChart.Data(over140,over140Count[4]));
+        series2.getData().add(new XYChart.Data(over140,over140Count[5]));
+        series2.getData().add(new XYChart.Data(over140,over140Count[6]));
+
+
+        series3.getData().add(new XYChart.Data(over160,over160Count[0]));
+        series3.getData().add(new XYChart.Data(over160,over160Count[1]));
+        series3.getData().add(new XYChart.Data(over160,over160Count[2]));
+        series3.getData().add(new XYChart.Data(over160,over160Count[3]));
+        series3.getData().add(new XYChart.Data(over160,over160Count[4]));
+        series3.getData().add(new XYChart.Data(over160,over160Count[5]));
+        series3.getData().add(new XYChart.Data(over160,over160Count[6]));
+
+
+        series4.getData().add(new XYChart.Data(over180,over180Count[0]));
+        series4.getData().add(new XYChart.Data(over180,over180Count[1]));
+        series4.getData().add(new XYChart.Data(over180,over180Count[2]));
+        series4.getData().add(new XYChart.Data(over180,over180Count[3]));
+        series4.getData().add(new XYChart.Data(over180,over180Count[4]));
+        series4.getData().add(new XYChart.Data(over180,over180Count[5]));
+        series4.getData().add(new XYChart.Data(over180,over180Count[6]));
+
+
+        series5.getData().add(new XYChart.Data(over210,over210Count[0]));
+        series5.getData().add(new XYChart.Data(over210,over210Count[1]));
+        series5.getData().add(new XYChart.Data(over210,over210Count[2]));
+        series5.getData().add(new XYChart.Data(over210,over210Count[3]));
+        series5.getData().add(new XYChart.Data(over210,over210Count[4]));
+        series5.getData().add(new XYChart.Data(over210,over210Count[5]));
+        series5.getData().add(new XYChart.Data(over210,over210Count[6]));
+
+
+        series6.getData().add(new XYChart.Data(over250,over250Count[0]));
+        series6.getData().add(new XYChart.Data(over250,over250Count[1]));
+        series6.getData().add(new XYChart.Data(over250,over250Count[2]));
+        series6.getData().add(new XYChart.Data(over250,over250Count[3]));
+        series6.getData().add(new XYChart.Data(over250,over250Count[4]));
+        series6.getData().add(new XYChart.Data(over250,over250Count[5]));
+        series6.getData().add(new XYChart.Data(over250,over250Count[6]));
+
+
+        series7.getData().add(new XYChart.Data(over300,over300Count[0]));
+        series7.getData().add(new XYChart.Data(over300,over300Count[1]));
+        series7.getData().add(new XYChart.Data(over300,over300Count[2]));
+        series7.getData().add(new XYChart.Data(over300,over300Count[3]));
+        series7.getData().add(new XYChart.Data(over300,over300Count[4]));
+        series7.getData().add(new XYChart.Data(over300,over300Count[5]));
+        series7.getData().add(new XYChart.Data(over300,over300Count[6]));
+
+
+        series8.getData().add(new XYChart.Data(over350,over350Count[0]));
+        series8.getData().add(new XYChart.Data(over350,over350Count[1]));
+        series8.getData().add(new XYChart.Data(over350,over350Count[2]));
+        series8.getData().add(new XYChart.Data(over350,over350Count[3]));
+        series8.getData().add(new XYChart.Data(over350,over350Count[4]));
+        series8.getData().add(new XYChart.Data(over350,over350Count[5]));
+        series8.getData().add(new XYChart.Data(over350,over350Count[6]));
+
+
+        series9.getData().add(new XYChart.Data(over400,over400Count[0]));
+        series9.getData().add(new XYChart.Data(over400,over400Count[1]));
+        series9.getData().add(new XYChart.Data(over400,over400Count[2]));
+        series9.getData().add(new XYChart.Data(over400,over400Count[3]));
+        series9.getData().add(new XYChart.Data(over400,over400Count[4]));
+        series9.getData().add(new XYChart.Data(over400,over400Count[5]));
+        series9.getData().add(new XYChart.Data(over400,over400Count[6]));
+
+
+        series10.getData().add(new XYChart.Data(over500,over500Count[0]));
+        series10.getData().add(new XYChart.Data(over500,over500Count[1]));
+        series10.getData().add(new XYChart.Data(over500,over500Count[2]));
+        series10.getData().add(new XYChart.Data(over500,over500Count[3]));
+        series10.getData().add(new XYChart.Data(over500,over500Count[4]));
+        series10.getData().add(new XYChart.Data(over500,over500Count[5]));
+        series10.getData().add(new XYChart.Data(over500,over500Count[6]));
+
+
 
         LineChart .getData().add(series1);
         LineChart .getData().add(series2);
