@@ -5,11 +5,15 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -89,7 +93,7 @@ public class InfoPieChart extends Application  {
         religionType= "Religion";
         bigganType = "Biggan";
         sciFicType = "Science Fiction";
-        shisuSahittoType = "SHishu Sahitto";
+        shisuSahittoType = "Shishu Sahitto";
         kisoreUponnashType = "Kisore";
         onubadType = "Onubad";
         othersType= "Others";
@@ -170,6 +174,46 @@ public class InfoPieChart extends Application  {
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
+
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem pie_chart = new MenuItem("Pie Chart");
+        MenuItem bar_chart = new MenuItem("Bar Chart");
+
+
+
+        pie_chart.setOnAction((event) -> {
+            try {
+                InfoPieChart infoPieChart = new InfoPieChart();
+                infoPieChart.startTypeBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        bar_chart.setOnAction((event) -> {
+            InfoBarChart infoBarChart = new InfoBarChart();
+            try {
+                infoBarChart.startTypeBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(bar_chart,pie_chart);
+
+
+        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
@@ -309,6 +353,46 @@ public class InfoPieChart extends Application  {
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem pie_chart = new MenuItem("Pie Chart");
+        MenuItem bar_chart = new MenuItem("Bar Chart");
+
+
+
+        pie_chart.setOnAction((event) -> {
+            try {
+                InfoPieChart infoPieChart = new InfoPieChart();
+                infoPieChart.startDemandBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        bar_chart.setOnAction((event) -> {
+            InfoBarChart infoBarChart = new InfoBarChart();
+            try {
+                infoBarChart.startDemandBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(bar_chart,pie_chart);
+
+
+        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
+
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
@@ -465,6 +549,47 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
 
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem pie_chart = new MenuItem("Pie Chart");
+        MenuItem bar_chart = new MenuItem("Bar Chart");
+
+
+
+        pie_chart.setOnAction((event) -> {
+            try {
+                InfoPieChart infoPieChart = new InfoPieChart();
+                infoPieChart.startGenericBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        bar_chart.setOnAction((event) -> {
+            InfoBarChart infoBarChart = new InfoBarChart();
+            try {
+                infoBarChart.startGenericBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(bar_chart,pie_chart);
+
+
+        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
+
+
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
@@ -611,6 +736,46 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem pie_chart = new MenuItem("Pie Chart");
+        MenuItem bar_chart = new MenuItem("Bar Chart");
+
+
+
+        pie_chart.setOnAction((event) -> {
+            try {
+                InfoPieChart infoPieChart = new InfoPieChart();
+                infoPieChart.startClassBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        bar_chart.setOnAction((event) -> {
+            InfoBarChart infoBarChart = new InfoBarChart();
+            try {
+                infoBarChart.startClassBook(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(bar_chart,pie_chart);
+
+
+        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
+
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
@@ -766,6 +931,45 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem pie_chart = new MenuItem("Pie Chart");
+        MenuItem bar_chart = new MenuItem("Bar Chart");
+
+
+
+        pie_chart.setOnAction((event) -> {
+            try {
+                InfoPieChart infoPieChart = new InfoPieChart();
+                infoPieChart.startBorrowCount(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        bar_chart.setOnAction((event) -> {
+            InfoBarChart infoBarChart = new InfoBarChart();
+            try {
+                infoBarChart.startBorrowCount(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(bar_chart,pie_chart);
+
+
+        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
 
         HBox hBox1 = new HBox(pieChart,back,exit);
 
