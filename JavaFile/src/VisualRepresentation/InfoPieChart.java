@@ -167,7 +167,7 @@ public class InfoPieChart extends Application  {
         pieChart.getData().add(slice10);
 
 
-        pieChart.setTranslateX(55);
+        pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
 
@@ -306,7 +306,7 @@ public class InfoPieChart extends Application  {
         pieChart.getData().add(slice8);
 
 
-        pieChart.setTranslateX(55);
+        pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
 
@@ -461,7 +461,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.getData().add(slice10);
 
 
-        pieChart.setTranslateX(55);
+        pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
 
@@ -608,7 +608,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.getData().add(slice10);
 
 
-        pieChart.setTranslateX(55);
+        pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
 
@@ -763,7 +763,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.getData().add(slice10);
 
 
-        pieChart.setTranslateX(55);
+        pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
 

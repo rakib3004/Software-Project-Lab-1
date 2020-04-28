@@ -413,7 +413,7 @@ public class LineChartFX extends Application {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
 
 
@@ -640,7 +640,7 @@ public class LineChartFX extends Application {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+       vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
 
 
@@ -811,7 +811,7 @@ public class LineChartFX extends Application {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+       vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
 
 
@@ -993,7 +993,7 @@ public class LineChartFX extends Application {
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
-        vbox.setMaxSize(850, 650);
+       vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
 
 
