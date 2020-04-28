@@ -913,13 +913,18 @@ public class LineChartFX extends Application {
         exit.setPrefSize(200, 80);
 
 
+
         String below4,over4,over7,over10,over15,over20,over25,over30;
-        int  below4Count,over4Count,over7Count,over10Count,over15Count,
-                over20Count,over25Count,over30Count;
+       double []   below4Count = new double[7] ;
+        double [] over4Count = new double[7] ;
+        double [] over7Count = new double[7] ;
+        double [] over10Count = new double[7] ;
+        double [] over15Count = new double[7] ;
+        double []  over20Count = new double[7] ;
+        double [] over25Count = new double[7] ;
+        double [] over30Count = new double[7];
 
 
-        below4Count=0;over4Count=0;over7Count=0;over10Count=0;
-        over15Count=0;over20Count=0;over25Count=0;over30Count=0;
 
         int iterator;
         priorityData = processing.fileReaderMethods();
@@ -944,7 +949,7 @@ public class LineChartFX extends Application {
             }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 over4Count++;
             }} for (iterator = 0; iterator < numberOfBooks; iterator++) { if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
-                below4Count++;
+               // below4Count++;
             }
 
 
