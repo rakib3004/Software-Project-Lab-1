@@ -404,11 +404,55 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .getData().add(series9);
         ScatterChart .getData().add(series10);
 
-
-
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,700);
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart1 = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startTyping(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startTyping(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart1.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startTyping(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
+
+
+        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
 
 
 
@@ -843,6 +887,54 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,800);
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart1 = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startTiming(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startTiming(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart1.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startTiming(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
+
+
+        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
+
 
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
 
@@ -1609,7 +1701,49 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .setPrefSize(1000,700);
 
 
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart1 = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
 
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startPricing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startPricing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart1.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startPricing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
+
+
+        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
+            }
+        });
 
 
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
