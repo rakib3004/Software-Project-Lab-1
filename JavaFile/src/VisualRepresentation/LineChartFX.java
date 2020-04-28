@@ -410,6 +410,52 @@ double []  year2017Books = new double[7];
         LineChart .setPrefSize(1000,700);
 
 
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startTyping(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startTyping(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startTyping(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
+
+
+        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+
+
 
 
         HBox hBox1 = new HBox(LineChart ,exit,back);
@@ -844,6 +890,52 @@ double []  year2017Books = new double[7];
         LineChart .setPrefSize(1000,700);
 
 
+
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startTiming(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startTiming(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startTiming(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
+
+
+        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+            }
+        });
 
 
 
@@ -1623,6 +1715,52 @@ double []  year2017Books = new double[7];
         LineChart .setTranslateX(65);
         LineChart .setTranslateY(55);
         LineChart .setPrefSize(1000,700);
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startPricing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startPricing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startPricing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
+
+
+        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
 
 
 
