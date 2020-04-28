@@ -34,7 +34,8 @@ public class StackedAreaFX extends Application {
     BookNumber bookNumber = new BookNumber();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
+  /*  LineChartFX lineChartFX = new LineChartFX();
+    ScatterChartFX scatterChartFX = new ScatterChartFX();*/
 
     @Override
     public void start(Stage primaryStage) {

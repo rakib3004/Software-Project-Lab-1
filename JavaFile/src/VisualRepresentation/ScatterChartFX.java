@@ -10,16 +10,13 @@ import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.chart.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
@@ -36,7 +33,8 @@ public class ScatterChartFX extends Application {
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
-    double [] uponnashTypeNO= new double[7] ;
+
+
 
     @Override
     public void start(Stage primaryStage) {
@@ -86,6 +84,8 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
 
 
+
+        double [] uponnashTypeNO= new double[7] ;
         double []kobitaTypeNO= new double[7] ;
         double []rochonaBoliTypeNO= new double[7] ;
         double []  religionTypeNO= new double[7] ;
@@ -881,6 +881,31 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
 
     public void startBorrowing(Stage primaryStage) throws IOException {
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+stackedAreaChart.setOnAction((event) -> {
+    try {
+        StackedAreaFX stackedAreaFX = new StackedAreaFX();
+        stackedAreaFX.startBorrowing(primaryStage);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+});
+
+        contextMenu.getItems().addAll(lineChart,stackedAreaChart);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -917,7 +942,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-        ScatterChart  ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
+        ScatterChart  scatterChart  = new ScatterChart (categoryAxis,numberAxis);
 
 
 
@@ -1165,24 +1190,22 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series8.getData().add(new XYChart.Data(over30,over30Count[6]));
 
 
-        ScatterChart .getData().add(series1);
-        ScatterChart .getData().add(series2);
-        ScatterChart .getData().add(series3);
-        ScatterChart .getData().add(series4);
-        ScatterChart .getData().add(series5);
-        ScatterChart .getData().add(series6);
-        ScatterChart .getData().add(series7);
-        ScatterChart .getData().add(series8);
+        scatterChart .getData().add(series1);
+        scatterChart .getData().add(series2);
+        scatterChart .getData().add(series3);
+        scatterChart .getData().add(series4);
+        scatterChart .getData().add(series5);
+        scatterChart .getData().add(series6);
+        scatterChart .getData().add(series7);
+        scatterChart .getData().add(series8);
 
 
 
-        ScatterChart .setTranslateX(65);
-        ScatterChart .setTranslateY(55);
-        ScatterChart .setPrefSize(1000,700);
+        scatterChart .setTranslateX(65);
+        scatterChart .setTranslateY(55);
+        scatterChart .setPrefSize(1000,700);
 
-
-
-        HBox hBox1 = new HBox(ScatterChart ,exit,back);
+        HBox hBox1 = new HBox(scatterChart ,exit,back);
 
 
         VBox vbox = new VBox();

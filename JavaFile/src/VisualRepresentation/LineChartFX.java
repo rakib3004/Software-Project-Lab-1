@@ -29,8 +29,8 @@ public class LineChartFX extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
+
 double []  year2017Books = new double[7];
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPcriteriaWeight ahPcriteriaWeight;
