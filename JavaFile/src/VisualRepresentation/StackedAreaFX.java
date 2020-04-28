@@ -7,18 +7,17 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.PriorityData;
 import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.chart.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
@@ -1301,6 +1300,51 @@ public class StackedAreaFX extends Application {
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
 
+
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart1.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
+
+
+        StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
+            }
+        });
 
 
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);

@@ -8,11 +8,13 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.PriorityData;
 import Regression.newVersion.TypeCountRegression;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -882,30 +884,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
     public void startBorrowing(Stage primaryStage) throws IOException {
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-
-        lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
-            try {
-                lineChartFX.startBorrowing(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-stackedAreaChart.setOnAction((event) -> {
-    try {
-        StackedAreaFX stackedAreaFX = new StackedAreaFX();
-        stackedAreaFX.startBorrowing(primaryStage);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-});
-
-        contextMenu.getItems().addAll(lineChart,stackedAreaChart);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -946,17 +924,12 @@ stackedAreaChart.setOnAction((event) -> {
 
 
 
-
-
-
-
         String below4,over4,over7,over10,over15,over20,over25,over30;
 
         below4 =  "0-3" ;
         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
         over30 =  "30+" ;
-
 
         double []   below4Count = new double[7] ;
         double [] over4Count = new double[7] ;
@@ -1204,6 +1177,50 @@ stackedAreaChart.setOnAction((event) -> {
         scatterChart .setTranslateX(65);
         scatterChart .setTranslateY(55);
         scatterChart .setPrefSize(1000,700);
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem scatterChart1 = new MenuItem("Scatter Chart");
+        MenuItem lineChart = new MenuItem("Line Chart");
+        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+
+        lineChart.setOnAction((event) -> {
+            LineChartFX lineChartFX = new LineChartFX();
+            try {
+                lineChartFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaChart.setOnAction((event) -> {
+            try {
+                StackedAreaFX stackedAreaFX = new StackedAreaFX();
+                stackedAreaFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        scatterChart1.setOnAction((event) -> {
+            try {
+                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                stackedAreaFX.startBorrowing(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
+
+
+        scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
+            }
+        });
 
         HBox hBox1 = new HBox(scatterChart ,exit,back);
 
