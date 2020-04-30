@@ -6,6 +6,7 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -33,22 +34,32 @@ AHPcalculation ahPcalculation = new AHPcalculation();
 
 
 
+        Button tableView = new Button("Table View");
+        tableView.setTranslateX(500);
+        tableView.setTranslateY(300);
+        tableView.setOnAction(actionEvent -> {
+            PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
+            try {
+
+                pra_tableViewFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        setStyle(tableView);
+        tableView.setPrefSize(200,80);
 
 
-        Button Start = new Button("Start");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
 
 
-        Start.setTranslateX(550);
-        Start.setTranslateY(400);
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        Button consoleView = new Button("Console View");
 
-
-        Start.setOnAction(actionEvent -> {
+        consoleView.setTranslateX(550);
+        consoleView.setTranslateY(400);
+        consoleView.setOnAction(actionEvent -> {
 
             try {
 
@@ -67,6 +78,16 @@ AHPcalculation ahPcalculation = new AHPcalculation();
             }
 
         });
+        consoleView.setPrefSize(200, 80);
+        setStyle(consoleView);
+
+
+
+
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
 
@@ -83,19 +104,23 @@ AHPcalculation ahPcalculation = new AHPcalculation();
 
 
         });
-        setStyle(Start);
         setStyle(exit);
         setStyle(back);
 
-        Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
 
 
         Image image = new Image("libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,Start,exit,back);
+        group.getChildren().addAll(canvas,consoleView,exit,back,tableView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

@@ -1,6 +1,6 @@
 package RegressionFx;
 
-import JavaSwing.FxTableViewExample1;
+import TableViewPackage.MLR_TableViewFX;
 import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -48,9 +48,9 @@ public class FourVariableRegression extends Application {
 
             try {
 
-                FxTableViewExample1 fxTableViewExample1 = new FxTableViewExample1();
+                MLR_TableViewFX MLRTableViewFX = new MLR_TableViewFX();
 
-                fxTableViewExample1.start(primaryStage);
+                MLRTableViewFX.start(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();

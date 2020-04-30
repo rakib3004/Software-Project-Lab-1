@@ -8,6 +8,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import RegressionFx.MultiVaribleRegressionFX;
+import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -36,20 +37,38 @@ public class PageRankAlgorithmFx extends Application {
 
 
 
-        Button Start = new Button("Start");
+        Button consoleView = new Button("Console View");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
 
-        Start.setTranslateX(500);
-        Start.setTranslateY(400);
+        Button tableView = new Button("Table View");
+        tableView.setTranslateX(500);
+        tableView.setTranslateY(300);
+        tableView.setOnAction(actionEvent -> {
+            PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
+            try {
+
+                pra_tableViewFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        setStyle(tableView);
+        tableView.setPrefSize(200,80);
+
+        consoleView.setTranslateX(500);
+        consoleView.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
 
-        Start.setOnAction(actionEvent -> {
+        consoleView.setOnAction(actionEvent -> {
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
             try {
@@ -59,9 +78,6 @@ public class PageRankAlgorithmFx extends Application {
 pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
                 System.exit(0);
 
-
-
-
             }
 
             catch (Exception exception) {
@@ -69,6 +85,8 @@ pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
             }
 
         });
+
+
         back.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
 
@@ -85,18 +103,23 @@ pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
 
         });
 
-        setStyle(Start);
+
+
+
+
+
+        setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
 
-        Start.setPrefSize(200, 80);
+        consoleView.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,Start,exit,back);
+        group.getChildren().addAll(canvas,consoleView,exit,back,tableView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
