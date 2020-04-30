@@ -138,8 +138,8 @@ label2.setFont(font1);
 
        TableView tableView = new TableView();
 
-        TableColumn<FxDatabase,String > column0 = new TableColumn<>("index");
-        column0.setCellValueFactory(new PropertyValueFactory<>("index"));
+       /* TableColumn<FxDatabase,String > column0 = new TableColumn<>("index");
+        column0.setCellValueFactory(new PropertyValueFactory<>("index"));*/
 
         TableColumn<FxDatabase,String > column1 = new TableColumn<>("bookName");
         column1.setCellValueFactory(new PropertyValueFactory<>("bookName"));
@@ -159,7 +159,7 @@ TableColumn<FxDatabase,String > column3 = new TableColumn<>("bookId");
         column5.setCellValueFactory(new PropertyValueFactory<>("priceCount"));
 
 
-        tableView.getColumns().add(column0);
+       // tableView.getColumns().add(column0);
         tableView.getColumns().add(column1);
         tableView.getColumns().add(column2);
         tableView.getColumns().add(column3);
@@ -174,9 +174,8 @@ TableColumn<FxDatabase,String > column3 = new TableColumn<>("bookId");
         numberOfBooks = bookNumber.bookNumberFindingMethods();
 
 for(i=0;i<numberOfBooks;i++){
-index = Integer.toString(i);
 
-    tableView.getItems().add(new FxDatabase( index,priorityData[i].bookData.bookName,
+    tableView.getItems().add(new FxDatabase(priorityData[i].bookData.bookName,
             priorityData[i].bookData.writerName,priorityData[i].bookData.bookId,
             priorityData[i].bookData.borrowCount,priorityData[i].bookData.bookPrice));
             }
@@ -210,12 +209,4 @@ index = Integer.toString(i);
 
     }
 
-    TableView<FxDatabase> tableView;
-
-    TypeCountRegression typeCountRegression = new TypeCountRegression();
-    public void backupFxCode(Stage primaryStage) throws Exception{
-
-
-
-    }
 }

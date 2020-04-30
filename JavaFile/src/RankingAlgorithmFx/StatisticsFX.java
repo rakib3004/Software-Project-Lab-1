@@ -108,7 +108,7 @@ try {
 
 
         Image image = new Image("libraryBackground4.jpg");
-        Canvas canvas = new Canvas(1400,750);
+        Canvas canvas = new Canvas(1400,800);
         Group group = new Group();
         group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,
                 analyticHierarchy,exit,back);

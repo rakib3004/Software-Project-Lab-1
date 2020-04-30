@@ -11,7 +11,6 @@ public class FxDatabase {
     String borrowCount;
     String priceCount;
     public FxDatabase(String  index, String bookName, String writerName, String bookId, String borrowCount, String priceCount) {
-        this.index = index;
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;

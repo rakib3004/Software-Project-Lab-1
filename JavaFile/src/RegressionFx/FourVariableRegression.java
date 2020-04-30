@@ -1,5 +1,6 @@
 package RegressionFx;
 
+import JavaSwing.FxTableViewExample1;
 import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -27,20 +28,36 @@ public class FourVariableRegression extends Application {
     public void start(Stage primaryStage) throws IOException {
 
 
-        Button Start = new Button("Start");
+        Button consoleView = new Button("Console View");
+        Button tableView = new Button("Table View");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
 
-        Start.setTranslateX(500);
-        Start.setTranslateY(400);
+        tableView.setTranslateX(500);
+        tableView.setTranslateY(400);
+        consoleView.setTranslateX(500);
+        consoleView.setTranslateY(500);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
 
-        Start.setOnAction(actionEvent -> {
+        tableView.setOnAction(actionEvent -> {
+
+            try {
+
+                FxTableViewExample1 fxTableViewExample1 = new FxTableViewExample1();
+
+                fxTableViewExample1.start(primaryStage);
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        consoleView.setOnAction(actionEvent -> {
 
             try {
 
@@ -70,10 +87,12 @@ public class FourVariableRegression extends Application {
 
         });
 
-        setStyle(Start);
+        setStyle(tableView);
+        setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
-        Start.setPrefSize(200, 80);
+        tableView.setPrefSize(200, 80);
+        consoleView.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -81,7 +100,7 @@ public class FourVariableRegression extends Application {
         Image image = new Image("libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, Start, exit, back);
+        group.getChildren().addAll(canvas, tableView, exit, back,consoleView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);

@@ -7,10 +7,11 @@ import ObjectOriented.PriorityData;
 public class Sorting {
 
     int iterator;
+    GenericAlgo genericAlgo[] = new GenericAlgo[1050];
 
-    public void sortingMLRmethods(PriorityData[] priorityData, int numberOfBooks){
+    public GenericAlgo[] sortingMLRmethods(PriorityData[] priorityData, int numberOfBooks){
 
-        GenericAlgo genericAlgo[] = new GenericAlgo[632];
+
 
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             genericAlgo[iterator] = new GenericAlgo(priorityData[iterator].getMLRweight(), iterator);
@@ -29,23 +30,9 @@ public class Sorting {
                 }
             }
         }
-        int start= 20;
-     //   Scanner scanner = new Scanner(System.in);
-      //  start =scanner.nextInt();
-        //System.out.println("List of top "+start+" Risk Books :" );
 
+  return genericAlgo;
 
-       try {
-           for (iterator = 0; iterator < numberOfBooks; iterator++) {
-               System.out.println("Book Name :" + priorityData[genericAlgo[iterator].getIndex()].bookData.getBookName() +
-                       "; Writer Name : " + priorityData[genericAlgo[iterator].getIndex()].bookData.getWriterName()
-                       + "; Weight : " + genericAlgo[iterator].getWeight()+" ID : "+priorityData[genericAlgo[iterator].getIndex()].bookData.getBookId());
-           }
-
-       }
-       catch (NullPointerException nullPointerException){
-           System.out.println("Null Pointer Exception");
-       }
 
     }public void sortingAHPmethods(PriorityData[] priorityData, int numberOfBooks){
 
