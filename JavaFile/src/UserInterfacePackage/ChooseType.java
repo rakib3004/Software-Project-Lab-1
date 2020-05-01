@@ -40,14 +40,9 @@ public class ChooseType extends Application {
         writerWise.setOnAction(actionEvent -> {
 
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
 
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
-
-                System.exit(0);
+                WriterWiseFX writerWiseFX = new WriterWiseFX();
+                writerWiseFX.start(primaryStage);
             }
 
             catch (Exception exception) {
@@ -66,14 +61,8 @@ Button classWise = new Button("Class Wise");
         classWise.setOnAction(actionEvent -> {
 
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
-
-                System.exit(0);
+                ClassWiseFX classWiseFX = new ClassWiseFX();
+                classWiseFX.start(primaryStage);
             }
 
             catch (Exception exception) {
@@ -92,14 +81,9 @@ Button selfWise = new Button("Self Wise");
         selfWise.setOnAction(actionEvent -> {
 
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
 
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
-
-                System.exit(0);
+                SelfWiseFX selfWiseFX = new SelfWiseFX();
+                selfWiseFX.start(primaryStage);
             }
 
             catch (Exception exception) {
@@ -118,14 +102,10 @@ Button timeWise = new Button("Time Wise");
         timeWise.setOnAction(actionEvent -> {
 
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
 
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
 
-                System.exit(0);
+                TimeWiseFX timeWiseFX = new TimeWiseFX();
+                timeWiseFX.start(primaryStage);
             }
 
             catch (Exception exception) {
@@ -144,14 +124,8 @@ Button addBook = new Button("Add Book");
         addBook.setOnAction(actionEvent -> {
 
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
-
-                System.exit(0);
+               AddBookFX addBookFX = new AddBookFX();
+               addBookFX.start(primaryStage);
             }
 
             catch (Exception exception) {
