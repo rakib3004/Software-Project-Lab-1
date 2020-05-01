@@ -33,11 +33,11 @@ public class ChooseType extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        Button consoleView = new Button("Console View");
+        Button writerWise = new Button("Writer Wise");
 
-        consoleView.setTranslateX(550);
-        consoleView.setTranslateY(400);
-        consoleView.setOnAction(actionEvent -> {
+        writerWise.setTranslateX(550);
+        writerWise.setTranslateY(200);
+        writerWise.setOnAction(actionEvent -> {
 
             try {
                 priorityData = processing.fileReaderMethods();
@@ -55,11 +55,112 @@ public class ChooseType extends Application {
             }
 
         });
-        consoleView.setPrefSize(200, 80);
-        setStyle(consoleView);
+        writerWise.setPrefSize(230, 80);
+        setStyle(writerWise);
 
 
+Button classWise = new Button("Class Wise");
 
+        classWise.setTranslateX(550);
+        classWise.setTranslateY(300);
+        classWise.setOnAction(actionEvent -> {
+
+            try {
+                priorityData = processing.fileReaderMethods();
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+
+                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
+                        priorityData,numberOfBooks);
+
+                System.exit(0);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        classWise.setPrefSize(230, 80);
+        setStyle(classWise);
+
+
+Button selfWise = new Button("Self Wise");
+
+        selfWise.setTranslateX(550);
+        selfWise.setTranslateY(400);
+        selfWise.setOnAction(actionEvent -> {
+
+            try {
+                priorityData = processing.fileReaderMethods();
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+
+                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
+                        priorityData,numberOfBooks);
+
+                System.exit(0);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        selfWise.setPrefSize(230, 80);
+        setStyle(selfWise);
+
+
+Button timeWise = new Button("Time Wise");
+
+        timeWise.setTranslateX(550);
+        timeWise.setTranslateY(500);
+        timeWise.setOnAction(actionEvent -> {
+
+            try {
+                priorityData = processing.fileReaderMethods();
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+
+                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
+                        priorityData,numberOfBooks);
+
+                System.exit(0);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        timeWise.setPrefSize(230, 80);
+        setStyle(timeWise);
+
+
+Button addBook = new Button("Add Book");
+
+        addBook.setTranslateX(550);
+        addBook.setTranslateY(600);
+        addBook.setOnAction(actionEvent -> {
+
+            try {
+                priorityData = processing.fileReaderMethods();
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+
+                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
+                        priorityData,numberOfBooks);
+
+                System.exit(0);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        addBook.setPrefSize(230, 80);
+        setStyle(addBook);
 
 
 
@@ -97,7 +198,8 @@ public class ChooseType extends Application {
         Image image = new Image("libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,consoleView,exit,back);
+        group.getChildren().addAll(canvas,addBook,exit,back,writerWise,
+                classWise,selfWise,timeWise);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
