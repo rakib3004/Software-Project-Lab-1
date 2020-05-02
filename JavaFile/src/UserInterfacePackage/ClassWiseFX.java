@@ -7,6 +7,8 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import RegressionFx.MultiVaribleRegressionFX;
+import TableViewPackage.MLR_TableViewFX;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,10 +22,12 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.util.*;
+
 public class ClassWiseFX extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
+int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -39,7 +43,6 @@ public class ClassWiseFX extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -74,15 +77,26 @@ public class ClassWiseFX extends Application {
         exit.setPrefSize(200, 80);
 
 
-
+                TreeMap<Object, Object> map = new TreeMap<>();
 
         MenuItem uponnash = new MenuItem("Uponnash");
-
-
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println("");
 
+             for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("01")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+             for(Map.Entry<Object,Object>entry : map.entrySet()){
+                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+             }
+              //  System.out.println(map);
+                showInfo(primaryStage);
 
             } });
 
@@ -184,7 +198,57 @@ bsse.setPrefSize(200, 50);
 
 
     public void showInfo(Stage secondaryStage){
-        
+
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
+
+
+        back.setOnAction(actionEvent -> {
+            try {
+                start(secondaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+        });
+
+
+        setStyle(exit);
+        setStyle(back);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        Image image = new Image("libraryBackground15.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit, back);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+        Scene scene1 = new Scene(group, 1500, 950);
+
+
+        secondaryStage.setScene(scene1);
+        secondaryStage.setTitle("Books Statistics");
+        secondaryStage.setFullScreen(true);
+        secondaryStage.show();
+
 
     }
 
