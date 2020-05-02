@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import JavFX.FxSecondWindow;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -141,10 +142,10 @@ Button addBook = new Button("Add Book");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
+            FxSecondWindow fxSecondWindow = new FxSecondWindow();
 
             try {
-                statisticsFX.start(primaryStage);
+                fxSecondWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

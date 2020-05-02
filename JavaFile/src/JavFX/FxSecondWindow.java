@@ -1,5 +1,6 @@
 package JavFX;
 
+import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
@@ -37,21 +38,25 @@ public class FxSecondWindow extends Application {
 
 
 
-        Button menu = new Button("Menu");
+        Button userSection = new Button("User Section");
+        Button adminSection = new Button("Admin Section");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
 
 
-        menu.setTranslateX(565);
-        menu.setTranslateY(400);
+
+        userSection.setTranslateX(565);
+        userSection.setTranslateY(260);
+        adminSection.setTranslateX(565);
+        adminSection.setTranslateY(360);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
 
-        menu.setOnAction(actionEvent -> {
+        userSection.setOnAction(actionEvent -> {
 
             MenuFX menuFX = new MenuFX();
             try {
@@ -61,6 +66,19 @@ public class FxSecondWindow extends Application {
             }
 
         });
+
+            adminSection.setOnAction(actionEvent -> {
+
+            ChooseType chooseType = new ChooseType();
+            try {
+                chooseType.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
         back.setOnAction(actionEvent -> {
 FxMainClass fxMainClass = new FxMainClass();
             try {
@@ -76,12 +94,14 @@ FxMainClass fxMainClass = new FxMainClass();
 
 
         });
-        setStyle(menu);
+        setStyle(userSection);
+        setStyle(adminSection);
         setStyle(exit);
         setStyle(back);
 
 
-        menu.setPrefSize(200, 80);
+        userSection.setPrefSize(280, 80);
+        adminSection.setPrefSize(280, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -89,7 +109,7 @@ FxMainClass fxMainClass = new FxMainClass();
         Image image = new Image("libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,menu,exit,back);
+        group.getChildren().addAll(canvas,userSection,exit,back,adminSection);
 
 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 graphicsContext.drawImage(image,0,0);

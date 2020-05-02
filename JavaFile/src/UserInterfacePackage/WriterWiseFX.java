@@ -54,11 +54,6 @@ public class WriterWiseFX extends Application {
 
         });
 
-
-
-
-
-
         setStyle(exit);
         setStyle(back);
 
@@ -84,8 +79,6 @@ public class WriterWiseFX extends Application {
         primaryStage.show();
 
     }
-
-
 
     public Button setStyle( Button button)
     {

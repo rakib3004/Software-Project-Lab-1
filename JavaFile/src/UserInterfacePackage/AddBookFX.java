@@ -53,10 +53,7 @@ public class AddBookFX extends Application {
             System.exit(0);
 
         });
-
-
-
-
+        
 
 
         setStyle(exit);
