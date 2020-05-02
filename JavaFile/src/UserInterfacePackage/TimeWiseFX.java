@@ -54,14 +54,8 @@ public class TimeWiseFX extends Application {
 
         });
 
-
-
-
-
-
         setStyle(exit);
         setStyle(back);
-
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
