@@ -119,7 +119,7 @@ int iterator;
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
 
-         
+                showInfo(primaryStage);
             }
         });
 
@@ -138,7 +138,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
         MenuItem religion = new MenuItem("Religion");
@@ -156,7 +156,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
 
@@ -176,7 +176,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           } });
 
         MenuItem sciFi = new MenuItem("Sci Fi");
@@ -194,7 +194,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
 
@@ -213,7 +213,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
         
@@ -234,7 +234,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           } });
         MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
@@ -251,7 +251,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
 
@@ -270,7 +270,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
         MenuItem onubad = new MenuItem("Onubad");
@@ -289,7 +289,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
         MenuItem others = new MenuItem("Others");
@@ -308,7 +308,7 @@ int iterator;
              for(Map.Entry<Object,Object>entry : map.entrySet()){
                  System.out.println(entry.getKey().toString()+"-"+entry.getValue());
              }
-
+                showInfo(primaryStage);
           }
         });
 
@@ -360,7 +360,7 @@ bookType.setPrefSize(200, 50);
 
         back.setOnAction(actionEvent -> {
             try {
-                start(secondaryStage);
+                this.start(secondaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
