@@ -106,36 +106,49 @@ int iterator;
         kobita.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+         
+            }
         });
 
         MenuItem rochonaboli = new MenuItem("Rochonaboli");
         rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
         MenuItem religion = new MenuItem("Religion");
         religion.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
 
 
         MenuItem biggan = new MenuItem("Biggan");
         biggan.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); } });
+               showInfo(primaryStage);
+
+          } });
 
         MenuItem sciFi = new MenuItem("Sci Fi");
         sciFi.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
 
         MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
         shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
         
 
@@ -143,28 +156,38 @@ int iterator;
         MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
         kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); } });
+               showInfo(primaryStage);
+
+          } });
         MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
 
         MenuItem gobesona = new MenuItem("Gobesona");
         gobesona.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
         MenuItem onubad = new MenuItem("Onubad");
 
         onubad.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println(""); }
+               showInfo(primaryStage);
+
+          }
         });
         MenuButton bsse = new MenuButton("Select");
         bsse.getItems().addAll( uponnash, kobita, rochonaboli, religion,
