@@ -85,7 +85,7 @@ int iterator;
 
              for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("01")) {
+                    if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
                         //   uponnashTypeNO++;
                         map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
@@ -379,7 +379,7 @@ bookType.setPrefSize(200, 50);
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground15.jpg");
+        Image image = new Image("libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back);

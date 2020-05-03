@@ -30,6 +30,7 @@ int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
 
+    TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
@@ -42,8 +43,6 @@ int iterator;
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
 
         back.setOnAction(actionEvent -> {
             ChooseType chooseType = new ChooseType();
@@ -67,7 +66,6 @@ int iterator;
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        TreeMap<Object, Object> map = new TreeMap<>();
 
         MenuItem year1 = new MenuItem("2008-2010");
         year1.setOnAction(new EventHandler<ActionEvent>() {
@@ -247,7 +245,7 @@ int iterator;
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground15.jpg");
+        Image image = new Image("libraryBackground14.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back);

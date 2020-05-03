@@ -61,6 +61,11 @@ public class WriterWiseFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
+
+
+
+
+
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -79,6 +84,62 @@ public class WriterWiseFX extends Application {
         primaryStage.show();
 
     }
+
+    public void showInfo(Stage secondaryStage){
+
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
+
+
+        back.setOnAction(actionEvent -> {
+            try {
+                this.start(secondaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+        });
+
+
+        setStyle(exit);
+        setStyle(back);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        Image image = new Image("libraryBackground15.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit, back);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+        Scene scene1 = new Scene(group, 1500, 950);
+
+        secondaryStage.setScene(scene1);
+        secondaryStage.setTitle("Books Statistics");
+        secondaryStage.setFullScreen(true);
+        secondaryStage.show();
+
+
+    }
+
+
 
     public Button setStyle( Button button)
     {

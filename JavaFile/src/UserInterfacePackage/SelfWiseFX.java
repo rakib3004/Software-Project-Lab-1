@@ -10,22 +10,30 @@ import PageRankAlgorithm.PageRankCalculation;
 import RankingAlgorithmFx.StatisticsFX;
 import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 public class SelfWiseFX extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
+int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
 
+    TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
@@ -59,9 +67,6 @@ public class SelfWiseFX extends Application {
 
 
 
-
-
-
     setStyle(exit);
     setStyle(back);
 
@@ -69,10 +74,166 @@ public class SelfWiseFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-    Image image = new Image("libraryBackground6.jpg");
+
+
+
+
+
+        MenuItem self1 = new MenuItem("Book No : 1-100");
+
+        self1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                for (iterator = 0; iterator < 100; iterator++) {
+
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+
+                showInfo(primaryStage);
+            }
+        });
+
+
+        MenuItem self2 = new MenuItem("Book No : 101-200");
+        self2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 100; iterator < 200; iterator++) {
+
+
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage);
+            }
+        });
+
+
+        MenuItem self3 = new MenuItem("Book No : 201-300");
+        self3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 200; iterator < 300; iterator++) {
+
+
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage);
+            }
+        });
+
+
+
+
+        MenuItem self4 = new MenuItem("Book No : 301-400");
+        self4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 300; iterator < 400; iterator++) {
+
+                        //   uponnashTypeNO++;
+
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage);
+            } });
+
+
+
+        MenuItem self5 = new MenuItem("Book No : 401-500");
+        self5.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 400; iterator < 500; iterator++) {
+
+
+
+                        //   uponnashTypeNO++;
+
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage);
+            } });
+
+
+
+        MenuItem self6 = new MenuItem("Book No : 501-600");
+        self6.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 500; iterator < 600; iterator++) {
+
+
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage);
+            } });
+
+
+       MenuItem self7 = new MenuItem("Book No : 601-700");
+        self7.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 600; iterator < 700 ; iterator++) {
+
+
+
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage);
+            } });
+
+
+
+
+
+        MenuButton selfSection = new MenuButton("Choose Self ");
+        selfSection.getItems().addAll(self1, self2, self3,
+                self4,self5,self6,self7);
+
+
+        selfSection.setTranslateX(500);
+        selfSection.setTranslateY(350);
+        selfSection.setPrefSize(200, 50);
+
+
+        Image image = new Image("libraryBackground5.jpg");
     Canvas canvas = new Canvas(1500,950);
     Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(canvas,exit,back,selfSection);
 
     GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
@@ -87,6 +248,60 @@ public class SelfWiseFX extends Application {
         primaryStage.show();
 
 }
+
+    public void showInfo(Stage secondaryStage){
+
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
+
+
+        back.setOnAction(actionEvent -> {
+            try {
+                this.start(secondaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+        });
+
+
+        setStyle(exit);
+        setStyle(back);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+        Image image = new Image("libraryBackground15.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit, back);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+        Scene scene1 = new Scene(group, 1500, 950);
+
+        secondaryStage.setScene(scene1);
+        secondaryStage.setTitle("Books Statistics");
+        secondaryStage.setFullScreen(true);
+        secondaryStage.show();
+
+
+    }
 
 
 
