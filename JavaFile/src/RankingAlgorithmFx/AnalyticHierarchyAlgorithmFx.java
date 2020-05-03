@@ -35,7 +35,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
 
 
         Button tableView = new Button("Table View");
-        tableView.setTranslateX(500);
+        tableView.setTranslateX(550);
         tableView.setTranslateY(300);
         tableView.setOnAction(actionEvent -> {
             PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();

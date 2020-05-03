@@ -38,25 +38,25 @@ public class FxSecondWindow extends Application {
 
 
 
-        Button userSection = new Button("User Section");
         Button adminSection = new Button("Admin Section");
+        Button userSection = new Button("User Section");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
 
 
 
-        userSection.setTranslateX(565);
-        userSection.setTranslateY(260);
         adminSection.setTranslateX(565);
-        adminSection.setTranslateY(360);
+        adminSection.setTranslateY(260);
+        userSection.setTranslateX(565);
+        userSection.setTranslateY(360);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
 
-        userSection.setOnAction(actionEvent -> {
+        adminSection.setOnAction(actionEvent -> {
 
             MenuFX menuFX = new MenuFX();
             try {
@@ -67,7 +67,7 @@ public class FxSecondWindow extends Application {
 
         });
 
-            adminSection.setOnAction(actionEvent -> {
+            userSection.setOnAction(actionEvent -> {
 
             ChooseType chooseType = new ChooseType();
             try {
@@ -94,14 +94,14 @@ FxMainClass fxMainClass = new FxMainClass();
 
 
         });
-        setStyle(userSection);
         setStyle(adminSection);
+        setStyle(userSection);
         setStyle(exit);
         setStyle(back);
 
 
-        userSection.setPrefSize(280, 80);
         adminSection.setPrefSize(280, 80);
+        userSection.setPrefSize(280, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -109,7 +109,7 @@ FxMainClass fxMainClass = new FxMainClass();
         Image image = new Image("libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,userSection,exit,back,adminSection);
+        group.getChildren().addAll(canvas,adminSection,exit,back,userSection);
 
 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 graphicsContext.drawImage(image,0,0);

@@ -5,23 +5,24 @@ import ObjectOriented.PriorityData;
 
 public class PrintInfo {
 int iterator;
+int jterator;
     public void printInfoMethods(BookData[] bookData, int numberOfBooks) {
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookData[j].bookName);
+        for (jterator = 0; jterator < numberOfBooks; jterator++) {
+            System.out.println(bookData[jterator].bookName);
         }
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookData[j].writerName);
+        for (jterator = 0; jterator < numberOfBooks; jterator++) {
+            System.out.println(bookData[jterator].writerName);
         }
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookData[j].bookId);
+        for (jterator = 0; jterator < numberOfBooks; jterator++) {
+            System.out.println(bookData[jterator].bookId);
         }
 
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookData[j].borrowCount);
+        for (jterator = 0; jterator < numberOfBooks; jterator++) {
+            System.out.println(bookData[jterator].borrowCount);
 
         }
-        for (int j = 0; j < numberOfBooks; j++) {
-            System.out.println(bookData[j].bookPrice);
+        for (jterator = 0; jterator < numberOfBooks; jterator++) {
+            System.out.println(bookData[jterator].bookPrice);
 
         }
     }

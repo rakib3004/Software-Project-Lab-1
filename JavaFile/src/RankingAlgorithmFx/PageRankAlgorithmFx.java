@@ -43,7 +43,7 @@ public class PageRankAlgorithmFx extends Application {
 
 
         Button tableView = new Button("Table View");
-        tableView.setTranslateX(500);
+        tableView.setTranslateX(550);
         tableView.setTranslateY(300);
         tableView.setOnAction(actionEvent -> {
             PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
@@ -60,7 +60,7 @@ public class PageRankAlgorithmFx extends Application {
         setStyle(tableView);
         tableView.setPrefSize(200,80);
 
-        consoleView.setTranslateX(500);
+        consoleView.setTranslateX(550);
         consoleView.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);

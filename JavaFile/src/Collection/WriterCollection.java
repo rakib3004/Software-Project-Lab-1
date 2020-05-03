@@ -1,8 +1,13 @@
 package Collection;
 
+import MainPackage.BookNumber;
+import MainPackage.Processing;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.PriorityData;
 import MultiVariableRegression.MedianCalculation;
 
+import java.io.IOException;
+import java.time.Period;
 import java.util.*;
 
 public class WriterCollection {
@@ -28,6 +33,10 @@ public class WriterCollection {
         System.out.println();
 int number=0;
 int writerCount=0;
+PriorityQueue writer = new PriorityQueue();
+
+
+
         Iterator<String> iterator = writerId.iterator();
 
         while(iterator.hasNext()){
@@ -62,9 +71,12 @@ int writerCount=0;
 
 
             }
+if(sizeB>7){
+
+    writer.add(element);
 
 
-
+            }
 
             double summation=0.0;
 
@@ -74,7 +86,6 @@ int writerCount=0;
                 if(priorityData[iterator1].bookData.writerName.equals(element)){
                     summation = summation + priorityData[iterator1].MLRweight;
 
-                    //   System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
                 }
 
             }
@@ -101,6 +112,10 @@ int writerCount=0;
 
 
         }
+
+        System.out.println(writer);
+
+
 
     }
 
@@ -297,4 +312,49 @@ int writerCount=0;
 
     }
 
+
+}
+ class ConsoleMain{
+    public static void main(String[] args) throws IOException {
+        PriorityData [] priorityData;
+        int numberOfBooks;
+        Processing processing = new Processing();
+        BookNumber bookNumber = new BookNumber();
+        MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        WriterCollection writerCollection = new WriterCollection();
+
+        writerCollection.writerCollectionMLRMethods(priorityData,numberOfBooks);
+
+    }
+}
+
+class Writer{
+
+    String writerName;
+    int bookNumber;
+
+    public Writer(String writerName, int bookNumber) {
+        this.writerName = writerName;
+        this.bookNumber = bookNumber;
+    }
+
+    public String getWriterName() {
+        return writerName;
+    }
+
+    public void setWriterName(String writerName) {
+        this.writerName = writerName;
+    }
+
+    public int getBookNumber() {
+        return bookNumber;
+    }
+
+    public void setBookNumber(int bookNumber) {
+        this.bookNumber = bookNumber;
+    }
 }

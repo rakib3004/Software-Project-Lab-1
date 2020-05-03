@@ -10,6 +10,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -18,6 +19,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -66,10 +68,10 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
+            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
 
             try {
-                statisticsFX.start(primaryStage);
+                analyticHierarchyAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -88,9 +90,9 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         exit.setPrefSize(200, 80);
 
         back.setTranslateX(0);
-        back.setTranslateY(550);
+        back.setTranslateY(685);
         exit.setTranslateX(1100);
-        exit.setTranslateY(550);
+        exit.setTranslateY(685);
 
 
 
@@ -131,7 +133,8 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
 
         table.getColumns().setAll(bookName,writerName,bookId,borrowCount,price, bookWeight);
         table.setPrefWidth(1440);
-        table.setPrefHeight(750);
+        table.setPrefHeight(580);
+
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
@@ -141,15 +144,17 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
-        // Vbox
-        VBox vbox = new VBox(20);
-        vbox.setPadding(new Insets(25, 25, 25, 25));;
-        vbox.getChildren().addAll(hb, table, actionStatus,back,exit);
+        // Hbox
+        HBox hBox = new HBox();
+        hBox.getChildren().add(table);
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(hb,hBox);
+        Group group = new Group();
+        group.getChildren().addAll(vBox,exit,back);
 
-        // Scene
-        Scene scene = new Scene(vbox, 1400, 775); // w x h
+        Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
-        primaryStage.setFullScreen(true);
+       primaryStage.setFullScreen(true);
         primaryStage.show();
 
         // Select the first row

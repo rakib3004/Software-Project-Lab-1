@@ -12,26 +12,26 @@ public class TypeCriteriaAHP {
         double[][] typeCriteriaAHPMatrix = new double[6][6];
 
 typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData,numberOfBooks);
-        int i, j;
+        int iterator, jterator;
 int priority=1;
-        for (i = 0; i < 6; i++) {
-            for (j = i + 1; j < 6; j++) {
-                typeCriteriaAHPMatrix[i][j] = typeCounter[i]/typeCounter[j];
+        for (iterator = 0; iterator < 6; iterator++) {
+            for (jterator = iterator + 1; jterator < 6; jterator++) {
+                typeCriteriaAHPMatrix[iterator][jterator] = typeCounter[iterator]/typeCounter[jterator];
             }
         }
 
-        for (i = 0; i < 6; i++) {
-            for (j = i + 1; j < 6; j++) {
+        for (iterator = 0; iterator < 6; iterator++) {
+            for (jterator = iterator + 1; jterator < 6; jterator++) {
 
 
 
-                typeCriteriaAHPMatrix[j][i] = Math.pow(typeCriteriaAHPMatrix[i][j], -1);
+                typeCriteriaAHPMatrix[jterator][iterator] = Math.pow(typeCriteriaAHPMatrix[iterator][jterator], -1);
             }
         }
-        for (i = 0; i < 6; i++) {
+        for (iterator = 0; iterator < 6; iterator++) {
 
 
-            typeCriteriaAHPMatrix[i][i] = (1);
+            typeCriteriaAHPMatrix[iterator][iterator] = (1);
 
 
         }
@@ -40,32 +40,32 @@ int priority=1;
 
         double[] summationMatrix = new double[6];
 
-        for (i = 0; i < 6; i++) {
-            for (j = 0; j < 6; j++) {
+        for (iterator = 0; iterator < 6; iterator++) {
+            for (jterator = 0; jterator < 6; jterator++) {
 
-                summationMatrix[i] = summationMatrix[i] + typeCriteriaAHPMatrix[i][j];
+                summationMatrix[iterator] = summationMatrix[iterator] + typeCriteriaAHPMatrix[iterator][jterator];
             }
         }
 
-        for (i = 0; i < 6; i++) {
-            for (j = 0; j < 6; j++) {
+        for (iterator = 0; iterator < 6; iterator++) {
+            for (jterator = 0; jterator < 6; jterator++) {
 
-                typeCriteriaAHPMatrix[i][j] = typeCriteriaAHPMatrix[i][j] / summationMatrix[i];
+                typeCriteriaAHPMatrix[iterator][jterator] = typeCriteriaAHPMatrix[iterator][jterator] / summationMatrix[iterator];
             }
         }
         double[] typeWeightMatrix = new double[6];
 
-        for (i = 0; i < 6; i++) {
-            for (j = 0; j < 6; j++) {
+        for (iterator = 0; iterator < 6; iterator++) {
+            for (jterator = 0; jterator < 6; jterator++) {
 
-                typeWeightMatrix[i] = typeWeightMatrix[i] + typeCriteriaAHPMatrix[j][i];
+                typeWeightMatrix[iterator] = typeWeightMatrix[iterator] + typeCriteriaAHPMatrix[jterator][iterator];
 
             }
-            typeWeightMatrix[i] = typeWeightMatrix[i] / 6;
+            typeWeightMatrix[iterator] = typeWeightMatrix[iterator] / 6;
         }
-        for (i = 0; i < 6; i++) {
+        for (iterator = 0; iterator < 6; iterator++) {
 
-   typeWeightMatrix[i]  =    typeWeightMatrix[i]*criteria;
+   typeWeightMatrix[iterator]  =    typeWeightMatrix[iterator]*criteria;
         }
 
 

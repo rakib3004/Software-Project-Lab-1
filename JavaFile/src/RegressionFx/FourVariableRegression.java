@@ -34,10 +34,10 @@ public class FourVariableRegression extends Application {
         Button exit = new Button("Exit");
 
 
-        tableView.setTranslateX(500);
-        tableView.setTranslateY(400);
-        consoleView.setTranslateX(500);
-        consoleView.setTranslateY(500);
+        tableView.setTranslateX(570);
+        tableView.setTranslateY(300);
+        consoleView.setTranslateX(570);
+        consoleView.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);

@@ -12,21 +12,21 @@ public class MonthCriteriaAHP {
         double[][] monthCriterAHPMatrix = new double[5][5];
 
 monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityData,numberOfBooks);
-        int iterator, j;
+        int iterator, jterator;
 
         int priority=1;
 
         for (iterator = 0; iterator < 5; iterator++) {
-            for (j = iterator + 1; j < 5; j++) {
-                monthCriterAHPMatrix[iterator][j] = (monthCounter[iterator]/monthCounter[j]);
+            for (jterator = iterator + 1; jterator < 5; jterator++) {
+                monthCriterAHPMatrix[iterator][jterator] = (monthCounter[iterator]/monthCounter[jterator]);
             }
         }
 
         for (iterator = 0; iterator < 5; iterator++) {
-            for (j = iterator + 1; j < 5; j++) {
+            for (jterator = iterator + 1; jterator < 5; jterator++) {
 
 
-                monthCriterAHPMatrix[j][iterator] = Math.pow(monthCriterAHPMatrix[iterator][j], -1);
+                monthCriterAHPMatrix[jterator][iterator] = Math.pow(monthCriterAHPMatrix[iterator][jterator], -1);
 
             }
         }
@@ -42,24 +42,24 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
         double[] summationMatrix = new double[5];
 
         for (iterator = 0; iterator < 5; iterator++) {
-            for (j = 0; j < 5; j++) {
+            for (jterator = 0; jterator < 5; jterator++) {
 
-                summationMatrix[iterator] = summationMatrix[iterator] + monthCriterAHPMatrix[iterator][j];
+                summationMatrix[iterator] = summationMatrix[iterator] + monthCriterAHPMatrix[iterator][jterator];
             }
         }
 
         for (iterator = 0; iterator < 5; iterator++) {
-            for (j = 0; j < 5; j++) {
+            for (jterator = 0; jterator < 5; jterator++) {
 
-                monthCriterAHPMatrix[iterator][j] = monthCriterAHPMatrix[iterator][j] / summationMatrix[iterator];
+                monthCriterAHPMatrix[iterator][jterator] = monthCriterAHPMatrix[iterator][jterator] / summationMatrix[iterator];
             }
         }
         double[] monthWeightMatrix = new double[5];
 
         for (iterator = 0; iterator < 5; iterator++) {
-            for (j = 0; j < 5; j++) {
+            for (jterator = 0; jterator < 5; jterator++) {
 
-                monthWeightMatrix[iterator] = monthWeightMatrix[iterator] + monthCriterAHPMatrix[j][iterator];
+                monthWeightMatrix[iterator] = monthWeightMatrix[iterator] + monthCriterAHPMatrix[jterator][iterator];
 
             }
             monthWeightMatrix[iterator] = monthWeightMatrix[iterator] / 5;

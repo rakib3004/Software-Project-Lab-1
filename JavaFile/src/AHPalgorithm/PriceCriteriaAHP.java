@@ -12,65 +12,65 @@ public class PriceCriteriaAHP {
         double[][] priceCriteriaAHPMatrix = new double[3][3];
 
 
-        int i, j;
+        int iterator, jterator;
         priceCounter  = ahpSubCriteriaProcess.priceCriteriaCalculationMethods(priorityData,numberOfBooks);
 
 
-        for (i = 0; i < 3; i++) {
-            for (j = i + 1; j < 3; j++) {
+        for (iterator = 0; iterator < 3; iterator++) {
+            for (jterator = iterator + 1; jterator < 3; jterator++) {
 
-                priceCriteriaAHPMatrix[i][j] = priceCounter[i]/priceCounter[j];
-
-            }
-        }
-
-
-         for (i = 0; i < 3; i++) {
-            for (j = i + 1; j < 3; j++) {
-
-                priceCriteriaAHPMatrix[j][i] = Math.pow(priceCriteriaAHPMatrix[i][j], -1);
+                priceCriteriaAHPMatrix[iterator][jterator] = priceCounter[iterator]/priceCounter[jterator];
 
             }
         }
 
-        for (i = 0; i < 3; i++) {
 
-            priceCriteriaAHPMatrix[i][i] = 1.00;
+         for (iterator = 0; iterator < 3; iterator++) {
+            for (jterator = iterator + 1; jterator < 3; jterator++) {
+
+                priceCriteriaAHPMatrix[jterator][iterator] = Math.pow(priceCriteriaAHPMatrix[iterator][jterator], -1);
+
+            }
+        }
+
+        for (iterator = 0; iterator < 3; iterator++) {
+
+            priceCriteriaAHPMatrix[iterator][iterator] = 1.00;
         }
 
 
         double[] summationMatrix = new double[3];
 
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {
+        for (iterator = 0; iterator < 3; iterator++) {
+            for (jterator = 0; jterator < 3; jterator++) {
 
-                summationMatrix[i] = summationMatrix[i] + priceCriteriaAHPMatrix[i][j];
+                summationMatrix[iterator] = summationMatrix[iterator] + priceCriteriaAHPMatrix[iterator][jterator];
 
             }
 
         }
 
 
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {
+        for (iterator = 0; iterator < 3; iterator++) {
+            for (jterator = 0; jterator < 3; jterator++) {
 
-                priceCriteriaAHPMatrix[i][j] = priceCriteriaAHPMatrix[i][j] / summationMatrix[i];
+                priceCriteriaAHPMatrix[iterator][jterator] = priceCriteriaAHPMatrix[iterator][jterator] / summationMatrix[iterator];
             }
         }
         double[] priceWeightMatrix = new double[3];
 
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {
+        for (iterator = 0; iterator < 3; iterator++) {
+            for (jterator = 0; jterator < 3; jterator++) {
 
-                priceWeightMatrix[i] = priceWeightMatrix[i] + priceCriteriaAHPMatrix[j][i];
+                priceWeightMatrix[iterator] = priceWeightMatrix[iterator] + priceCriteriaAHPMatrix[jterator][iterator];
 
             }
-            priceWeightMatrix[i] = priceWeightMatrix[i] / 3;
+            priceWeightMatrix[iterator] = priceWeightMatrix[iterator] / 3;
         }
 
-        for (i = 0; i < 3; i++) {
+        for (iterator = 0; iterator < 3; iterator++) {
 
-        priceWeightMatrix[i]  =  priceWeightMatrix[i]*criteria;
+        priceWeightMatrix[iterator]  =  priceWeightMatrix[iterator]*criteria;
 
         }
 

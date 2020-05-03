@@ -8,6 +8,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
+import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -16,6 +17,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -62,10 +64,9 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
-
+            PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
             try {
-                statisticsFX.start(primaryStage);
+                pageRankAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -84,9 +85,9 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         exit.setPrefSize(200, 80);
 
         back.setTranslateX(0);
-        back.setTranslateY(650);
+        back.setTranslateY(685);
         exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        exit.setTranslateY(685);
 
 
 
@@ -128,7 +129,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
         table.getColumns().setAll(bookName,writerName,bookId,borrowCount,price, bookWeight);
         table.setPrefWidth(1440);
-        table.setPrefHeight(770);
+        table.setPrefHeight(620);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
@@ -138,13 +139,15 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
-        // Vbox
-        VBox vbox = new VBox(20);
-        vbox.setPadding(new Insets(25, 25, 25, 25));;
-        vbox.getChildren().addAll(hb, table, actionStatus,back,exit);
+        // Hbox
+        HBox hBox = new HBox();
+        hBox.getChildren().add(table);
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(hb,hBox);
+        Group group = new Group();
+        group.getChildren().addAll(vBox,exit,back);
 
-        // Scene
-        Scene scene = new Scene(vbox, 1400, 775); // w x h
+        Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
         primaryStage.show();
