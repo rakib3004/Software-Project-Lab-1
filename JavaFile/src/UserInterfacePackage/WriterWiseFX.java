@@ -16,6 +16,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -25,8 +26,9 @@ import java.util.TreeMap;
 public class WriterWiseFX extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-int iterator;
+    int iterator;
     int numberOfBooks;
+    String labelName="Top Books";
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
 
@@ -84,19 +86,19 @@ int iterator;
                                 Sunil Gango Paddahay
                                 Samaresh majumdar
                                 Emdadiya Pustokaloy
-
+                                others
        */
 
 
         TreeMap<Object, Object> map = new TreeMap<>();
 
-        MenuItem uponnash = new MenuItem("Uponnash");
-        uponnash.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
+                    if (priorityData[iterator].bookData.bookName.equals("Humayon Ahmed")) {
                         //   uponnashTypeNO++;
                         map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
@@ -107,19 +109,155 @@ int iterator;
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
                 //  System.out.println(map);
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
 
+            } });
+        
+
+        MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Muhammad Jafar Iqbal")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+
+                showInfo(primaryStage,labelName);
+            }
+        });
+
+        MenuItem rokibHasan = new MenuItem("Rokib Hasan");
+        rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Rokib Hasan")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage,labelName);
+            }
+        });
+        MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
+        emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Emdadul Haque Milon")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage,labelName);
+            }
+        });
+
+
+        MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
+        kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Kazi Nazrul Islam")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage,labelName);
+            } });
+
+        MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
+        kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Kazi Anwar Hossain")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage,labelName);
+            }
+        });
+
+        MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
+        sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Sharat Chandra Chattropadhay")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage,labelName);
+            }
+        });
+
+
+
+        MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
+        rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookName.equals("Rabindranath Tagore")) {
+                        //   uponnashTypeNO++;
+                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                    }
+                }
+
+                for(Map.Entry<Object,Object>entry : map.entrySet()){
+                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
+                }
+                showInfo(primaryStage,labelName);
             } });
 
 
-        MenuItem kobita = new MenuItem("Kobita");
-
-        kobita.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
+        sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")) {
+                    if (priorityData[iterator].bookData.bookName.equals("Sunil Gango Paddahay")) {
                         //   uponnashTypeNO++;
                         map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
@@ -129,55 +267,17 @@ int iterator;
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-
-                showInfo(primaryStage);
-            }
-        });
-
-        MenuItem rochonaboli = new MenuItem("Rochonaboli");
-        rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("05")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
-            }
-        });
-        MenuItem religion = new MenuItem("Religion");
-        religion.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("04")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
 
-        MenuItem biggan = new MenuItem("Biggan");
-        biggan.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
+        samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("13")) {
+                    if (priorityData[iterator].bookData.bookName.equals("Samaresh majumdar")) {
                         //   uponnashTypeNO++;
                         map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
@@ -187,55 +287,18 @@ int iterator;
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
-            } });
-
-        MenuItem sciFi = new MenuItem("Sci Fi");
-        sciFi.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
-            }
-        });
-
-        MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
-        shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("11")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
 
+        MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
 
-        MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
-        kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {
+        emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("10")) {
+                    if (priorityData[iterator].bookData.bookName.equals("Emdadiya Pustokaloy")) {
                         //   uponnashTypeNO++;
                         map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
@@ -245,64 +308,11 @@ int iterator;
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
-            } });
-        MenuItem biography = new MenuItem("Biography");
-        biography.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
-        MenuItem gobesona = new MenuItem("Gobesona");
-        gobesona.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
-            }
-        });
-        MenuItem onubad = new MenuItem("Onubad");
-
-        onubad.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
-                    }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                showInfo(primaryStage);
-            }
-        });
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -319,26 +329,26 @@ int iterator;
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
-        MenuButton bookType = new MenuButton("Choose Your Type");
-        bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
-                biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
-                gobesona, onubad,others);
+        MenuButton writerMenu = new MenuButton("Choose Your Type");
+        writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
+                kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
+                samareshMajumdar, emdadiyaPustokaloy,others);
 
 
-        bookType.setTranslateX(500);
-        bookType.setTranslateY(350);
-        bookType.setPrefSize(200, 50);
+        writerMenu.setTranslateX(500);
+        writerMenu.setTranslateY(350);
+        writerMenu.setPrefSize(200, 50);
 
 
 
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(canvas,exit,back,writerMenu);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
@@ -354,14 +364,20 @@ int iterator;
 
     }
 
-    public void showInfo(Stage secondaryStage){
+    public void showInfo(Stage secondaryStage,String labelName){
 
+
+
+        TextField textField = new TextField();
+        textField.setPrefSize(380,95);
+        textField.setTranslateX(550);
+        textField.setTranslateY(55);
+        textField.setText(labelName);
+        setStyle(textField);
 
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -393,7 +409,7 @@ int iterator;
         Image image = new Image("libraryBackground15.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back);
+        group.getChildren().addAll(canvas,exit, back,textField);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -424,5 +440,20 @@ int iterator;
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  button;
+    }
+    public TextField setStyle( TextField textField)
+    {
+        textField.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color:\n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  textField;
     }
 }

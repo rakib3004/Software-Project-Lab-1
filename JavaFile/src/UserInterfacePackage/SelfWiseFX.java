@@ -19,6 +19,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -32,7 +33,7 @@ int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-
+    String labelName="Top Books";
     TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
@@ -86,7 +87,7 @@ int iterator;
 
                 for (iterator = 0; iterator < 100; iterator++) {
 
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
 
                 }
@@ -95,7 +96,7 @@ int iterator;
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
 
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
@@ -107,14 +108,14 @@ int iterator;
 
 
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
                 }
 
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
@@ -126,14 +127,14 @@ int iterator;
 
 
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
                 }
 
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             }
         });
 
@@ -147,7 +148,7 @@ int iterator;
 
                         //   uponnashTypeNO++;
 
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
 
                 }
@@ -155,7 +156,7 @@ int iterator;
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             } });
 
 
@@ -169,14 +170,14 @@ int iterator;
 
                         //   uponnashTypeNO++;
 
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
                 }
 
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             } });
 
 
@@ -187,7 +188,7 @@ int iterator;
                 for (iterator = 500; iterator < 600; iterator++) {
 
 
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
 
                 }
@@ -195,25 +196,25 @@ int iterator;
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             } });
 
 
        MenuItem self7 = new MenuItem("Book No : 601-700");
         self7.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                for (iterator = 600; iterator < 700 ; iterator++) {
+                for (iterator = 600; iterator < 632 ; iterator++) {
 
 
 
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
                 }
 
                 for(Map.Entry<Object,Object>entry : map.entrySet()){
                     System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
-                showInfo(primaryStage);
+                showInfo(primaryStage,labelName);
             } });
 
 
@@ -249,8 +250,16 @@ int iterator;
 
 }
 
-    public void showInfo(Stage secondaryStage){
+    public void showInfo(Stage secondaryStage,String labelName){
 
+
+
+        TextField textField = new TextField();
+        textField.setPrefSize(380,95);
+        textField.setTranslateX(550);
+        textField.setTranslateY(55);
+        textField.setText(labelName);
+        setStyle(textField);
 
 
         Button back = new Button("Back");
@@ -285,10 +294,10 @@ int iterator;
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground15.jpg");
+        Image image = new Image("libraryBackground16.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back);
+        group.getChildren().addAll(canvas,exit, back,textField);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -319,5 +328,20 @@ int iterator;
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  button;
+    }
+    public TextField setStyle(TextField textField)
+    {
+        textField.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color:\n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  textField;
     }
 }
