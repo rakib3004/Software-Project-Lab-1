@@ -34,6 +34,31 @@ public class ChooseType extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
+
+
+        Button addBook = new Button("Add Book");
+
+        addBook.setTranslateX(550);
+        addBook.setTranslateY(100);
+
+
+        addBook.setOnAction(actionEvent -> {
+
+            try {
+                AddBookFX addBookFX = new AddBookFX();
+                addBookFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        addBook.setPrefSize(230, 80);
+        setStyle(addBook);
+
+
+
         Button writerWise = new Button("Writer Wise");
 
         writerWise.setTranslateX(550);
@@ -75,7 +100,7 @@ Button classWise = new Button("Class Wise");
         setStyle(classWise);
 
 
-Button selfWise = new Button("Self Wise");
+        Button selfWise = new Button("Self Wise");
 
         selfWise.setTranslateX(550);
         selfWise.setTranslateY(400);
@@ -117,25 +142,6 @@ Button timeWise = new Button("Time Wise");
         timeWise.setPrefSize(230, 80);
         setStyle(timeWise);
 
-
-Button addBook = new Button("Add Book");
-
-        addBook.setTranslateX(550);
-        addBook.setTranslateY(600);
-        addBook.setOnAction(actionEvent -> {
-
-            try {
-               AddBookFX addBookFX = new AddBookFX();
-               addBookFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        addBook.setPrefSize(230, 80);
-        setStyle(addBook);
 
 
 

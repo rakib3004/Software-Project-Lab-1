@@ -16,7 +16,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -34,19 +34,20 @@ public class WriterWiseFX extends Application {
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+    
+    
     @Override
     public void start(Stage primaryStage){
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
+        
+        
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
-
+        
         back.setOnAction(actionEvent -> {
             ChooseType chooseType = new ChooseType();
 
@@ -94,8 +95,11 @@ public class WriterWiseFX extends Application {
 
         MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
         humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override 
+            public void handle(ActionEvent e) {
 
+
+                labelName="Top Books of "+humayonAhmed.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Humayon Ahmed")) {
@@ -114,10 +118,13 @@ public class WriterWiseFX extends Application {
             } });
         
 
+
         MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
 
         muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+muhammadJafarIqbal.getText();
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
@@ -139,6 +146,8 @@ public class WriterWiseFX extends Application {
         MenuItem rokibHasan = new MenuItem("Rokib Hasan");
         rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+rokibHasan.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Rokib Hasan")) {
@@ -158,6 +167,8 @@ public class WriterWiseFX extends Application {
         emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+emdadulHaqueMilon.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Emdadul Haque Milon")) {
@@ -178,6 +189,8 @@ public class WriterWiseFX extends Application {
         MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
         kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+kaziNazrulIslam.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Kazi Nazrul Islam")) {
@@ -196,6 +209,8 @@ public class WriterWiseFX extends Application {
         MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
         kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+kaziAnwarHossain.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Kazi Anwar Hossain")) {
@@ -215,6 +230,8 @@ public class WriterWiseFX extends Application {
         MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
         sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+sharatChandraChattropadhay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Sharat Chandra Chattropadhay")) {
@@ -236,6 +253,8 @@ public class WriterWiseFX extends Application {
         MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
         rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+rabindranathTagore.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Rabindranath Tagore")) {
@@ -255,6 +274,8 @@ public class WriterWiseFX extends Application {
         MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
         sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+sunilGangoPaddahay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Sunil Gango Paddahay")) {
@@ -275,6 +296,8 @@ public class WriterWiseFX extends Application {
         MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
         samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+samareshMajumdar.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Samaresh majumdar")) {
@@ -296,6 +319,8 @@ public class WriterWiseFX extends Application {
 
         emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+emdadiyaPustokaloy.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Emdadiya Pustokaloy")) {
@@ -316,6 +341,8 @@ public class WriterWiseFX extends Application {
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                labelName="Top Books of "+others.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
@@ -344,7 +371,6 @@ public class WriterWiseFX extends Application {
         writerMenu.setPrefSize(200, 50);
 
 
-
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -364,16 +390,18 @@ public class WriterWiseFX extends Application {
 
     }
 
+    
+    
     public void showInfo(Stage secondaryStage,String labelName){
 
 
 
-        TextField textField = new TextField();
-        textField.setPrefSize(380,95);
-        textField.setTranslateX(550);
-        textField.setTranslateY(55);
-        textField.setText(labelName);
-        setStyle(textField);
+        Label label = new Label();
+        label.setPrefSize(500,105);
+        label.setTranslateX(450);
+        label.setTranslateY(47);
+        label.setText(labelName);
+        setStyle(label);
 
 
         Button back = new Button("Back");
@@ -409,7 +437,7 @@ public class WriterWiseFX extends Application {
         Image image = new Image("libraryBackground15.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,textField);
+        group.getChildren().addAll(canvas,exit, back,label);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -441,9 +469,9 @@ public class WriterWiseFX extends Application {
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-    public TextField setStyle( TextField textField)
+    public Label setStyle( Label Label)
     {
-        textField.setStyle("-fx-padding: 8 15 15 15;\n" +
+        Label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color:\n" +
@@ -454,6 +482,6 @@ public class WriterWiseFX extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  textField;
+        return  Label;
     }
 }
