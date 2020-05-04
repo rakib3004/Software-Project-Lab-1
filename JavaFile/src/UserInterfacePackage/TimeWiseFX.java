@@ -114,17 +114,15 @@ int iterator;
                             priorityData[iterator].bookData.bookId.contains("0410")||
                             priorityData[iterator].bookData.bookId.contains("0810")||
                             priorityData[iterator].bookData.bookId.contains("1210")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                //  System.out.println(map);
-               showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName);
 
             } });
 
@@ -141,17 +139,16 @@ int iterator;
                             priorityData[iterator].bookData.bookId.contains("1211")||
                             priorityData[iterator].bookData.bookId.contains("0212")||
                             priorityData[iterator].bookData.bookId.contains("0812")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
 
-               showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName);
             }
         });
 
@@ -163,16 +160,15 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.contains("13")||
                             priorityData[iterator].bookData.bookId.contains("14")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-               showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName);
             }
         });
         MenuItem year4 = new MenuItem("2015-2016");
@@ -183,16 +179,15 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.contains("15")||
                             priorityData[iterator].bookData.bookId.contains("16")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-               showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName);
             }
         });
 
@@ -205,17 +200,15 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.contains("17")) {
 
-                        //   uponnashTypeNO++;
-
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-               showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName);
             } });
 
         MenuButton yearSection = new MenuButton("Choose Year");

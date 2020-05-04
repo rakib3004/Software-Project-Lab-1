@@ -358,7 +358,7 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("22")) {
-                        //   uponnashTypeNO++;
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId));
