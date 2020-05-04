@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import Methods.PrioritySort;
 import Methods.Sorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
@@ -41,7 +42,7 @@ public class ClassWiseFX extends Application {
     private Text actionStatus;
     PriorityData[] priorityData;
     GenericAlgo[] genericAlgo;
-Sorting sorting =  new Sorting();
+PrioritySort prioritySort = new PrioritySort();
 
 
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -53,6 +54,7 @@ int iterator;
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
     @Override
     public void start(Stage primaryStage){
 
@@ -65,7 +67,7 @@ int iterator;
         }
 
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
@@ -100,6 +102,7 @@ int iterator;
 
 
                 TreeMap<Object, Object> map = new TreeMap<>();
+        List list = new ArrayList();
 
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
@@ -113,18 +116,20 @@ int iterator;
 
              for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
+                    if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) 
+                    {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                  data = FXCollections.observableList(list);
 
                     }
                 }
-
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
+             
+            
               //  System.out.println(map);
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
 
             } });
 
@@ -139,17 +144,15 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                         data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
             }
         });
 
@@ -161,16 +164,15 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("05")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                         data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
           }
         });
         MenuItem religion = new MenuItem("Religion");
@@ -182,15 +184,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("04")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
 
@@ -204,15 +207,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("13")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           } });
 
         MenuItem sciFi = new MenuItem("Sci Fi");
@@ -224,15 +228,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
 
@@ -245,15 +250,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("11")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
         
@@ -268,15 +274,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("10")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           } });
         MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
@@ -287,15 +294,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
 
@@ -308,15 +316,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
         MenuItem onubad = new MenuItem("Onubad");
@@ -329,15 +338,16 @@ int iterator;
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
         MenuItem others = new MenuItem("Others");
@@ -350,15 +360,16 @@ int iterator;
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("22")) {
                         //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
+                 }
 
-             for(Map.Entry<Object,Object>entry : map.entrySet()){
-                 System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-             }
-                showInfo(primaryStage,labelName);
+
+                showInfo(primaryStage,labelName,data);
           }
         });
 
@@ -393,7 +404,7 @@ bookType.setPrefSize(200, 50);
     }
 
 
-    public void showInfo(Stage secondaryStage,String labelName){
+    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
 
 
         Label label = new Label();
@@ -439,11 +450,11 @@ bookType.setPrefSize(200, 50);
 
 
         table = new TableView();
-        try {
+      /*  try {
             data = getInitialTableData();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         table.setItems(data);
 
         TableColumn bookName = new TableColumn("Book Name");
@@ -475,8 +486,10 @@ bookType.setPrefSize(200, 50);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new ClassWiseFX.RowSelectChangeListener());
-
-        // Status message text
+        
+        
+        
+                // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
@@ -525,7 +538,7 @@ bookType.setPrefSize(200, 50);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        genericAlgo =sorting.sortingMLRmethods(priorityData,numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
 

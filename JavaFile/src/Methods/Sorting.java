@@ -19,7 +19,7 @@ public class Sorting {
         double temporary;
         int temp;
         for( iterator=0;iterator<numberOfBooks;iterator++){
-            for(int jterator=0;jterator<numberOfBooks;jterator++){
+            for(int jterator=iterator+1;jterator<numberOfBooks;jterator++){
                 if(genericAlgo[iterator].getWeight()>genericAlgo[jterator].getWeight()){
                     temporary= genericAlgo[iterator].getWeight();
                     genericAlgo[iterator].setWeight(genericAlgo[jterator].getWeight());
@@ -46,7 +46,7 @@ public class Sorting {
         double temporary;
         int temp;
         for( iterator=0;iterator<numberOfBooks;iterator++){
-            for(int jterator=0;jterator<numberOfBooks;jterator++){
+            for(int jterator=iterator+1;jterator<numberOfBooks;jterator++){
                 if(genericAlgo[iterator].getWeight()>genericAlgo[jterator].getWeight()){
                     temporary= genericAlgo[iterator].getWeight();
                     genericAlgo[iterator].setWeight(genericAlgo[jterator].getWeight());
@@ -73,7 +73,7 @@ public class Sorting {
         double temporary;
         int temp;
         for( iterator=0;iterator<numberOfBooks;iterator++){
-            for(int jterator=0;jterator<numberOfBooks;jterator++){
+            for(int jterator=iterator+1;jterator<numberOfBooks;jterator++){
                 if(genericAlgo[iterator].getWeight()>genericAlgo[jterator].getWeight()){
                     temporary= genericAlgo[iterator].getWeight();
                     genericAlgo[iterator].setWeight(genericAlgo[jterator].getWeight());
