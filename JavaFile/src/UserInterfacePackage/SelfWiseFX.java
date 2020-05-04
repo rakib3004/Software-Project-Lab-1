@@ -11,8 +11,12 @@ import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import RankingAlgorithmFx.StatisticsFX;
+import TableViewPackage.Book;
 import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -356,6 +360,36 @@ int iterator;
 
 
     }
+
+    private class RowSelectChangeListener implements ChangeListener {
+
+        @Override
+        public void changed(ObservableValue observableValue, Object o, Object t1) {
+
+        }
+    }
+
+    private ObservableList getInitialTableData() throws IOException {
+
+        List list = new ArrayList();
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
+        }
+        ObservableList data = FXCollections.observableList(list);
+        return data;
+    }
+
+
 
 
 
