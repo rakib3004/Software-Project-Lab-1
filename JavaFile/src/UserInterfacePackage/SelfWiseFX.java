@@ -124,16 +124,17 @@ int iterator;
                 
                 for (iterator = 0; iterator < 100; iterator++) {
 
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
 
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
 
-                showInfo(primaryStage,labelName);
+
+            showInfo(primaryStage,labelName);
             }
         });
 
@@ -146,14 +147,13 @@ int iterator;
                 for (iterator = 100; iterator < 200; iterator++) {
 
 
-                        //   uponnashTypeNO++;
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -167,14 +167,13 @@ int iterator;
                 for (iterator = 200; iterator < 300; iterator++) {
 
 
-                        //   uponnashTypeNO++;
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -189,16 +188,14 @@ int iterator;
                     labelName="Top Books from "+self4.getText();
                 for (iterator = 300; iterator < 400; iterator++) {
 
-                        //   uponnashTypeNO++;
 
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             } });
 
@@ -212,16 +209,13 @@ int iterator;
                 for (iterator = 400; iterator < 500; iterator++) {
 
 
-
-                        //   uponnashTypeNO++;
-
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             } });
 
@@ -234,15 +228,13 @@ int iterator;
                     labelName="Top Books from "+self6.getText();
                 for (iterator = 500; iterator < 600; iterator++) {
 
-
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
-
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             } });
 
@@ -255,14 +247,13 @@ int iterator;
                 for (iterator = 600; iterator < 632 ; iterator++) {
 
 
-
-                        //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId));
+                    data = FXCollections.observableList(list);
 
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             } });
 
