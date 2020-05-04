@@ -449,11 +449,7 @@ bookType.setPrefSize(200, 50);
 
 
         table = new TableView();
-      /*  try {
-            data = getInitialTableData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+
         table.setItems(data);
 
         TableColumn bookName = new TableColumn("Book Name");
@@ -465,18 +461,9 @@ bookType.setPrefSize(200, 50);
 
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
-/*
-      TableColumn borrowCount = new TableColumn("Borrow Count");
-        borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
 
 
-        TableColumn price = new TableColumn("Price");
-        price.setCellValueFactory(new PropertyValueFactory("price"));
-
-        TableColumn bookWeight = new TableColumn("Book Weight");
-        bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));*/
-
-        table.getColumns().setAll(bookName,writerName,bookId/*borrowCount,price, bookWeight*/);
+        table.getColumns().setAll(bookName,writerName,bookId);
         table.setPrefWidth(1240);
         table.setPrefHeight(560);
         table.setTranslateX(60);

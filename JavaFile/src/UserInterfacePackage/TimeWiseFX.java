@@ -22,7 +22,9 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -122,7 +124,7 @@ int iterator;
                     }
                 }
 
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
 
             } });
 
@@ -148,7 +150,7 @@ int iterator;
                 }
 
 
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
             }
         });
 
@@ -168,7 +170,7 @@ int iterator;
                     }
                 }
 
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
             }
         });
         MenuItem year4 = new MenuItem("2015-2016");
@@ -187,7 +189,7 @@ int iterator;
                     }
                 }
 
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
             }
         });
 
@@ -208,7 +210,7 @@ int iterator;
                     }
                 }
 
-                showInfo(primaryStage,labelName);
+                showInfo(primaryStage,labelName,data);
             } });
 
         MenuButton yearSection = new MenuButton("Choose Year");
@@ -241,7 +243,7 @@ int iterator;
     }
 
 
-    public void showInfo(Stage secondaryStage,String labelName){
+    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
 
 
 
@@ -284,11 +286,48 @@ int iterator;
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
+        table = new TableView();
+
+        table.setItems(data);
+
+        TableColumn bookName = new TableColumn("Book Name");
+        bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
+
+        TableColumn writerName = new TableColumn("Writer Name");
+        writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
+
+
+        TableColumn bookId = new TableColumn("Book ID");
+        bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
+
+
+        table.getColumns().setAll(bookName,writerName,bookId);
+        table.setPrefWidth(1240);
+        table.setPrefHeight(560);
+        table.setTranslateX(60);
+        table.setTranslateY(70);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        table.getSelectionModel().selectedIndexProperty().addListener(
+                new TimeWiseFX.RowSelectChangeListener());
+
+
+
+        // Status message text
+        actionStatus = new Text();
+        actionStatus.setFill(Color.FIREBRICK);
+
+
+        table.getSelectionModel().select(0);
+        Book book = (Book) table.getSelectionModel().getSelectedItem();
+        actionStatus.setText(book.toString());
+
+
 
         Image image = new Image("libraryBackground14.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label);
+        group.getChildren().addAll(canvas,exit, back,label,table);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
