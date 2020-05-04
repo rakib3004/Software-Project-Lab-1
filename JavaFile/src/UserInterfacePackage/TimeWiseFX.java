@@ -4,29 +4,44 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import Methods.PrioritySort;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
+import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
+import TableViewPackage.Book;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class TimeWiseFX extends Application {
+
+    private TableView table;
+    private ObservableList data;
+    private Text actionStatus;
     PriorityData[] priorityData;
+    GenericAlgo[] genericAlgo;
+    PrioritySort prioritySort = new PrioritySort();
+    List list = new ArrayList();
+
     AHPcriteriaWeight ahPcriteriaWeight;
 int iterator;
     int numberOfBooks;
@@ -34,6 +49,7 @@ int iterator;
     BookNumber bookNumber = new BookNumber();
     String labelName="Top Books";
     TreeMap<Object, Object> map = new TreeMap<>();
+
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
@@ -51,6 +67,7 @@ int iterator;
         }
 
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
@@ -292,6 +309,36 @@ int iterator;
 
 
     }
+
+
+    private class RowSelectChangeListener implements ChangeListener {
+
+        @Override
+        public void changed(ObservableValue observableValue, Object o, Object t1) {
+
+        }
+    }
+
+    private ObservableList getInitialTableData() throws IOException {
+
+        List list = new ArrayList();
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
+        }
+        ObservableList data = FXCollections.observableList(list);
+        return data;
+    }
+
 
 
 

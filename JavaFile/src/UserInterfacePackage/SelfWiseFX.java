@@ -4,31 +4,43 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import Methods.PrioritySort;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
+import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import RankingAlgorithmFx.StatisticsFX;
 import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class SelfWiseFX extends Application {
+
+
+    private TableView table;
+    private ObservableList data;
+    private Text actionStatus;
+    GenericAlgo[] genericAlgo;
+    PrioritySort prioritySort = new PrioritySort();
+    List list = new ArrayList();
+
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 int iterator;
@@ -54,8 +66,8 @@ int iterator;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
     Button back = new Button("Back");
     Button exit = new Button("Exit");
 

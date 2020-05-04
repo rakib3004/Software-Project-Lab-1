@@ -40,11 +40,11 @@ public class ClassWiseFX extends Application {
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
-    PriorityData[] priorityData;
     GenericAlgo[] genericAlgo;
 PrioritySort prioritySort = new PrioritySort();
+    List list = new ArrayList();
 
-
+    PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 int iterator;
     int numberOfBooks;
@@ -101,8 +101,7 @@ int iterator;
         exit.setPrefSize(200, 80);
 
 
-                TreeMap<Object, Object> map = new TreeMap<>();
-        List list = new ArrayList();
+
 
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
