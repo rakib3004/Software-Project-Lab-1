@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ClassWiseFX extends Application {
@@ -37,12 +38,16 @@ int iterator;
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage){
 
 
+        try {
+            priorityData = processing.fileReaderMethods();
+            numberOfBooks = bookNumber.bookNumberFindingMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        priorityData = processing.fileReaderMethods();
-        numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
 
         Button back = new Button("Back");
@@ -82,7 +87,13 @@ int iterator;
 
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+             public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+uponnash.getText();
+
+
+              
 
              for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
@@ -105,7 +116,9 @@ int iterator;
         MenuItem kobita = new MenuItem("Kobita");
 
         kobita.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+kobita.getText();
 
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
@@ -126,7 +139,9 @@ int iterator;
 
         MenuItem rochonaboli = new MenuItem("Rochonaboli");
         rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+rochonaboli.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("05")) {
@@ -144,7 +159,9 @@ int iterator;
         });
         MenuItem religion = new MenuItem("Religion");
         religion.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+religion.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("04")) {
@@ -164,7 +181,9 @@ int iterator;
 
         MenuItem biggan = new MenuItem("Biggan");
         biggan.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+biggan.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("13")) {
@@ -182,7 +201,9 @@ int iterator;
 
         MenuItem sciFi = new MenuItem("Sci Fi");
         sciFi.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+sciFi.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")) {
@@ -201,7 +222,9 @@ int iterator;
 
         MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
         shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+shishuShahitto.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("11")) {
@@ -222,7 +245,9 @@ int iterator;
 
         MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
         kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+kisoreUponnash.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("10")) {
@@ -239,7 +264,9 @@ int iterator;
           } });
         MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+biography.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
@@ -258,7 +285,9 @@ int iterator;
 
         MenuItem gobesona = new MenuItem("Gobesona");
         gobesona.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+gobesona.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
@@ -277,7 +306,9 @@ int iterator;
         MenuItem onubad = new MenuItem("Onubad");
 
         onubad.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+onubad.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
@@ -295,7 +326,9 @@ int iterator;
         });
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e) {
+
+                    labelName="Top Books of  "+others.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
@@ -348,9 +381,9 @@ bookType.setPrefSize(200, 50);
 
 
         Label label = new Label();
-        label.setPrefSize(380,95);
-        label.setTranslateX(550);
-        label.setTranslateY(55);
+        label.setPrefSize(500,105);
+        label.setTranslateX(450);
+        label.setTranslateY(47);
         label.setText(labelName);
         setStyle(label);
 

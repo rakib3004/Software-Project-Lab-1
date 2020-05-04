@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import javafx.application.Application;
@@ -20,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -34,8 +36,21 @@ int iterator;
     TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
     @Override
     public void start(Stage primaryStage){
+
+
+
+        try {
+            priorityData = processing.fileReaderMethods();
+            numberOfBooks = bookNumber.bookNumberFindingMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
@@ -70,8 +85,10 @@ int iterator;
 
         MenuItem year1 = new MenuItem("2008-2010");
         year1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override 
+            public void handle(ActionEvent e) {
 
+                labelName="Top Books of "+year1.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.contains("0618")||
@@ -99,6 +116,7 @@ int iterator;
 
         year2.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                labelName="Top Books of "+year2.getText();
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
@@ -123,6 +141,7 @@ int iterator;
         MenuItem year3 = new MenuItem("2013-2014");
         year3.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                labelName="Top Books of "+year3.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.contains("13")||
@@ -142,6 +161,7 @@ int iterator;
         MenuItem year4 = new MenuItem("2015-2016");
         year4.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                labelName="Top Books of "+year4.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.contains("15")||
@@ -163,6 +183,7 @@ int iterator;
         MenuItem year5 = new MenuItem("2017-2018");
         year5.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                labelName="Top Books of "+year5.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.contains("17")) {
@@ -215,9 +236,9 @@ int iterator;
 
 
         Label label = new Label();
-        label.setPrefSize(380,95);
-        label.setTranslateX(550);
-        label.setTranslateY(55);
+        label.setPrefSize(500,105);
+        label.setTranslateX(450);
+        label.setTranslateY(47);
         label.setText(labelName);
         setStyle(label);
 

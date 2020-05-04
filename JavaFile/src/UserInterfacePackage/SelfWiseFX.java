@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
@@ -23,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -37,8 +39,23 @@ int iterator;
     TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
     @Override
     public void start(Stage primaryStage){
+
+
+
+
+
+        try {
+            priorityData = processing.fileReaderMethods();
+            numberOfBooks = bookNumber.bookNumberFindingMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
     Button back = new Button("Back");
     Button exit = new Button("Exit");
 
@@ -83,8 +100,12 @@ int iterator;
         MenuItem self1 = new MenuItem("Book No : 1-100");
 
         self1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
 
+                    labelName="Top Books from "+self1.getText();
+
+                
                 for (iterator = 0; iterator < 100; iterator++) {
 
                         //map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
@@ -104,6 +125,8 @@ int iterator;
         MenuItem self2 = new MenuItem("Book No : 101-200");
         self2.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                    labelName="Top Books from "+self2.getText();
                 for (iterator = 100; iterator < 200; iterator++) {
 
 
@@ -123,6 +146,8 @@ int iterator;
         MenuItem self3 = new MenuItem("Book No : 201-300");
         self3.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                    labelName="Top Books from "+self3.getText();
                 for (iterator = 200; iterator < 300; iterator++) {
 
 
@@ -144,6 +169,8 @@ int iterator;
         MenuItem self4 = new MenuItem("Book No : 301-400");
         self4.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                    labelName="Top Books from "+self4.getText();
                 for (iterator = 300; iterator < 400; iterator++) {
 
                         //   uponnashTypeNO++;
@@ -164,6 +191,8 @@ int iterator;
         MenuItem self5 = new MenuItem("Book No : 401-500");
         self5.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                    labelName="Top Books from "+self5.getText();
                 for (iterator = 400; iterator < 500; iterator++) {
 
 
@@ -185,6 +214,8 @@ int iterator;
         MenuItem self6 = new MenuItem("Book No : 501-600");
         self6.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                    labelName="Top Books from "+self6.getText();
                 for (iterator = 500; iterator < 600; iterator++) {
 
 
@@ -203,6 +234,8 @@ int iterator;
        MenuItem self7 = new MenuItem("Book No : 601-700");
         self7.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
+                    labelName="Top Books from "+self7.getText();
                 for (iterator = 600; iterator < 632 ; iterator++) {
 
 
@@ -255,9 +288,9 @@ int iterator;
 
 
         Label label = new Label();
-        label.setPrefSize(380,95);
-        label.setTranslateX(550);
-        label.setTranslateY(55);
+        label.setPrefSize(500,105);
+        label.setTranslateX(450);
+        label.setTranslateY(47);
         label.setText(labelName);
         setStyle(label);
 

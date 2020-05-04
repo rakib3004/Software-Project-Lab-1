@@ -37,7 +37,9 @@ PriorityData [] priorityData;
 
         String bookPrice[] = new String[1050];
 
-
+        int iterator;
+        int charIndex=0;
+        int wordIndex=0;
 
         bookName[wordIndex] = "\0";
         writerName[wordIndex] = "\0";
@@ -81,12 +83,14 @@ bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
 
 
                 wordIndex++;
+
                 bookName[wordIndex] = "\0";
                 writerName[wordIndex] = "\0";
                 bookId[wordIndex] = "\0";
 
                 borrowCount[wordIndex] = "\0";
                 bookPrice[wordIndex] = "\0";
+
 
             }
             if (charIndex == 0) {
