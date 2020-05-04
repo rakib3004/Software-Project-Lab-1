@@ -130,16 +130,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Humayon Ahmed")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
-                //  System.out.println(map);
                 showInfo(primaryStage,labelName);
 
             } });
@@ -156,14 +155,13 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Muhammad Jafar Iqbal")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
-                }
-
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
                 }
 
                 showInfo(primaryStage,labelName);
@@ -178,15 +176,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Rokib Hasan")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -199,15 +197,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Emdadul Haque Milon")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -221,15 +219,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Kazi Nazrul Islam")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             } });
 
@@ -241,15 +239,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Kazi Anwar Hossain")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -262,15 +260,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Sharat Chandra Chattropadhay")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -285,15 +283,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Rabindranath Tagore")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             } });
 
@@ -306,15 +304,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Sunil Gango Paddahay")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -328,15 +326,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Samaresh majumdar")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -351,15 +349,15 @@ public class WriterWiseFX extends Application {
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookName.equals("Emdadiya Pustokaloy")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
@@ -374,15 +372,15 @@ public class WriterWiseFX extends Application {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("22")) {
-                        //   uponnashTypeNO++;
-                        map.put(priorityData[iterator].getMLRweight(),priorityData[iterator].bookData.bookName );
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
 
                     }
                 }
 
-                for(Map.Entry<Object,Object>entry : map.entrySet()){
-                    System.out.println(entry.getKey().toString()+"-"+entry.getValue());
-                }
                 showInfo(primaryStage,labelName);
             }
         });
