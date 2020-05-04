@@ -1,13 +1,10 @@
 package TableViewPackage;
-import JavFX.FxDatabase;
-import JavaSwing.Book;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.Sorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import RankingAlgorithmFx.StatisticsFX;
 import RegressionFx.FourVariableRegression;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -24,7 +21,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableColumn;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -155,6 +151,11 @@ public class MLR_TableViewFX extends Application {
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
+
+
+
+
+
 
     } // start()
 

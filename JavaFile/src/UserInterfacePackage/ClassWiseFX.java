@@ -4,30 +4,46 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import Methods.Sorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
+import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import RegressionFx.MultiVaribleRegressionFX;
+import TableViewPackage.Book;
 import TableViewPackage.MLR_TableViewFX;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.*;
 
 public class ClassWiseFX extends Application {
+
+
+    private TableView table;
+    private ObservableList data;
+    private Text actionStatus;
     PriorityData[] priorityData;
+    GenericAlgo[] genericAlgo;
+Sorting sorting =  new Sorting();
+
+
     AHPcriteriaWeight ahPcriteriaWeight;
 int iterator;
     int numberOfBooks;
@@ -381,9 +397,9 @@ bookType.setPrefSize(200, 50);
 
 
         Label label = new Label();
-        label.setPrefSize(500,105);
+        label.setPrefSize(500,45);
         label.setTranslateX(450);
-        label.setTranslateY(47);
+        label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
 
@@ -421,10 +437,61 @@ bookType.setPrefSize(200, 50);
         exit.setPrefSize(200, 80);
 
 
+
+        table = new TableView();
+        try {
+            data = getInitialTableData();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        table.setItems(data);
+
+        TableColumn bookName = new TableColumn("Book Name");
+        bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
+
+        TableColumn writerName = new TableColumn("Writer Name");
+        writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
+
+
+        TableColumn bookId = new TableColumn("Book ID");
+        bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
+/*
+      TableColumn borrowCount = new TableColumn("Borrow Count");
+        borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
+
+
+        TableColumn price = new TableColumn("Price");
+        price.setCellValueFactory(new PropertyValueFactory("price"));
+
+        TableColumn bookWeight = new TableColumn("Book Weight");
+        bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));*/
+
+        table.getColumns().setAll(bookName,writerName,bookId/*borrowCount,price, bookWeight*/);
+        table.setPrefWidth(1240);
+        table.setPrefHeight(560);
+        table.setTranslateX(60);
+        table.setTranslateY(70);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        table.getSelectionModel().selectedIndexProperty().addListener(
+                new ClassWiseFX.RowSelectChangeListener());
+
+        // Status message text
+        actionStatus = new Text();
+        actionStatus.setFill(Color.FIREBRICK);
+
+
+        table.getSelectionModel().select(0);
+        Book book = (Book) table.getSelectionModel().getSelectedItem();
+        actionStatus.setText(book.toString());
+
+
+
+
         Image image = new Image("libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label);
+        group.getChildren().addAll(canvas,exit, back,label,table);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -441,6 +508,34 @@ bookType.setPrefSize(200, 50);
     }
 
 
+
+    private class RowSelectChangeListener implements ChangeListener {
+
+        @Override
+        public void changed(ObservableValue observableValue, Object o, Object t1) {
+
+        }
+    }
+
+    private ObservableList getInitialTableData() throws IOException {
+
+        List list = new ArrayList();
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        genericAlgo =sorting.sortingMLRmethods(priorityData,numberOfBooks);
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
+        }
+        ObservableList data = FXCollections.observableList(list);
+        return data;
+    }
 
 
 

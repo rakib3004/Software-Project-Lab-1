@@ -27,6 +27,8 @@ public class PriorityData {
         this.PRAweight = PRAweight;
     }
 
+
+
     public PriorityData(double bookPriority,
                         double timePriority, double borrowPriority,
                         double pricePriority,int index , BookData

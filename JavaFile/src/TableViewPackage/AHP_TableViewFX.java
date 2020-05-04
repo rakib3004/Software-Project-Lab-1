@@ -2,22 +2,18 @@ package TableViewPackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
-import JavaSwing.Book;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.Sorting;
-import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
-import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -210,4 +206,5 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
+
 }

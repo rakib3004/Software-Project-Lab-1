@@ -1,21 +1,17 @@
 package TableViewPackage;
 
-import JavaSwing.Book;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.Sorting;
-import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
-import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
