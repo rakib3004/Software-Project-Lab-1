@@ -295,11 +295,10 @@ int iterator;
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
 
 
-
         Label label = new Label();
-        label.setPrefSize(500,105);
+        label.setPrefSize(500,45);
         label.setTranslateX(450);
-        label.setTranslateY(47);
+        label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
 

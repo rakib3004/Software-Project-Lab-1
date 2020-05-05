@@ -127,12 +127,14 @@ public class WriterWiseFX extends Application {
             @Override 
             public void handle(ActionEvent e) {
 
-
+int as=0;
                 labelName="Top Books of "+humayonAhmed.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Humayon Ahmed")) {
+                    if (priorityData[iterator].bookData.writerName.contains("umayon")) {
 
+                        as++;
+                        System.out.println("Yes"+as);
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId));
@@ -156,7 +158,7 @@ public class WriterWiseFX extends Application {
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Muhammad Jafar Iqbal")) {
+                    if (priorityData[iterator].bookData.writerName.contains("afar")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -177,7 +179,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+rokibHasan.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Rokib Hasan")) {
+                    if (priorityData[iterator].bookData.writerName.contains("okib")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -198,7 +200,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+emdadulHaqueMilon.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Emdadul Haque Milon")) {
+                    if (priorityData[iterator].bookData.writerName.contains("ilon")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -220,7 +222,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+kaziNazrulIslam.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Kazi Nazrul Islam")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Nazrul")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -240,7 +242,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+kaziAnwarHossain.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Kazi Anwar Hossain")) {
+                    if (priorityData[iterator].bookData.writerName.contains("nwar")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -261,7 +263,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+sharatChandraChattropadhay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Sharat Chandra Chattropadhay")) {
+                    if (priorityData[iterator].bookData.writerName.contains("handra")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -284,7 +286,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+rabindranathTagore.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Rabindranath Tagore")) {
+                    if (priorityData[iterator].bookData.writerName.contains("agore")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -305,7 +307,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+sunilGangoPaddahay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Sunil Gango Paddahay")) {
+                    if (priorityData[iterator].bookData.writerName.contains("unil")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -327,7 +329,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+samareshMajumdar.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Samaresh majumdar")) {
+                    if (priorityData[iterator].bookData.writerName.contains("ajumdar")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -350,7 +352,7 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+emdadiyaPustokaloy.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookName.equals("Emdadiya Pustokaloy")) {
+                    if (priorityData[iterator].bookData.writerName.contains("mdadiy")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -372,8 +374,8 @@ public class WriterWiseFX extends Application {
                 labelName="Top Books of "+others.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
-                            priorityData[iterator].bookData.bookId.substring(0, 2).equals("22")) {
+                    if (priorityData[iterator].bookData.bookId.substring(0, 2).contains("07")||
+                            priorityData[iterator].bookData.bookId.substring(0, 2).contains("22")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -424,9 +426,9 @@ public class WriterWiseFX extends Application {
 
 
         Label label = new Label();
-        label.setPrefSize(500,105);
+        label.setPrefSize(500,45);
         label.setTranslateX(450);
-        label.setTranslateY(47);
+        label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
 
