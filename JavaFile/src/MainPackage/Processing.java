@@ -77,9 +77,9 @@ bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
                 bookPrice[wordIndex] = string;
 
 
-                bookData[wordIndex] = new BookData(  bookName[wordIndex],  writerName[wordIndex],
-         bookId[wordIndex],   borrowCount[wordIndex],
-           bookPrice[wordIndex],0.00);
+                bookData[wordIndex] = new BookData(  bookName[wordIndex].trim(),  writerName[wordIndex].trim(),
+         bookId[wordIndex].trim(),   borrowCount[wordIndex].trim(),
+           bookPrice[wordIndex].trim(),0.00);
 
 
                 wordIndex++;
