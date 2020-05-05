@@ -110,12 +110,12 @@ int iterator;
                 labelName="Top Books of "+year1.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.contains("0618")||
-                            priorityData[iterator].bookData.bookId.contains("1208")||
-                            priorityData[iterator].bookData.bookId.contains("1009")||
-                            priorityData[iterator].bookData.bookId.contains("0410")||
-                            priorityData[iterator].bookData.bookId.contains("0810")||
-                            priorityData[iterator].bookData.bookId.contains("1210")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("0618")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1208")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1009")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0410")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0810")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1210")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId));
@@ -137,10 +137,10 @@ int iterator;
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.contains("0311")||
-                            priorityData[iterator].bookData.bookId.contains("1211")||
-                            priorityData[iterator].bookData.bookId.contains("0212")||
-                            priorityData[iterator].bookData.bookId.contains("0812")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("0311")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1211")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0212")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0812")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId));
@@ -160,8 +160,8 @@ int iterator;
                 labelName="Top Books of "+year3.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.contains("13")||
-                            priorityData[iterator].bookData.bookId.contains("14")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("13")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("14")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId));
@@ -179,8 +179,8 @@ int iterator;
                 labelName="Top Books of "+year4.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.contains("15")||
-                            priorityData[iterator].bookData.bookId.contains("16")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("15")||
+                            priorityData[iterator].bookData.bookId.substring(3,7).contains("16")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId));
@@ -200,7 +200,7 @@ int iterator;
                 labelName="Top Books of "+year5.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.contains("17")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("17")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -267,6 +267,8 @@ int iterator;
 
 
         back.setOnAction(actionEvent -> {
+            list.clear();
+
             try {
                 this.start(secondaryStage);
             } catch (Exception exception) {

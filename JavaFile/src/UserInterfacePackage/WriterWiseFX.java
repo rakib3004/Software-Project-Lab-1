@@ -131,7 +131,7 @@ int as=0;
                 labelName="Top Books of "+humayonAhmed.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("umayon")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Humayon Ahmed")) {
 
                         as++;
                         System.out.println("Yes"+as);
@@ -158,7 +158,7 @@ int as=0;
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("afar")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Muhammad Jafar Iqbal")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -179,7 +179,7 @@ int as=0;
                 labelName="Top Books of "+rokibHasan.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("okib")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Rokib Hasan")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -200,7 +200,7 @@ int as=0;
                 labelName="Top Books of "+emdadulHaqueMilon.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("ilon")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Emdadul Haque Milon")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -222,7 +222,7 @@ int as=0;
                 labelName="Top Books of "+kaziNazrulIslam.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("Nazrul")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Kazi Nazrul Islam")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -242,7 +242,7 @@ int as=0;
                 labelName="Top Books of "+kaziAnwarHossain.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("nwar")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Kazi Anwar Hossain")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -263,7 +263,8 @@ int as=0;
                 labelName="Top Books of "+sharatChandraChattropadhay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("handra")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Sharat Chandra Chattropadhay")||
+                            priorityData[iterator].bookData.writerName.contains("Sharatchandra Chottopaddhday")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -286,7 +287,7 @@ int as=0;
                 labelName="Top Books of "+rabindranathTagore.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("agore")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Rabindranath Tagore")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -307,7 +308,8 @@ int as=0;
                 labelName="Top Books of "+sunilGangoPaddahay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("unil")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Sunil Gango Paddahay")||
+                            priorityData[iterator].bookData.writerName.contains("Sunil gangopadhyay")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -329,7 +331,7 @@ int as=0;
                 labelName="Top Books of "+samareshMajumdar.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("ajumdar")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Samaresh majumdar")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -352,7 +354,7 @@ int as=0;
                 labelName="Top Books of "+emdadiyaPustokaloy.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.writerName.contains("mdadiy")) {
+                    if (priorityData[iterator].bookData.writerName.contains("Emdadiya Pustokaloy")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -443,6 +445,8 @@ int as=0;
 
 
         back.setOnAction(actionEvent -> {
+            list.clear();
+
             try {
                 this.start(secondaryStage);
             } catch (Exception exception) {

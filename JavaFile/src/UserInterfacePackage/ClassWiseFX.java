@@ -427,6 +427,7 @@ bookType.setPrefSize(200, 50);
 
 
         back.setOnAction(actionEvent -> {
+            list.clear();
             try {
                 this.start(secondaryStage);
             } catch (Exception exception) {

@@ -123,17 +123,18 @@ int iterator;
 
                     labelName="Top Books from "+self1.getText();
 
-                
-                for (iterator = 0; iterator < 100; iterator++) {
 
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("0")) {
 
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
-
 
 
            showInfo(primaryStage,labelName,data);
@@ -146,16 +147,18 @@ int iterator;
             @Override public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self2.getText();
-                for (iterator = 100; iterator < 200; iterator++) {
 
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("1")) {
 
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
-
                showInfo(primaryStage,labelName,data);
             }
         });
@@ -166,16 +169,18 @@ int iterator;
             @Override public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self3.getText();
-                for (iterator = 200; iterator < 300; iterator++) {
 
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("2")) {
 
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
-
                showInfo(primaryStage,labelName,data);
             }
         });
@@ -188,16 +193,19 @@ int iterator;
             @Override public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self4.getText();
-                for (iterator = 300; iterator < 400; iterator++) {
 
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("3")) {
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
-
                showInfo(primaryStage,labelName,data);
             } });
 
@@ -208,14 +216,19 @@ int iterator;
             @Override public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self5.getText();
-                for (iterator = 400; iterator < 500; iterator++) {
 
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
 
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("4")) {
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
 
                showInfo(primaryStage,labelName,data);
@@ -228,13 +241,17 @@ int iterator;
             @Override public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self6.getText();
-                for (iterator = 500; iterator < 600; iterator++) {
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("5")) {
+
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
 
                showInfo(primaryStage,labelName,data);
@@ -246,14 +263,17 @@ int iterator;
             @Override public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self7.getText();
-                for (iterator = 600; iterator < 632 ; iterator++) {
 
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId));
-                    data = FXCollections.observableList(list);
+                    if (priorityData[iterator].bookData.bookId.substring(11,12).contains("6")) {
 
+                        list.add(new Book(priorityData[iterator].bookData.bookName,
+                                priorityData[iterator].bookData.writerName,
+                                priorityData[iterator].bookData.bookId));
+                        data = FXCollections.observableList(list);
+
+                    }
                 }
 
                showInfo(primaryStage,labelName,data);
@@ -315,6 +335,8 @@ int iterator;
 
 
         back.setOnAction(actionEvent -> {
+            list.clear();
+
             try {
                 this.start(secondaryStage);
             } catch (Exception exception) {
