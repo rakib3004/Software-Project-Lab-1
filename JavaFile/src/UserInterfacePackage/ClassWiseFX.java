@@ -120,7 +120,9 @@ int iterator;
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
                   data = FXCollections.observableList(list);
 
                     }
@@ -145,7 +147,8 @@ int iterator;
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                          data = FXCollections.observableList(list);
 
                     }
@@ -165,7 +168,8 @@ int iterator;
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("05")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                          data = FXCollections.observableList(list);
 
                     }
@@ -185,7 +189,8 @@ int iterator;
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -208,7 +213,8 @@ int iterator;
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -229,7 +235,8 @@ int iterator;
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -248,10 +255,16 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("11")) {
-                        //   uponnashTypeNO++;
+
+
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
+
+
                         data = FXCollections.observableList(list);
 
                     }
@@ -272,10 +285,12 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("10")) {
-                        //   uponnashTypeNO++;
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
                         data = FXCollections.observableList(list);
 
                     }
@@ -292,10 +307,12 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
-                        //   uponnashTypeNO++;
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
                         data = FXCollections.observableList(list);
 
                     }
@@ -314,10 +331,12 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
-                        //   uponnashTypeNO++;
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
                         data = FXCollections.observableList(list);
 
                     }
@@ -336,10 +355,12 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
-                        //   uponnashTypeNO++;
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
                         data = FXCollections.observableList(list);
 
                     }
@@ -359,9 +380,12 @@ int iterator;
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("22")) {
 
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
+
                         data = FXCollections.observableList(list);
 
                     }

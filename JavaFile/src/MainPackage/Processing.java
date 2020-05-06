@@ -77,103 +77,70 @@ bookName[wordIndex] = bookName[wordIndex].trim();
                      string = string.replaceAll("[\\t\\n\\r]+", "");
                 bookPrice[wordIndex] = string;
 
-int iterator1;
 
                 MenuItem uponnash = new MenuItem("Uponnash");
-        
-              
+                MenuItem kobita = new MenuItem("Kobita");
+                MenuItem rochonaboli = new MenuItem("Rochonaboli");
+                MenuItem religion = new MenuItem("Religion");
+                MenuItem biggan = new MenuItem("Biggan");
+                MenuItem sciFi = new MenuItem("Sci Fi");
+                MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
+                MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
+                MenuItem biography = new MenuItem("Biography");
+                MenuItem gobesona = new MenuItem("Gobesona");
+                MenuItem onubad = new MenuItem("Onubad");
+                MenuItem others = new MenuItem("Others");
+
                             if (bookId[wordIndex].substring(0,2).equals("01"))
                             {
                            typeName[wordIndex]=uponnash.getText();
                                   }
 
 
-                    
-
-
-                MenuItem kobita = new MenuItem("Kobita");
-
-                
-
                          if (bookId[wordIndex].substring(0, 2).equals("02")) {
                              typeName[wordIndex]=kobita.getText();
                         }
-
-
-                MenuItem rochonaboli = new MenuItem("Rochonaboli");
-                
 
                             if (bookId[wordIndex].substring(0, 2).equals("05")) {
                                 typeName[wordIndex]=rochonaboli.getText();
                         }
 
-                    
-                MenuItem religion = new MenuItem("Religion");
-               
-                            if (bookId[wordIndex].substring(0, 2).equals("04")) {
+
+                if (bookId[wordIndex].substring(0, 2).equals("04")) {
                                 typeName[wordIndex]=religion.getText();
 
                             }
-                    
-                MenuItem biggan = new MenuItem("Biggan");
-          
+
 
                             if (bookId[wordIndex].substring(0, 2).equals("13")) {
                                 typeName[wordIndex]=biggan.getText();
                         }
 
-
-                MenuItem sciFi = new MenuItem("Sci Fi");
-              
-                            if (bookId[wordIndex].substring(0, 2).equals("06")) {
+                           if (bookId[wordIndex].substring(0, 2).equals("06")) {
                                 typeName[wordIndex]=sciFi.getText();
                         }
-
-
-                MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
-                
-                            if (bookId[wordIndex].substring(0, 2).equals("11")) {
+                     if (bookId[wordIndex].substring(0, 2).equals("11")) {
 
                                 typeName[wordIndex]=shishuShahitto.getText();
                         }
-
-
-                      
-
-                MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
-         
 
                             if (bookId[wordIndex].substring(0, 2).equals("10")) {
                                 typeName[wordIndex]=kisoreUponnash.getText();
                         }
 
-                MenuItem biography = new MenuItem("Biography");
-              
+
                             if (bookId[wordIndex].substring(0, 2).equals("12")) {
                                 typeName[wordIndex]=biography.getText();
                         }
 
 
-
-                MenuItem gobesona = new MenuItem("Gobesona");
-           
-
-
                             if (bookId[wordIndex].substring(0,2).equals("08")) {
                                 typeName[wordIndex]=gobesona.getText();
-
                             }
-                   
-                MenuItem onubad = new MenuItem("Onubad");
-
-             
-
-                            if (bookId[wordIndex].substring(0, 2).equals("12")) {
+                       if (bookId[wordIndex].substring(0, 2).equals("12")) {
                                 typeName[wordIndex]=onubad.getText();
                         }
 
-
-                MenuItem others = new MenuItem("Others");
                       if (bookId[wordIndex].substring(0, 2).equals("07")||
                                     bookId[wordIndex].substring(0, 2).equals("22")) {
                           typeName[wordIndex]=others.getText();
@@ -181,14 +148,9 @@ int iterator1;
                         }
 
 
-            
-
-
-
-
                 bookData[wordIndex] = new BookData(  bookName[wordIndex],  writerName[wordIndex],
          bookId[wordIndex],borrowCount[wordIndex],
-           bookPrice[wordIndex],"a");
+           bookPrice[wordIndex],typeName[wordIndex]);
 
 
                 wordIndex++;

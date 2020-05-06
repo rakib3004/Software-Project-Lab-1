@@ -5,22 +5,27 @@ import JavFX.FxMainClass;
 public class BookData {
     public  String SerialNo;
 
-    public BookData(String serialNo, String bookName, String writerName, String bookId, String borrowCount, String bookPrice) {
-        SerialNo = serialNo;
-        this.bookName = bookName;
-        this.writerName = writerName;
-        this.bookId = bookId;
-        this.borrowCount = borrowCount;
-        this.bookPrice = bookPrice;
-    }
+
 
     public   String  bookName;
     public  String writerName;
     public  String bookId;
     public String borrowCount;
     public   String bookPrice;
+    public String typeName;
+
+    public BookData(String bookName, String writerName, String bookId, String borrowCount, String bookPrice, String typeName) {
+        this.bookName = bookName;
+        this.writerName = writerName;
+        this.bookId = bookId;
+        this.borrowCount = borrowCount;
+        this.bookPrice = bookPrice;
+        this.typeName = typeName;
+    }
+
     public   double weight;
     public int rank[] = new int[9];
+
 
     public BookData(){
 
@@ -102,5 +107,13 @@ public class BookData {
     public void setRank(int rankValue,int i){
         this.rank[i] = rankValue;
     }
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
 
 }

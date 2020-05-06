@@ -19,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.rmi.Remote;
 
 public class ChooseType extends Application {
     PriorityData[] priorityData;
@@ -61,7 +62,7 @@ public class ChooseType extends Application {
 
         Button writerWise = new Button("Writer Wise");
 
-        writerWise.setTranslateX(550);
+        writerWise.setTranslateX(400);
         writerWise.setTranslateY(200);
         writerWise.setOnAction(actionEvent -> {
 
@@ -82,7 +83,7 @@ public class ChooseType extends Application {
 
 Button classWise = new Button("Class Wise");
 
-        classWise.setTranslateX(550);
+        classWise.setTranslateX(400);
         classWise.setTranslateY(300);
         classWise.setOnAction(actionEvent -> {
 
@@ -102,8 +103,8 @@ Button classWise = new Button("Class Wise");
 
         Button selfWise = new Button("Self Wise");
 
-        selfWise.setTranslateX(550);
-        selfWise.setTranslateY(400);
+        selfWise.setTranslateX(700);
+        selfWise.setTranslateY(200);
         selfWise.setOnAction(actionEvent -> {
 
             try {
@@ -123,8 +124,8 @@ Button classWise = new Button("Class Wise");
 
 Button timeWise = new Button("Time Wise");
 
-        timeWise.setTranslateX(550);
-        timeWise.setTranslateY(500);
+        timeWise.setTranslateX(700);
+        timeWise.setTranslateY(300);
         timeWise.setOnAction(actionEvent -> {
 
             try {
@@ -141,6 +142,29 @@ Button timeWise = new Button("Time Wise");
         });
         timeWise.setPrefSize(230, 80);
         setStyle(timeWise);
+
+
+
+Button removeBook = new Button("Remove Book");
+
+        removeBook.setTranslateX(550);
+        removeBook.setTranslateY(400);
+        removeBook.setOnAction(actionEvent -> {
+
+            try {
+
+
+                RemoveBookFX removeBookFX = new RemoveBookFX();
+                removeBookFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        removeBook.setPrefSize(230, 80);
+        setStyle(removeBook);
 
 
 
@@ -180,7 +204,7 @@ Button timeWise = new Button("Time Wise");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,addBook,exit,back,writerWise,
-                classWise,selfWise,timeWise);
+                classWise,selfWise,timeWise,removeBook);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

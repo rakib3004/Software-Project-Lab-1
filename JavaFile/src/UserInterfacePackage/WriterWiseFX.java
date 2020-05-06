@@ -135,9 +135,11 @@ int as=0;
 
                         as++;
                         System.out.println("Yes"+as);
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -162,7 +164,8 @@ int as=0;
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -183,7 +186,8 @@ int as=0;
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -202,9 +206,11 @@ int as=0;
 
                     if (priorityData[iterator].bookData.writerName.contains("Emdadul Haque Milon")) {
 
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -224,9 +230,11 @@ int as=0;
 
                     if (priorityData[iterator].bookData.writerName.contains("Kazi Nazrul Islam")) {
 
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -244,9 +252,11 @@ int as=0;
 
                     if (priorityData[iterator].bookData.writerName.contains("Kazi Anwar Hossain")) {
 
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -266,9 +276,11 @@ int as=0;
                     if (priorityData[iterator].bookData.writerName.contains("Sharat Chandra Chattropadhay")||
                             priorityData[iterator].bookData.writerName.contains("Sharatchandra Chottopaddhday")) {
 
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -291,7 +303,8 @@ int as=0;
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -313,7 +326,8 @@ int as=0;
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -335,7 +349,8 @@ int as=0;
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -358,7 +373,8 @@ int as=0;
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
@@ -379,9 +395,11 @@ int as=0;
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).contains("07")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).contains("22")) {
 
+
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId));
+                                priorityData[iterator].bookData.bookId,
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
 
                     }
