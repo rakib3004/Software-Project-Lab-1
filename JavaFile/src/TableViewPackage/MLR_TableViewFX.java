@@ -121,7 +121,11 @@ public class MLR_TableViewFX extends Application {
         TableColumn bookWeight = new TableColumn("Book Weight");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
 
-        table.getColumns().setAll(bookName,writerName,bookId,borrowCount,price, bookWeight);
+
+        TableColumn typeName = new TableColumn("Type Name");
+        typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
+
+        table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
         table.setPrefWidth(1440);
         table.setPrefHeight(620);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -220,10 +224,11 @@ public class MLR_TableViewFX extends Application {
 int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
-        list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
-                priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
-                priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                Double.toString(priorityData[genericAlgo[iterator].getIndex()].getMLRweight())));
+            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
+                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getMLRweight())));
         }
         ObservableList data = FXCollections.observableList(list);
 

@@ -39,17 +39,18 @@ public class Book {
     public Book(SimpleStringProperty bookName,
                 SimpleStringProperty writerName,
                 SimpleStringProperty bookId,
+                SimpleStringProperty typeName,
                 SimpleStringProperty borrowCount,
                 SimpleStringProperty price,
-                SimpleStringProperty bookWeight,
-                SimpleStringProperty typeName) {
+                SimpleStringProperty bookWeight) {
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;
+        this.typeName = typeName;
         this.borrowCount = borrowCount;
         this.price = price;
         this.bookWeight = bookWeight;
-        this.typeName = typeName;
+
     }
 
     public Book(SimpleStringProperty bookName, SimpleStringProperty writerName, SimpleStringProperty bookId) {
@@ -129,14 +130,15 @@ public class Book {
         bookName = new SimpleStringProperty(s1);
         writerName = new SimpleStringProperty(s2);
     }
-public Book(String s1, String s2, String s3, String s4, String s5, String s6) {
+public Book(String s1, String s2, String s3, String s4, String s5, String s6, String s7) {
 
         bookName = new SimpleStringProperty(s1);
         writerName = new SimpleStringProperty(s2);
         bookId = new SimpleStringProperty(s3);
-        borrowCount = new SimpleStringProperty(s4);
-        price = new SimpleStringProperty(s5);
-        bookWeight = new SimpleStringProperty(s6);
+        typeName = new SimpleStringProperty(s4);
+        borrowCount = new SimpleStringProperty(s5);
+        price = new SimpleStringProperty(s6);
+        bookWeight = new SimpleStringProperty(s7);
 
     }
 public Book(String s1, String s2, String s3) {
