@@ -1272,13 +1272,13 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
+            if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))<4.0){
                 list.add(priorityData[iterator].getMLRweight());
 
             }
             int sizeB = list.size();
             if(sizeB>7){
-                over4Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+                below4Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
 
         }
@@ -1573,7 +1573,8 @@ public class StackedAreaFX extends Application {
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<500.00){
                 //over400Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1586,7 +1587,8 @@ public class StackedAreaFX extends Application {
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<400.00){
                 //over350Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1601,7 +1603,8 @@ public class StackedAreaFX extends Application {
 
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over300Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1615,7 +1618,8 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over250Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1629,7 +1633,8 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<250.00){
                 //over210Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1643,7 +1648,8 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<210.00){
                 //over180Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1657,7 +1663,8 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<180.00){
                 //over160Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1671,7 +1678,8 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>140.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=140.00&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<160.00){
                 //over140Count++;
                 list.add(priorityData[iterator].getMLRweight());
 
@@ -1685,7 +1693,8 @@ public class StackedAreaFX extends Application {
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
+            if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.0&&
+                    Double.parseDouble(priorityData[iterator].bookData.bookPrice)<140.000){
                 //over100Count++;
             }
             int sizeB = list.size();
@@ -1695,11 +1704,6 @@ public class StackedAreaFX extends Application {
 
         }
         list.clear();
-
-
-
-
-
 
 
 

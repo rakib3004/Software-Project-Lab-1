@@ -12,14 +12,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -134,6 +133,49 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem mlr_table_view = new MenuItem("MLR Table View");
+        MenuItem ahp_table_view = new MenuItem("AHP Table View");
+        MenuItem pra_table_view = new MenuItem("PRA Table View");
+
+        ahp_table_view.setOnAction((event) -> {
+            AHP_TableViewFX ahpTableViewFX = new AHP_TableViewFX();
+            try {
+                ahpTableViewFX.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        pra_table_view.setOnAction((event) -> {
+            PRA_TableViewFX praTableViewFX = new PRA_TableViewFX();
+            try {
+                praTableViewFX.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        mlr_table_view.setOnAction((event) -> {
+            MLR_TableViewFX mlrTableViewFX = new MLR_TableViewFX();
+            try {
+                mlrTableViewFX.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
+
+        table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(table, event.getScreenX(), event.getScreenY());
+            }
+        });
 
         // Hbox
         HBox hBox = new HBox();
