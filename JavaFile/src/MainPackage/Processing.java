@@ -4,6 +4,12 @@ package MainPackage;
 import Methods.PrintInfo;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
+import TableViewPackage.Book;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 
 import java.io.File;
 import java.io.FileReader;
@@ -31,11 +37,9 @@ PriorityData [] priorityData;
         String  bookName[] = new String[1050];
         String writerName[] = new String[1050];
         String bookId[] = new String[1050];
-
-
         String borrowCount[] = new String[1050];
-
         String bookPrice[] = new String[1050];
+        String typeName[] = new String[1050];
 
         int iterator;
         int charIndex=0;
@@ -60,26 +64,131 @@ PriorityData [] priorityData;
                 charIndex = charIndex % 5;
 
 
-                int bookNameSize = bookName[wordIndex].length();
-bookName[wordIndex] = bookName[wordIndex].substring(1,bookNameSize);
 
-                int writerNameSize = writerName[wordIndex].length();
-                writerName[wordIndex] = writerName[wordIndex].substring(1,writerNameSize);
+bookName[wordIndex] = bookName[wordIndex].trim();
 
-                int bookIdSize = bookId[wordIndex].length();
-                bookId[wordIndex] = bookId[wordIndex].substring(1,bookIdSize);
+                writerName[wordIndex] = writerName[wordIndex].trim();
 
-                int bookIdPrice = bookPrice[wordIndex].length();
-                bookPrice[wordIndex] = bookPrice[wordIndex].substring(1,bookIdPrice);
+                bookId[wordIndex] = bookId[wordIndex].trim();
+
+                bookPrice[wordIndex] = bookPrice[wordIndex].trim();
 
              String string = bookPrice[wordIndex];
                      string = string.replaceAll("[\\t\\n\\r]+", "");
                 bookPrice[wordIndex] = string;
 
+int iterator1;
 
-                bookData[wordIndex] = new BookData(  bookName[wordIndex].trim(),  writerName[wordIndex].trim(),
-         bookId[wordIndex].trim(),   borrowCount[wordIndex].trim(),
-           bookPrice[wordIndex].trim(),0.00);
+                MenuItem uponnash = new MenuItem("Uponnash");
+        
+              
+                            if (bookId[wordIndex].substring(0,2).equals("01"))
+                            {
+                           typeName[wordIndex]=uponnash.getText();
+                                  }
+
+
+                    
+
+
+                MenuItem kobita = new MenuItem("Kobita");
+
+                
+
+                         if (bookId[wordIndex].substring(0, 2).equals("02")) {
+                             typeName[wordIndex]=kobita.getText();
+                        }
+
+
+                MenuItem rochonaboli = new MenuItem("Rochonaboli");
+                
+
+                            if (bookId[wordIndex].substring(0, 2).equals("05")) {
+                                typeName[wordIndex]=rochonaboli.getText();
+                        }
+
+                    
+                MenuItem religion = new MenuItem("Religion");
+               
+                            if (bookId[wordIndex].substring(0, 2).equals("04")) {
+                                typeName[wordIndex]=religion.getText();
+
+                            }
+                    
+                MenuItem biggan = new MenuItem("Biggan");
+          
+
+                            if (bookId[wordIndex].substring(0, 2).equals("13")) {
+                                typeName[wordIndex]=biggan.getText();
+                        }
+
+
+                MenuItem sciFi = new MenuItem("Sci Fi");
+              
+                            if (bookId[wordIndex].substring(0, 2).equals("06")) {
+                                typeName[wordIndex]=sciFi.getText();
+                        }
+
+
+                MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
+                
+                            if (bookId[wordIndex].substring(0, 2).equals("11")) {
+
+                                typeName[wordIndex]=shishuShahitto.getText();
+                        }
+
+
+                      
+
+                MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
+         
+
+                            if (bookId[wordIndex].substring(0, 2).equals("10")) {
+                                typeName[wordIndex]=kisoreUponnash.getText();
+                        }
+
+                MenuItem biography = new MenuItem("Biography");
+              
+                            if (bookId[wordIndex].substring(0, 2).equals("12")) {
+                                typeName[wordIndex]=biography.getText();
+                        }
+
+
+
+                MenuItem gobesona = new MenuItem("Gobesona");
+           
+
+
+                            if (bookId[wordIndex].substring(0,2).equals("08")) {
+                                typeName[wordIndex]=gobesona.getText();
+
+                            }
+                   
+                MenuItem onubad = new MenuItem("Onubad");
+
+             
+
+                            if (bookId[wordIndex].substring(0, 2).equals("12")) {
+                                typeName[wordIndex]=onubad.getText();
+                        }
+
+
+                MenuItem others = new MenuItem("Others");
+                      if (bookId[wordIndex].substring(0, 2).equals("07")||
+                                    bookId[wordIndex].substring(0, 2).equals("22")) {
+                          typeName[wordIndex]=others.getText();
+
+                        }
+
+
+            
+
+
+
+
+                bookData[wordIndex] = new BookData(  bookName[wordIndex],  writerName[wordIndex],
+         bookId[wordIndex],borrowCount[wordIndex],
+           bookPrice[wordIndex],"a");
 
 
                 wordIndex++;
