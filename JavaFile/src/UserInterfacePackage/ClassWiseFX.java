@@ -487,8 +487,11 @@ bookType.setPrefSize(200, 50);
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
 
+        TableColumn typeName = new TableColumn("Type Name");
+        typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-        table.getColumns().setAll(bookName,writerName,bookId);
+
+        table.getColumns().setAll(bookName,writerName,typeName,bookId);
         table.setPrefWidth(1240);
         table.setPrefHeight(560);
         table.setTranslateX(60);
