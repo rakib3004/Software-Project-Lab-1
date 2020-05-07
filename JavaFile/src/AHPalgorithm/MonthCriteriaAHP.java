@@ -22,6 +22,21 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
             }
         }
 
+
+        // add new methodology for analytical hierarchy process
+        monthCriterAHPMatrix[0][1]=1.35;
+        monthCriterAHPMatrix[0][2]=2.6;
+        monthCriterAHPMatrix[0][3]=4.7;
+        monthCriterAHPMatrix[0][4]=7.8;
+        monthCriterAHPMatrix[1][2]=1.35;
+        monthCriterAHPMatrix[1][3]=3.4;
+        monthCriterAHPMatrix[1][4]=5.6;
+        monthCriterAHPMatrix[2][3]=2.1;
+        monthCriterAHPMatrix[2][4]=3.9;
+        monthCriterAHPMatrix[3][4]=1.47;
+
+
+
         for (iterator = 0; iterator < 5; iterator++) {
             for (jterator = iterator + 1; jterator < 5; jterator++) {
 

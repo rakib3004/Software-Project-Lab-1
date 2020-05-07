@@ -34,6 +34,15 @@ public class AHPcalculation {
         AHPMatrix[1][3] = countPriceRegression.countPriceRegressionMethods(priorityData,numberOfBooks);
         AHPMatrix[2][3] = monthPriceRegression.monthPriceRegressionMethods(priorityData,numberOfBooks);
 
+        // new methodology for analytical hierarchy process.
+
+        AHPMatrix[0][1] = 2.0;
+        AHPMatrix[0][2] = 3.0;
+        AHPMatrix[0][3] = 5.0;
+        AHPMatrix[1][2] = 2.0;
+        AHPMatrix[1][3] = 4.0;
+        AHPMatrix[2][3] = 1.5;
+
 
         for(i=0;i<4;i++){
             for(j=i+1;j<4;j++){
@@ -53,12 +62,6 @@ public class AHPcalculation {
 
         }
 
-//        for(i=0;i<4;i++){
-//            for(j=0;j<4;j++){
-//
-//                System.out.print(AHPMatrix[i][j]+"  ");
-//            }
-//            System.out.println(); }
 
 
 
@@ -89,10 +92,12 @@ weightMatrix[i] = weightMatrix[i] + AHPMatrix[j][i];
         }
 
 
-        ahPcriteriaWeight1 =    priceCriteriaAHP.priceCriteriaAHPMethods(weightMatrix[3],priorityData,numberOfBooks);
-        ahPcriteriaWeight2=    countCriteriaAHP.countCriteriaAHPMethods(weightMatrix[1],priorityData,numberOfBooks);
-         ahPcriteriaWeight3=   monthCriteriaAHP.monthCriteriaAHPMethods(weightMatrix[2],priorityData,numberOfBooks);
+
+
         ahPcriteriaWeight4 =    typeCriteriaAHP.typeCriteriaAHPMethods(weightMatrix[0],priorityData,numberOfBooks);
+        ahPcriteriaWeight2=    countCriteriaAHP.countCriteriaAHPMethods(weightMatrix[1],priorityData,numberOfBooks);
+        ahPcriteriaWeight3=   monthCriteriaAHP.monthCriteriaAHPMethods(weightMatrix[2],priorityData,numberOfBooks);
+        ahPcriteriaWeight1 =    priceCriteriaAHP.priceCriteriaAHPMethods(weightMatrix[3],priorityData,numberOfBooks);
 
 
 

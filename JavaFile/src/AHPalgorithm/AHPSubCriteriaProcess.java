@@ -42,15 +42,15 @@ return  parsingPriceCounter;
         double [] parsingCountCounter = new double[4];
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].borrowPriority <= 10) {
-                countCounter[0]++;
+                countCounter[3]++;
             } else if (priorityData[iterator].borrowPriority <= 20) {
-                countCounter[1]++;
-
-            } else if (priorityData[iterator].borrowPriority <= 30) {
                 countCounter[2]++;
 
+            } else if (priorityData[iterator].borrowPriority <= 30) {
+                countCounter[1]++;
+
             } else if (priorityData[iterator].borrowPriority <= 40) {
-                countCounter[3]++;
+                countCounter[0]++;
             }
         }
 
@@ -70,19 +70,19 @@ return  parsingPriceCounter;
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].timePriority <= 5.60) {
-                monthCounter[0]++;
+                monthCounter[4]++;
 
             } else if (priorityData[iterator].timePriority <= 7.20) {
-                monthCounter[1]++;
+                monthCounter[3]++;
 
             }  else if (priorityData[iterator].timePriority <= 9.50) {
                 monthCounter[2]++;
 
             }  else if (priorityData[iterator].timePriority <= 12.00) {
-                monthCounter[3]++;
+                monthCounter[1]++;
 
             }  else if (priorityData[iterator].timePriority <= 14.00) {
-                monthCounter[4]++;
+                monthCounter[0]++;
 
             }
         }
@@ -113,7 +113,7 @@ return  parsingPriceCounter;
             }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
 
                 typeCounter[2]++;
-            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
+            }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
                 typeCounter[2]++;
             }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
                 typeCounter[2]++;

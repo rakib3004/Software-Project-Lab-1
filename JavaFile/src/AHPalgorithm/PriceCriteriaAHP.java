@@ -23,6 +23,12 @@ public class PriceCriteriaAHP {
 
             }
         }
+// new methodology for analytic hierarchy process
+
+
+        priceCriteriaAHPMatrix[0][1]=3.0;
+        priceCriteriaAHPMatrix[0][2]=5.0;
+        priceCriteriaAHPMatrix[1][2]=5.0/3.0;
 
 
          for (iterator = 0; iterator < 3; iterator++) {
