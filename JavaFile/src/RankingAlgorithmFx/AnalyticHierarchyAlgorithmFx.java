@@ -6,6 +6,7 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import TableViewPackage.AHP_TableViewFX;
 import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -38,10 +39,10 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         tableView.setTranslateX(550);
         tableView.setTranslateY(300);
         tableView.setOnAction(actionEvent -> {
-            PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
+            AHP_TableViewFX ahpTableViewFX = new AHP_TableViewFX();
             try {
 
-                pra_tableViewFX.start(primaryStage);
+                ahpTableViewFX.start(primaryStage);
             }
 
             catch (Exception exception) {

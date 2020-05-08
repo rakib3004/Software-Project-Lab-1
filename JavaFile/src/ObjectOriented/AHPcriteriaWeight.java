@@ -2,9 +2,10 @@ package ObjectOriented;
 
 public class AHPcriteriaWeight {
 
-    public double highPrice;
+
     public double lowPrice;
     public double mediumPrice;
+    public double highPrice;
 
     public double highlyDemand;
     public double highMediumDemand;
@@ -20,8 +21,8 @@ public class AHPcriteriaWeight {
     public double uponnashType;
     public double kobitaType;
     public double scienceFictionType;
-    public double religionType;
     public double kisorUponnashType;
+    public double religionType;
     public double othersType;
 
 
@@ -29,14 +30,23 @@ public class AHPcriteriaWeight {
 
     }
 
-
-    public AHPcriteriaWeight(double highPrice, double lowPrice, double mediumPrice) {
-        this.highPrice = highPrice;
-        this.lowPrice = lowPrice;
-        this.mediumPrice = mediumPrice;
+    public AHPcriteriaWeight(double uponnashType, double kobitaType,
+                             double scienceFictionType, double kisorUponnashType,
+                             double religionType, double othersType) {
+        this.uponnashType = uponnashType;
+        this.kobitaType = kobitaType;
+        this.scienceFictionType = scienceFictionType;
+        this.kisorUponnashType = kisorUponnashType;
+        this.religionType = religionType;
+        this.othersType = othersType;
     }
 
 
+    public AHPcriteriaWeight(double lowPrice, double mediumPrice, double highPrice) {
+        this.lowPrice = lowPrice;
+        this.mediumPrice = mediumPrice;
+        this.highPrice = highPrice;
+    }
 
     public AHPcriteriaWeight(double latestBook, double newlyBook, double recentlyOldBook, double oldBook, double oldestBook) {
         this.latestBook = latestBook;
@@ -54,15 +64,6 @@ public class AHPcriteriaWeight {
     }
 
 
-    public AHPcriteriaWeight( double uponnashType, double kobitaType, double scienceFictionType,
-                             double religionType, double kisorUponnashType, double othersType) {
-        this.uponnashType = uponnashType;
-        this.kobitaType = kobitaType;
-        this.scienceFictionType = scienceFictionType;
-        this.religionType = religionType;
-        this.kisorUponnashType = kisorUponnashType;
-        this.othersType = othersType;
-    }
 
 
     public AHPcriteriaWeight(double highPrice, double mediumPrice, double lowPrice, double highlyDemand,
