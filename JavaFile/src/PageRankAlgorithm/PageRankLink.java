@@ -6,6 +6,7 @@ public class PageRankLink {
     int iterator1;
     public double  pageRankLinkMethods(int index,PriorityData[] priorityData, int numberOfBooks){
 int borrowLink,typeLink,writerLink,alphabetLink;
+double antiBorrowLink,antiTypeLink,antiWriterLink,antiAlphabetLink;
         double linkValue;
 
 borrowLink = findBorrowLink(index,priorityData,numberOfBooks);
@@ -15,38 +16,40 @@ alphabetLink = findAlphabetLink(index,priorityData,numberOfBooks);
 
 int nullValueCounter=0;
 if(borrowLink==0){
-    borrowLink=1;
-    nullValueCounter++;
+antiBorrowLink =0.0;
+}
+else{
+    antiBorrowLink =  Math.pow(Double.parseDouble(String.valueOf(borrowLink)),-1);
 }
 
 if(typeLink==0){
-    typeLink=1;
-    nullValueCounter++;
+   antiTypeLink=0.0;
+}
+else{
+    antiTypeLink = Math.pow(Double.parseDouble(String.valueOf(typeLink)),-1);
 }
 
 if(writerLink==0){
-    writerLink=1;
-    nullValueCounter++;
+    antiWriterLink=0.0;
+
+}
+else{
+    antiWriterLink=Math.pow(Double.parseDouble(String.valueOf(writerLink)),-1);
+
 }
 
 if(alphabetLink==0){
-    alphabetLink=1;
-    nullValueCounter++;
+    antiAlphabetLink=0.0;
+
+}
+else{
+    antiAlphabetLink=Math.pow(Double.parseDouble(String.valueOf(alphabetLink)),-1);
+
 }
 
+  linkValue  = antiBorrowLink+antiTypeLink+antiWriterLink+antiAlphabetLink;
 
 
-
-
-
-   linkValue  = Math.pow(Double.parseDouble(String.valueOf(borrowLink)),-1)+
-                Math.pow(Double.parseDouble(String.valueOf(typeLink)),-1)+
-                Math.pow(Double.parseDouble(String.valueOf(writerLink)),-1)+
-                Math.pow(Double.parseDouble(String.valueOf(alphabetLink)),-1);
-
-       // System.out.println("1/"+borrowLink+"  "+"1/"+typeLink+"  "+"1/"+writerLink+"  "+"1/"+alphabetLink);
-
-linkValue = linkValue - nullValueCounter;
 
    return linkValue;
 

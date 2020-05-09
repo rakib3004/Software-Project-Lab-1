@@ -24,7 +24,13 @@ public class CheckPageLink {
        compareDataOne = priorityData[index].bookData.borrowCount;
        compareDataTwo = priorityData[jIndex].bookData.borrowCount;
 
-       if(compareDataOne.equals(compareDataTwo)){
+        if(compareDataOne.equals(0.0)){
+            return  false;
+        }
+        else if(compareDataTwo.equals(0.0)){
+            return  false;
+        }
+    else  if(compareDataOne.equals(compareDataTwo)){
            return  true;
        }
         else{

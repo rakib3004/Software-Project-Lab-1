@@ -20,17 +20,17 @@ public class MenuFX extends Application {
     public void start(Stage primaryStage) {
 
 
-        Button bookApplications = new Button("Book Applications");
-        Button bookInfo = new Button("Book Info");
-        Button statistics = new Button("Statistics");
+        Button bookApplications = new Button("Tool Applications");
+        Button bookInformation = new Button("Book Information");
+        Button processImplementation = new Button("Process Implementation");
 
 
         bookApplications.setTranslateX(500);
-        bookApplications.setTranslateY(350);
-        bookInfo.setTranslateX(500);
-        bookInfo.setTranslateY(250);
-        statistics.setTranslateX(500);
-        statistics.setTranslateY(450);
+        bookApplications.setTranslateY(450);
+        bookInformation.setTranslateX(500);
+        bookInformation.setTranslateY(250);
+        processImplementation.setTranslateX(500);
+        processImplementation.setTranslateY(350);
 
 
         bookApplications.setOnAction(actionEvent -> {
@@ -46,7 +46,7 @@ public class MenuFX extends Application {
 
         });
 
-        bookInfo.setOnAction(actionEvent -> {
+        bookInformation.setOnAction(actionEvent -> {
             BookInformationFX bookInformationFX = new BookInformationFX();
             try {
                 bookInformationFX.start(primaryStage);
@@ -55,7 +55,7 @@ public class MenuFX extends Application {
             }
 
         });
-        statistics.setOnAction(actionEvent -> {
+        processImplementation.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
             try {
 
@@ -68,13 +68,13 @@ public class MenuFX extends Application {
 
 
         setStyle(bookApplications);
-        setStyle(bookInfo);
-        setStyle(statistics);
+        setStyle(bookInformation);
+        setStyle(processImplementation);
 
 
-        bookInfo.setPrefSize(300, 80);
-        bookApplications.setPrefSize(300, 80);
-        statistics.setPrefSize(300, 80);
+        bookInformation.setPrefSize(350, 80);
+        bookApplications.setPrefSize(350, 80);
+        processImplementation.setPrefSize(350, 80);
 
 
 
@@ -109,7 +109,7 @@ public class MenuFX extends Application {
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,bookApplications,statistics,bookInfo,exit,back);
+        group.getChildren().addAll(canvas,bookApplications,processImplementation,bookInformation,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

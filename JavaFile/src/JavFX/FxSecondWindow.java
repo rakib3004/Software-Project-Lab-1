@@ -40,6 +40,7 @@ public class FxSecondWindow extends Application {
 
         Button adminSection = new Button("Admin Section");
         Button userSection = new Button("User Section");
+        Button about = new Button("About");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
@@ -48,6 +49,8 @@ public class FxSecondWindow extends Application {
 
         adminSection.setTranslateX(565);
         adminSection.setTranslateY(260);
+        about.setTranslateX(565);
+        about.setTranslateY(460);
         userSection.setTranslateX(565);
         userSection.setTranslateY(360);
         back.setTranslateX(0);
@@ -98,10 +101,11 @@ FxMainClass fxMainClass = new FxMainClass();
         setStyle(userSection);
         setStyle(exit);
         setStyle(back);
-
+        setStyle(about);
 
         adminSection.setPrefSize(280, 80);
         userSection.setPrefSize(280, 80);
+        about.setPrefSize(280,80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -109,7 +113,8 @@ FxMainClass fxMainClass = new FxMainClass();
         Image image = new Image("libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,adminSection,exit,back,userSection);
+        group.getChildren().addAll(canvas,adminSection,exit,
+                back,userSection,about);
 
 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 graphicsContext.drawImage(image,0,0);
