@@ -111,11 +111,14 @@ public class TrainingSet3 extends Application {
 
 
 
+
         ContextMenu contextMenu = new ContextMenu();
         MenuItem trainingSet1 = new MenuItem("Training Set 1");
         MenuItem trainingSet2 = new MenuItem("Training Set 2");
         MenuItem trainingSet3 = new MenuItem("Training Set 3");
         MenuItem trainingSet4 = new MenuItem("Training Set 4");
+        MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
+
 
         trainingSet1.setOnAction((event) -> {
             try {
@@ -153,9 +156,19 @@ public class TrainingSet3 extends Application {
             }
 
         });
+        fullTrainingSet.setOnAction((event) -> {
+            try {
+                TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
+                trainingSetGroup.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
 
 
-        contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4);
+        contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4,fullTrainingSet);
+
 
 
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {

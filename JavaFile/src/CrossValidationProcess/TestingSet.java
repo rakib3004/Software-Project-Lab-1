@@ -38,18 +38,16 @@ public class TestingSet extends Application {
         exit.setTranslateY(650);
 
 
-
         back.setOnAction(actionEvent -> {
-            ChooseType chooseType = new ChooseType();
+            CrossValidationFX crossValidationFX = new CrossValidationFX();
 
             try {
-                chooseType.start(primaryStage);
+                crossValidationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 

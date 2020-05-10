@@ -107,11 +107,14 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,700);
 
+
         ContextMenu contextMenu = new ContextMenu();
         MenuItem trainingSet1 = new MenuItem("Training Set 1");
         MenuItem trainingSet2 = new MenuItem("Training Set 2");
         MenuItem trainingSet3 = new MenuItem("Training Set 3");
         MenuItem trainingSet4 = new MenuItem("Training Set 4");
+        MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
+
 
         trainingSet1.setOnAction((event) -> {
             try {
@@ -140,7 +143,7 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
             }
 
         });
-       trainingSet4.setOnAction((event) -> {
+        trainingSet4.setOnAction((event) -> {
             try {
                 TrainingSet4 trainingSet41 = new TrainingSet4();
                 trainingSet41.start(primaryStage);
@@ -149,9 +152,19 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
             }
 
         });
+        fullTrainingSet.setOnAction((event) -> {
+            try {
+                TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
+                trainingSetGroup.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
 
 
-        contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4);
+        contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4,fullTrainingSet);
+
 
 
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
