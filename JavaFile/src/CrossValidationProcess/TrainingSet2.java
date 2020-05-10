@@ -2,7 +2,6 @@ package CrossValidationProcess;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
-import FilePackage.TrainingSet3;
 import FilePackage.TrainingSet4;
 import MainPackage.BookNumber;
 import MainPackage.Processing;

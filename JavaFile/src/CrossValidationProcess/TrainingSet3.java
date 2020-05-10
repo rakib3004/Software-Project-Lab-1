@@ -27,7 +27,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TrainingSet1 extends Application {
+public class TrainingSet3 extends Application {
+
+
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 
@@ -78,9 +80,9 @@ public class TrainingSet1 extends Application {
         exit.setPrefSize(200, 80);
 
 
-priorityData = processing.fileReaderMethods();
-numberOfBooks = bookNumber.bookNumberFindingMethods();
-priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
@@ -94,8 +96,8 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Training Set 1 ");
         for (iterator=0;iterator<numberOfBooks;iterator++){
-            if (priorityData[iterator].bookData.bookId.substring(13,14).contains("1")||
-                    priorityData[iterator].bookData.bookId.substring(13,14).contains("6")) {
+            if (priorityData[iterator].bookData.bookId.substring(13,14).contains("3")||
+                    priorityData[iterator].bookData.bookId.substring(13,14).contains("8")) {
 
                 series1.getData().add(new XYChart.Data(priorityData[iterator].bookData.bookName,priorityData[iterator].getMLRweight()));
             }
@@ -107,6 +109,8 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,700);
+
+
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem trainingSet1 = new MenuItem("Training Set 1");
@@ -141,7 +145,7 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
             }
 
         });
-       trainingSet4.setOnAction((event) -> {
+        trainingSet4.setOnAction((event) -> {
             try {
                 TrainingSet4 trainingSet41 = new TrainingSet4();
                 trainingSet41.start(primaryStage);
@@ -166,14 +170,13 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
 
 
 
-
         //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,ScatterChart,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-       // graphicsContext.drawImage(image,0,0);
+        // graphicsContext.drawImage(image,0,0);
 
 
         Scene scene1 = new Scene(group,1500,950);
@@ -185,6 +188,7 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
         primaryStage.show();
 
     }
+
 
 
     public Button setStyle(Button button)
