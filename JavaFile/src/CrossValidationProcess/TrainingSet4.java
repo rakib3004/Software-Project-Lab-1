@@ -26,8 +26,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TrainingSet2 extends Application {
-
+public class TrainingSet4 extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 
@@ -92,10 +91,11 @@ public class TrainingSet2 extends Application {
         ScatterChart ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
+
         series1.setName("Training Set 1 ");
         for (iterator=0;iterator<numberOfBooks;iterator++){
-            if (priorityData[iterator].bookData.bookId.substring(13,14).contains("2")||
-                    priorityData[iterator].bookData.bookId.substring(13,14).contains("7")) {
+            if (priorityData[iterator].bookData.bookId.substring(13,14).contains("4")||
+                    priorityData[iterator].bookData.bookId.substring(13,14).contains("9")) {
 
                 series1.getData().add(new XYChart.Data(priorityData[iterator].bookData.bookName,priorityData[iterator].getMLRweight()));
             }
