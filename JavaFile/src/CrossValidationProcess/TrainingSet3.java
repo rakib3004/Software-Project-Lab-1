@@ -7,7 +7,6 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -54,10 +53,10 @@ public class TrainingSet3 extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            ChooseType chooseType = new ChooseType();
+            TrainingMethodology trainingMethodology = new TrainingMethodology();
 
             try {
-                chooseType.start(primaryStage);
+                trainingMethodology.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -158,8 +157,8 @@ public class TrainingSet3 extends Application {
         });
         fullTrainingSet.setOnAction((event) -> {
             try {
-                TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
-                trainingSetGroup.start(primaryStage);
+                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+                combinedTrainingSet.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }

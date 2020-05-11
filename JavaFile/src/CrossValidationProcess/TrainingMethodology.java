@@ -16,7 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class TrainingObserVation extends Application {
+public class TrainingMethodology extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -41,11 +41,11 @@ public class TrainingObserVation extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
+            CrossValidationFX crossValidationFX = new CrossValidationFX();
 
 
             try {
-                menuFX.start(primaryStage);
+                crossValidationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -66,47 +66,90 @@ public class TrainingObserVation extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Button trainingMethodology = new Button("Training Methodology");
-        Button cvVisualization = new Button("CV Visualization");
+        Button trainingSet1 = new Button("Training Set 1");
+        Button trainingSet2 = new Button("Training Set 2");
+
+        Button trainingSet3 = new Button("Training Set 3");
+        Button trainingSet4 = new Button("Training Set 4");
+        Button trainingSetAll = new Button("Training Set All");
 
 
-        trainingMethodology.setTranslateX(500);
-        trainingMethodology.setTranslateY(250);
-        cvVisualization.setTranslateX(500);
-        cvVisualization.setTranslateY(350);
+        trainingSet1.setTranslateX(500);
+        trainingSet1.setTranslateY(200);
+        trainingSet2.setTranslateX(500);
+        trainingSet2.setTranslateY(300);
+
+        trainingSet3.setTranslateX(500);
+        trainingSet3.setTranslateY(400);
+        trainingSet4.setTranslateX(500);
+        trainingSet4.setTranslateY(500);
+        trainingSetAll.setTranslateX(500);
+        trainingSetAll.setTranslateY(600);
 
 
-        trainingMethodology.setOnAction(actionEvent -> {
-            TrainingMethodology trainingSetClassFX = new TrainingMethodology();
+        trainingSet1.setOnAction(actionEvent -> {
+
+TrainingSet1 trainingSet11 = new TrainingSet1();
             try {
-                trainingSetClassFX.start(primaryStage);
+                trainingSet11.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        cvVisualization.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+        trainingSet2.setOnAction(actionEvent -> {
+            TrainingSet2 trainingSet21 = new TrainingSet2();
             try {
-                crossValidationVisualization.start(primaryStage);
+                trainingSet21.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+trainingSet3.setOnAction(actionEvent -> {
+           TrainingSet3 trainingSet31 = new TrainingSet3();
+            try {
+                trainingSet31.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        trainingSet4.setOnAction(actionEvent -> {
+            TrainingSet4 trainingSet41 = new TrainingSet4();
+            try {
+                trainingSet41.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+trainingSetAll.setOnAction(actionEvent -> {
+            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+            try {
+                combinedTrainingSet.startCombined(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
 
-        setStyle(trainingMethodology);
-        setStyle(cvVisualization);
+        setStyle(trainingSet1);
+        setStyle(trainingSet2);
+        setStyle(trainingSet3);
+        setStyle(trainingSet4);
+        setStyle(trainingSetAll);
 
 
-        trainingMethodology.setPrefSize(350,80);
-        cvVisualization.setPrefSize(350,80);
+        trainingSet1.setPrefSize(350,80);
+        trainingSet2.setPrefSize(350,80);
+        trainingSet3.setPrefSize(350,80);
+        trainingSet4.setPrefSize(350,80);
+        trainingSetAll.setPrefSize(350,80);
 
 
         Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingMethodology,cvVisualization);
+        group.getChildren().addAll(canvas,exit,back,trainingSet1,trainingSet2,trainingSet3,trainingSet4,trainingSetAll);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
