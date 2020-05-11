@@ -66,17 +66,64 @@ public class TrainingSetClassFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Button trainingCombined = new Button("Training Set1");
-        Button stackedAreaSet = new Button("STraining Set1");
+        Button trainingSet1 = new Button("Training Set 1");
+        Button trainingSet2 = new Button("Training Set 2");
 
 
-        trainingCombined.setTranslateX(500);
-        trainingCombined.setTranslateY(450);
-        stackedAreaSet.setTranslateX(500);
-        stackedAreaSet.setTranslateY(550);
+        Button trainingSet3 = new Button("Training Set 3");
+        Button trainingSet4 = new Button("Training Set 4");
+        Button trainingSetAll = new Button("Training Set All");
 
 
-        trainingCombined.setOnAction(actionEvent -> {
+        trainingSet1.setTranslateX(500);
+        trainingSet1.setTranslateY(200);
+        trainingSet2.setTranslateX(500);
+        trainingSet2.setTranslateY(300);
+
+        trainingSet3.setTranslateX(500);
+        trainingSet3.setTranslateY(400);
+        trainingSet4.setTranslateX(500);
+        trainingSet4.setTranslateY(500);
+        trainingSetAll.setTranslateX(500);
+        trainingSetAll.setTranslateY(500);
+
+
+        trainingSet1.setOnAction(actionEvent -> {
+
+TrainingSet1 trainingSet11 = new TrainingSet1();
+            try {
+                trainingSet11.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        trainingSet2.setOnAction(actionEvent -> {
+            TrainingSet2 trainingSet21 = new TrainingSet2();
+            try {
+                trainingSet21.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+trainingSet3.setOnAction(actionEvent -> {
+           TrainingSet3 trainingSet31 = new TrainingSet3();
+            try {
+                trainingSet31.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        trainingSet4.setOnAction(actionEvent -> {
+            TrainingSet4 trainingSet41 = new TrainingSet4();
+            try {
+                trainingSet41.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+trainingSetAll.setOnAction(actionEvent -> {
             TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
             try {
                 trainingSetGroup.startCombined(primaryStage);
@@ -85,28 +132,25 @@ public class TrainingSetClassFX extends Application {
             }
         });
 
-        stackedAreaSet.setOnAction(actionEvent -> {
-            TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
-            try {
-                trainingSetGroup.startStackedArea(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+
+        setStyle(trainingSet1);
+        setStyle(trainingSet2);
+        setStyle(trainingSet3);
+        setStyle(trainingSet4);
+        setStyle(trainingSetAll);
 
 
-        setStyle(trainingCombined);
-        setStyle(stackedAreaSet);
-
-
-        trainingCombined.setPrefSize(350,80);
-        stackedAreaSet.setPrefSize(350,80);
+        trainingSet1.setPrefSize(350,80);
+        trainingSet2.setPrefSize(350,80);
+        trainingSet3.setPrefSize(350,80);
+        trainingSet4.setPrefSize(350,80);
+        trainingSetAll.setPrefSize(350,80);
 
 
         Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingCombined,stackedAreaSet);
+        group.getChildren().addAll(canvas,exit,back,trainingSet1,trainingSet2,trainingSet3,trainingSet4,trainingSetAll);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
