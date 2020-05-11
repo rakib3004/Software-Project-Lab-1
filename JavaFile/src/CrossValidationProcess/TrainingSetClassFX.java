@@ -16,7 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class TrainingObserVation extends Application {
+public class TrainingSetClassFX extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -66,8 +66,8 @@ public class TrainingObserVation extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Button trainingCombined = new Button("Training Combined");
-        Button stackedAreaSet = new Button("Stacked Area Set");
+        Button trainingCombined = new Button("Training Set1");
+        Button stackedAreaSet = new Button("STraining Set1");
 
 
         trainingCombined.setTranslateX(500);

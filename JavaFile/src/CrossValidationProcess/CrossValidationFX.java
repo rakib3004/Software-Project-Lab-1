@@ -67,8 +67,6 @@ public class CrossValidationFX extends Application {
         exit.setPrefSize(200, 80);
 
         Button trainingSet = new Button("Training Set");
-        Button trainingCombined = new Button("Training Combined");
-        Button stackedAreaSet = new Button("Stacked Area Set");
         Button testingSet = new Button("Testing Set");
 
 
@@ -77,17 +75,12 @@ public class CrossValidationFX extends Application {
         trainingSet.setTranslateY(250);
         testingSet.setTranslateX(500);
         testingSet.setTranslateY(350);
-        trainingCombined.setTranslateX(500);
-        trainingCombined.setTranslateY(450);
-        stackedAreaSet.setTranslateX(500);
-        stackedAreaSet.setTranslateY(550);
-
 
 
         trainingSet.setOnAction(actionEvent -> {
-        TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
+        TrainingObserVation trainingObserVation = new TrainingObserVation();
             try {
-                trainingSetGroup.start(primaryStage);
+                trainingObserVation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -103,41 +96,20 @@ public class CrossValidationFX extends Application {
                 exception.printStackTrace();
             }
         });
- trainingCombined.setOnAction(actionEvent -> {
-     TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
-     try {
-         trainingSetGroup.startCombined(primaryStage);
-     } catch (Exception exception) {
-         exception.printStackTrace();
-     }
-        });
-
- stackedAreaSet.setOnAction(actionEvent -> {
-     TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
-     try {
-         trainingSetGroup.startStackedArea(primaryStage);
-     } catch (Exception exception) {
-         exception.printStackTrace();
-     }
-        });
-
 
 
         setStyle(trainingSet);
         setStyle(testingSet);
-        setStyle(trainingCombined);
-        setStyle(stackedAreaSet);
 
         trainingSet.setPrefSize(350, 80);
         testingSet.setPrefSize(350, 80);
-        trainingCombined.setPrefSize(350,80);
-        stackedAreaSet.setPrefSize(350,80);
+
 
 
         Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingSet,testingSet,trainingCombined,stackedAreaSet);
+        group.getChildren().addAll(canvas,exit,back,trainingSet,testingSet);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
