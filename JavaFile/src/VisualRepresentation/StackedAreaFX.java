@@ -33,8 +33,17 @@ public class StackedAreaFX extends Application {
     BookNumber bookNumber = new BookNumber();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-  /*  LineChartFX lineChartFX = new LineChartFX();
-    ScatterChartFX scatterChartFX = new ScatterChartFX();*/
+
+
+
+    String sevenValueArray0 =  "findMinimumValue";
+    String sevenValueArray6 ="findMaximumValue";
+    String sevenValueArray3= "findMedianValue";
+    String sevenValueArray2= "findFirstQuartileValue";
+    String sevenValueArray4=  "findThirdQuartileValue";
+    String sevenValueArray1=  "findLowerAdjacentValue";
+    String sevenValueArray5=  "findUpperAdjacentValue";
+
 
     @Override
     public void start(Stage primaryStage) {
@@ -279,123 +288,6 @@ public class StackedAreaFX extends Application {
 
         StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
 
-
-    /*    XYChart.Series series = new XYChart.Series();
-        series.setName(uponnashType);
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName(kobitaType);
-        XYChart.Series series2 = new XYChart.Series();
-        series2.setName(rochonaBoliType);
-        XYChart.Series series3 = new XYChart.Series();
-        series3.setName(religionType);
-        XYChart.Series series4 = new XYChart.Series();
-        series4.setName(bigganType);
-        XYChart.Series series5 = new XYChart.Series();
-        series5.setName(sciFicType);
-        XYChart.Series series6 = new XYChart.Series();
-        series6.setName(shisuSahittoType);
-
-
-        series.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,kobitaTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,rochonaBoliTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,religionTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,bigganTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,sciFicTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,shisuSahittoTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,kisoreUponnashTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,onubadTypeNO[0]));
-        series.getData().add(new XYChart.Data(uponnashType,othersTypeNO[0]));
-
-
-
-        series1.getData().add(new XYChart.Data(kobitaType,uponnashTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,rochonaBoliTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,religionTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,bigganTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,sciFicTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,shisuSahittoTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,kisoreUponnashTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,onubadTypeNO[1]));
-        series1.getData().add(new XYChart.Data(kobitaType,othersTypeNO[1]));
-
-
-
-        series1.getData().add(new XYChart.Data(rochonaBoliType,uponnashTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,kobitaTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,religionTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,bigganTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,sciFicTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,shisuSahittoTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,kisoreUponnashTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,onubadTypeNO[2]));
-        series1.getData().add(new XYChart.Data(rochonaBoliType,othersTypeNO[2]));
-
-
-
-
-
-        series1.getData().add(new XYChart.Data(religionType,uponnashTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,kobitaTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,rochonaBoliTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,religionTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,bigganTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,sciFicTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,shisuSahittoTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,kisoreUponnashTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,onubadTypeNO[3]));
-        series1.getData().add(new XYChart.Data(religionType,othersTypeNO[3]));
-
-
-
-        series1.getData().add(new XYChart.Data(bigganType,uponnashTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,kobitaTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,rochonaBoliTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,religionTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,bigganTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,sciFicTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,shisuSahittoTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,kisoreUponnashTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,onubadTypeNO[4]));
-        series1.getData().add(new XYChart.Data(bigganType,othersTypeNO[4]));
-
-
-
-        series1.getData().add(new XYChart.Data(sciFicType,uponnashTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,kobitaTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,rochonaBoliTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,religionTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,bigganTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,shisuSahittoTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,kisoreUponnashTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,onubadTypeNO[5]));
-        series1.getData().add(new XYChart.Data(sciFicType,othersTypeNO[5]));
-
-
-
-        series1.getData().add(new XYChart.Data(shisuSahittoType,uponnashTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,kobitaTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,rochonaBoliTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,religionTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,bigganTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,sciFicTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,kisoreUponnashTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,onubadTypeNO[6]));
-        series1.getData().add(new XYChart.Data(shisuSahittoType,othersTypeNO[6]));
-
-
-
-        StackedAreaChart.getData().add(series);
-        StackedAreaChart.getData().add(series1);
-        StackedAreaChart.getData().add(series2);
-        StackedAreaChart.getData().add(series3);
-        StackedAreaChart.getData().add(series4);
-        StackedAreaChart.getData().add(series5);
-        StackedAreaChart.getData().add(series6);*/
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(uponnashType);
         XYChart.Series series2 = new XYChart.Series();
@@ -419,94 +311,94 @@ public class StackedAreaFX extends Application {
 
 
 
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[0]));
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[1]));
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[2]));
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[3]));
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[4]));
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[5]));
-        series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[6]));
+        series1.getData().add(new XYChart.Data(sevenValueArray0,uponnashTypeNO[0]));
+        series1.getData().add(new XYChart.Data(sevenValueArray1,uponnashTypeNO[1]));
+        series1.getData().add(new XYChart.Data(sevenValueArray2,uponnashTypeNO[2]));
+        series1.getData().add(new XYChart.Data(sevenValueArray3,uponnashTypeNO[3]));
+        series1.getData().add(new XYChart.Data(sevenValueArray4,uponnashTypeNO[4]));
+        series1.getData().add(new XYChart.Data(sevenValueArray5,uponnashTypeNO[5]));
+        series1.getData().add(new XYChart.Data(sevenValueArray6,uponnashTypeNO[6]));
 
 
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[0]));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[1]));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[2]));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[3]));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[4]));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[5]));
-        series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[6]));
+        series2.getData().add(new XYChart.Data(sevenValueArray0,kobitaTypeNO[0]));
+        series2.getData().add(new XYChart.Data(sevenValueArray1,kobitaTypeNO[1]));
+        series2.getData().add(new XYChart.Data(sevenValueArray2,kobitaTypeNO[2]));
+        series2.getData().add(new XYChart.Data(sevenValueArray3,kobitaTypeNO[3]));
+        series2.getData().add(new XYChart.Data(sevenValueArray4,kobitaTypeNO[4]));
+        series2.getData().add(new XYChart.Data(sevenValueArray5,kobitaTypeNO[5]));
+        series2.getData().add(new XYChart.Data(sevenValueArray6,kobitaTypeNO[6]));
 
 
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[0]));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[1]));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[2]));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[3]));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[4]));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[5]));
-        series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[6]));
+        series3.getData().add(new XYChart.Data(sevenValueArray0,rochonaBoliTypeNO[0]));
+        series3.getData().add(new XYChart.Data(sevenValueArray1,rochonaBoliTypeNO[1]));
+        series3.getData().add(new XYChart.Data(sevenValueArray2,rochonaBoliTypeNO[2]));
+        series3.getData().add(new XYChart.Data(sevenValueArray3,rochonaBoliTypeNO[3]));
+        series3.getData().add(new XYChart.Data(sevenValueArray4,rochonaBoliTypeNO[4]));
+        series3.getData().add(new XYChart.Data(sevenValueArray5,rochonaBoliTypeNO[5]));
+        series3.getData().add(new XYChart.Data(sevenValueArray6,rochonaBoliTypeNO[6]));
 
 
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[0]));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[1]));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[2]));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[3]));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[4]));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[5]));
-        series4.getData().add(new XYChart.Data(religionType,religionTypeNO[6]));
+        series4.getData().add(new XYChart.Data(sevenValueArray0,religionTypeNO[0]));
+        series4.getData().add(new XYChart.Data(sevenValueArray1,religionTypeNO[1]));
+        series4.getData().add(new XYChart.Data(sevenValueArray2,religionTypeNO[2]));
+        series4.getData().add(new XYChart.Data(sevenValueArray3,religionTypeNO[3]));
+        series4.getData().add(new XYChart.Data(sevenValueArray4,religionTypeNO[4]));
+        series4.getData().add(new XYChart.Data(sevenValueArray5,religionTypeNO[5]));
+        series4.getData().add(new XYChart.Data(sevenValueArray6,religionTypeNO[6]));
 
 
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[0]));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[1]));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[2]));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[3]));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[4]));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[5]));
-        series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[6]));
+        series5.getData().add(new XYChart.Data(sevenValueArray0,bigganTypeNO[0]));
+        series5.getData().add(new XYChart.Data(sevenValueArray1,bigganTypeNO[1]));
+        series5.getData().add(new XYChart.Data(sevenValueArray2,bigganTypeNO[2]));
+        series5.getData().add(new XYChart.Data(sevenValueArray3,bigganTypeNO[3]));
+        series5.getData().add(new XYChart.Data(sevenValueArray4,bigganTypeNO[4]));
+        series5.getData().add(new XYChart.Data(sevenValueArray5,bigganTypeNO[5]));
+        series5.getData().add(new XYChart.Data(sevenValueArray6,bigganTypeNO[6]));
 
 
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[0]));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[1]));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[2]));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[3]));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[4]));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[5]));
-        series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[6]));
+        series6.getData().add(new XYChart.Data(sevenValueArray0,sciFicTypeNO[0]));
+        series6.getData().add(new XYChart.Data(sevenValueArray1,sciFicTypeNO[1]));
+        series6.getData().add(new XYChart.Data(sevenValueArray2,sciFicTypeNO[2]));
+        series6.getData().add(new XYChart.Data(sevenValueArray3,sciFicTypeNO[3]));
+        series6.getData().add(new XYChart.Data(sevenValueArray4,sciFicTypeNO[4]));
+        series6.getData().add(new XYChart.Data(sevenValueArray5,sciFicTypeNO[5]));
+        series6.getData().add(new XYChart.Data(sevenValueArray6,sciFicTypeNO[6]));
 
 
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[0]));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[1]));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[2]));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[3]));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[4]));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[5]));
-        series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[6]));
+        series7.getData().add(new XYChart.Data(sevenValueArray0,shisuSahittoTypeNO[0]));
+        series7.getData().add(new XYChart.Data(sevenValueArray1,shisuSahittoTypeNO[1]));
+        series7.getData().add(new XYChart.Data(sevenValueArray2,shisuSahittoTypeNO[2]));
+        series7.getData().add(new XYChart.Data(sevenValueArray3,shisuSahittoTypeNO[3]));
+        series7.getData().add(new XYChart.Data(sevenValueArray4,shisuSahittoTypeNO[4]));
+        series7.getData().add(new XYChart.Data(sevenValueArray5,shisuSahittoTypeNO[5]));
+        series7.getData().add(new XYChart.Data(sevenValueArray6,shisuSahittoTypeNO[6]));
 
 
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[0]));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[1]));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[2]));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[3]));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[4]));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[5]));
-        series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[6]));
+        series8.getData().add(new XYChart.Data(sevenValueArray0,kisoreUponnashTypeNO[0]));
+        series8.getData().add(new XYChart.Data(sevenValueArray1,kisoreUponnashTypeNO[1]));
+        series8.getData().add(new XYChart.Data(sevenValueArray2,kisoreUponnashTypeNO[2]));
+        series8.getData().add(new XYChart.Data(sevenValueArray3,kisoreUponnashTypeNO[3]));
+        series8.getData().add(new XYChart.Data(sevenValueArray4,kisoreUponnashTypeNO[4]));
+        series8.getData().add(new XYChart.Data(sevenValueArray5,kisoreUponnashTypeNO[5]));
+        series8.getData().add(new XYChart.Data(sevenValueArray6,kisoreUponnashTypeNO[6]));
 
 
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[0]));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[1]));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[2]));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[3]));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[4]));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[5]));
-        series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[6]));
+        series9.getData().add(new XYChart.Data(sevenValueArray0,onubadTypeNO[0]));
+        series9.getData().add(new XYChart.Data(sevenValueArray1,onubadTypeNO[1]));
+        series9.getData().add(new XYChart.Data(sevenValueArray2,onubadTypeNO[2]));
+        series9.getData().add(new XYChart.Data(sevenValueArray3,onubadTypeNO[3]));
+        series9.getData().add(new XYChart.Data(sevenValueArray4,onubadTypeNO[4]));
+        series9.getData().add(new XYChart.Data(sevenValueArray5,onubadTypeNO[5]));
+        series9.getData().add(new XYChart.Data(sevenValueArray6,onubadTypeNO[6]));
 
 
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[0]));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[1]));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[2]));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[3]));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[4]));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[5]));
-        series10.getData().add(new XYChart.Data(othersType,othersTypeNO[6]));
+        series10.getData().add(new XYChart.Data(sevenValueArray0,othersTypeNO[0]));
+        series10.getData().add(new XYChart.Data(sevenValueArray1,othersTypeNO[1]));
+        series10.getData().add(new XYChart.Data(sevenValueArray2,othersTypeNO[2]));
+        series10.getData().add(new XYChart.Data(sevenValueArray3,othersTypeNO[3]));
+        series10.getData().add(new XYChart.Data(sevenValueArray4,othersTypeNO[4]));
+        series10.getData().add(new XYChart.Data(sevenValueArray5,othersTypeNO[5]));
+        series10.getData().add(new XYChart.Data(sevenValueArray6,othersTypeNO[6]));
 
 
 
@@ -588,18 +480,7 @@ public class StackedAreaFX extends Application {
         vbox.getChildren().addAll(hBox1);
 
        vbox.setMaxSize(1400,750);
-        // vBox3.setSpacing(5);
-
-
-      /*  Image background = new Image("libraryBackground4.jpg");
-
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-        vbox.setBackground(bg);*/
+     
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
@@ -1533,6 +1414,7 @@ public class StackedAreaFX extends Application {
         over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
         over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
         over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
+
 
 
 
