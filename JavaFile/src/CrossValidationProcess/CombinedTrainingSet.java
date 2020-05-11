@@ -37,6 +37,8 @@ public class CombinedTrainingSet extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 
+
+
     public void start(Stage primaryStage) throws IOException {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -48,10 +50,10 @@ public class CombinedTrainingSet extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
 
             try {
-                crossValidationFX.start(primaryStage);
+                crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -143,59 +145,40 @@ public class CombinedTrainingSet extends Application {
         ScatterChart.getData().add(series3);
         ScatterChart.getData().add(series4);
 
-        ScatterChart.setTranslateX(65);
-        ScatterChart.setTranslateY(55);
-        ScatterChart.setPrefSize(1000, 700);
+        ScatterChart.setTranslateX(10);
+        ScatterChart.setTranslateY(25);
+        ScatterChart.setPrefSize(1350, 700);
 
 
         ContextMenu contextMenu = new ContextMenu();
-        MenuItem trainingSet1 = new MenuItem("Training Set 1");
-        MenuItem trainingSet2 = new MenuItem("Training Set 2");
-        MenuItem trainingSet3 = new MenuItem("Training Set 3");
-        MenuItem trainingSet4 = new MenuItem("Training Set 4");
-        MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
+        MenuItem scatterView = new MenuItem("Scatter View");
+        MenuItem lineChartView = new MenuItem("LineChart View");
+        MenuItem stackedAreaView = new MenuItem("StackedArea View");
 
 
-        trainingSet1.setOnAction((event) -> {
+
+        scatterView.setOnAction((event) -> {
             try {
-                TrainingSet1 trainingSet11 = new TrainingSet1();
-                trainingSet11.start(primaryStage);
+               CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+               combinedTrainingSet.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         });
 
-        trainingSet2.setOnAction((event) -> {
-            TrainingSet2 trainingSet21 = new TrainingSet2();
+        lineChartView.setOnAction((event) -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
-                trainingSet21.start(primaryStage);
+                crossValidationVisualization.startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        trainingSet3.setOnAction((event) -> {
+        stackedAreaView.setOnAction((event) -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
-                TrainingSet3 trainingSet31 = new TrainingSet3();
-                trainingSet31.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
-        trainingSet4.setOnAction((event) -> {
-            try {
-                TrainingSet4 trainingSet41 = new TrainingSet4();
-                trainingSet41.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
-        fullTrainingSet.setOnAction((event) -> {
-            try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+                crossValidationVisualization.startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -203,7 +186,7 @@ public class CombinedTrainingSet extends Application {
         });
 
 
-        contextMenu.getItems().addAll(trainingSet1, trainingSet2, trainingSet3, trainingSet4, fullTrainingSet);
+        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
 
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 

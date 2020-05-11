@@ -41,14 +41,13 @@ public class TrainingMethodology extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
-
-
+            TrainingObserVation trainingObserVation = new TrainingObserVation();
             try {
-                crossValidationFX.start(primaryStage);
+                trainingObserVation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
 
         });
 

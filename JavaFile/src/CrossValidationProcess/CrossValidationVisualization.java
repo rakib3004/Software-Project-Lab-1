@@ -259,50 +259,13 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
 
         ContextMenu contextMenu = new ContextMenu();
-        MenuItem trainingSet1 = new MenuItem("Training Set 1");
-        MenuItem trainingSet2 = new MenuItem("Training Set 2");
-        MenuItem trainingSet3 = new MenuItem("Training Set 3");
-        MenuItem trainingSet4 = new MenuItem("Training Set 4");
-        MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
+        MenuItem scatterView = new MenuItem("Scatter View");
+        MenuItem lineChartView = new MenuItem("LineChart View");
+        MenuItem stackedAreaView = new MenuItem("StackedArea View");
 
 
-        trainingSet1.setOnAction((event) -> {
-            try {
-                TrainingSet1 trainingSet11 = new TrainingSet1();
-                trainingSet11.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
-        });
-
-        trainingSet2.setOnAction((event) -> {
-            TrainingSet2 trainingSet21 = new TrainingSet2();
-            try {
-                trainingSet21.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        trainingSet3.setOnAction((event) -> {
-            try {
-                TrainingSet3 trainingSet31 = new TrainingSet3();
-                trainingSet31.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
-        trainingSet4.setOnAction((event) -> {
-            try {
-                TrainingSet4 trainingSet41 = new TrainingSet4();
-                trainingSet41.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
-        fullTrainingSet.setOnAction((event) -> {
+        scatterView.setOnAction((event) -> {
             try {
                 CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
                 combinedTrainingSet.start(primaryStage);
@@ -312,8 +275,26 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         });
 
+        lineChartView.setOnAction((event) -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            try {
+                crossValidationVisualization.startLineChart(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaView.setOnAction((event) -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            try {
+                crossValidationVisualization.startStackedArea(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        contextMenu.getItems().addAll(trainingSet1, trainingSet2, trainingSet3, trainingSet4, fullTrainingSet);
+        });
+
+
+        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
 
         stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
@@ -455,50 +436,13 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
 
         ContextMenu contextMenu = new ContextMenu();
-        MenuItem trainingSet1 = new MenuItem("Training Set 1");
-        MenuItem trainingSet2 = new MenuItem("Training Set 2");
-        MenuItem trainingSet3 = new MenuItem("Training Set 3");
-        MenuItem trainingSet4 = new MenuItem("Training Set 4");
-        MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
+        MenuItem scatterView = new MenuItem("Scatter View");
+        MenuItem lineChartView = new MenuItem("LineChart View");
+        MenuItem stackedAreaView = new MenuItem("StackedArea View");
 
 
-        trainingSet1.setOnAction((event) -> {
-            try {
-                TrainingSet1 trainingSet11 = new TrainingSet1();
-                trainingSet11.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
-        });
-
-        trainingSet2.setOnAction((event) -> {
-            TrainingSet2 trainingSet21 = new TrainingSet2();
-            try {
-                trainingSet21.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        trainingSet3.setOnAction((event) -> {
-            try {
-                TrainingSet3 trainingSet31 = new TrainingSet3();
-                trainingSet31.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
-        trainingSet4.setOnAction((event) -> {
-            try {
-                TrainingSet4 trainingSet41 = new TrainingSet4();
-                trainingSet41.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
-        fullTrainingSet.setOnAction((event) -> {
+        scatterView.setOnAction((event) -> {
             try {
                 CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
                 combinedTrainingSet.start(primaryStage);
@@ -508,8 +452,26 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         });
 
+        lineChartView.setOnAction((event) -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            try {
+                crossValidationVisualization.startLineChart(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        stackedAreaView.setOnAction((event) -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            try {
+                crossValidationVisualization.startStackedArea(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        contextMenu.getItems().addAll(trainingSet1, trainingSet2, trainingSet3, trainingSet4, fullTrainingSet);
+        });
+
+
+        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
 
         lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
