@@ -66,47 +66,47 @@ public class TrainingObserVation extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Button trainingCombined = new Button("Training Combined");
-        Button stackedAreaSet = new Button("Stacked Area Set");
+        Button trainingMethodology = new Button("Training Methodology");
+        Button cvVisualization = new Button("CV Visualization");
 
 
-        trainingCombined.setTranslateX(500);
-        trainingCombined.setTranslateY(450);
-        stackedAreaSet.setTranslateX(500);
-        stackedAreaSet.setTranslateY(550);
+        trainingMethodology.setTranslateX(500);
+        trainingMethodology.setTranslateY(450);
+        cvVisualization.setTranslateX(500);
+        cvVisualization.setTranslateY(550);
 
 
-        trainingCombined.setOnAction(actionEvent -> {
-            TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
+        trainingMethodology.setOnAction(actionEvent -> {
+            TrainingSetClassFX trainingSetClassFX = new TrainingSetClassFX();
             try {
-                trainingSetGroup.startCombined(primaryStage);
+                trainingSetClassFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        stackedAreaSet.setOnAction(actionEvent -> {
-            TrainingSetGroup trainingSetGroup = new TrainingSetGroup();
+        cvVisualization.setOnAction(actionEvent -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
-                trainingSetGroup.startStackedArea(primaryStage);
+                crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
 
-        setStyle(trainingCombined);
-        setStyle(stackedAreaSet);
+        setStyle(trainingMethodology);
+        setStyle(cvVisualization);
 
 
-        trainingCombined.setPrefSize(350,80);
-        stackedAreaSet.setPrefSize(350,80);
+        trainingMethodology.setPrefSize(350,80);
+        cvVisualization.setPrefSize(350,80);
 
 
         Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingCombined,stackedAreaSet);
+        group.getChildren().addAll(canvas,exit,back,trainingMethodology,cvVisualization);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
