@@ -41,11 +41,10 @@ public class TrainingObserVation extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
-
+            CrossValidationFX crossValidationFX = new CrossValidationFX();
 
             try {
-                menuFX.start(primaryStage);
+                crossValidationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

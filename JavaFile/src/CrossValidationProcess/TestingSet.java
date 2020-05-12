@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import UserInterfacePackage.ChooseType;
@@ -17,15 +18,20 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class TestingSet extends Application {
+
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 
     int numberOfBooks;
+    int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+
+
     @Override
     public void start(Stage primaryStage){
         Button back = new Button("Back");
@@ -62,10 +68,71 @@ public class TestingSet extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
+
+
+
+
+
+
+
+        Button testingSetResults = new Button("TestingSet Results");
+        Button trainingTestingCompersion = new Button("TrainingTesting Compersion");
+        Button codeValidationSet = new Button("CodeValidation Set");
+
+
+        testingSetResults.setTranslateX(500);
+        testingSetResults.setTranslateY(250);
+        trainingTestingCompersion.setTranslateX(500);
+        codeValidationSet.setTranslateX(500);
+        codeValidationSet.setTranslateY(350);
+        trainingTestingCompersion.setTranslateY(450);
+
+
+
+        testingSetResults.setOnAction(actionEvent -> {
+            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+            try {
+                combinedTrainingSet.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        trainingTestingCompersion.setOnAction(actionEvent -> {
+
+            TrainingTestingComperison trainingTestingComperison = new TrainingTestingComperison();
+             try {
+                trainingTestingComperison.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        codeValidationSet.setOnAction(actionEvent -> {
+            CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
+            try {
+                crossValidationVisualization.startLineChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+
+        setStyle(testingSetResults);
+        setStyle(trainingTestingCompersion);
+        setStyle(codeValidationSet);
+
+
+        testingSetResults.setPrefSize(350, 80);
+        trainingTestingCompersion.setPrefSize(380, 80);
+        codeValidationSet.setPrefSize(350, 80);
+
+
         Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(canvas,exit,back,testingSetResults,
+                trainingTestingCompersion,codeValidationSet);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

@@ -52,11 +52,11 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
 
         back.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
+            TrainingObserVation trainingObserVation = new TrainingObserVation();
 
 
             try {
-                crossValidationFX.start(primaryStage);
+                trainingObserVation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -84,9 +84,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         codeValidationScatter.setTranslateX(500);
         codeValidationScatter.setTranslateY(250);
         codeValidationStackedArea.setTranslateX(500);
-        codeValidationStackedArea.setTranslateY(350);
         codeValidationLineChart.setTranslateX(500);
-        codeValidationLineChart.setTranslateY(450);
+        codeValidationLineChart.setTranslateY(350);
+        codeValidationStackedArea.setTranslateY(450);
+
 
 
         codeValidationScatter.setOnAction(actionEvent -> {
