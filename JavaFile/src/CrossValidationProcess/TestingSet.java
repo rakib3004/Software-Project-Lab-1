@@ -7,7 +7,6 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -100,9 +99,9 @@ public class TestingSet extends Application {
 
         trainingTestingCompersion.setOnAction(actionEvent -> {
 
-            TrainingTestingComperison trainingTestingComperison = new TrainingTestingComperison();
+            TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
              try {
-                trainingTestingComperison.start(primaryStage);
+                trainingTestingComparison.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
