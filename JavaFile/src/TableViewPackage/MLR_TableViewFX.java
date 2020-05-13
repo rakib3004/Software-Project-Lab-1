@@ -1,7 +1,7 @@
 package TableViewPackage;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import Methods.Sorting;
+import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
@@ -42,19 +42,12 @@ public class MLR_TableViewFX extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-    Sorting soring = new Sorting();
+    ReverseSorting soring = new ReverseSorting();
 
-    public static void main(String [] args) {
-
-        Application.launch(args);
-    }
-
-    @Override
+     @Override
     public void start(Stage primaryStage) throws IOException {
 
         primaryStage.setTitle("Table View Example 1");
-
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");

@@ -4,14 +4,11 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import Methods.Sorting;
+import Methods.ReverseSorting;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
-import VisualRepresentation.LineChartFX;
-import VisualRepresentation.ScatterChartFX;
-import VisualRepresentation.StackedAreaFX;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -47,7 +44,7 @@ public class AHP_TableViewFX extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    Sorting sorting = new Sorting();
+    ReverseSorting reverseSorting = new ReverseSorting();
     AHPcriteriaWeight ahPcriteriaWeight;
     AHPcalculation ahPcalculation = new AHPcalculation();
 AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementation();
@@ -225,7 +222,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
         priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
-        genericAlgo =sorting.sortingAHPmethods(priorityData,numberOfBooks);
+        genericAlgo = reverseSorting.sortingAHPmethods(priorityData,numberOfBooks);
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
 

@@ -2,7 +2,7 @@ package TableViewPackage;
 
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import Methods.Sorting;
+import Methods.ReverseSorting;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
@@ -44,7 +44,7 @@ public class PRA_TableViewFX extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
 PageRankCalculation pageRankCalculation = new PageRankCalculation();
-    Sorting soring = new Sorting();
+    ReverseSorting soring = new ReverseSorting();
 
     public static void main(String [] args) {
 
