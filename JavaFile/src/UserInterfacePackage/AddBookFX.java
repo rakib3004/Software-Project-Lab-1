@@ -6,13 +6,22 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import TableViewPackage.Book;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AddBookFX extends Application {
@@ -63,10 +72,175 @@ public class AddBookFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
+        Text bookNameText = new Text();
+        Text writerNameText = new Text();
+        Text typeNameText = new Text();
+        Text bookPriceText = new Text();
+
+        bookNameText.setText("Book Name : ");
+        writerNameText.setText("Writer Name : ");
+        typeNameText.setText("Type Name : ");
+        bookPriceText.setText("Book price : ");
+
+
+        setStyle(bookNameText);
+        setStyle(writerNameText);
+        setStyle(typeNameText);
+        setStyle(bookPriceText);
+
+        bookNameText.setFill(Color.GREENYELLOW);
+        writerNameText.setFill(Color.GREENYELLOW);
+        typeNameText.setFill(Color.GREENYELLOW);
+        bookPriceText.setFill(Color.GREENYELLOW);
+
+        bookNameText.setTranslateX(200);
+        writerNameText.setTranslateX(200);
+        typeNameText.setTranslateX(200);
+        bookPriceText.setTranslateX(200);
+
+        bookNameText.setTranslateY(200);
+        writerNameText.setTranslateY(300);
+        typeNameText.setTranslateY(400);
+        bookPriceText.setTranslateY(500);
+
+
+        TextField bookNameTextField = new TextField();
+        TextField writerNameTextField = new TextField();
+        TextField typeNameTextField = new TextField();
+        TextField bookPriceTextField = new TextField();
+
+        setStyle(bookNameTextField);
+        setStyle(writerNameTextField);
+        setStyle(typeNameTextField);
+        setStyle(bookPriceTextField);
+
+        bookNameTextField.setTranslateX(450);
+        writerNameTextField.setTranslateX(450);
+        typeNameTextField.setTranslateX(450);
+        bookPriceTextField.setTranslateX(450);
+
+        bookNameTextField.setTranslateY(200-45);
+        writerNameTextField.setTranslateY(300-45);
+        typeNameTextField.setTranslateY(400-45);
+        bookPriceTextField.setTranslateY(500-45);
+
+        bookNameTextField.setPrefSize(400,60);
+        writerNameTextField.setPrefSize(400,60);
+        typeNameTextField.setPrefSize(400,60);
+        bookPriceTextField.setPrefSize(400,60);
+
+
+
+        MenuItem uponnash = new MenuItem("Uponnash");
+        uponnash.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+         typeNameTextField.setText(uponnash.getText());
+
+            } });
+
+
+        MenuItem kobita = new MenuItem("Kobita");
+
+        kobita.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+
+                typeNameTextField.setText(kobita.getText());
+
+            }
+        });
+
+        MenuItem rochonaboli = new MenuItem("Rochonaboli");
+        rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+
+                typeNameTextField.setText(rochonaboli.getText());
+            }
+        });
+        MenuItem religion = new MenuItem("Religion");
+        religion.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+
+                typeNameTextField.setText(religion.getText());
+            }
+        });
+
+
+        MenuItem biggan = new MenuItem("Biggan");
+        biggan.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+                typeNameTextField.setText(biggan.getText());
+            } });
+
+        MenuItem sciFi = new MenuItem("Sci Fi");
+        sciFi.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+
+                typeNameTextField.setText(sciFi.getText());
+            }
+        });
+
+        MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
+        shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+                typeNameTextField.setText(shishuShahitto.getText());
+            }
+        });
+
+
+
+        MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
+        kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+
+                typeNameTextField.setText(kisoreUponnash.getText());
+            } });
+        MenuItem biography = new MenuItem("Biography");
+        biography.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+
+                typeNameTextField.setText(biography.getText());
+            }
+        });
+
+        MenuItem gobesona = new MenuItem("Gobesona");
+        gobesona.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+                typeNameTextField.setText(gobesona.getText());
+            }
+        });
+        MenuItem onubad = new MenuItem("Onubad");
+
+        onubad.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+                typeNameTextField.setText(onubad.getText());
+
+            }
+        });
+        MenuItem others = new MenuItem("Others");
+        others.setOnAction(new EventHandler<ActionEvent>() {
+            @Override  public void handle(ActionEvent e) {
+                typeNameTextField.setText(others.getText());
+            }
+        });
+
+        MenuButton bookType = new MenuButton("Choose Your Type");
+        bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
+                biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
+                gobesona, onubad,others);
+
+        bookType.setTranslateX(880);
+        bookType.setTranslateY(355);
+        bookType.setPrefSize(200,55);
+
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(canvas,exit,back,bookNameText,writerNameText,
+                typeNameText,bookPriceText,bookNameTextField,writerNameTextField,typeNameTextField,
+                bookPriceTextField,bookType);
+
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
@@ -98,5 +272,36 @@ public class AddBookFX extends Application {
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  button;
+    }
+    public Text setStyle(Text text)
+    {
+        text.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color:\n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  text;
+    }
+
+    public TextField setStyle(TextField textField)
+    {
+        textField.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color:\n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  textField;
     }
 }
