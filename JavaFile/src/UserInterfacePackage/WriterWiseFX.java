@@ -409,7 +409,7 @@ int as=0;
             }
         });
 
-        MenuButton writerMenu = new MenuButton("Choose Your Type");
+        MenuButton writerMenu = new MenuButton("Choose The Writer");
         writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
                 kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
                 samareshMajumdar, emdadiyaPustokaloy,others);

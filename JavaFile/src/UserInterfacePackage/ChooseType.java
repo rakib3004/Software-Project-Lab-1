@@ -3,6 +3,7 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import JavFX.FxSecondWindow;
+import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -163,8 +164,31 @@ Button removeBook = new Button("Remove Book");
             }
 
         });
-        removeBook.setPrefSize(230, 80);
+        removeBook.setPrefSize(270, 80);
         setStyle(removeBook);
+
+
+        Button readingRoom = new Button("Reading Room");
+
+        readingRoom.setTranslateX(550);
+        readingRoom.setTranslateY(500);
+        readingRoom.setOnAction(actionEvent -> {
+
+            try {
+
+
+                ReadingRoom readingRoom1 = new ReadingRoom();
+                readingRoom1.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        readingRoom.setPrefSize(275, 80);
+        setStyle(readingRoom);
+
 
 
 
@@ -204,7 +228,7 @@ Button removeBook = new Button("Remove Book");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,addBook,exit,back,writerWise,
-                classWise,selfWise,timeWise,removeBook);
+                classWise,selfWise,timeWise,removeBook,readingRoom);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

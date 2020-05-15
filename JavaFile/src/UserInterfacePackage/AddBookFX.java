@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 public class AddBookFX extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
+int positionLocator=85;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -72,62 +72,104 @@ public class AddBookFX extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
+
+
+
+
         Text bookNameText = new Text();
         Text writerNameText = new Text();
         Text typeNameText = new Text();
         Text bookPriceText = new Text();
+        Text bookInformationText = new Text();
 
         bookNameText.setText("Book Name : ");
         writerNameText.setText("Writer Name : ");
         typeNameText.setText("Type Name : ");
         bookPriceText.setText("Book price : ");
+        bookInformationText.setText("Book Info : ");
 
 
         setStyle(bookNameText);
         setStyle(writerNameText);
         setStyle(typeNameText);
         setStyle(bookPriceText);
+        setStyle(bookInformationText);
 
         bookNameText.setFill(Color.GREENYELLOW);
         writerNameText.setFill(Color.GREENYELLOW);
         typeNameText.setFill(Color.GREENYELLOW);
         bookPriceText.setFill(Color.GREENYELLOW);
+        bookInformationText.setFill(Color.GREENYELLOW);
 
         bookNameText.setTranslateX(200);
         writerNameText.setTranslateX(200);
         typeNameText.setTranslateX(200);
         bookPriceText.setTranslateX(200);
+        bookInformationText.setTranslateX(200);
 
-        bookNameText.setTranslateY(200);
-        writerNameText.setTranslateY(300);
-        typeNameText.setTranslateY(400);
-        bookPriceText.setTranslateY(500);
+        bookNameText.setTranslateY(200-positionLocator);
+        writerNameText.setTranslateY(300-positionLocator);
+        typeNameText.setTranslateY(400-positionLocator);
+        bookPriceText.setTranslateY(500-positionLocator);
+        bookInformationText.setTranslateY(700-positionLocator);
 
 
         TextField bookNameTextField = new TextField();
         TextField writerNameTextField = new TextField();
         TextField typeNameTextField = new TextField();
         TextField bookPriceTextField = new TextField();
+        TextField bookInformationTextField = new TextField();
 
         setStyle(bookNameTextField);
         setStyle(writerNameTextField);
         setStyle(typeNameTextField);
         setStyle(bookPriceTextField);
+        setStyle(bookInformationTextField);
 
         bookNameTextField.setTranslateX(450);
         writerNameTextField.setTranslateX(450);
         typeNameTextField.setTranslateX(450);
         bookPriceTextField.setTranslateX(450);
+        bookInformationTextField.setTranslateX(450);
 
-        bookNameTextField.setTranslateY(200-45);
-        writerNameTextField.setTranslateY(300-45);
-        typeNameTextField.setTranslateY(400-45);
-        bookPriceTextField.setTranslateY(500-45);
+        bookNameTextField.setTranslateY(155-positionLocator);
+        writerNameTextField.setTranslateY(255-positionLocator);
+        typeNameTextField.setTranslateY(355-positionLocator);
+        bookPriceTextField.setTranslateY(455-positionLocator);
+        bookInformationTextField.setTranslateY(655-positionLocator);
+
+
 
         bookNameTextField.setPrefSize(400,60);
         writerNameTextField.setPrefSize(400,60);
         typeNameTextField.setPrefSize(400,60);
         bookPriceTextField.setPrefSize(400,60);
+        bookInformationTextField.setPrefSize(800,60);
+
+
+        Button addItem = new Button("Add Item");
+
+
+        addItem.setTranslateX(480);
+        addItem.setTranslateY(500);
+
+
+
+
+        addItem.setOnAction(actionEvent -> {
+try{
+    bookInformationTextField.setText(bookNameTextField.getText()+"-"+
+            writerNameTextField.getText()+"-"+typeNameTextField.getText()+
+            "-"+bookPriceTextField.getText());
+
+}
+catch (Exception exception){
+    System.out.println("Blank Text");
+}
+        });
+
+        setStyle(addItem);
+        addItem.setPrefSize(220, 65);
 
 
 
@@ -170,6 +212,7 @@ public class AddBookFX extends Application {
         MenuItem biggan = new MenuItem("Biggan");
         biggan.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
+
                 typeNameTextField.setText(biggan.getText());
             } });
 
@@ -183,7 +226,8 @@ public class AddBookFX extends Application {
 
         MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
         shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
-            @Override  public void handle(ActionEvent e) {
+            @Override  public void handle(ActionEvent e)
+            {
                 typeNameTextField.setText(shishuShahitto.getText());
             }
         });
@@ -207,6 +251,7 @@ public class AddBookFX extends Application {
         MenuItem gobesona = new MenuItem("Gobesona");
         gobesona.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
+
                 typeNameTextField.setText(gobesona.getText());
             }
         });
@@ -221,6 +266,7 @@ public class AddBookFX extends Application {
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
+
                 typeNameTextField.setText(others.getText());
             }
         });
@@ -231,15 +277,23 @@ public class AddBookFX extends Application {
                 gobesona, onubad,others);
 
         bookType.setTranslateX(880);
-        bookType.setTranslateY(355);
+        bookType.setTranslateY(355-positionLocator);
         bookType.setPrefSize(200,55);
+
+
+
+
+
+
 
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,bookNameText,writerNameText,
-                typeNameText,bookPriceText,bookNameTextField,writerNameTextField,typeNameTextField,
-                bookPriceTextField,bookType);
+                typeNameText,bookPriceText,bookInformationText,bookNameTextField,
+                writerNameTextField,typeNameTextField,
+                bookPriceTextField,bookInformationTextField,
+                addItem,bookType);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
