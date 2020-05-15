@@ -144,14 +144,14 @@ int positionLocator=85;
         writerNameTextField.setPrefSize(400,60);
         typeNameTextField.setPrefSize(400,60);
         bookPriceTextField.setPrefSize(400,60);
-        bookInformationTextField.setPrefSize(800,60);
+        bookInformationTextField.setPrefSize(850,60);
 
 
         Button addItem = new Button("Add Item");
 
 
         addItem.setTranslateX(480);
-        addItem.setTranslateY(500);
+        addItem.setTranslateY(450);
 
 
 
@@ -285,6 +285,121 @@ catch (Exception exception){
 
 
 
+        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+writerNameTextField.setText(humayonAhmed.getText());
+
+            } });
+
+
+
+        MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                writerNameTextField.setText(muhammadJafarIqbal.getText());
+
+            }
+        });
+
+        MenuItem rokibHasan = new MenuItem("Rokib Hasan");
+        rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                writerNameTextField.setText(rokibHasan.getText());
+
+            }
+        });
+        MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
+        emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override public void handle(ActionEvent e) {
+
+                writerNameTextField.setText(emdadulHaqueMilon.getText());
+
+            }
+        });
+
+
+        MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
+        kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                writerNameTextField.setText(kaziNazrulIslam.getText());
+
+            } });
+
+        MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
+        kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                writerNameTextField.setText(kaziAnwarHossain.getText());
+
+            }
+        });
+
+        MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
+        sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                writerNameTextField.setText(sharatChandraChattropadhay.getText());
+
+            }
+        });
+
+
+
+        MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
+        rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                writerNameTextField.setText(rabindranathTagore.getText());
+
+            } });
+
+
+        MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
+        sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                writerNameTextField.setText(sunilGangoPaddahay.getText());
+
+            }
+        });
+
+
+        MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
+        samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                writerNameTextField.setText(samareshMajumdar.getText());
+
+            }
+        });
+
+
+        MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
+
+        emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                writerNameTextField.setText(emdadiyaPustokaloy.getText());
+
+
+            }
+        });
+
+
+
+
+        MenuButton writerMenu = new MenuButton("Choose The Writer");
+        writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
+                kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
+                samareshMajumdar, emdadiyaPustokaloy);
+
+
+        writerMenu.setTranslateX(880);
+        writerMenu.setTranslateY(255-positionLocator);
+        writerMenu.setPrefSize(200, 55);
+
 
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -293,7 +408,7 @@ catch (Exception exception){
                 typeNameText,bookPriceText,bookInformationText,bookNameTextField,
                 writerNameTextField,typeNameTextField,
                 bookPriceTextField,bookInformationTextField,
-                addItem,bookType);
+                addItem,bookType,writerMenu);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
