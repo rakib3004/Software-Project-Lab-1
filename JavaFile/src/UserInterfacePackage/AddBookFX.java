@@ -11,15 +11,14 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -161,6 +160,18 @@ try{
     bookInformationTextField.setText(bookNameTextField.getText()+"-"+
             writerNameTextField.getText()+"-"+typeNameTextField.getText()+
             "-"+bookPriceTextField.getText());
+    Stage infoStage = new Stage();
+    GridPane gridPane = new GridPane();
+    gridPane.setAlignment(Pos.CENTER);
+    Label label3 = new Label("Your Book is Added:");
+    setStyle(label3);
+   // TextField Ve = new TextField();
+    gridPane.add(label3,1,3,2,1);
+   // VELO.add(Ve,3,10,1,1);
+    Scene S = new Scene(gridPane, 450, 350);
+    infoStage.setTitle("Velocity");
+    infoStage.setScene(S);
+    infoStage.show();
 
 }
 catch (Exception exception){
@@ -456,6 +467,22 @@ writerNameTextField.setText(humayonAhmed.getText());
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  text;
+    }
+
+ public Label setStyle(Label label)
+    {
+        label.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color:\n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 2.1em;");
+        return  label;
     }
 
     public TextField setStyle(TextField textField)
