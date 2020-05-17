@@ -450,7 +450,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price4 = new MenuItem("150.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price4.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price4.getText());
@@ -458,7 +458,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price5 = new MenuItem("160.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -468,7 +468,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price6 = new MenuItem("175.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price6.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price6.getText());
@@ -476,7 +476,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price7 = new MenuItem("180.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price7.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -488,7 +488,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price8 = new MenuItem("190.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price8.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price8.getText());
@@ -496,7 +496,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price9 = new MenuItem("200.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price9.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -508,7 +508,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price10 = new MenuItem("210.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price10.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price10.getText());
@@ -516,7 +516,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price11 = new MenuItem("220.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price11.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -528,7 +528,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price12 = new MenuItem("250.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price12.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price12.getText());
@@ -536,7 +536,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price13 = new MenuItem("270.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price13.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -548,7 +548,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price14 = new MenuItem("280.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price14.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price14.getText());
@@ -556,7 +556,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price15 = new MenuItem("300.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price15.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -569,7 +569,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price16 = new MenuItem("320.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price16.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
 
@@ -580,7 +580,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price17 = new MenuItem("350.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price17.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -592,7 +592,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price18 = new MenuItem("375.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price18.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price18.getText());
@@ -600,7 +600,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             }
         });
  MenuItem price19 = new MenuItem("400.00");
-        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+        price19.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
@@ -612,7 +612,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         MenuItem price20 = new MenuItem("500.00");
 
-        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+        price20.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 bookPriceTextField.setText(price20.getText());
