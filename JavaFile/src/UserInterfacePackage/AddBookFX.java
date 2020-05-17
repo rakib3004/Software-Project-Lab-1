@@ -163,13 +163,16 @@ try{
     Stage infoStage = new Stage();
     GridPane gridPane = new GridPane();
     gridPane.setAlignment(Pos.CENTER);
-    Label label3 = new Label("Your Book is Added:");
-    setStyle(label3);
+    Label label3 = new Label("Your Book is Added:\n50% " +
+            "reason for type value" +
+            "\n36% reason for price value\n " +
+            "others for count value");
+   setStyle(label3);
    // TextField Ve = new TextField();
-    gridPane.add(label3,1,3,2,1);
+    gridPane.add(label3,1,1,5,5);
    // VELO.add(Ve,3,10,1,1);
-    Scene S = new Scene(gridPane, 450, 350);
-    infoStage.setTitle("Velocity");
+    Scene S = new Scene(gridPane, 300, 130);
+    infoStage.setTitle("Add Book");
     infoStage.setScene(S);
     infoStage.show();
 
@@ -239,6 +242,7 @@ catch (Exception exception){
         shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e)
             {
+
                 typeNameTextField.setText(shishuShahitto.getText());
             }
         });
@@ -302,7 +306,6 @@ catch (Exception exception){
             public void handle(ActionEvent e) {
 
 writerNameTextField.setText(humayonAhmed.getText());
-
             } });
 
 
@@ -412,6 +415,223 @@ writerNameTextField.setText(humayonAhmed.getText());
         writerMenu.setPrefSize(200, 55);
 
 
+
+
+        MenuItem price1 = new MenuItem("120.00");
+        price1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price1.getText());
+
+            } });
+
+
+
+        MenuItem price2 = new MenuItem("135.00");
+
+        price2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price2.getText());
+
+            }
+        });
+ MenuItem price3 = new MenuItem("140.00");
+        price3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price3.getText());
+
+            } });
+
+
+
+        MenuItem price4 = new MenuItem("150.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price4.getText());
+
+            }
+        });
+ MenuItem price5 = new MenuItem("160.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price5.getText());
+
+            } });
+
+        MenuItem price6 = new MenuItem("175.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price6.getText());
+
+            }
+        });
+ MenuItem price7 = new MenuItem("180.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price7.getText());
+
+            } });
+
+
+
+        MenuItem price8 = new MenuItem("190.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price8.getText());
+
+            }
+        });
+ MenuItem price9 = new MenuItem("200.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price9.getText());
+
+            } });
+
+
+
+        MenuItem price10 = new MenuItem("210.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price10.getText());
+
+            }
+        });
+ MenuItem price11 = new MenuItem("220.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price11.getText());
+
+            } });
+
+
+
+        MenuItem price12 = new MenuItem("250.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price12.getText());
+
+            }
+        });
+ MenuItem price13 = new MenuItem("270.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price13.getText());
+
+            } });
+
+
+
+        MenuItem price14 = new MenuItem("280.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price14.getText());
+
+            }
+        });
+ MenuItem price15 = new MenuItem("300.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price15.getText());
+                
+
+            } });
+
+
+
+        MenuItem price16 = new MenuItem("320.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+
+                bookPriceTextField.setText(price16.getText());
+
+
+            }
+        });
+ MenuItem price17 = new MenuItem("350.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price17.getText());
+
+            } });
+
+
+
+        MenuItem price18 = new MenuItem("375.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price18.getText());
+
+            }
+        });
+ MenuItem price19 = new MenuItem("400.00");
+        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price19.getText());
+
+            } });
+
+
+
+        MenuItem price20 = new MenuItem("500.00");
+
+        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+                bookPriceTextField.setText(price20.getText());
+
+            }
+        });
+
+
+        MenuButton priceMenu = new MenuButton("Select Book Price");
+        priceMenu.getItems().addAll(price1,price2,price3,price4,
+                price5,price6,price7,price8,price9,price10,price11,
+                price12,price13,price14,price15,price16,price17,
+                price18,price19,price20);
+
+        priceMenu.setTranslateX(880);
+        priceMenu.setTranslateY(455-positionLocator);
+        priceMenu.setPrefSize(200, 55);
+
+
         Image image = new Image("libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -419,7 +639,7 @@ writerNameTextField.setText(humayonAhmed.getText());
                 typeNameText,bookPriceText,bookInformationText,bookNameTextField,
                 writerNameTextField,typeNameTextField,
                 bookPriceTextField,bookInformationTextField,
-                addItem,bookType,writerMenu);
+                addItem,bookType,writerMenu,priceMenu);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -431,7 +651,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
+       // primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
@@ -478,10 +698,10 @@ writerNameTextField.setText(humayonAhmed.getText());
                 "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
                 "        #8d9092,\n" +
                 "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #f123ff, #a1a3a6);\n" +
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 2.1em;");
+                "    -fx-font-size: 1.1em;");
         return  label;
     }
 
