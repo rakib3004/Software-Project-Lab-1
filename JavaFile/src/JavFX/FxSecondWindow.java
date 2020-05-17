@@ -46,13 +46,13 @@ public class FxSecondWindow extends Application {
 
 
 
+        userSection.setTranslateX(530);
+        userSection.setTranslateY(200);
+        adminSection.setTranslateX(530);
+        adminSection.setTranslateY(300);
+        about.setTranslateX(530);
+        about.setTranslateY(400);
 
-        adminSection.setTranslateX(565);
-        adminSection.setTranslateY(260);
-        about.setTranslateX(565);
-        about.setTranslateY(460);
-        userSection.setTranslateX(565);
-        userSection.setTranslateY(360);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -136,7 +136,7 @@ graphicsContext.drawImage(image,0,0);
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: \n" +
+                "    -fx-background-color:\n" +
                 "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
                 "        #8d9092,\n" +
                 "        #717375,\n" +

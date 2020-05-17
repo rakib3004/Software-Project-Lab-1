@@ -11,7 +11,7 @@ int iterator,jterator,kterator;
         char ch;
         String string = " ";
         int iterator, jterator;
-        System.out.println("##########Sorting by Book Name############" );
+        System.out.println("##########ReverseSorting by Book Name############" );
         System.out.println();
         for (iterator = 65; iterator <=90; iterator++) {
             ch = (char) iterator;
@@ -33,7 +33,7 @@ int iterator,jterator,kterator;
         }
         System.out.println();
         System.out.println();
-        System.out.println("########################################Sorting by Writer Name#########################" );
+        System.out.println("########################################ReverseSorting by Writer Name#########################" );
 
 
         for (iterator = 65; iterator <=90; iterator++) {

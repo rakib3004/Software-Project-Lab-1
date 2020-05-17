@@ -1,5 +1,6 @@
 package JavFX;
 
+import CrossValidationProcess.CrossValidationFX;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
@@ -23,14 +24,17 @@ public class MenuFX extends Application {
         Button bookApplications = new Button("Tool Applications");
         Button bookInformation = new Button("Book Information");
         Button processImplementation = new Button("Process Implementation");
+        Button processValidation = new Button("Process Validation");
 
 
         bookApplications.setTranslateX(500);
-        bookApplications.setTranslateY(450);
+        bookApplications.setTranslateY(380);
         bookInformation.setTranslateX(500);
-        bookInformation.setTranslateY(250);
+        bookInformation.setTranslateY(180);
         processImplementation.setTranslateX(500);
-        processImplementation.setTranslateY(350);
+        processImplementation.setTranslateY(280);
+        processValidation.setTranslateX(500);
+        processValidation.setTranslateY(480);
 
 
         bookApplications.setOnAction(actionEvent -> {
@@ -66,15 +70,28 @@ public class MenuFX extends Application {
 
         });
 
+ processValidation.setOnAction(actionEvent -> {
+            CrossValidationFX crossValidationFX = new CrossValidationFX();
+            try {
+
+                crossValidationFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
 
         setStyle(bookApplications);
         setStyle(bookInformation);
         setStyle(processImplementation);
+        setStyle(processValidation);
 
 
         bookInformation.setPrefSize(350, 80);
         bookApplications.setPrefSize(350, 80);
         processImplementation.setPrefSize(350, 80);
+        processValidation.setPrefSize(350, 80);
 
 
 
@@ -109,7 +126,9 @@ public class MenuFX extends Application {
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,bookApplications,processImplementation,bookInformation,exit,back);
+        group.getChildren().addAll(canvas,bookApplications,
+                processImplementation,bookInformation,
+                processValidation,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

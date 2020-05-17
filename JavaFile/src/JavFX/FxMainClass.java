@@ -25,11 +25,11 @@ public class FxMainClass extends Application {
 
         Button welcome = new Button("Welcome to RTML");
         welcome.setTranslateX(480);
-        welcome.setTranslateY(370);
+        welcome.setTranslateY(300);
         setStyle(welcome);
 
 
-        welcome.setPrefSize(450, 100);
+        welcome.setPrefSize(400, 100);
 
         welcome.setOnAction(actionEvent -> {
 

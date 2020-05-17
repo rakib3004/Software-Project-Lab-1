@@ -23,19 +23,13 @@ LineChartFX lineChartFX = new LineChartFX();
 StackedAreaFX stackedAreaFX = new StackedAreaFX();
     @Override
     public void start(Stage primaryStage) {
-
-
     }
 
-
-
     public void typeStatistics(Stage typeStatisticsStage) {
-
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
         Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
-
 
         //  Button Start = new Button("Start");
         Button back = new Button("Back");
@@ -91,8 +85,6 @@ BookApplication bookApplication = new BookApplication();
             }
 
         });
-
-
         lineChart.setOnAction(actionEvent -> {
             try {
                 lineChartFX.startTyping(typeStatisticsStage);
@@ -102,7 +94,6 @@ BookApplication bookApplication = new BookApplication();
             }
 
         });
-
 
 
         //    setStyle(Start);
@@ -123,10 +114,6 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setPrefSize(275, 80);
 
-
-
-
-
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -144,12 +131,9 @@ BookApplication bookApplication = new BookApplication();
         typeStatisticsStage.setTitle("Books Statistics");
         typeStatisticsStage.setFullScreen(true);
         typeStatisticsStage.show();
-
     }
 
     public void timeStatistics(Stage timeStatisticsStage) {
-
-
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
@@ -163,10 +147,8 @@ BookApplication bookApplication = new BookApplication();
         Button lineChart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
 
-
         //  Start.setTranslateX(500);
         //  Start.setTranslateY(400);
-
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -194,8 +176,6 @@ BookApplication bookApplication = new BookApplication();
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         scatterChart.setOnAction(actionEvent -> {
             try {
@@ -206,7 +186,6 @@ BookApplication bookApplication = new BookApplication();
             }
 
         });
-
         stackedAreaChart.setOnAction(actionEvent -> {
             try {
                 stackedAreaFX.startTiming(timeStatisticsStage);
@@ -214,9 +193,7 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
 
         lineChart.setOnAction(actionEvent -> {
             try {
@@ -225,10 +202,7 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
 
         //    setStyle(Start);
         setStyle(exit);
@@ -248,27 +222,20 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setPrefSize(275, 80);
 
-
-
         Image image = new Image("libraryBackground20.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         timeStatisticsStage.setScene(scene1);
         timeStatisticsStage.setTitle("Books Statistics");
         timeStatisticsStage.setFullScreen(true);
         timeStatisticsStage.show();
-
-
     }
 
     public void borrowStatistics(Stage borrowStatisticsStage) {
@@ -278,18 +245,12 @@ BookApplication bookApplication = new BookApplication();
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
         Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
 
-
         //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
-
-
-        //  Start.setTranslateX(500);
-        //  Start.setTranslateY(400);
-
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -318,7 +279,6 @@ BookApplication bookApplication = new BookApplication();
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 
-
         });
         scatterChart.setOnAction(actionEvent -> {
             try {
@@ -337,7 +297,6 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
 
@@ -350,8 +309,6 @@ BookApplication bookApplication = new BookApplication();
             }
 
         });
-
-
 
         //    setStyle(Start);
         setStyle(exit);
@@ -371,10 +328,6 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setPrefSize(275, 80);
 
-
-
-
-
         Image image = new Image("libraryBackground21.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -393,14 +346,9 @@ BookApplication bookApplication = new BookApplication();
         borrowStatisticsStage.setFullScreen(true);
         borrowStatisticsStage.show();
 
-
-
     }
 
      public void priceStatistics(Stage priceStatisticsStage) {
-
-
-
 
          Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
          Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
@@ -414,11 +362,6 @@ BookApplication bookApplication = new BookApplication();
          Button lineChart = new Button("Line Chart");
          Button stackedAreaChart = new Button("Stacked Area Chart");
 
-
-         //  Start.setTranslateX(500);
-         //  Start.setTranslateY(400);
-
-
          back.setTranslateX(0);
          back.setTranslateY(650);
          exit.setTranslateX(1100);
@@ -431,7 +374,6 @@ BookApplication bookApplication = new BookApplication();
 
          stackedAreaChart.setTranslateX(500);
          stackedAreaChart.setTranslateY(400);
-
 
          back.setOnAction(actionEvent -> {
              BookApplication bookApplication = new BookApplication();
@@ -467,8 +409,6 @@ BookApplication bookApplication = new BookApplication();
              }
 
          });
-
-
          lineChart.setOnAction(actionEvent -> {
              try {
                  lineChartFX.startPricing(priceStatisticsStage);
@@ -479,9 +419,6 @@ BookApplication bookApplication = new BookApplication();
 
          });
 
-
-
-         //    setStyle(Start);
          setStyle(exit);
          setStyle(back);
 
@@ -489,8 +426,6 @@ BookApplication bookApplication = new BookApplication();
          setStyle(scatterChart);
 
          setStyle(stackedAreaChart);
-
-         //  Start.setPrefSize(200, 80);
          back.setPrefSize(200, 80);
          exit.setPrefSize(200, 80);
 
@@ -499,19 +434,13 @@ BookApplication bookApplication = new BookApplication();
 
          stackedAreaChart.setPrefSize(275, 80);
 
-
-
-
-
          Image image = new Image("libraryBackground17.jpg");
          Canvas canvas = new Canvas(1500,950);
          Group group = new Group();
          group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
-
          GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
          graphicsContext.drawImage(image,0,0);
-
 
          Scene scene1 = new Scene(group,1500,950);
 
@@ -522,7 +451,6 @@ BookApplication bookApplication = new BookApplication();
          priceStatisticsStage.show();
 
      }
-
     public Button setStyle( Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +

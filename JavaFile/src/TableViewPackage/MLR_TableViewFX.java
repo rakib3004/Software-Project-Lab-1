@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
+import static javafx.scene.paint.Color.DARKBLUE;
+
 public class MLR_TableViewFX extends Application {
 
     private TableView table;
@@ -64,7 +66,6 @@ public class MLR_TableViewFX extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 
-
         });
         setStyle(exit);
         setStyle(back);
@@ -78,11 +79,9 @@ public class MLR_TableViewFX extends Application {
         exit.setTranslateY(685);
 
 
-
-
         // Books label
         Label label = new Label("Multiple Linear Regression Results");
-        label.setTextFill(Color.DARKBLUE);
+        label.setTextFill(DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
         HBox hb = new HBox();
         hb.setAlignment(Pos.CENTER);
@@ -189,11 +188,6 @@ public class MLR_TableViewFX extends Application {
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
-
-
-
-
-
 
     } // start()
 
