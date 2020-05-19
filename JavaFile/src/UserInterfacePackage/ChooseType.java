@@ -8,8 +8,6 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import RankingAlgorithmFx.StatisticsFX;
-import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -20,7 +18,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.rmi.Remote;
 
 public class ChooseType extends Application {
     PriorityData[] priorityData;
@@ -89,8 +86,8 @@ Button classWise = new Button("Class Wise");
         classWise.setOnAction(actionEvent -> {
 
             try {
-                ClassWiseFX classWiseFX = new ClassWiseFX();
-                classWiseFX.start(primaryStage);
+                TypeWiseFX typeWiseFX = new TypeWiseFX();
+                typeWiseFX.start(primaryStage);
             }
 
             catch (Exception exception) {

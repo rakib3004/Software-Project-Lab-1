@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import TableViewPackage.Book;
@@ -28,8 +29,10 @@ public class AddBookFX extends Application {
     AHPcriteriaWeight ahPcriteriaWeight;
 int positionLocator=85;
     int numberOfBooks;
+    int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
@@ -146,46 +149,6 @@ int positionLocator=85;
         bookInformationTextField.setPrefSize(850,60);
 
 
-        Button addItem = new Button("Add Item");
-
-
-        addItem.setTranslateX(480);
-        addItem.setTranslateY(450);
-
-
-
-
-        addItem.setOnAction(actionEvent -> {
-try{
-    bookInformationTextField.setText(bookNameTextField.getText()+"-"+
-            writerNameTextField.getText()+"-"+typeNameTextField.getText()+
-            "-"+bookPriceTextField.getText());
-    Stage infoStage = new Stage();
-    GridPane gridPane = new GridPane();
-    gridPane.setAlignment(Pos.CENTER);
-    Label label3 = new Label("Your Book is Added:\n50% " +
-            "reason for type value" +
-            "\n36% reason for price value\n " +
-            "others for count value");
-   setStyle(label3);
-   // TextField Ve = new TextField();
-    gridPane.add(label3,1,1,5,5);
-   // VELO.add(Ve,3,10,1,1);
-    Scene S = new Scene(gridPane, 300, 130);
-    infoStage.setTitle("Add Book");
-    infoStage.setScene(S);
-    infoStage.show();
-
-}
-catch (Exception exception){
-    System.out.println("Blank Text");
-}
-        });
-
-        setStyle(addItem);
-        addItem.setPrefSize(220, 65);
-
-
 
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
@@ -295,11 +258,6 @@ catch (Exception exception){
         bookType.setTranslateY(355-positionLocator);
         bookType.setPrefSize(200,55);
 
-
-
-
-
-
         MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
         humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -307,7 +265,6 @@ catch (Exception exception){
 
 writerNameTextField.setText(humayonAhmed.getText());
             } });
-
 
 
         MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
@@ -400,10 +357,6 @@ writerNameTextField.setText(humayonAhmed.getText());
 
             }
         });
-
-
-
-
         MenuButton writerMenu = new MenuButton("Choose The Writer");
         writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
                 kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
@@ -630,6 +583,106 @@ writerNameTextField.setText(humayonAhmed.getText());
         priceMenu.setTranslateX(880);
         priceMenu.setTranslateY(455-positionLocator);
         priceMenu.setPrefSize(200, 55);
+
+
+
+
+        Button addItem = new Button("Add Item");
+
+
+        addItem.setTranslateX(480);
+        addItem.setTranslateY(450);
+
+
+
+
+        addItem.setOnAction(actionEvent -> {
+            try{
+                bookInformationTextField.setText(bookNameTextField.getText()+"-"+
+                        writerNameTextField.getText()+"-"+typeNameTextField.getText()+
+                        "-"+bookPriceTextField.getText());
+
+                double newBookPrice = Double.parseDouble(bookPriceTextField.getText());
+
+                Stage infoStage = new Stage();
+                GridPane gridPane = new GridPane();
+                gridPane.setAlignment(Pos.CENTER);
+
+
+double writerWeight=0;
+double priceWeight=0;
+double typeWeight=0;
+
+int writerCounter=0;
+int priceCounter=0;
+int typeCounter=0;
+
+String upperBookPrice,lowerBookPrice;
+double upperBookPriceRange;
+double lowerBookPriceRange;
+double newBookPriceValue;
+
+boolean isGetAnyWriter = false;
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+                priorityData = processing.fileReaderMethods();
+                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
+
+                newBookPriceValue = Double.parseDouble(bookPriceTextField.getText());
+
+                for(iterator=0;iterator<numberOfBooks;iterator++){
+upperBookPrice = priorityData[iterator].bookData.bookPrice;
+lowerBookPrice = priorityData[iterator].bookData.bookPrice;
+
+upperBookPriceRange = Double.parseDouble(upperBookPrice)+30.00;
+lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
+
+
+
+                }
+
+
+                for(iterator=0;iterator<numberOfBooks;iterator++){
+
+                    if(priorityData[iterator].bookData.writerName.contains(writerNameTextField.getText())){
+                        writerWeight = writerWeight+priorityData[iterator].getMLRweight();
+                        writerCounter++;
+                    }
+                }
+
+                for(iterator=0;iterator<numberOfBooks;iterator++){
+
+                    if(priorityData[iterator].bookData.typeName.contains(typeNameTextField.getText())){
+                        typeWeight = typeWeight+priorityData[iterator].getMLRweight();
+                        typeCounter++;
+                    }
+                }
+
+
+
+                
+                Label label3 = new Label("Your Book is Added:\n50% " +
+                        "reason for type value" +
+                        "\n36% reason for price value\n " +
+                        "others for count value");
+                setStyle(label3);
+                // TextField Ve = new TextField();
+                gridPane.add(label3,1,1,5,5);
+                // VELO.add(Ve,3,10,1,1);
+                Scene S = new Scene(gridPane, 250, 100);
+                infoStage.setTitle("Add Book");
+                infoStage.setScene(S);
+                infoStage.show();
+
+            }
+            catch (Exception exception){
+                System.out.println("Blank Text");
+            }
+        });
+
+        setStyle(addItem);
+        addItem.setPrefSize(220, 65);
+
 
 
         Image image = new Image("libraryBackground6.jpg");

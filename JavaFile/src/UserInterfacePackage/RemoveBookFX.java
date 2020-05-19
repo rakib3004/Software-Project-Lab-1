@@ -325,6 +325,8 @@ else{
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
+
+
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
