@@ -24,6 +24,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class AddBookFX extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -597,7 +599,7 @@ writerNameTextField.setText(humayonAhmed.getText());
 
 
         addItem.setOnAction(actionEvent -> {
-            try{
+        //    try{
                 bookInformationTextField.setText(bookNameTextField.getText()+"-"+
                         writerNameTextField.getText()+"-"+typeNameTextField.getText()+
                         "-"+bookPriceTextField.getText());
@@ -622,10 +624,22 @@ double upperBookPriceRange;
 double lowerBookPriceRange;
 double newBookPriceValue;
 
+newBookPriceValue =newBookPrice;
+
 boolean isGetAnyWriter = false;
+boolean isGetAnyType = false;
+boolean isGetSimilarPrice = false;
+            try {
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
                 priorityData = processing.fileReaderMethods();
-                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
 
 
                 newBookPriceValue = Double.parseDouble(bookPriceTextField.getText());
@@ -636,9 +650,11 @@ lowerBookPrice = priorityData[iterator].bookData.bookPrice;
 
 upperBookPriceRange = Double.parseDouble(upperBookPrice)+30.00;
 lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
-
-
-
+if(newBookPriceValue<=upperBookPriceRange&&newBookPriceValue>=lowerBookPriceRange){
+    priceWeight = priceWeight + priorityData[iterator].getMLRweight();
+    priceCounter++;
+    isGetSimilarPrice = true;
+}
                 }
 
 
@@ -647,6 +663,7 @@ lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
                     if(priorityData[iterator].bookData.writerName.contains(writerNameTextField.getText())){
                         writerWeight = writerWeight+priorityData[iterator].getMLRweight();
                         writerCounter++;
+                        isGetAnyWriter = true;
                     }
                 }
 
@@ -655,16 +672,24 @@ lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
                     if(priorityData[iterator].bookData.typeName.contains(typeNameTextField.getText())){
                         typeWeight = typeWeight+priorityData[iterator].getMLRweight();
                         typeCounter++;
+                        isGetAnyType = true;
                     }
                 }
 
-
-
+if(isGetAnyType==true){
+    typeWeight = typeWeight/typeCounter;
+}
+if(isGetAnyWriter==true){
+    writerWeight = writerWeight/writerCounter;
+}
+if(isGetSimilarPrice==true){
+    priceWeight = priceWeight/priceCounter;
+}
                 
-                Label label3 = new Label("Your Book is Added:\n50% " +
-                        "reason for type value" +
-                        "\n36% reason for price value\n " +
-                        "others for count value");
+                Label label3 = new Label("Type Predicted Weight : "+typeWeight+"\n" +
+                        "Writer Predicted Weight : "+writerWeight+"\n" +
+                        "Price Predicted Weight : "+priceWeight+"\n");
+
                 setStyle(label3);
                 // TextField Ve = new TextField();
                 gridPane.add(label3,1,1,5,5);
@@ -674,10 +699,10 @@ lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
                 infoStage.setScene(S);
                 infoStage.show();
 
-            }
-            catch (Exception exception){
-                System.out.println("Blank Text");
-            }
+          //  }
+          //  catch (Exception exception){
+            //    System.out.println("Blank Text");
+            //}
         });
 
         setStyle(addItem);
