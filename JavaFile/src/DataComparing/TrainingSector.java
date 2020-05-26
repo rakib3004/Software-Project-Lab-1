@@ -21,8 +21,6 @@ import java.util.TreeMap;
 
 public class TrainingSector {
 
-
-
     PriorityData[] priorityData;
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
