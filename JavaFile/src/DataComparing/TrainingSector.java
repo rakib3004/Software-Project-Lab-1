@@ -38,16 +38,20 @@ public class TrainingSector {
 
     public void trainingSectorMethods(){
         int [] typeCounter = new int[6];
-        double [] parsingTypeCounter = new double[6];
+        double [] typeGroupWeight;
+        typeGroupWeight = new double[6];
 
-        int [] monthCounter = new int[5];
-        double [] parsingMonthCounter = new double[5];
+        int [] timeCounter = new int[5];
+        double [] timeGroupWeight;
+        timeGroupWeight = new double[5];
 
         int [] countCounter = new int[4];
-        double [] parsingCountCounter = new double[4];
+        double [] countGroupWeight;
+        countGroupWeight = new double[4];
 
         int [] priceCounter = new int[3];
-        double [] parsingPriceCounter = new double[3];
+        double [] priceGroupWeight;
+        priceGroupWeight = new double[3];
 
 
         try {
@@ -87,19 +91,27 @@ public class TrainingSector {
             else{
 
                 if (priorityData[iterator].timePriority <= 5.60) {
-                    monthCounter[4]++;
+                    timeCounter[4]++;
+                    timeGroupWeight[4] = timeGroupWeight[4] + priorityData[iterator].getMLRweight();
+
 
                 } else if (priorityData[iterator].timePriority <= 7.20) {
-                    monthCounter[3]++;
+                    timeCounter[3]++;
+                    timeGroupWeight[3] = timeGroupWeight[3] + priorityData[iterator].getMLRweight();
+
 
                 }  else if (priorityData[iterator].timePriority <= 9.50) {
-                    monthCounter[2]++;
+                    timeCounter[2]++;
+                    timeGroupWeight[2] = timeGroupWeight[2] + priorityData[iterator].getMLRweight();
 
                 }  else if (priorityData[iterator].timePriority <= 12.00) {
-                    monthCounter[1]++;
+                    timeCounter[1]++;
+                    timeGroupWeight[1] = timeGroupWeight[1] + priorityData[iterator].getMLRweight();
+
 
                 }  else if (priorityData[iterator].timePriority <= 14.00) {
-                    monthCounter[0]++;
+                    timeCounter[0]++;
+                    timeGroupWeight[0] = timeGroupWeight[0] + priorityData[iterator].getMLRweight();
 
                 }
             }
@@ -116,7 +128,17 @@ public class TrainingSector {
                 continue;
             }
             else{
+                if (priorityData[iterator].borrowPriority <= 10) {
+                    countCounter[3]++;
+                } else if (priorityData[iterator].borrowPriority <= 20) {
+                    countCounter[2]++;
 
+                } else if (priorityData[iterator].borrowPriority <= 30) {
+                    countCounter[1]++;
+
+                } else if (priorityData[iterator].borrowPriority <= 40) {
+                    countCounter[0]++;
+                }
             }
         }
 
@@ -160,8 +182,6 @@ public class TrainingSector {
                     typeCounter[5]++;
 
                 }
-
-
 
             }
         }
