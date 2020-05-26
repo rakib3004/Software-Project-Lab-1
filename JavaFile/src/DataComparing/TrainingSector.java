@@ -21,7 +21,7 @@ import java.util.TreeMap;
 
 public class TrainingSector {
 
-    PriorityData[] priorityData;
+    PriorityData[] priorityData,priorityDataCV;
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList();
@@ -34,7 +34,7 @@ public class TrainingSector {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
-    public void trainingSectorMethods(){
+    public PriorityData [] trainingSectorMethods(){
         int [] priceCounter = new int[3];
         double [] priceGroupWeight;
         priceGroupWeight = new double[3];
@@ -51,7 +51,7 @@ public class TrainingSector {
         double [] typeGroupWeight;
         typeGroupWeight = new double[6];
 
-        //double [] priceGroupWeight,double [] timeGroupWeight, double [] countGroupWeight,double [] typeGroupWeight;
+        //doubl   e [] priceGroupWeight,double [] timeGroupWeight, double [] countGroupWeight,double [] typeGroupWeight;
 
         try {
             priorityData = processing.fileReaderMethods();
@@ -222,11 +222,14 @@ public class TrainingSector {
 
         for(iterator=0;iterator<6;iterator++){
 
-            timeGroupWeight[iterator] = timeGroupWeight[iterator]/timeCounter[iterator];
+            typeGroupWeight[iterator] = typeGroupWeight[iterator]/typeCounter[iterator];
         }
 
         PredictionSector predictionSector = new PredictionSector();
-        predictionSector.predictionSectorMethods(priceGroupWeight,timeGroupWeight,countGroupWeight,typeGroupWeight);
+     priorityDataCV =    predictionSector.predictionSectorMethods(priceGroupWeight,timeGroupWeight,countGroupWeight,typeGroupWeight);
+
+        return priorityDataCV;
+
     }
 
 

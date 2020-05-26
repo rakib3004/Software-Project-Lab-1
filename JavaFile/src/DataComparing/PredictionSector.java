@@ -1,10 +1,13 @@
 package DataComparing;
 
 import ObjectOriented.AHPcriteriaWeight;
+import ObjectOriented.PriorityData;
 
 public class PredictionSector {
+    PriorityData[] priorityData,priorityDataCV;
+
     AHPcriteriaWeight ahPcriteriaWeight;
-    public void predictionSectorMethods(double [] priceGroupWeight,double [] timeGroupWeight,
+    public PriorityData [] predictionSectorMethods(double [] priceGroupWeight,double [] timeGroupWeight,
                                         double [] countGroupWeight,double [] typeGroupWeight){
 
         ahPcriteriaWeight = new AHPcriteriaWeight(priceGroupWeight[0],
@@ -22,6 +25,8 @@ public class PredictionSector {
                 typeGroupWeight[1],typeGroupWeight[2],typeGroupWeight[3],typeGroupWeight[4],typeGroupWeight[5]);
 
 TestingSector testingSector  = new TestingSector();
-testingSector.testingSectorMethods(ahPcriteriaWeight);
+priorityDataCV = testingSector.testingSectorMethods(ahPcriteriaWeight);
+        return priorityDataCV;
+
     }
 }
