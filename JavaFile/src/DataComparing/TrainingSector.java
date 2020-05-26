@@ -71,13 +71,19 @@ public class TrainingSector {
             else{
                 if (Integer.parseInt(priorityData[iterator].bookData.bookPrice) <= 180) {
                     priceCounter[0]++;
+                    priceGroupWeight[0] = priceGroupWeight[0] + priorityData[iterator].getMLRweight();
+
                 }
                 else if (Integer.parseInt(priorityData[iterator].bookData.bookPrice) <= 250) {
                     priceCounter[1]++;
+                    priceGroupWeight[1] = priceGroupWeight[1] + priorityData[iterator].getMLRweight();
+
                 }
 
                 else {
                     priceCounter[2]++;
+                    priceGroupWeight[2] = priceGroupWeight[2] + priorityData[iterator].getMLRweight();
+
                 }
             }
         }
@@ -130,14 +136,22 @@ public class TrainingSector {
             else{
                 if (priorityData[iterator].borrowPriority <= 10) {
                     countCounter[3]++;
+                    countGroupWeight[3] = countGroupWeight[3] + priorityData[iterator].getMLRweight();
+
                 } else if (priorityData[iterator].borrowPriority <= 20) {
                     countCounter[2]++;
+                    countGroupWeight[2] = countGroupWeight[2] + priorityData[iterator].getMLRweight();
+
 
                 } else if (priorityData[iterator].borrowPriority <= 30) {
                     countCounter[1]++;
+                    countGroupWeight[1] = countGroupWeight[1] + priorityData[iterator].getMLRweight();
+
 
                 } else if (priorityData[iterator].borrowPriority <= 40) {
                     countCounter[0]++;
+                    countGroupWeight[0] = countGroupWeight[0] + priorityData[iterator].getMLRweight();
+
                 }
             }
         }
@@ -155,31 +169,46 @@ public class TrainingSector {
             else{
                 if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
                     typeCounter[0]++;
+                    typeGroupWeight[0] = typeGroupWeight[0] + priorityData[iterator].getMLRweight();
+
                 } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
 
                     typeCounter[0]++;
+                    typeGroupWeight[0] = typeGroupWeight[0] + priorityData[iterator].getMLRweight();
+
                 } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
 
                     typeCounter[1]++;
+                    typeGroupWeight[1] = typeGroupWeight[1] + priorityData[iterator].getMLRweight();
 
                 }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
 
                     typeCounter[2]++;
+                    typeGroupWeight[2] = typeGroupWeight[2] + priorityData[iterator].getMLRweight();
+
                 }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
                     typeCounter[2]++;
+                    typeGroupWeight[2] = typeGroupWeight[2] + priorityData[iterator].getMLRweight();
+
                 }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
                     typeCounter[2]++;
+                    typeGroupWeight[2] = typeGroupWeight[2] + priorityData[iterator].getMLRweight();
+
                 } else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
                     typeCounter[3]++;
+                    typeGroupWeight[3] = typeGroupWeight[3] + priorityData[iterator].getMLRweight();
 
                 }  else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
                     typeCounter[3]++;
+                    typeGroupWeight[3] = typeGroupWeight[3] + priorityData[iterator].getMLRweight();
 
                 }else if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
                     typeCounter[4]++;
+                    typeGroupWeight[4] = typeGroupWeight[4] + priorityData[iterator].getMLRweight();
 
                 }  else {
                     typeCounter[5]++;
+                    typeGroupWeight[5] = typeGroupWeight[5] + priorityData[iterator].getMLRweight();
 
                 }
 
