@@ -37,9 +37,9 @@ public class TrainingSector {
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     public void trainingSectorMethods(){
-        int [] typeCounter = new int[6];
-        double [] typeGroupWeight;
-        typeGroupWeight = new double[6];
+        int [] priceCounter = new int[3];
+        double [] priceGroupWeight;
+        priceGroupWeight = new double[3];
 
         int [] timeCounter = new int[5];
         double [] timeGroupWeight;
@@ -49,10 +49,11 @@ public class TrainingSector {
         double [] countGroupWeight;
         countGroupWeight = new double[4];
 
-        int [] priceCounter = new int[3];
-        double [] priceGroupWeight;
-        priceGroupWeight = new double[3];
+        int [] typeCounter = new int[6];
+        double [] typeGroupWeight;
+        typeGroupWeight = new double[6];
 
+        //double [] priceGroupWeight,double [] timeGroupWeight, double [] countGroupWeight,double [] typeGroupWeight;
 
         try {
             priorityData = processing.fileReaderMethods();
@@ -86,6 +87,11 @@ public class TrainingSector {
 
                 }
             }
+        }
+
+        for(iterator=0;iterator<3;iterator++){
+
+            priceGroupWeight[iterator] = priceGroupWeight[iterator]/priceCounter[iterator];
         }
 
 
@@ -123,10 +129,10 @@ public class TrainingSector {
             }
         }
 
+        for(iterator=0;iterator<5;iterator++){
 
-
-
-
+            timeGroupWeight[iterator] = timeGroupWeight[iterator]/timeCounter[iterator];
+        }
 
         for (iterator = 0;iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
@@ -156,9 +162,10 @@ public class TrainingSector {
             }
         }
 
+        for(iterator=0;iterator<4;iterator++){
 
-
-
+            countGroupWeight[iterator] = countGroupWeight[iterator]/countCounter[iterator];
+        }
 
 
         for (iterator = 0;iterator < numberOfBooks; iterator++) {
@@ -215,10 +222,14 @@ public class TrainingSector {
             }
         }
 
+        for(iterator=0;iterator<6;iterator++){
 
+            timeGroupWeight[iterator] = timeGroupWeight[iterator]/timeCounter[iterator];
+        }
 
+        PredictionSector predictionSector = new PredictionSector();
+        predictionSector.predictionSectorMethods(priceGroupWeight,timeGroupWeight,countGroupWeight,typeGroupWeight);
     }
-
 
 
 }
