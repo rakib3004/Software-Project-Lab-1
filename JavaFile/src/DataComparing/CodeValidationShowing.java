@@ -2,6 +2,7 @@ package DataComparing;
 
 import MainPackage.BookNumber;
 import MainPackage.Processing;
+import Methods.PrioritySort;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
@@ -50,6 +51,7 @@ public class CodeValidationShowing extends Application {
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
+    PrioritySort prioritySort = new PrioritySort();
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -167,19 +169,25 @@ public class CodeValidationShowing extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        genericAlgo =soring.sortingMLRmethods(priorityData,numberOfBooks);
+    //    priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        
         TrainingSector trainingSector = new TrainingSector();
        priorityDataCV= trainingSector.trainingSectorMethods();
+    //    priorityDataCV = prioritySort.PrioritySortingMLRmethods(priorityDataCV,numberOfBooks);
+        System.out.println("Testing system of cross validation :");
 
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName, priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount, priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getMLRweight())));
+            list.add(new Book(priorityData[iterator].bookData.bookName,
+                    priorityData[iterator].bookData.writerName,
+                    priorityData[iterator].bookData.typeName,
+                    priorityData[iterator].bookData.bookId,
+                    priorityData[iterator].getMLRweight(),
+                    priorityDataCV[iterator].MLRweight));
+
+                System.out.println(priorityDataCV[iterator].getMLRweight()+"\t"+priorityData[iterator].getMLRweight());
         }
         }
         ObservableList data = FXCollections.observableList(list);
@@ -207,23 +215,42 @@ public class CodeValidationShowing extends Application {
 
 
 
+
         private SimpleStringProperty bookName;
         private SimpleStringProperty writerName;
-        private SimpleStringProperty bookId;
-        private SimpleStringProperty borrowCount;
-        private SimpleStringProperty price;
-        private SimpleStringProperty bookWeight;
         private SimpleStringProperty typeName;
+        private SimpleStringProperty bookId;
+        private SimpleStringProperty bookWeight;
+        private SimpleStringProperty bookWeightCV;
+
 
         public Book(SimpleStringProperty bookName,
                     SimpleStringProperty writerName,
+                    SimpleStringProperty typeName,
                     SimpleStringProperty bookId,
-                    SimpleStringProperty typeName) {
+                    SimpleStringProperty bookWeight,
+                    SimpleStringProperty bookWeightCV) {
             this.bookName = bookName;
             this.writerName = writerName;
-            this.bookId = bookId;
             this.typeName = typeName;
+            this.bookId = bookId;
+            this.bookWeight = bookWeight;
+            this.bookWeightCV = bookWeightCV;
         }
+
+        public String getBookWeightCV() {
+            return bookWeightCV.get();
+        }
+
+        public SimpleStringProperty bookWeightCVProperty() {
+            return bookWeightCV;
+        }
+
+        public void setBookWeightCV(String bookWeightCV) {
+            this.bookWeightCV.set(bookWeightCV);
+        }
+
+
 
         public String getTypeName() {
             return typeName.get();
@@ -237,28 +264,7 @@ public class CodeValidationShowing extends Application {
             this.typeName.set(typeName);
         }
 
-        public Book(SimpleStringProperty bookName,
-                    SimpleStringProperty writerName,
-                    SimpleStringProperty bookId,
-                    SimpleStringProperty typeName,
-                    SimpleStringProperty borrowCount,
-                    SimpleStringProperty price,
-                    SimpleStringProperty bookWeight) {
-            this.bookName = bookName;
-            this.writerName = writerName;
-            this.bookId = bookId;
-            this.typeName = typeName;
-            this.borrowCount = borrowCount;
-            this.price = price;
-            this.bookWeight = bookWeight;
-
-        }
-
-        public Book(SimpleStringProperty bookName, SimpleStringProperty writerName, SimpleStringProperty bookId) {
-            this.bookName = bookName;
-            this.writerName = writerName;
-            this.bookId = bookId;
-        }
+      
 
 
         public String getBookId() {
@@ -286,81 +292,6 @@ public class CodeValidationShowing extends Application {
         }
 
 
-
-        public Book(SimpleStringProperty bookName,
-                    SimpleStringProperty writerName,
-                    SimpleStringProperty bookId,
-                    SimpleStringProperty borrowCount,
-                    SimpleStringProperty price) {
-            this.bookName = bookName;
-            this.writerName = writerName;
-            this.bookId = bookId;
-            this.borrowCount = borrowCount;
-            this.price = price;
-        }
-
-
-
-        public SimpleStringProperty borrowCountProperty() {
-            return borrowCount;
-        }
-
-        public void setBorrowCount(String borrowCount) {
-            this.borrowCount.set(borrowCount);
-        }
-
-        public String getPrice() {
-            return price.get();
-        }
-
-        public SimpleStringProperty priceProperty() {
-            return price;
-        }
-
-        public void setPrice(String price) {
-            this.price.set(price);
-        }
-
-
-
-        public Book(String bookName, String writerName, String bookId, String borrowCount, String bookPrice, double mlRweight) {
-        }
-
-        public Book(String s1, String s2) {
-
-            bookName = new SimpleStringProperty(s1);
-            writerName = new SimpleStringProperty(s2);
-        }
-    public Book(String s1, String s2, String s3, String s4, String s5, String s6, String s7) {
-
-            bookName = new SimpleStringProperty(s1);
-            writerName = new SimpleStringProperty(s2);
-            bookId = new SimpleStringProperty(s3);
-            typeName = new SimpleStringProperty(s4);
-            borrowCount = new SimpleStringProperty(s5);
-            price = new SimpleStringProperty(s6);
-            bookWeight = new SimpleStringProperty(s7);
-
-        }
-    public Book(String s1, String s2, String s3) {
-
-            bookName = new SimpleStringProperty(s1);
-            writerName = new SimpleStringProperty(s2);
-            bookId = new SimpleStringProperty(s3);
-
-        }
-
-    public Book(String s1, String s2, String s3, String s4) {
-
-            bookName = new SimpleStringProperty(s1);
-            writerName = new SimpleStringProperty(s2);
-            bookId = new SimpleStringProperty(s3);
-            typeName = new SimpleStringProperty(s4);
-
-        }
-
-
-
         public String getBookName() {
 
             return bookName.get();
@@ -378,6 +309,25 @@ public class CodeValidationShowing extends Application {
 
             writerName.set(s);
         }
+
+
+
+        public Book(String s1, String s2) {
+
+            bookName = new SimpleStringProperty(s1);
+            writerName = new SimpleStringProperty(s2);
+        }
+    public Book(String s1, String s2, String s3, String s4, double s5, double s6) {
+
+            bookName = new SimpleStringProperty(s1);
+            writerName = new SimpleStringProperty(s2);
+            typeName = new SimpleStringProperty(s4);
+            bookId = new SimpleStringProperty(s3);
+            bookWeight = new SimpleStringProperty(Double.toString(s5));
+            bookWeightCV = new SimpleStringProperty(Double.toString(s6));
+
+        }
+
 
         @Override
         public String toString() {

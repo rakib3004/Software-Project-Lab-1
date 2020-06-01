@@ -163,6 +163,7 @@ public class TrainingSector {
         for(iterator=0;iterator<4;iterator++){
 
             countGroupWeight[iterator] = countGroupWeight[iterator]/countCounter[iterator];
+
         }
 
 

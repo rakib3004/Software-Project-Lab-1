@@ -14,12 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestingSector {
-    AHPcriteriaWeight ahPcriteriaWeight;
 
     PriorityData[] priorityData,priorityDataCV;
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
-    List list = new ArrayList();
+    List list = new ArrayList(); 
 
     int iterator;
     int numberOfBooks;
@@ -30,7 +29,28 @@ public class TestingSector {
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     public PriorityData [] testingSectorMethods(AHPcriteriaWeight ahPcriteriaWeight) {
-        this.ahPcriteriaWeight = ahPcriteriaWeight;
+
+        System.out.println("Here We will see the result of AHP weight calculation : ");
+        System.out.println("ahPcriteriaWeight.scienceFictionType");
+        System.out.println(ahPcriteriaWeight.scienceFictionType);
+        System.out.println("ahPcriteriaWeight.lowlyDemand");
+        System.out.println(ahPcriteriaWeight.lowlyDemand);
+        System.out.println("ahPcriteriaWeight.latestBook");
+        System.out.println(ahPcriteriaWeight.latestBook);
+        System.out.println("ahPcriteriaWeight.newlyBook");
+        System.out.println(ahPcriteriaWeight.newlyBook);
+        System.out.println("ahPcriteriaWeight.kobitaType");
+        System.out.println(ahPcriteriaWeight.kobitaType);
+        System.out.println("ahPcriteriaWeight.religionType");
+        System.out.println(ahPcriteriaWeight.religionType);
+        System.out.println("ahPcriteriaWeight.lowlyDemand");
+        System.out.println(ahPcriteriaWeight.lowlyDemand);
+        System.out.println("ahPcriteriaWeight.highMediumDemand");
+        System.out.println(ahPcriteriaWeight.highMediumDemand);
+        System.out.println("ahPcriteriaWeight.highlyDemand");
+        System.out.println(ahPcriteriaWeight.highlyDemand);
+
+
         try {
             priorityData = processing.fileReaderMethods();
             priorityDataCV = processing.fileReaderMethods();
@@ -165,6 +185,10 @@ priorityDataCV[iterator].MLRweight = .25 * (priorityData[iterator].pricePriority
         priorityData[iterator].timePriority+priorityData[iterator].borrowPriority+
         priorityData[iterator].timePriority);
 
+
+
+
+            System.out.println(priorityDataCV[iterator].MLRweight);
         }
 
         return priorityDataCV;
