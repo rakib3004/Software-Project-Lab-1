@@ -1,5 +1,6 @@
 package JavFX;
 
+import ProjectDescription.About;
 import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -75,6 +76,17 @@ public class FxSecondWindow extends Application {
             ChooseType chooseType = new ChooseType();
             try {
                 chooseType.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+ about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
