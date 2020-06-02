@@ -184,8 +184,8 @@ public class CodeValidationShowing extends Application {
                     priorityData[iterator].bookData.writerName,
                     priorityData[iterator].bookData.typeName,
                     priorityData[iterator].bookData.bookId,
-                    priorityData[iterator].getMLRweight(),
-                    priorityDataCV[iterator].MLRweight));
+                    priorityDataCV[iterator].getMLRweight(),
+                    priorityData[iterator].getMLRweight()));
 
                 System.out.println(priorityDataCV[iterator].getMLRweight()+"\t"+priorityData[iterator].getMLRweight());
         }

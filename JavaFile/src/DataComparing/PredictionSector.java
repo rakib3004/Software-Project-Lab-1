@@ -5,6 +5,7 @@ import ObjectOriented.PriorityData;
 
 public class PredictionSector {
     PriorityData[] priorityData,priorityDataCV;
+    TestingSector testingSector  = new TestingSector();
 
     AHPcriteriaWeight ahPcriteriaWeight;
     public PriorityData [] predictionSectorMethods(double [] priceGroupWeight,double [] timeGroupWeight,
@@ -64,10 +65,6 @@ int iterator;
         }
 
 
-
-
-
-TestingSector testingSector  = new TestingSector();
 priorityDataCV = testingSector.testingSectorMethods(ahPcriteriaWeight);
         return priorityDataCV;
 

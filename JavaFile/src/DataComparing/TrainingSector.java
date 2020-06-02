@@ -30,6 +30,7 @@ public class TrainingSector {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+    PredictionSector predictionSector = new PredictionSector();
 
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
@@ -226,7 +227,6 @@ public class TrainingSector {
             typeGroupWeight[iterator] = typeGroupWeight[iterator]/typeCounter[iterator];
         }
 
-        PredictionSector predictionSector = new PredictionSector();
      priorityDataCV =    predictionSector.predictionSectorMethods(priceGroupWeight,timeGroupWeight,countGroupWeight,typeGroupWeight);
 
         return priorityDataCV;

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class TestingSector {
 
-    PriorityData[] priorityData,priorityDataCV;
+    PriorityData[] priorityData,priorityDataCV,priorityData2;
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList(); 
@@ -54,12 +54,14 @@ public class TestingSector {
         try {
             priorityData = processing.fileReaderMethods();
             priorityDataCV = processing.fileReaderMethods();
+            priorityData2 = processing.fileReaderMethods();
             numberOfBooks = bookNumber.bookNumberFindingMethods();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData2 = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
@@ -185,11 +187,22 @@ priorityDataCV[iterator].MLRweight = .25 * (priorityData[iterator].pricePriority
         priorityData[iterator].timePriority+priorityData[iterator].borrowPriority+
         priorityData[iterator].timePriority);
 
-
-
-
-            System.out.println(priorityDataCV[iterator].MLRweight);
         }
+        System.out.println("Cross Validation Value\tCalculated Value\n");
+ for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+
+     if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+             priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+         System.out.println(priorityDataCV[iterator].getMLRweight()+"\t"+priorityData2[iterator].getMLRweight());
+
+
+     }
+
+
+        }
+
+
 
         return priorityDataCV;
 
