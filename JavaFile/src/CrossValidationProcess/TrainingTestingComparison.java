@@ -2,6 +2,7 @@ package CrossValidationProcess;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -52,10 +53,13 @@ public class TrainingTestingComparison extends Application {
 
     @Override
     public void start(Stage primaryStage){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -169,10 +173,12 @@ public class TrainingTestingComparison extends Application {
 
 
     public void startScatterChart(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -361,10 +367,13 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
 
 
     public void startLineChart(Stage primaryStage) throws Exception{
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -552,10 +561,12 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
 
 
     public void startStackedAreaChart(Stage primaryStage) throws Exception{
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);

@@ -2,6 +2,7 @@ package CrossValidationProcess;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -29,10 +30,13 @@ public class TrainingMethodology extends Application {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
     public void start(Stage primaryStage){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
