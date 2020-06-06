@@ -1,5 +1,6 @@
 package BookDataBaseFX;
 
+import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
@@ -24,7 +25,9 @@ public class DemandsOfBookFX extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);

@@ -1,5 +1,7 @@
 package BookDataBaseFX;
 
+import FilePackage.DateTimeWriter;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -11,6 +13,10 @@ public class SevenValueCalculation {
     int thirdQuartile;
 
     public double [] sevenValueCalculationMethods(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
 
         double [] sevenValueArray  =  new double[7];
 
@@ -33,9 +39,15 @@ public class SevenValueCalculation {
     }
 
     public double  findMinimumValue(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
    return    list.get(0);
 
     } public double  findFirstQuartileValue(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         double q1 = sizeA/4;
         firstQuartile = (int)q1;
@@ -56,7 +68,9 @@ public class SevenValueCalculation {
 
 
     } public double  findMedianValue(List<Double> list){
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         double median,median1,median2;
         if(sizeA%2==1){
@@ -77,7 +91,9 @@ return  median;
 
     }
     public double  findThirdQuartileValue(List<Double> list){
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         double q2 = (3*sizeA)/4;
         thirdQuartile = (int)q2;
@@ -98,6 +114,9 @@ return  median;
 
 
     } public double  findMaximumValue(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
       return list.get(sizeA-1);
 
@@ -106,17 +125,26 @@ return  median;
 
     public void findInterQuartileRange(List<Double> list){
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         interQuartileRange = list.get(thirdQuartile) -  list.get(firstQuartile) ;
 
     }
 
     public double findLowerAdjacentValue(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         double lowerAdjacentValue = firstQuartile - (1.5 * interQuartileRange);
   return lowerAdjacentValue;
     }
     public double findUpperAdjacentValue(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         double upperAdjacentValue = thirdQuartile + (1.5 * interQuartileRange);
 return upperAdjacentValue;
