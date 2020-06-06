@@ -2,6 +2,7 @@ package LibraryFunctionality;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.ReverseSorting;
@@ -11,18 +12,20 @@ import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import TableViewPackage.Book;
 import UserInterfacePackage.ChooseType;
+import UserInterfacePackage.RemoveBookFX;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -76,6 +79,10 @@ public class ReadingRoom extends Application {
     public void start(Stage primaryStage) {
 
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         if(bookPoint==0){
             try {
                 priorityData = processing.fileReaderMethods();
@@ -128,8 +135,7 @@ public class ReadingRoom extends Application {
         show.setTranslateY(350);
 
         show.setOnAction(actionEvent -> {
-            System.out.println("Nothing to Show");
-
+            showInfo(primaryStage,labelName,data);
         });
 
         setStyle(show);
@@ -172,6 +178,122 @@ public class ReadingRoom extends Application {
 
 
     }
+
+
+    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
+
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        Label label = new Label();
+        label.setPrefSize(800,45);
+        label.setTranslateX(150);
+        label.setTranslateY(0);
+        label.setText(labelName);
+        setStyle(label);
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
+
+
+        back.setOnAction(actionEvent -> {
+            list.clear();
+
+            try {
+                this.start(secondaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+        });
+
+
+        setStyle(exit);
+        setStyle(back);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+
+
+        TextField textField1 = new TextField();
+        setStyle(textField1);
+        textField1.setTranslateX(580);
+        textField1.setTranslateY(650);
+        textField1.setPrefSize(120,80);
+
+
+
+
+        Image image = new Image("libraryBackground16.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit, back);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+        Scene scene1 = new Scene(group, 1500, 950);
+
+        secondaryStage.setScene(scene1);
+        secondaryStage.setTitle("Books Statistics");
+        secondaryStage.setFullScreen(true);
+        secondaryStage.show();
+
+
+    }
+
+    private class RowSelectChangeListener implements ChangeListener {
+
+        @Override
+        public void changed(ObservableValue observableValue, Object o, Object t1) {
+
+        }
+    }
+
+    private ObservableList getInitialTableData() throws IOException {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+
+        List list = new ArrayList();
+
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
+
+
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
+        }
+        ObservableList data = FXCollections.observableList(list);
+        return data;
+    }
+
+
 
 
 
