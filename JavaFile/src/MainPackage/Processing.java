@@ -1,6 +1,7 @@
 package MainPackage;
 
 
+import FilePackage.DateTimeWriter;
 import Methods.PrintInfo;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
@@ -21,11 +22,14 @@ public class Processing {
 
   DataParsing dataParsing = new DataParsing();
   PrintInfo printInfo = new PrintInfo();
-  int iterator;
     int charIndex ;
     int wordIndex;
 PriorityData [] priorityData;
     public PriorityData [] fileReaderMethods()  throws IOException{
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         File file = new File("IIT_SPL.txt");
         FileReader fr = new FileReader(file);
@@ -97,52 +101,50 @@ bookName[wordIndex] = bookName[wordIndex].trim();
                                   }
 
 
-                         if (bookId[wordIndex].substring(0, 2).equals("02")) {
+                     else    if (bookId[wordIndex].substring(0, 2).equals("02")) {
                              typeName[wordIndex]=kobita.getText();
                         }
 
-                            if (bookId[wordIndex].substring(0, 2).equals("05")) {
+                        else    if (bookId[wordIndex].substring(0, 2).equals("05")) {
                                 typeName[wordIndex]=rochonaboli.getText();
                         }
 
-
-                if (bookId[wordIndex].substring(0, 2).equals("04")) {
+              else  if (bookId[wordIndex].substring(0, 2).equals("04")) {
                                 typeName[wordIndex]=religion.getText();
 
                             }
 
 
-                            if (bookId[wordIndex].substring(0, 2).equals("13")) {
+                          else  if (bookId[wordIndex].substring(0, 2).equals("13")) {
                                 typeName[wordIndex]=biggan.getText();
                         }
 
-                           if (bookId[wordIndex].substring(0, 2).equals("06")) {
+                        else   if (bookId[wordIndex].substring(0, 2).equals("06")) {
                                 typeName[wordIndex]=sciFi.getText();
                         }
-                     if (bookId[wordIndex].substring(0, 2).equals("11")) {
+                   else  if (bookId[wordIndex].substring(0, 2).equals("11")) {
 
                                 typeName[wordIndex]=shishuShahitto.getText();
                         }
 
-                            if (bookId[wordIndex].substring(0, 2).equals("10")) {
+                          else  if (bookId[wordIndex].substring(0, 2).equals("10")) {
                                 typeName[wordIndex]=kisoreUponnash.getText();
                         }
 
 
-                            if (bookId[wordIndex].substring(0, 2).equals("12")) {
+                         else   if (bookId[wordIndex].substring(0, 2).equals("12")) {
                                 typeName[wordIndex]=biography.getText();
                         }
 
 
-                            if (bookId[wordIndex].substring(0,2).equals("08")) {
+                        else   if (bookId[wordIndex].substring(0,2).equals("08")) {
                                 typeName[wordIndex]=gobesona.getText();
                             }
-                       if (bookId[wordIndex].substring(0, 2).equals("12")) {
+                     else  if (bookId[wordIndex].substring(0, 2).equals("12")) {
                                 typeName[wordIndex]=onubad.getText();
                         }
 
-                      if (bookId[wordIndex].substring(0, 2).equals("07")||
-                                    bookId[wordIndex].substring(0, 2).equals("22")) {
+                     else {
                           typeName[wordIndex]=others.getText();
 
                         }

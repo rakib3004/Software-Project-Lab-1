@@ -1,5 +1,6 @@
 package MainPackage;
 
+import FilePackage.DateTimeWriter;
 import SimpleRegression.DoublyLinearRegression;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
@@ -32,6 +33,9 @@ public class DataParsing {
     public PriorityData [] dataParsingMethods(BookData[] bookData, String[] writerName,
                                    String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = bookId[iterator].length();

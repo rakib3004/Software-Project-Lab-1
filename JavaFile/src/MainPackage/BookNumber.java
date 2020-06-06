@@ -1,5 +1,6 @@
 package MainPackage;
 
+import FilePackage.DateTimeWriter;
 import Methods.PrintInfo;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
@@ -11,8 +12,11 @@ import java.io.IOException;
 
 public class BookNumber {
     public  int bookNumberFindingMethods() throws IOException {
-        int numOfBook;
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
+        int numOfBook;
         int iterator;
         int charIndex = 0;
         int wordIndex = 0;
