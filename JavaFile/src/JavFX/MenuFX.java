@@ -1,6 +1,7 @@
 package JavFX;
 
 import CrossValidationProcess.CrossValidationFX;
+import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
@@ -19,6 +20,10 @@ public class MenuFX extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 
         Button bookApplications = new Button("Tool Applications");

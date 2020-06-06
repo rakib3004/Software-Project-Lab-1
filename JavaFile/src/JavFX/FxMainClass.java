@@ -1,5 +1,6 @@
 package JavFX;
 
+import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
 import VisualRepresentation.LineChartFX;
@@ -24,6 +25,12 @@ public class FxMainClass extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
 
         Button welcome = new Button("Welcome to RTML");
         welcome.setTranslateX(480);
@@ -110,11 +117,7 @@ public class FxMainClass extends Application {
     
 
     public static void main(String[] args) {
-        Date dNow = new Date( );
-        SimpleDateFormat ft =
-                new SimpleDateFormat("E dd.MM.yyyy 'at' hh:mm:ss a");
 
-        System.out.println(ft.format(dNow));
         Application.launch(args);
     }
 

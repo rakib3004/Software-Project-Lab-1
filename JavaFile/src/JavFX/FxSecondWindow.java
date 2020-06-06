@@ -1,5 +1,6 @@
 package JavFX;
 
+import FilePackage.DateTimeWriter;
 import ProjectDescription.About;
 import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
@@ -37,6 +38,9 @@ public class FxSecondWindow extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 
         Button adminSection = new Button("Admin Section");
