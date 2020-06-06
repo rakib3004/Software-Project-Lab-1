@@ -15,6 +15,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class FxMainClass extends Application {
@@ -108,7 +110,13 @@ public class FxMainClass extends Application {
     
 
     public static void main(String[] args) {
+        Date dNow = new Date( );
+        SimpleDateFormat ft =
+                new SimpleDateFormat("E dd.MM.yyyy 'at' hh:mm:ss a");
 
+        System.out.println(ft.format(dNow));
         Application.launch(args);
     }
+
+
 }
