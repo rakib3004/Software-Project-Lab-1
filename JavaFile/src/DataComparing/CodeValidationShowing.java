@@ -1,5 +1,6 @@
 package DataComparing;
 
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -55,9 +56,11 @@ public class CodeValidationShowing extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         primaryStage.setTitle("Table View Example 1");
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -162,6 +165,9 @@ public class CodeValidationShowing extends Application {
     }
 
     private ObservableList getInitialTableData() throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         List list = new ArrayList();
 

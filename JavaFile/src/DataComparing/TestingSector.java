@@ -1,6 +1,7 @@
 package DataComparing;
 
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -50,6 +51,9 @@ public class TestingSector {
         System.out.println("ahPcriteriaWeight.highlyDemand");
         System.out.println(ahPcriteriaWeight.highlyDemand);
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         try {
             priorityData = processing.fileReaderMethods();

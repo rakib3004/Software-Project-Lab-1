@@ -1,5 +1,6 @@
 package DataComparing;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
@@ -26,7 +27,9 @@ public class PredictionSector {
         */
         // Combined section for constructor;
 
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         ahPcriteriaWeight = new AHPcriteriaWeight(priceGroupWeight[0],
                 priceGroupWeight[1],priceGroupWeight[2],countGroupWeight[0],countGroupWeight[1],

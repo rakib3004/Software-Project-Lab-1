@@ -2,6 +2,7 @@ package DataComparing;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -36,6 +37,10 @@ public class TrainingSector {
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     public PriorityData [] trainingSectorMethods(){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        
         int [] priceCounter = new int[3];
         double [] priceGroupWeight;
         priceGroupWeight = new double[3];
