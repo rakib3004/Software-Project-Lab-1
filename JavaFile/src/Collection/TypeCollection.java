@@ -1,5 +1,6 @@
 package Collection;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 import MultiVariableRegression.MedianCalculation;
 
@@ -9,6 +10,10 @@ public class TypeCollection {
     MedianCalculation medianCalculation = new MedianCalculation();
 
     public void typeCollectionMLRMethods(PriorityData[] priorityData, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Set<String> typeId = new HashSet<>();
         int iterator1;
 
@@ -87,6 +92,11 @@ public class TypeCollection {
 
 
     }public void typeCollectionAHPMethods(PriorityData[] priorityData, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Set<String> typeId = new HashSet<>();
         int iterator1;
 
@@ -165,6 +175,11 @@ public class TypeCollection {
 
 
     }public void typeCollectionPRAMethods(PriorityData[] priorityData, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Set<String> typeId = new HashSet<>();
         int iterator1;
 

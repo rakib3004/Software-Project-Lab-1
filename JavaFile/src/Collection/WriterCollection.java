@@ -1,5 +1,6 @@
 package Collection;
 
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -14,6 +15,11 @@ public class WriterCollection {
     MedianCalculation medianCalculation = new MedianCalculation();
 
     public  void writerCollectionMLRMethods(PriorityData[] priorityData, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
 
         Set<String> writerId = new HashSet<>();
         int iterator1;
@@ -121,6 +127,10 @@ if(sizeB>7){
 
     public  void writerCollectionAHPMethods(PriorityData[] priorityData, int numberOfBooks){
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Set<String> writerId = new HashSet<>();
         int iterator1;
 
@@ -217,6 +227,10 @@ int writerCount=0;
 
 
     public  void writerCollectionPRAMethods(PriorityData[] priorityData, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Set<String> writerId = new HashSet<>();
         int iterator1;
@@ -316,6 +330,7 @@ int writerCount=0;
 }
  class ConsoleMain{
     public static void main(String[] args) throws IOException {
+
         PriorityData [] priorityData;
         int numberOfBooks;
         Processing processing = new Processing();

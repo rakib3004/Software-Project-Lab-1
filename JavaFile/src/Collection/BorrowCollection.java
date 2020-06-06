@@ -1,5 +1,6 @@
 package Collection;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 import MultiVariableRegression.MedianCalculation;
 
@@ -8,6 +9,11 @@ public class BorrowCollection {
     MedianCalculation medianCalculation = new MedianCalculation();
 
     public void borrowCollectionMLRMethods(PriorityData[] priorityData, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Set<String> borrowID = new HashSet<>();
         int iterator1;
 
@@ -82,6 +88,11 @@ list.add(priorityData[iterator1].MLRweight);
         }
     }
     public void borrowCollectionAHPMethods(PriorityData[] priorityData,int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Set<String> borrowID = new HashSet<>();
         int iterator1;
 
@@ -148,6 +159,11 @@ list.add(priorityData[iterator1].AHPweight);
         }
     }
     public void borrowCollectionPRAMethods(PriorityData[] priorityData,int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Set<String> borrowID = new HashSet<>();
         int iterator1;
 

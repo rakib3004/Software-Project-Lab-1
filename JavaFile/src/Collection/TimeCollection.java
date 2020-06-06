@@ -1,5 +1,6 @@
 package Collection;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 import MultiVariableRegression.MedianCalculation;
 
@@ -11,6 +12,9 @@ public class TimeCollection {
     public void timeCollectionMLRMethods(PriorityData[] priorityData, int numberOfBooks){
 
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Set<String> monthID = new HashSet<>();
         int iterator1;
 
@@ -100,6 +104,9 @@ public class TimeCollection {
     } public void timeCollectionAHPMethods(PriorityData[] priorityData, int numberOfBooks){
 
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Set<String> monthID = new HashSet<>();
         int iterator1;
 
@@ -189,6 +196,9 @@ public class TimeCollection {
     } public void timeCollectionPRAMethods(PriorityData[] priorityData, int numberOfBooks){
 
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Set<String> monthID = new HashSet<>();
         int iterator1;
 
