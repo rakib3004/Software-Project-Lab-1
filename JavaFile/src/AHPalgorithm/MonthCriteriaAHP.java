@@ -1,5 +1,6 @@
 package AHPalgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
@@ -9,6 +10,11 @@ public class MonthCriteriaAHP {
     double [] monthCounter = new double[5];
 
     public AHPcriteriaWeight monthCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         double[][] monthCriterAHPMatrix = new double[5][5];
 
 monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityData,numberOfBooks);

@@ -1,5 +1,6 @@
 package AHPalgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
@@ -9,6 +10,10 @@ public class TypeCriteriaAHP {
     double [] typeCounter = new double[6];
 
     public AHPcriteriaWeight typeCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         double[][] typeCriteriaAHPMatrix = new double[6][6];
 
 typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData,numberOfBooks);

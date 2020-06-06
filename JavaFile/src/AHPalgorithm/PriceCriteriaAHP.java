@@ -1,5 +1,6 @@
 package AHPalgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 
@@ -8,6 +9,11 @@ public class PriceCriteriaAHP {
     AHPSubCriteriaProcess ahpSubCriteriaProcess = new AHPSubCriteriaProcess();
     double [] priceCounter = new double[3];
     public AHPcriteriaWeight priceCriteriaAHPMethods(double criteria,PriorityData[] priorityData, int numberOfBooks) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         double[][] priceCriteriaAHPMatrix = new double[3][3];
 
         int iterator, jterator;

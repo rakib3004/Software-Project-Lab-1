@@ -1,11 +1,16 @@
 package AHPalgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class AHPSubCriteriaProcess {
 
 int iterator;
     public double[] priceCriteriaCalculationMethods(PriorityData[] priorityData, int numberOfBooks){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         int [] priceCounter = new int[3];
         double [] parsingPriceCounter = new double[3];
 
@@ -27,7 +32,7 @@ priceCounter[0] =1;priceCounter[1] =1;priceCounter[2] =1;
 
         for(iterator=0;iterator<3;iterator++){
 
-            parsingPriceCounter[iterator] = Double.parseDouble(String.valueOf(priceCounter[iterator]));
+            parsingPriceCounter[iterator] = Double. parseDouble(String.valueOf(priceCounter[iterator]));
 
         }
 
@@ -96,6 +101,7 @@ return  parsingPriceCounter;
         return  parsingMonthCounter;
     }
 
+
     public double[] typeCriteriaCalculationMethods(PriorityData[] priorityData, int numberOfBooks){
         int [] typeCounter = new int[6];
         double [] parsingTypeCounter = new double[6];
@@ -136,7 +142,6 @@ return  parsingPriceCounter;
         for(iterator=0;iterator<6;iterator++){
 
             parsingTypeCounter[iterator] = Double.parseDouble(String.valueOf(typeCounter[iterator]));
-
         }
 
         return  parsingTypeCounter;
