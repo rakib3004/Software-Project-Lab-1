@@ -1,5 +1,6 @@
 package InfoDisplay;
 
+import FilePackage.DateTimeWriter;
 import SimpleRegression.DoublyLinearRegression;
 import JavFX.MenuFX;
 import MainPackage.BookNumber;
@@ -28,8 +29,9 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
     @Override
     public void start(Stage primaryStage) {
 
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);

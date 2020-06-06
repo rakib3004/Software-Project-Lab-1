@@ -3,6 +3,7 @@ package InfoDisplay;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import BookDataBaseFX.*;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -63,7 +64,11 @@ public class BookInformationFX extends Application {
     public void start(Stage primaryStage) {
 
 
-UIDisplayFX uiDisplayFX = new UIDisplayFX();
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);

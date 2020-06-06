@@ -2,6 +2,7 @@ package InfoDisplay;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -44,14 +45,19 @@ public class BookNumberDisplayFX extends Application {
     int typePalse,writerPalse,yearPalse;
     int timeSec = 1;
     int bookCounter=0;
+    Timeline time = new Timeline();
+
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    Timeline time = new Timeline();
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
     public void start(Stage primaryStage) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");

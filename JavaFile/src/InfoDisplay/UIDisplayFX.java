@@ -1,5 +1,6 @@
 package InfoDisplay;
 
+import FilePackage.DateTimeWriter;
 import VisualRepresentation.ScatterChartFX;
 import VisualRepresentation.LineChartFX;
 import VisualRepresentation.StackedAreaFX;
@@ -26,6 +27,10 @@ StackedAreaFX stackedAreaFX = new StackedAreaFX();
     }
 
     public void typeStatistics(Stage typeStatisticsStage) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
@@ -135,6 +140,9 @@ BookApplication bookApplication = new BookApplication();
 
     public void timeStatistics(Stage timeStatisticsStage) {
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
         Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
@@ -239,6 +247,9 @@ BookApplication bookApplication = new BookApplication();
     }
 
     public void borrowStatistics(Stage borrowStatisticsStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
@@ -261,7 +272,6 @@ BookApplication bookApplication = new BookApplication();
         scatterChart.setTranslateY(200);
         lineChart.setTranslateX(500);
         lineChart.setTranslateY(300);
-
         stackedAreaChart.setTranslateX(500);
         stackedAreaChart.setTranslateY(400);
 
@@ -349,6 +359,10 @@ BookApplication bookApplication = new BookApplication();
     }
 
      public void priceStatistics(Stage priceStatisticsStage) {
+
+         String  className = this.getClass().getSimpleName();
+         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+         dateTimeWriter.dateTimeWriterMethods(className);
 
          Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
          Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
