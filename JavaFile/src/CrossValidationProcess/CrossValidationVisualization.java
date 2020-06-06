@@ -2,6 +2,7 @@ package CrossValidationProcess;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -41,10 +42,13 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
     @Override
     public void start(Stage primaryStage) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -149,10 +153,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
     }
 
     public void startStackedArea(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -326,11 +332,14 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
     }
     public void startLineChart(Stage primaryStage) throws IOException {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
-        back.setTranslateX(0);
+                back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);

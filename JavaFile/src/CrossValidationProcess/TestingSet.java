@@ -2,6 +2,7 @@ package CrossValidationProcess;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -33,6 +34,11 @@ public class TestingSet extends Application {
 
     @Override
     public void start(Stage primaryStage){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 

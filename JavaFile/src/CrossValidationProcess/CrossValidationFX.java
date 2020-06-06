@@ -2,6 +2,8 @@ package CrossValidationProcess;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import DataComparing.CodeValidationShowing;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -31,10 +33,12 @@ public class CrossValidationFX extends Application {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
     public void start(Stage primaryStage){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -80,14 +84,16 @@ public class CrossValidationFX extends Application {
 
 
         dataComparing.setOnAction(actionEvent -> {
-      /*  TrainingObserVation trainingObserVation = new TrainingObserVation();
-            try {
-                trainingObserVation.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }*/
 
             // new process which we processed today......................................................................
+            CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
+            try {
+                codeValidationShowing.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+
 
         });
 
@@ -125,10 +131,13 @@ public class CrossValidationFX extends Application {
     }
 
 public void finish(Stage primaryStage){
-        Button back = new Button("Back");
+
+    String  className = this.getClass().getSimpleName();
+    DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    dateTimeWriter.dateTimeWriterMethods(className);
+
+    Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
