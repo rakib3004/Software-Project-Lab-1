@@ -1,5 +1,6 @@
 package RegressionFx;
 
+import FilePackage.DateTimeWriter;
 import JavFX.FxMainClass;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
@@ -16,12 +17,13 @@ public class MultiVaribleRegressionFX extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button twoVariableRegression = new Button("Two Variable Regression");
         Button threeVariableRegression = new Button("Three Variable Regression");
         Button fourVariableRegression = new Button("Four Variable Regression");
-
-
         twoVariableRegression.setTranslateX(500);
         twoVariableRegression.setTranslateY(250);
         threeVariableRegression.setTranslateX(500);

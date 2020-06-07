@@ -1,5 +1,6 @@
 package RegressionFx;
 
+import FilePackage.DateTimeWriter;
 import TableViewPackage.MLR_TableViewFX;
 import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
@@ -26,14 +27,13 @@ public class FourVariableRegression extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button consoleView = new Button("Console View");
         Button tableView = new Button("Table View");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         tableView.setTranslateX(570);
         tableView.setTranslateY(300);
         consoleView.setTranslateX(570);

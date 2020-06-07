@@ -1,5 +1,6 @@
 package RegressionFx;
 
+import FilePackage.DateTimeWriter;
 import SimpleRegression.DoublyLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -26,25 +27,19 @@ public class ThreeVariableRegression extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-
-
-
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         Start.setTranslateX(500);
         Start.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         Start.setOnAction(actionEvent -> {
 
             try {

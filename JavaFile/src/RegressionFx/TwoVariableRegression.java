@@ -1,5 +1,6 @@
 package RegressionFx;
 
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
@@ -22,25 +23,19 @@ public class TwoVariableRegression extends Application {
     BookNumber bookNumber = new BookNumber();
 TypeCountRegression typeCountRegression = new TypeCountRegression();
     @Override
-    public void start(Stage primaryStage) throws IOException {
-
-
-
-
-
+    public void start(Stage primaryStage)  {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         Start.setTranslateX(500);
         Start.setTranslateY(400);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         Start.setOnAction(actionEvent -> {
 
             try {
