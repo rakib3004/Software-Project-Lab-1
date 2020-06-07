@@ -1,5 +1,6 @@
 package Methods;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
@@ -11,6 +12,9 @@ public class ReverseSorting {
     GenericAlgo genericAlgo[] = new GenericAlgo[1050];
 
     public PriorityData[] reverseSortingMLRmethods(PriorityData[] priorityData, int numberOfBooks){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         PriorityData temporaryPriority;
 

@@ -1,5 +1,6 @@
 package Methods;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.PriorityData;
 
@@ -7,6 +8,10 @@ public class PrintInfo {
 int iterator;
 int jterator;
     public void printInfoMethods(BookData[] bookData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         for (jterator = 0; jterator < numberOfBooks; jterator++) {
             System.out.println(bookData[jterator].bookName);
         }
@@ -28,6 +33,9 @@ int jterator;
     }
 
     public void showMLRProcessResult(PriorityData[] priorityData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         System.out.println("Book Name :\t Writer Name : \t Weight ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
@@ -41,6 +49,9 @@ int jterator;
 
 
     public void showAHPProcessResult(PriorityData[] priorityData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         System.out.println("Book Name :\t Writer Name : \t Weight ");
         for(iterator=0;iterator<numberOfBooks;iterator++){
@@ -54,6 +65,9 @@ int jterator;
 
 
     public void showPRAProcessResult(PriorityData[] priorityData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         System.out.println("Book Name :\t Writer Name : \t Weight ");
         for(iterator=0;iterator<numberOfBooks;iterator++){

@@ -1,5 +1,6 @@
 package Methods;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 import java.util.Scanner;
@@ -8,6 +9,10 @@ public class Searching {
 
 int iterator,jterator,kterator;
     public void search(PriorityData[] priorityData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         char ch;
         String string = " ";
         int iterator, jterator;

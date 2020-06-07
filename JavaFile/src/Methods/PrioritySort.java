@@ -1,15 +1,18 @@
 package Methods;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 
 public class PrioritySort {
-
     int iterator,jterator;
     public   PriorityData [] PrioritySortingMLRmethods(PriorityData[] priorityData, int numberOfBooks){
-PriorityData temporaryPriority;
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
+        PriorityData temporaryPriority;
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             for(jterator= iterator+1;jterator<numberOfBooks;jterator++){
                 if(priorityData[iterator].getMLRweight()<priorityData[jterator].getMLRweight()){
@@ -19,9 +22,6 @@ PriorityData temporaryPriority;
                 }
             }
         }
-
         return priorityData;
-
-
     }
 }
