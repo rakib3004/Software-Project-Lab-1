@@ -1,5 +1,6 @@
 package MultiVariableRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class MultipleLinearRegression {
@@ -11,12 +12,10 @@ d2 = a2X + b2Y + c2Z
 d3 = a3X + b3Y + c3Z
  */
 double a1,a2,a3;
-
 double b1,b2,b3;
 double c1,c2,c3;
 double d1,d2,d3;
 int iterator;
-
 
     double [] a_array = new double[3];
 double [] b_array = new double[3];
@@ -27,6 +26,9 @@ Matrix matrix = new Matrix();
 
 
  public PriorityData[] multipleLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks ){
+     String  className = this.getClass().getSimpleName();
+     DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+     dateTimeWriter.dateTimeWriterMethods(className);
 
      for(iterator =0; iterator <numberOfBooks; iterator++){
          y_mean = y_mean + priorityData[iterator].bookPriority;
@@ -42,7 +44,6 @@ for(iterator =0; iterator <numberOfBooks; iterator++){
  d3 = d3 + (priorityData[iterator].bookPriority*priorityData[iterator].pricePriority);
 }
 
-
   for(iterator =0; iterator <numberOfBooks; iterator++){
    a1 = a1 + (priorityData[iterator].borrowPriority*priorityData[iterator].borrowPriority);
   }for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -50,9 +51,6 @@ for(iterator =0; iterator <numberOfBooks; iterator++){
   }for(iterator =0; iterator <numberOfBooks; iterator++){
    c1 = c1 + (priorityData[iterator].pricePriority*priorityData[iterator].borrowPriority);
   }
-
-
-
 
 for(iterator =0; iterator <numberOfBooks; iterator++){
    a2 = a2 + (priorityData[iterator].borrowPriority*priorityData[iterator].timePriority);
@@ -86,11 +84,8 @@ for(iterator =0; iterator <numberOfBooks; iterator++){
   d_array[1] = d2;
   d_array[2] = d3;
 
-
 priorityData = matrix.evaluateMatrix(a_array,b_array,c_array,d_array,priorityData,numberOfBooks,y_mean);
 //,a2,a3,b1,b2,b3,c1,c2,c3,d1,d2,d3;
-
-
      return priorityData;
  }
 }

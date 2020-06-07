@@ -1,5 +1,6 @@
 package MultiVariableRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class Matrix {
@@ -18,6 +19,9 @@ CalculateWeight calculateWeight = new CalculateWeight();
                                double [] c_array, double [] d_array, PriorityData[] priorityData,
                                int numberOfBooks, double y_mean){
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 for (iterator =0; iterator <3; iterator++){
     matrix[iterator][0] = a_array[iterator];

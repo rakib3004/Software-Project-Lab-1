@@ -1,5 +1,7 @@
 package MultiVariableRegression;
 
+import FilePackage.DateTimeWriter;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -12,10 +14,13 @@ public class  MedianCalculation {
     int thirdQuartile;
 
     public void medianCalculationMethods(List<Double> list){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Collections.sort(list);
         System.out.println(list);
         sizeA = list.size();
-
         findMinimumValue(list);
         findMaximumValue(list);
         findMedianValue(list);
@@ -36,9 +41,7 @@ public class  MedianCalculation {
 
         double q1 = sizeA/4;
          firstQuartile = (int)q1;
-
         double checkFloor = q1 - firstQuartile;
-
         if(checkFloor>0.5){
             firstQuartile++;
         }
