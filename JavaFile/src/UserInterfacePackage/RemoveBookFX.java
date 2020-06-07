@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -48,8 +49,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
-
-
     int numberOfBooks;
     int bookPoint;
 
@@ -79,6 +78,9 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
     @Override
     public void start(Stage primaryStage){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 if(bookPoint==0){
     try {
@@ -176,7 +178,9 @@ else{
     }
 
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Label label = new Label();
         label.setPrefSize(800,45);
@@ -316,11 +320,10 @@ else{
         }
     }
 
-    private ObservableList getInitialTableData() throws IOException {
-
+    private ObservableList getInitialTableData() throws IOException { String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);

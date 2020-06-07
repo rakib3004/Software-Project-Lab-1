@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -54,27 +55,23 @@ int iterator;
 
     @Override
     public void start(Stage primaryStage){
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         try {
             priorityData = processing.fileReaderMethods();
             numberOfBooks = bookNumber.bookNumberFindingMethods();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
 
         back.setOnAction(actionEvent -> {
             ChooseType chooseType = new ChooseType();
@@ -425,7 +422,9 @@ bookType.setPrefSize(200, 50);
 
 
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Label label = new Label();
         label.setPrefSize(500,45);
@@ -433,19 +432,12 @@ bookType.setPrefSize(200, 50);
         label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
-
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
 
         back.setOnAction(actionEvent -> {
             list.clear();
@@ -542,9 +534,10 @@ bookType.setPrefSize(200, 50);
     }
 
     private ObservableList getInitialTableData() throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
-
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();

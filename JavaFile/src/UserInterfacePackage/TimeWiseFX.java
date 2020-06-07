@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -58,16 +59,15 @@ int iterator;
 
     @Override
     public void start(Stage primaryStage){
-
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         try {
             priorityData = processing.fileReaderMethods();
             numberOfBooks = bookNumber.bookNumberFindingMethods();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
@@ -259,8 +259,9 @@ int iterator;
 
 
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Label label = new Label();
         label.setPrefSize(500,45);
@@ -268,8 +269,6 @@ int iterator;
         label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
@@ -372,10 +371,11 @@ int iterator;
     }
 
     private ObservableList getInitialTableData() throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         List list = new ArrayList();
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);

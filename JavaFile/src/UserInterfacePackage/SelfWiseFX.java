@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -61,11 +62,9 @@ int iterator;
 
     @Override
     public void start(Stage primaryStage){
-
-
-
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         try {
             priorityData = processing.fileReaderMethods();
             numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -76,15 +75,10 @@ int iterator;
         priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
     Button back = new Button("Back");
     Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
         ChooseType chooseType = new ChooseType();
 
@@ -93,27 +87,15 @@ int iterator;
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     });
-
         exit.setOnAction(actionEvent -> {
         System.exit(0);
-
     });
-
-
 
     setStyle(exit);
     setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
-
-
 
         MenuItem self1 = new MenuItem("Book No : 1-100");
 
@@ -122,8 +104,6 @@ int iterator;
             public void handle(ActionEvent e) {
 
                     labelName="Top Books from "+self1.getText();
-
-
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(11,12).contains("0")) {
@@ -135,11 +115,8 @@ int iterator;
                                 priorityData[iterator].bookData.typeName));
 
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
-
            showInfo(primaryStage,labelName,data);
             }
         });
@@ -331,15 +308,15 @@ int iterator;
 }
 
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Label label = new Label();
         label.setPrefSize(500,45);
         label.setTranslateX(450);
         label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -441,10 +418,11 @@ int iterator;
     }
 
     private ObservableList getInitialTableData() throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         List list = new ArrayList();
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);

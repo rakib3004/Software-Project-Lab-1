@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import JavFX.FxSecondWindow;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
@@ -32,14 +33,13 @@ public class ChooseType extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button addBook = new Button("Add Book");
-
         addBook.setTranslateX(550);
         addBook.setTranslateY(100);
-
 
         addBook.setOnAction(actionEvent -> {
 
