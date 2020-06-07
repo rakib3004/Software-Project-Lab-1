@@ -2,6 +2,7 @@ package VisualRepresentation;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import BookDataBaseFX.*;
+import FilePackage.DateTimeWriter;
 import MultiVariableRegression.MultipleLinearRegression;
 import InfoDisplay.UIDisplayFX;
 import MainPackage.BookNumber;
@@ -45,6 +46,10 @@ double []  year2017Books = new double[7];
     }
 
     public void startTyping(Stage primaryStage) throws IOException {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -494,6 +499,9 @@ double []  year2017Books = new double[7];
     }
 
     public void startTiming(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -982,7 +990,9 @@ double []  year2017Books = new double[7];
 
 
     public void startBorrowing(Stage primaryStage) throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -1364,7 +1374,9 @@ double []  year2017Books = new double[7];
     }
 
     public void startPricing(Stage primaryStage) throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");

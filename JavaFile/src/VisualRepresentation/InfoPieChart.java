@@ -1,6 +1,7 @@
 package VisualRepresentation;
 
 import BookDataBaseFX.*;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
@@ -35,7 +36,9 @@ public class InfoPieChart extends Application  {
 
     public void startTypeBook(Stage primaryStage) throws IOException {
 
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -249,7 +252,9 @@ public class InfoPieChart extends Application  {
 
     public void startDemandBook(Stage primaryStage) throws IOException {
 
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -429,7 +434,9 @@ public class InfoPieChart extends Application  {
     }
 
     public void startGenericBook(Stage primaryStage) throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -626,8 +633,9 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
     }
 
     public void startClassBook(Stage primaryStage) throws IOException {
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -812,8 +820,9 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
     }
 
     public void startBorrowCount(Stage primaryStage) throws IOException {
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);

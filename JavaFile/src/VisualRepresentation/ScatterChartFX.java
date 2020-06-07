@@ -1,5 +1,6 @@
 package VisualRepresentation;
 import BookDataBaseFX.*;
+import FilePackage.DateTimeWriter;
 import InfoDisplay.UIDisplayFX;
 import JavFX.FxDatabase;
 import MainPackage.BookNumber;
@@ -44,6 +45,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     }
 
     public void startTyping(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -495,6 +499,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     }
 
     public void startTiming(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -975,7 +982,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
 
     public void startBorrowing(Stage primaryStage) throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -1349,7 +1358,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     }
 
     public void startPricing(Stage primaryStage) throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
