@@ -2,6 +2,7 @@ package ResultPackage;
 
 import AHPalgorithm.AHPcalculation;
 import BookDataBaseFX.SevenValueCalculation;
+import FilePackage.DateTimeWriter;
 import InfoDisplay.UIDisplayFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -47,8 +48,9 @@ public class MLR_LineChart extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);

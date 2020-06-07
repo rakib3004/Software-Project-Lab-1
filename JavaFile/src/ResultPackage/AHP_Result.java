@@ -1,9 +1,10 @@
 package ResultPackage;
 
 import Collection.*;
+import FilePackage.DateTimeWriter;
 import Methods.PrintInfo;
+import Methods.ReverseSorting;
 import Methods.Searching;
-import Methods.Sorting;
 import ObjectOriented.PriorityData;
 
 import javax.swing.*;
@@ -17,18 +18,20 @@ public class AHP_Result {
     TimeCollection timeCollection = new TimeCollection();
     BorrowCollection borrowCollection = new BorrowCollection();
     PriceCollection priceCollection = new PriceCollection();
-    Sorting sorting = new Sorting();
+    ReverseSorting reverseSorting = new ReverseSorting();
     PrintInfo printInfo = new PrintInfo();
     int iterator;
 
     public void AHP_ResultMethods(PriorityData[] priorityData, int numberOfBooks) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         int enterChoice;
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Enter Your Choice : ");
         System.out.println("1. Show Result");
-        System.out.println("2. Sorting and show result");
+        System.out.println("2. ReverseSorting and show result");
         System.out.println("3. Type Based Analysis");
         System.out.println("4. Writer Based Analysis");
         System.out.println("5. Price Based Analysis");
@@ -40,7 +43,7 @@ public class AHP_Result {
             printInfo.showAHPProcessResult(priorityData,numberOfBooks);
         }
         else if(enterChoice==2){
-            sorting.sortingAHPmethods(priorityData,numberOfBooks);
+            reverseSorting.sortingAHPmethods(priorityData,numberOfBooks);
         }
         else if(enterChoice==3){
             timeCollection.timeCollectionAHPMethods(priorityData,numberOfBooks);
