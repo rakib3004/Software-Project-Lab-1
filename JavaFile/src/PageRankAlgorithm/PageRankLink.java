@@ -1,14 +1,18 @@
 package PageRankAlgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class PageRankLink {
     int iterator1;
     public double  pageRankLinkMethods(int index,PriorityData[] priorityData, int numberOfBooks){
-int borrowLink,typeLink,writerLink,alphabetLink;
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        int borrowLink,typeLink,writerLink,alphabetLink;
 double antiBorrowLink,antiTypeLink,antiWriterLink,antiAlphabetLink;
         double linkValue;
-
 borrowLink = findBorrowLink(index,priorityData,numberOfBooks);
 typeLink = findTypeLink(index,priorityData,numberOfBooks);
 writerLink = findWriterLink(index,priorityData,numberOfBooks);

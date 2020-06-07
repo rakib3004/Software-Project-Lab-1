@@ -1,5 +1,6 @@
 package PageRankAlgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class CheckPageLink {
@@ -7,8 +8,11 @@ public class CheckPageLink {
     String  compareDataTwo;
     Character compareCharacterOne,compareCharacterTwo;
     public boolean checkPageLinkMethods(int index, int jIndex,PriorityData[] priorityData, int numberOfBooks){
-        boolean linkPageBool;
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
+        boolean linkPageBool;
         boolean borrowLinkBool,typeLinkBool,writerLinkBool,alphabetLinkBool;
         borrowLinkBool = checkBorrowLinkBool(index,jIndex,priorityData,numberOfBooks);
         typeLinkBool = checkTypeLinkBool(index,jIndex,priorityData,numberOfBooks);
@@ -17,7 +21,6 @@ public class CheckPageLink {
 
         linkPageBool = (borrowLinkBool||typeLinkBool||writerLinkBool||alphabetLinkBool);
         return linkPageBool;
-
     }
 
     public boolean checkBorrowLinkBool(int index,int jIndex,PriorityData[] priorityData, int numberOfBooks){

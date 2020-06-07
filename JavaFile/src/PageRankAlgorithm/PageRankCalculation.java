@@ -1,5 +1,6 @@
 package PageRankAlgorithm;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class PageRankCalculation {
@@ -12,11 +13,14 @@ CheckPageLink checkPageLink = new CheckPageLink();
 
 PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculation();
     public PriorityData[]  pageRankCalculationMethods(PriorityData[] priorityData, int numberOfBooks) {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         double initialProbability = Math.pow(numberOfBooks, -1);
         double[] pageWeight = new double[numberOfBooks];
         double[][] pageRankMatrix = new double[numberOfBooks][numberOfBooks];
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             pageWeight[iterator] = initialProbability * 4;
         }
