@@ -2,6 +2,7 @@ package RankingAlgorithmFx;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -33,7 +34,9 @@ AHPcalculation ahPcalculation = new AHPcalculation();
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button tableView = new Button("Table View");
         tableView.setTranslateX(550);

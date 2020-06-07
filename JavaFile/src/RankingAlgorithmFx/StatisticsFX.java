@@ -1,5 +1,6 @@
 package RankingAlgorithmFx;
 
+import FilePackage.DateTimeWriter;
 import JavFX.FxMainClass;
 import JavFX.MenuFX;
 import RegressionFx.MultiVaribleRegressionFX;
@@ -18,18 +19,19 @@ public class StatisticsFX extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button multiVariableRegression = new Button("MultiVariable Regression");
         Button analyticHierarchy = new Button("Analytic Hierarchy Process");
         Button pageRankAlgorithm = new Button("Page Rank Algorithm");
-
-
         multiVariableRegression.setTranslateX(500);
         multiVariableRegression.setTranslateY(250);
         analyticHierarchy.setTranslateX(500);
         analyticHierarchy.setTranslateY(350);
         pageRankAlgorithm.setTranslateX(500);
         pageRankAlgorithm.setTranslateY(450);
-
 
         multiVariableRegression.setOnAction(actionEvent -> {
 

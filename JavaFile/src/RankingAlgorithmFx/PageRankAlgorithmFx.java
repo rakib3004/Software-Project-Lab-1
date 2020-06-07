@@ -2,6 +2,7 @@ package RankingAlgorithmFx;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -35,13 +36,13 @@ public class PageRankAlgorithmFx extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         Button consoleView = new Button("Console View");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         Button tableView = new Button("Table View");
         tableView.setTranslateX(550);
         tableView.setTranslateY(300);
