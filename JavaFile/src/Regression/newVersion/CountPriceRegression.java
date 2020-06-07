@@ -1,12 +1,11 @@
 package Regression.newVersion;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 
 public class CountPriceRegression {
-
-
     int iterator;
     double countMean=0;
     double priceMean=0;
@@ -18,6 +17,9 @@ public class CountPriceRegression {
     String string;
     public  double countPriceRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         for(iterator =0; iterator <numberOfBooks; iterator++){
 
             bookCount[iterator] = priorityData[iterator].borrowPriority;

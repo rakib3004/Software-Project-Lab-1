@@ -1,5 +1,6 @@
 package Regression.newVersion;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
@@ -20,7 +21,9 @@ public class TypeCountRegression {
     double assumpMean2  = 0;
     public  double typeCountRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
 
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         for(iterator =0; iterator <numberOfBooks; iterator++){
 
             typeValue[iterator] = priorityData[iterator].bookPriority;

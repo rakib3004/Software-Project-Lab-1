@@ -1,5 +1,6 @@
  package Regression;
 
+ import FilePackage.DateTimeWriter;
  import ObjectOriented.BookData;
  import ObjectOriented.GenericAlgo;
 
@@ -18,6 +19,10 @@
     String string;
     public  void priceCountRegressionMethods(BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice9, String[] bookId, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 
         for(iterator =0; iterator <numberOfBooks; iterator++){

@@ -1,5 +1,6 @@
 package Regression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 
@@ -24,6 +25,10 @@ public class MonthCountRegression {
     int newYear,oldYear,integer1,integer2;
     public  void monthCountRegressionMethods(BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
             newYear = 2 + (20) * 12;
