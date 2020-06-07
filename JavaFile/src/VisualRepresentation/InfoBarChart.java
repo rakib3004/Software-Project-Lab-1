@@ -1,6 +1,7 @@
 package VisualRepresentation;
 
 import BookDataBaseFX.*;
+import FilePackage.DateTimeWriter;
 import JavFX.FxMainClass;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -34,7 +35,9 @@ public class InfoBarChart extends Application {
     }
 
      public void startTypeBook(Stage primaryStage) throws IOException {
-
+         String  className = this.getClass().getSimpleName();
+         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+         dateTimeWriter.dateTimeWriterMethods(className);
          Button back = new Button("Back");
          Button exit = new Button("Exit");
          back.setTranslateX(0);
@@ -279,7 +282,10 @@ public class InfoBarChart extends Application {
      }
 
      public void startDemandBook(Stage primaryStage) throws IOException {
-     Button back = new Button("Back");
+         String  className = this.getClass().getSimpleName();
+          DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+         dateTimeWriter.dateTimeWriterMethods(className);
+         Button back = new Button("Back");
          Button exit = new Button("Exit");
          back.setTranslateX(0);
          back.setTranslateY(650);
@@ -487,7 +493,9 @@ public class InfoBarChart extends Application {
 
 
      public void startGenericBook(Stage primaryStage) throws IOException {
-
+         String  className = this.getClass().getSimpleName();
+         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+         dateTimeWriter.dateTimeWriterMethods(className);
          Button back = new Button("Back");
          Button exit = new Button("Exit");
          back.setTranslateX(0);
@@ -755,7 +763,9 @@ public class InfoBarChart extends Application {
 
      public void startClassBook(Stage primaryStage) throws IOException {
 
-
+         String  className = this.getClass().getSimpleName();
+         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+         dateTimeWriter.dateTimeWriterMethods(className);
          Button back = new Button("Back");
          Button exit = new Button("Exit");
          back.setTranslateX(0);
@@ -970,7 +980,9 @@ public class InfoBarChart extends Application {
 
      }
     public void startBorrowCount(Stage primaryStage) throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
