@@ -1,5 +1,6 @@
 package SimpleRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import MainPackage.MainClass;
@@ -19,7 +20,10 @@ public class TotalRegression {
     int newYear,oldYear;
     public double[] totalRegressionMethods(BookData[] bookData, String[] writerName,
                                            String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
-     //   Processing processing = new Processing();
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         for(int iterator=0;iterator<numberOfBooks;iterator++){
            if(writerName[iterator].equals(" Humayon Ahmed")){

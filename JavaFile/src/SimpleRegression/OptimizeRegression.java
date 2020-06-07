@@ -1,14 +1,11 @@
 package SimpleRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import MainPackage.MainClass;
 
 public class OptimizeRegression {
-    double bookPriority5[] = new double[1050];
-    double timePriority5[] = new double[1050];
-    int borrowCount5[] = new int[1050];
-    double serialPriority[] = new double[1050];
     double pricePriority[] = new double[1050];
     double weight[] = new double[1050];
     int typeValue [] =new int[1050];
@@ -44,6 +41,9 @@ public class OptimizeRegression {
                                           String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
         //   Processing processing = new Processing();
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         for(int iterator=0;iterator<numberOfBooks;iterator++){
             if(writerName[iterator].equals(" Humayon Ahmed")){

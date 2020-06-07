@@ -1,5 +1,6 @@
 package SimpleRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class LinearRegression {
@@ -15,7 +16,9 @@ public class LinearRegression {
     int length;
     String string;
 public  double [] linearRegressionMethods(double x_value[], double y_value[], int numberOfBooks){
-
+    String  className = this.getClass().getSimpleName();
+    DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    dateTimeWriter.dateTimeWriterMethods(className);
 
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
         x_mean = x_mean + x_value[iterator];
@@ -33,14 +36,12 @@ public  double [] linearRegressionMethods(double x_value[], double y_value[], in
         beta_value = beta_value + (x_value[iterator] * x_value[iterator]);
 
     }
-
     double metaValue = alpha_value / beta_value;
     double betaValue = y_mean - (metaValue * x_mean);
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
         reg_y_value[iterator] = betaValue + metaValue * x_value[iterator];
     }
-
 return reg_y_value;
 }
 

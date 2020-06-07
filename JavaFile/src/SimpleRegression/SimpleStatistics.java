@@ -1,5 +1,6 @@
 package SimpleRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 import Regression.*;
 import Regression.newVersion.CountMonthRegression;
@@ -21,6 +22,9 @@ public class SimpleStatistics {
     public void regressionProcess(double[] bookPriority, double[] timePriority,
                                   double[] borrowPriority, double[]pricePriority,
                                   int numberOfBooks, PriorityData[] priorityData){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
 
     }

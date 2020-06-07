@@ -1,5 +1,6 @@
 package SimpleRegression;
 
+import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 import SimpleRegression.CalculateDoublyRegression;
 
@@ -11,6 +12,9 @@ double meanY,meanX2,meanX3;
 
 CalculateDoublyRegression calculateDoublyRegression = new CalculateDoublyRegression();
     public void doublyLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         for(iterator =0; iterator <number; iterator++){
 meanX2 = meanX2 + priorityData[iterator].borrowPriority;
@@ -42,8 +46,6 @@ meanY = meanY + priorityData[iterator].bookPriority ;
  for(iterator =0; iterator <number; iterator++) {
      sumX2X3 = sumX2X3 + (priorityData[iterator].borrowPriority*priorityData[iterator].timePriority);
         }
-
-
  double beta1,beta2,beta3;
 
  beta2 = ((sumYX2*sumX3square)-(sumYX3*sumX2X3))/((sumX2square*sumX3square)-(sumX2X3*sumX2X3));
@@ -54,9 +56,5 @@ meanY = meanY + priorityData[iterator].bookPriority ;
  beta1 = meanY - (beta2*meanX2) - (beta3*meanX3);
 
  calculateDoublyRegression.calculateDoublyRegressionMethod(beta1,beta2,beta3,priorityData);
-
-
         }
-
-
 }
