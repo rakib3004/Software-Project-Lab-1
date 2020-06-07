@@ -2,6 +2,7 @@ package ProjectDescription;
 
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingObserVation;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -17,17 +18,16 @@ public class StaticStage extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        
         Button back = new Button("Back");
         Button next = new Button("Next");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         next.setTranslateX(1100);
         next.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
            About about = new About();
 

@@ -1,5 +1,6 @@
 package ProjectDescription;
 
+import FilePackage.DateTimeWriter;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
@@ -25,10 +26,12 @@ public class DynamicStage extends Application {
     int bookCounter=0;
     @Override
     public void start(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);

@@ -3,6 +3,7 @@ package ProjectDescription;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingObserVation;
 import DataComparing.CodeValidationShowing;
+import FilePackage.DateTimeWriter;
 import JavFX.MenuFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -18,10 +19,12 @@ public class About extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);

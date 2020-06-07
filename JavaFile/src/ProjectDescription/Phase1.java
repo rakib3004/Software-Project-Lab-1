@@ -1,5 +1,6 @@
 package ProjectDescription;
 
+import FilePackage.DateTimeWriter;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,18 +14,17 @@ public class Phase1 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button next = new Button("Next");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         next.setTranslateX(1100);
         next.setTranslateY(650);
 
-
-
-        back.setOnAction(actionEvent -> {
+         back.setOnAction(actionEvent -> {
             StaticStage staticStage = new StaticStage();
             try {
                 staticStage.start(primaryStage);
@@ -74,10 +74,12 @@ public class Phase1 extends Application {
     }
 
     public void start2(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button next = new Button("Next");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         next.setTranslateX(1100);
@@ -135,10 +137,12 @@ public class Phase1 extends Application {
 
     }
     public void start3(Stage primaryStage) {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         Button back = new Button("Back");
         Button next = new Button("Next");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         next.setTranslateX(1100);
