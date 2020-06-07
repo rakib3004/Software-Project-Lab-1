@@ -1,4 +1,5 @@
 package TableViewPackage;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.ReverseSorting;
@@ -48,9 +49,11 @@ public class MLR_TableViewFX extends Application {
 
      @Override
     public void start(Stage primaryStage) throws IOException {
+         String  className = this.getClass().getSimpleName();
+         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+         dateTimeWriter.dateTimeWriterMethods(className);
 
         primaryStage.setTitle("Table View Example 1");
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -195,7 +198,9 @@ public class MLR_TableViewFX extends Application {
 
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
-
+            String  className = this.getClass().getSimpleName();
+            DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+            dateTimeWriter.dateTimeWriterMethods(className);
         }
     }
 

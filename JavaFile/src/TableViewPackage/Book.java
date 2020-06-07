@@ -53,7 +53,8 @@ public class Book {
 
     }
 
-    public Book(SimpleStringProperty bookName, SimpleStringProperty writerName, SimpleStringProperty bookId) {
+    public Book(SimpleStringProperty bookName, SimpleStringProperty writerName,
+                SimpleStringProperty bookId) {
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;
@@ -122,7 +123,8 @@ public class Book {
 
 
 
-    public Book(String bookName, String writerName, String bookId, String borrowCount, String bookPrice, double mlRweight) {
+    public Book(String bookName, String writerName, String bookId, String borrowCount
+            , String bookPrice, double mlRweight) {
     }
 
     public Book(String s1, String s2) {

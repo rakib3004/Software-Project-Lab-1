@@ -1,5 +1,6 @@
 package TableViewPackage;
 
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.ReverseSorting;
@@ -46,16 +47,13 @@ public class PRA_TableViewFX extends Application {
 PageRankCalculation pageRankCalculation = new PageRankCalculation();
     ReverseSorting soring = new ReverseSorting();
 
-    public static void main(String [] args) {
-
-        Application.launch(args);
-    }
-
     @Override
     public void start(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         primaryStage.setTitle("Table View Example 1");
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -207,7 +205,9 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
-
+            String  className = this.getClass().getSimpleName();
+            DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+            dateTimeWriter.dateTimeWriterMethods(className);
         }
     }
 

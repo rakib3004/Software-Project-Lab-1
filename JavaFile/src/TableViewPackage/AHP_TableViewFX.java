@@ -2,6 +2,7 @@ package TableViewPackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.ReverseSorting;
@@ -49,17 +50,13 @@ public class AHP_TableViewFX extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
 AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementation();
 
-    public static void main(String [] args) {
-
-        Application.launch(args);
-    }
-
     @Override
     public void start(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         primaryStage.setTitle("Table View Example 1");
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -72,25 +69,18 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
             }
 
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(exit);
         setStyle(back);
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
-
-
-
 
         // Books label
         Label label = new Label("Analytic Heirarchy Process Results");
@@ -99,7 +89,6 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         HBox hb = new HBox();
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
-
         // Table view, data, columns and properties
 
         table = new TableView();
@@ -214,9 +203,10 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
     }
 
     private ObservableList getInitialTableData() throws IOException {
-
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
-
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
