@@ -8,6 +8,7 @@ import MainPackage.Processing;
 import Methods.PrioritySort;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
+import ObjectOriented.CrossValidationData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import javafx.collections.ObservableList;
@@ -36,7 +37,7 @@ public class TrainingSector {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
-    public PriorityData [] trainingSectorMethods(){
+    public  CrossValidationData []  trainingSectorMethods(){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -234,12 +235,13 @@ public class TrainingSector {
 
      priorityDataCV =    predictionSector.predictionSectorMethods(priceGroupWeight,timeGroupWeight,countGroupWeight,typeGroupWeight);
         double [] codeValidationList = new double[1000];
+        CrossValidationData [] crossValidationData = new CrossValidationData[1000];
+
 int jterator=0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 codeValidationList[jterator] = priorityDataCV[iterator].getMLRweight();
-                System.out.println(codeValidationList[jterator]+" value of Book : "+jterator);
                 jterator++;
             }
         }
@@ -261,10 +263,12 @@ int jterator=0;
                         codeValidationList[jterator]));
 
                 System.out.println(priorityData[iterator].getMLRweight()+"\t"+codeValidationList[jterator]);
+
+                crossValidationData[jterator] = new CrossValidationData(priorityData[iterator].getMLRweight(),codeValidationList[jterator]);
                 jterator++;
             }
         }
-        return priorityDataCV;
+        return crossValidationData;
 
     }
 

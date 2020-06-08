@@ -7,6 +7,7 @@ import MainPackage.Processing;
 import Methods.PrioritySort;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
+import ObjectOriented.CrossValidationData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import RegressionFx.FourVariableRegression;
@@ -61,13 +62,6 @@ int iterator;
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
-
-
-
-
-
         primaryStage.setTitle("Table View Example 1");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -183,21 +177,12 @@ int iterator;
 
 
         /*  cross validation results apply :  */
-        double [] codeValidationList = new double[1000];
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
-
-        priorityDataCV= trainingSector.trainingSectorMethods();
+        CrossValidationData[] crossValidationData;
+        crossValidationData= trainingSector.trainingSectorMethods();
         int jterator=0;
 
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if (priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("5") ||
-                    priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-                codeValidationList[jterator] = priorityDataCV[iterator].getMLRweight();
-                System.out.println(codeValidationList[jterator]+" value of Book : "+jterator);
-                jterator++;
-            }
-        }
 
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
@@ -211,10 +196,10 @@ int iterator;
                     priorityData[iterator].bookData.writerName,
                     priorityData[iterator].bookData.typeName,
                     priorityData[iterator].bookData.bookId,
-                    priorityData[iterator].getMLRweight(),
-                    codeValidationList[jterator]));
+                    crossValidationData[jterator].calculatedValue,
+                    crossValidationData[jterator].estimatedData));
 
-              System.out.println(priorityData[iterator].getMLRweight()+"\t"+codeValidationList[jterator]);
+              System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
                 jterator++;
         }
         }
