@@ -1,5 +1,6 @@
 package DataComparing;
 
+import CrossValidationProcess.CrossValidationFX;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -47,6 +48,7 @@ public class CodeValidationShowing extends Application {
     PriorityData[] priorityData,priorityDataCV;
     GenericAlgo[] genericAlgo;
 
+int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -60,17 +62,23 @@ public class CodeValidationShowing extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
+
+
+
+
+
+
         primaryStage.setTitle("Table View Example 1");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            FourVariableRegression fourVariableRegression = new FourVariableRegression();
+            CrossValidationFX crossValidationFX = new CrossValidationFX();
             try {
-                fourVariableRegression.start(primaryStage);
+
+                crossValidationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -97,7 +105,8 @@ public class CodeValidationShowing extends Application {
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
 
-        // Table view, data, columns and properties
+
+
 
         table = new TableView();
         data = getInitialTableData();
@@ -164,25 +173,37 @@ public class CodeValidationShowing extends Application {
         }
     }
 
-    private ObservableList getInitialTableData() throws IOException {
+    private ObservableList getInitialTableData( ) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         List list = new ArrayList();
 
 
-        priorityData = processing.fileReaderMethods();
-        numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-    //    priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
-        
-        TrainingSector trainingSector = new TrainingSector();
-       priorityDataCV= trainingSector.trainingSectorMethods();
-    //    priorityDataCV = prioritySort.PrioritySortingMLRmethods(priorityDataCV,numberOfBooks);
-        System.out.println("Testing system of cross validation :");
 
-        int iterator;
+
+        /*  cross validation results apply :  */
+        double [] codeValidationList = new double[1000];
+        TrainingSector trainingSector = new TrainingSector();
+        priorityDataCV = processing.fileReaderMethods();
+
+        priorityDataCV= trainingSector.trainingSectorMethods();
+        int jterator=0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                codeValidationList[jterator] = priorityDataCV[iterator].getMLRweight();
+                System.out.println(codeValidationList[jterator]+" value of Book : "+jterator);
+                jterator++;
+            }
+        }
+
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = processing.fileReaderMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
+ jterator=0;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
@@ -190,10 +211,11 @@ public class CodeValidationShowing extends Application {
                     priorityData[iterator].bookData.writerName,
                     priorityData[iterator].bookData.typeName,
                     priorityData[iterator].bookData.bookId,
-                    priorityDataCV[iterator].getMLRweight(),
-                    priorityData[iterator].getMLRweight()));
+                    priorityData[iterator].getMLRweight(),
+                    codeValidationList[jterator]));
 
-                System.out.println(priorityDataCV[iterator].getMLRweight()+"\t"+priorityData[iterator].getMLRweight());
+              System.out.println(priorityData[iterator].getMLRweight()+"\t"+codeValidationList[jterator]);
+                jterator++;
         }
         }
         ObservableList data = FXCollections.observableList(list);

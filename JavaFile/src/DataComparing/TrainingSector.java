@@ -40,7 +40,7 @@ public class TrainingSector {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        
+
         int [] priceCounter = new int[3];
         double [] priceGroupWeight;
         priceGroupWeight = new double[3];
@@ -233,7 +233,37 @@ public class TrainingSector {
         }
 
      priorityDataCV =    predictionSector.predictionSectorMethods(priceGroupWeight,timeGroupWeight,countGroupWeight,typeGroupWeight);
+        double [] codeValidationList = new double[1000];
+int jterator=0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityDataCV[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                codeValidationList[jterator] = priorityDataCV[iterator].getMLRweight();
+                System.out.println(codeValidationList[jterator]+" value of Book : "+jterator);
+                jterator++;
+            }
+        }
+        try {
+            priorityData = processing.fileReaderMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        jterator=0;
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        for(iterator=0;iterator<numberOfBooks;iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                list.add(new CodeValidationShowing.Book(priorityData[iterator].bookData.bookName,
+                        priorityData[iterator].bookData.writerName,
+                        priorityData[iterator].bookData.typeName,
+                        priorityData[iterator].bookData.bookId,
+                        priorityData[iterator].getMLRweight(),
+                        codeValidationList[jterator]));
 
+                System.out.println(priorityData[iterator].getMLRweight()+"\t"+codeValidationList[jterator]);
+                jterator++;
+            }
+        }
         return priorityDataCV;
 
     }

@@ -31,7 +31,7 @@ public class TestingSector {
 
     public PriorityData [] testingSectorMethods(AHPcriteriaWeight ahPcriteriaWeight) {
 
-        System.out.println("Here We will see the result of AHP weight calculation : ");
+      /*  System.out.println("Here We will see the result of AHP weight calculation : ");
         System.out.println("ahPcriteriaWeight.scienceFictionType");
         System.out.println(ahPcriteriaWeight.scienceFictionType);
         System.out.println("ahPcriteriaWeight.lowlyDemand");
@@ -49,7 +49,7 @@ public class TestingSector {
         System.out.println("ahPcriteriaWeight.highMediumDemand");
         System.out.println(ahPcriteriaWeight.highMediumDemand);
         System.out.println("ahPcriteriaWeight.highlyDemand");
-        System.out.println(ahPcriteriaWeight.highlyDemand);
+        System.out.println(ahPcriteriaWeight.highlyDemand);*/
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -70,6 +70,7 @@ public class TestingSector {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                System.out.println(priorityData[iterator].getMLRweight());
 
                 if (Integer.parseInt(priorityData[iterator].bookData.bookPrice) <= 180) {
                     //System.out.println(iterator + ":::: 180 er niche dam");
@@ -187,28 +188,19 @@ public class TestingSector {
         }
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-priorityDataCV[iterator].MLRweight = .25 * (priorityData[iterator].pricePriority+
-        priorityData[iterator].timePriority+priorityData[iterator].borrowPriority+
-        priorityData[iterator].timePriority);
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+
+                priorityData[iterator].setMLRweight(.25*(priorityData[iterator].pricePriority +
+                        priorityData[iterator].timePriority + priorityData[iterator].borrowPriority +
+                        priorityData[iterator].timePriority)); ;
 
         }
-        System.out.println("Cross Validation Value\tCalculated Value\n");
- for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-
-     if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
-             priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-         System.out.println(priorityDataCV[iterator].getMLRweight()+"\t"+priorityData2[iterator].getMLRweight());
-
-
-     }
-
-
         }
 
 
 
-        return priorityDataCV;
+        return priorityData;
 
     }
 
