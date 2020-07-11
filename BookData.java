@@ -1,4 +1,3 @@
-package IOStream;
 
 public class BookData {
     String  bookName;
